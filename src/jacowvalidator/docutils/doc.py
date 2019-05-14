@@ -518,6 +518,8 @@ def create_upload_variables(doc, paper_name):
             'details': reference_csv_details['summary'],
             'anchor': 'spms'
         }
+    else:
+        reference_csv_details = False
 
     return summary, reference_csv_details, title
 
