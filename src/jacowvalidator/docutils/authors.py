@@ -56,7 +56,7 @@ National Synchrotron Radiation Research Center, Hsinchu, Taiwan, R.O.C`
     """
     newline_fixed_text = text
     for newline_char in LINE_TERMINATOR_CHARS:
-        newline_fixed_text = newline_fixed_text.replace(newline_char, ', ')
+        newline_fixed_text = newline_fixed_text.replace(newline_char, ' , ')
     potential_authors = newline_fixed_text.replace(NON_BREAKING_SPACE, ' ').replace(' and ', ', ').split(', ')
     filtered_authors = list()
     my_name_pattern = re.compile("(-?\\w\\.\\ ?)+([\\w]{2,}\\ ?)+")

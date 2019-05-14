@@ -209,7 +209,7 @@ def get_author_list_report(docx_text, spms_text):
     # if any unmatched authors remain, perform second round of matching, looking for loose matches (missing initials)
 
     for spms_author in spms_unmatched[:]:
-        docx_author = next((docx_author for docx_author in docx_unmatched if docx_author['compare-first-last'] == spms_author['compare-first-last']), None)
+        docx_author = next((docx_author for docx_author in docx_unmatched if docx_author['compare-first-last'] == spms_author['compare-first-last'] or docx_author['compare-transliterated'] == spms_author['compare-transliterated']), None)
         if docx_author:
             docx_matched.append(docx_author)
             docx_unmatched.remove(docx_author)
@@ -246,11 +246,13 @@ def build_comparison_author_objects(author_names):
         compare_value = normalize_author_name(author)
         compare_first_last = get_first_last_only(compare_value)
         compare_last = get_surname(compare_first_last)
+        compare_transliterated = transliterate_accents(compare_first_last)
         author_compare_objects.append(
             {
                 'original-value': original_value,
                 'compare-value': compare_value,
                 'compare-first-last': compare_first_last,
+                'compare-transliterated': compare_transliterated,
                 'compare-last': compare_last
             })
     return author_compare_objects
@@ -260,8 +262,6 @@ def normalize_author_name(author_name):
     """returns a normalized name suitable for comparing"""
     # ensure periods are followed by a space:
     normalized_name = author_name.replace('.', '. ').replace('  ', ' ')
-    # convert frequently interchanged accented characters with their asci equivalents:
-    normalized_name = remove_accented_chars(normalized_name)
     # remove hyphens (sometimes inconsistently applied):
     normalized_name = normalized_name.replace('-', '')
     # remove asterisks (sometimes included in docx authors text):
@@ -287,10 +287,6 @@ def get_surname(author_name):
     return author_name[author_name.rfind('.')+2:]
 
 
-def remove_accented_chars(name):
-    return name   # Todo
-
-
 def clone_list(list_to_clone):
     new_list = list()
     for item in list_to_clone:
@@ -312,3 +308,72 @@ def normalize_author_names(author_list_to_clean):
     for author in author_list_to_clean:
         new_list.append(normalize_author_name(author))
     return new_list
+
+# below taken from https://stackoverflow.com/questions/6837148/change-foreign-characters-to-their-normal-equivalent
+ACCENTED_CHARS_DICT = {'á': 'a', 'Á': 'A', 'à': 'a', 'À': 'A', 'ă': 'a',
+                       'Ă': 'A', 'â': 'a', 'Â': 'A', 'å': 'a', 'Å': 'A',
+                       'ã': 'a', 'Ã': 'A', 'ą': 'a', 'Ą': 'A', 'ā': 'a',
+                       'Ā': 'A', 'ä': 'ae', 'Ä': 'AE', 'æ': 'ae', 'Æ': 'AE',
+                       'ḃ': 'b', 'Ḃ': 'B', 'ć': 'c', 'Ć': 'C', 'ĉ': 'c',
+                       'Ĉ': 'C', 'č': 'c', 'Č': 'C', 'ċ': 'c', 'Ċ': 'C',
+                       'ç': 'c', 'Ç': 'C', 'ď': 'd', 'Ď': 'D', 'ḋ': 'd',
+                       'Ḋ': 'D', 'đ': 'd', 'Đ': 'D', 'ð': 'dh', 'Ð': 'Dh',
+                       'é': 'e', 'É': 'E', 'è': 'e', 'È': 'E', 'ĕ': 'e',
+                       'Ĕ': 'E', 'ê': 'e', 'Ê': 'E', 'ě': 'e', 'Ě': 'E',
+                       'ë': 'e', 'Ë': 'E', 'ė': 'e', 'Ė': 'E', 'ę': 'e',
+                       'Ę': 'E', 'ē': 'e', 'Ē': 'E', 'ḟ': 'f', 'Ḟ': 'F',
+                       'ƒ': 'f', 'Ƒ': 'F', 'ğ': 'g', 'Ğ': 'G', 'ĝ': 'g',
+                       'Ĝ': 'G', 'ġ': 'g', 'Ġ': 'G', 'ģ': 'g', 'Ģ': 'G',
+                       'ĥ': 'h', 'Ĥ': 'H', 'ħ': 'h', 'Ħ': 'H', 'í': 'i',
+                       'Í': 'I', 'ì': 'i', 'Ì': 'I', 'î': 'i', 'Î': 'I',
+                       'ï': 'i', 'Ï': 'I', 'ĩ': 'i', 'Ĩ': 'I', 'į': 'i',
+                       'Į': 'I', 'ī': 'i', 'Ī': 'I', 'ĵ': 'j', 'Ĵ': 'J',
+                       'ķ': 'k', 'Ķ': 'K', 'ĺ': 'l', 'Ĺ': 'L', 'ľ': 'l',
+                       'Ľ': 'L', 'ļ': 'l', 'Ļ': 'L', 'ł': 'l', 'Ł': 'L',
+                       'ṁ': 'm', 'Ṁ': 'M', 'ń': 'n', 'Ń': 'N', 'ň': 'n',
+                       'Ň': 'N', 'ñ': 'n', 'Ñ': 'N', 'ņ': 'n', 'Ņ': 'N',
+                       'ó': 'o', 'Ó': 'O', 'ò': 'o', 'Ò': 'O', 'ô': 'o',
+                       'Ô': 'O', 'ő': 'o', 'Ő': 'O', 'õ': 'o', 'Õ': 'O',
+                       'ø': 'oe', 'Ø': 'OE', 'ō': 'o', 'Ō': 'O', 'ơ': 'o',
+                       'Ơ': 'O', 'ö': 'oe', 'Ö': 'OE', 'ṗ': 'p', 'Ṗ': 'P',
+                       'ŕ': 'r', 'Ŕ': 'R', 'ř': 'r', 'Ř': 'R', 'ŗ': 'r',
+                       'Ŗ': 'R', 'ś': 's', 'Ś': 'S', 'ŝ': 's', 'Ŝ': 'S',
+                       'š': 's', 'Š': 'S', 'ṡ': 's', 'Ṡ': 'S', 'ş': 's',
+                       'Ş': 'S', 'ș': 's', 'Ș': 'S', 'ß': 'SS', 'ť': 't',
+                       'Ť': 'T', 'ṫ': 't', 'Ṫ': 'T', 'ţ': 't', 'Ţ': 'T',
+                       'ț': 't', 'Ț': 'T', 'ŧ': 't', 'Ŧ': 'T', 'ú': 'u',
+                       'Ú': 'U', 'ù': 'u', 'Ù': 'U', 'ŭ': 'u', 'Ŭ': 'U',
+                       'û': 'u', 'Û': 'U', 'ů': 'u', 'Ů': 'U', 'ű': 'u',
+                       'Ű': 'U', 'ũ': 'u', 'Ũ': 'U', 'ų': 'u', 'Ų': 'U',
+                       'ū': 'u', 'Ū': 'U', 'ư': 'u', 'Ư': 'U', 'ü': 'ue',
+                       'Ü': 'UE', 'ẃ': 'w', 'Ẃ': 'W', 'ẁ': 'w', 'Ẁ': 'W',
+                       'ŵ': 'w', 'Ŵ': 'W', 'ẅ': 'w', 'Ẅ': 'W', 'ý': 'y',
+                       'Ý': 'Y', 'ỳ': 'y', 'Ỳ': 'Y', 'ŷ': 'y', 'Ŷ': 'Y',
+                       'ÿ': 'y', 'Ÿ': 'Y', 'ź': 'z', 'Ź': 'Z', 'ž': 'z',
+                       'Ž': 'Z', 'ż': 'z', 'Ż': 'Z', 'þ': 'th', 'Þ': 'Th',
+                       'µ': 'u', 'а': 'a', 'А': 'a', 'б': 'b', 'Б': 'b',
+                       'в': 'v', 'В': 'v', 'г': 'g', 'Г': 'g', 'д': 'd',
+                       'Д': 'd', 'е': 'e', 'Е': 'E', 'ё': 'e', 'Ё': 'E',
+                       'ж': 'zh', 'Ж': 'zh', 'з': 'z', 'З': 'z', 'и': 'i',
+                       'И': 'i', 'й': 'j', 'Й': 'j', 'к': 'k', 'К': 'k',
+                       'л': 'l', 'Л': 'l', 'м': 'm', 'М': 'm', 'н': 'n',
+                       'Н': 'n', 'о': 'o', 'О': 'o', 'п': 'p', 'П': 'p',
+                       'р': 'r', 'Р': 'r', 'с': 's', 'С': 's', 'т': 't',
+                       'Т': 't', 'у': 'u', 'У': 'u', 'ф': 'f', 'Ф': 'f',
+                       'х': 'h', 'Х': 'h', 'ц': 'c', 'Ц': 'c', 'ч': 'ch',
+                       'Ч': 'ch', 'ш': 'sh', 'Ш': 'sh', 'щ': 'sch', 'Щ': 'sch',
+                       'ъ': '', 'Ъ': '', 'ы': 'y', 'Ы': 'y', 'ь': '', 'Ь': '',
+                       'э': 'e', 'Э': 'e', 'ю': 'ju', 'Ю': 'ju', 'я': 'ja',
+                       'Я': 'ja'}
+
+
+def transliterate_accents(name):
+    name_copy = name
+    for letter in name:
+        if ord(letter) > 127:
+            if letter in ACCENTED_CHARS_DICT:
+                print('replacing', letter)
+                print("with", ACCENTED_CHARS_DICT[letter])
+                name_copy = name_copy.replace(letter, ACCENTED_CHARS_DICT[letter])
+                print(name_copy)
+    return name_copy
