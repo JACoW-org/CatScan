@@ -7,20 +7,17 @@
         {% set action = 'upload' %}
         {% include "_fileupload.html" ignore missing %}
 
-        {% if error %}
-            {% if filename %}
-                <div class="container">
+        <div class="container">
+        {% if filename %}
                 <h1 class="title">Report for {{ filename }}</h1>
-                </div>
-            {% endif %}
+        {% endif %}
+
+        {% if error %}
             <div class="container box" style="background-color:#{{ false|pastel_background_style }}">{{ error }}</div>
         {% endif %}
 
         {% if processed %}
             {% import "section_macro.html" as section_helper %}
-            <div class="container">
-            <h1 class="title"><a name="top"></a>Report for {{ filename }}</h1>
-
             <div class="container box" style="text-align:center;font-size:14pt;background-color:#{{ 2|pastel_background_style }}">
                 <a href="https://www.jacow.org/Authors/CSEHelp" title="Author Help" target="_blank">Link to DOCX Cat Scan Editor - Help and Usage Guidelines</a>
             </div>

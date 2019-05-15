@@ -507,6 +507,11 @@ def create_upload_variables(doc, paper_name):
         'showTotal': True,
     }
 
+    return summary, authors, title
+
+
+def create_spms_variables(paper_name, authors, title):
+    summary = {}
     if "URL_TO_JACOW_REFERENCES_CSV" in os.environ:
         reference_csv_url = os.environ["URL_TO_JACOW_REFERENCES_CSV"]
         author_text = ''.join([a['text'] + ", " for a in authors])
@@ -521,11 +526,7 @@ def create_upload_variables(doc, paper_name):
     else:
         reference_csv_details = False
 
-    return summary, reference_csv_details, title
-
-
-
-
+    return summary, reference_csv_details
 
 
 

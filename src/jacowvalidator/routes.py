@@ -10,7 +10,7 @@ from flask_uploads import UploadNotAllowed
 from jacowvalidator import app, documents
 from .models import Log
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
-from jacowvalidator.docutils.doc import create_upload_variables, AbstractNotFoundError
+from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, AbstractNotFoundError
 from .test_utils import replace_identifying_text
 from .spms import PaperNotFoundError
 
@@ -94,7 +94,10 @@ def upload():
             result = check_tracking_on(doc)
 
             # get variables to pass to template
-            summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+            summary, authors, title = create_upload_variables(doc, paper_name)
+            spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
+            if spms_summary:
+                summary.update(spms_summary)
 
             # log = Log()
             # log.filename = filename
