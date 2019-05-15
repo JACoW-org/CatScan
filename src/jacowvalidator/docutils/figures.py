@@ -75,6 +75,8 @@ def extract_figures(doc):
 
         # find test for wrong versions
         for f in RE_WRONG_TITLES.findall(p.text.strip()):
+            figure_compare = FIGURE_DETAILS
+            # 55 chars is approx where it changes from 1 line to 2 lines
             text = p.text.strip()
             if len(text) > 55:
                 figure_compare = FIGURE_MULTI_DETAILS

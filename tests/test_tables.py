@@ -13,13 +13,13 @@ def test_tables():
     type_of_checks = [
         'order_ok',
         'style_ok',
+        'used_ok',
         'text_format_ok',
-        ['alignment', 'CENTER']
     ]
     issues = {
         1: [],
         2: ['style_ok'],
-        3: ['used', 'order_ok'],
+        3: ['used_ok', 'order_ok'],
     }
 
     table_titles = check_table_titles(doc)
@@ -27,10 +27,6 @@ def test_tables():
 
     for item in table_titles:
         # TODO optimise this
-        if 'used' in issues[item['id']]:
-            assert item['used'] == 0, f"{item['id']} used check passes but it should fail"
-        else:
-            assert item['used'] > 0, f"{item['id']} used check failed"
 
         for check in type_of_checks:
             if type(check) == list:
@@ -39,9 +35,9 @@ def test_tables():
                 to_check = item[check]
 
             if check in issues[item['id']]:
-                assert to_check is False, f"{item['id']} {check} check passes but it should fail"
+                assert to_check is False or to_check == 2, f"{item['id']} {check} check passes but it should fail"
             else:
-                assert to_check, f"{item['id']} {check} check failed"
+                assert to_check is True or to_check == 2, f"{item['id']} {check} check failed"
 
     for table in get_table_paragraphs(doc):
         assert check_is_floating(table['table']) is False, "Table should not be floating"
