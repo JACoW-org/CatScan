@@ -195,10 +195,11 @@ def check_table_titles(doc):
     ]
 
     for table in table_details:
-        title = table['title']
-        result, message = check_caption_format(title, table_caption_format_checks)
+        p = table['title']
+        text = p.text.strip()
+        result, message = check_caption_format(p, table_caption_format_checks)
 
-        order_check = RE_TABLE_ORDER.findall(title.text.strip())
+        order_check = RE_TABLE_ORDER.findall(text)
         # TODO Add info if doing some common wrong ways of doing references like 'table 1'
         used_count = refs.count(count)
 
@@ -206,20 +207,30 @@ def check_table_titles(doc):
 
         table_compare = TABLE_DETAILS
         # 55 chars is approx where it changes from 1 line to 2 lines
-        if len(title.text.strip()) > 55:
+        if len(text) > 55:
             table_compare = TABLE_MULTI_DETAILS
-        style_ok, detail = check_style(title, table_compare)
+
+        style_ok, detail = check_style(p, table_compare)
+        style_name = p.style.name
+        if p.style.name not in ['Caption', 'Table Caption', 'Table Caption Multi Line']:
+            final_style_ok = 2
+        else:
+            final_style_ok = style_ok
+
+        if 40 < len(text) < 80:
+            final_style_ok = 2
+            style_name = f"'{style_name}' checking against type '{table_compare['styles']['jacow']}'"
 
         title_detail = {
             'id': count,
-            'text': title.text,
+            'text': p.text,
             'text_format_ok': result,
             'text_format_message': message,
             'used': used_count,
             'used_ok': used_count > 0,
             'order_ok': f'Table {count}' in order_check,
-            'style': title.style.name,
-            'style_ok': style_ok and title.style.name in ['Caption', 'Table Caption', 'Table Caption Multi Line'],
+            'style': style_name,
+            'style_ok': final_style_ok,
             'table': f"rows: {len(table['table'].rows)}, columns: {len(table['table'].columns)}, floating: {floating}"
         }
         title_detail.update(detail)

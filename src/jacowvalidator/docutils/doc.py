@@ -308,7 +308,6 @@ def parse_paragraphs(doc):
                 'anchor': 'title'
             }
 
-
         # find abstract heading
         if text.lower() == 'abstract':
             abstract_index = i
@@ -324,7 +323,6 @@ def parse_paragraphs(doc):
                 'message': 'Abstract issues',
                 'anchor': 'abstract'
             }
-
 
         # all headings, paragraphs captions, figures, tables, equations should be between these two
         # if abstract_index > 0 and reference_index == -1:
@@ -471,10 +469,25 @@ def create_upload_variables(doc, paper_name):
     }
 
     references_in_text, references_list = extract_references(doc)
+    # Use checks first
+    ok = references_list and all([
+            all([tick['text_ok'], tick['used_ok'], tick['order_ok'], tick['unique_ok']])
+            for tick in references_list])
+
+    # Check style use checks pass
+    if ok:
+        for tick in references_list:
+            if not tick['style_ok']:
+                # If find a false then the result is false
+                ok = False
+                break
+            elif tick['style_ok'] == 2:
+                # If find a 2 (?) then result is 2 unless a false is found later
+                ok = 2
+
     summary['References'] = {
         'title': 'References',
-        'ok': references_list
-              and all([tick['style_ok'] and tick['used_ok'] and tick['order_ok'] for tick in references_list]),
+        'ok': ok,
         'message': 'Reference issues',
         'details': references_list,
         'anchor': 'references',
@@ -483,8 +496,27 @@ def create_upload_variables(doc, paper_name):
 
     figures = extract_figures(doc)
     ok = True
+    # Use checks first
     for _, sub in figures.items():
-        ok = ok and all([item['caption_ok'] and item['used_ok'] and item['style_ok'] for item in sub])
+        ok = ok and all(
+            [item['caption_ok'] and item['unique_ok'] and item['used_ok'] and item['found_ok'] for item in sub]
+        )
+
+    # Check style use checks pass
+    if ok:
+        for _, sub in figures.items():
+            # Break out of outer loop too if false
+            if not ok:
+                break
+
+            for item in sub:
+                if not item['style_ok']:
+                    # If find a false then the result is false
+                    ok = False
+                    break
+                elif item['style_ok'] == 2:
+                    # If find a 2 (?) then result is 2 unless a false is found later
+                    ok = 2
 
     summary['Figures'] = {
         'title': 'Figures',
@@ -496,11 +528,25 @@ def create_upload_variables(doc, paper_name):
     }
 
     table_titles = check_table_titles(doc)
+    # Use checks first
+    ok = all([
+            all([tick['text_format_ok'], tick['order_ok'], tick['style_ok'], tick['order_ok']])
+            for tick in table_titles])
+
+    # Check style use checks pass
+    if ok:
+        for tick in table_titles:
+            if not tick['style_ok']:
+                # If find a false then the result is false
+                ok = False
+                break
+            elif tick['style_ok'] == 2:
+                # If find a 2 (?) then result is 2 unless a false is found later
+                ok = 2
+
     summary['Tables'] = {
         'title': 'Tables',
-        'ok': all([
-            all([tick['text_format_ok'], tick['order_ok'], tick['style_ok'], tick['used'] > 0])
-            for tick in table_titles]),
+        'ok': ok,
         'message': 'Table issues',
         'details': table_titles,
         'anchor': 'tables',
