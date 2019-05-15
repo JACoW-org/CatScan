@@ -41,7 +41,8 @@ def get_page_size(section):
     elif width == round(Inches(8.5), -4):
         return 'Letter'
     else:
-        raise Exception('Unknown Page Size')
+        mm = round(round(width, -4) / 36000, 2)
+        return f'Unknown page size with width {mm} mm'
 
 
 def get_abstract_and_author(doc):
