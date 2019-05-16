@@ -9,6 +9,7 @@ from jacowvalidator.docutils.paragraph import get_paragraphs
 from jacowvalidator.docutils.figures import extract_figures
 from jacowvalidator.docutils.languages import (get_language_tags, get_language_tags_location, VALID_LANGUAGES)
 from jacowvalidator.docutils.tables import check_table_titles
+from jacowvalidator.docutils.title import get_title_details
 from jacowvalidator.spms import reference_csv_check
 
 
@@ -206,16 +207,6 @@ DETAILS = {
         'italic': True,
     },
 }
-
-
-def get_title_details(p):
-    title = get_text(p)
-    title_detail = {
-        'text': title,
-        'original_text': p.text,
-        'case_ok': check_title_case(title, 0.7),
-    }
-    return title_detail
 
 
 def get_author_details(p):

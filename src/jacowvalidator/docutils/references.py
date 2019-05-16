@@ -15,7 +15,7 @@ REFERENCE_DETAILS = {
     'font_size': 9.0,
     'space_before': 0.0,
     'space_after': 3.0,
-    'hanging_indent':  0.0,
+    # 'hanging_indent':  0.0,
     'first_line_indent': -14.75,  # 0.52 cm,
 }
 
@@ -27,7 +27,7 @@ REFERENCE_LESS_DETAILS = {
     'font_size': 9.0,
     'space_before': 0.0,
     'space_after': 3.0,
-    'hanging_indent': 4.53,  # 0.16 cm,  57600
+    # 'hanging_indent': 4.53,  # 0.16 cm,  57600
     'first_line_indent': -14.75,  # 0.52 cm,
 }
 
@@ -39,8 +39,8 @@ REFERENCE_MORE_DETAILS = {
     'font_size': 9.0,
     'space_before': 0.0,
     'space_after': 3.0,
-    'hanging_indent':  0.0,
-    'first_line_indent': -18.7,  # 0.68 cm,
+    # 'hanging_indent':  0.0,
+    'first_line_indent': -19.3,  # 0.68 cm,
 }
 
 
