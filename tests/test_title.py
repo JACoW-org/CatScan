@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from jacowvalidator.docutils.doc import create_upload_variables
+from jacowvalidator.docutils.doc import create_upload_variables, AbstractNotFoundError
 
 test_dir = Path(__file__).parent / 'data'
 
@@ -52,6 +52,22 @@ def test_abstract():
     details = summary_detail['details'][0]
     assert details['style_ok'], "Abstract has style issues but should have no style issues"
     assert details['title_style_ok'], "Abstract has strict style issues but should have no strict style issues"
+
+
+def test_no_abstract():
+    from docx import Document
+
+    paper_name = 'correct_a4_margins'
+    doc = Document(test_dir / 'correct_a4_margins.docx')
+    summary, reference_csv_details, title = None, None, None
+    try:
+        summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+        assert False, 'AbstractNotFoundError not raised'
+    except AbstractNotFoundError as err:
+        assert str(err) == "Abstract header not found", 'AbstractNotFoundError found but not correct message'
+        # these should be empty because Error raised before values returned
+        assert summary is None, 'summary not empty'
+        assert reference_csv_details is None, 'reference_csv_details not empty'
 
 
 def test_headings():

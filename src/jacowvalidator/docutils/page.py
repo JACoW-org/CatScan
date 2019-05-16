@@ -87,7 +87,7 @@ def get_abstract_and_author(doc):
 
 
 def get_text(p):
-    text = ''.join([r.text.upper() if r.style.font.all_caps or r.font.all_caps else r.text for r in p.runs])
+    text = ''.join([r.text.upper() if r.style and (r.style.font.all_caps or r.font.all_caps) else r.text for r in p.runs])
     if p.style.font.all_caps or p.style.base_style and p.style.base_style.font.all_caps:
         text = text.upper()
     return text

@@ -8,7 +8,7 @@ from jacowvalidator.docutils.doc import parse_paragraphs
 test_dir = Path(__file__).parent / 'data'
 
 
-def test_tables():
+def test_convert_document():
     doc = Document(test_dir / 'jacow_template_a4.docx')
     ref, ref_list = extract_references(doc)
     summary = parse_paragraphs(doc)
@@ -24,7 +24,7 @@ def test_tables():
     assert len(ref_list) == len(new_ref_list), \
         f"Reference count of {len(ref_list)} does not match original of {len(new_ref_list)}"
 
-    # compare
+    # compare title, author, abstract
     for index, detail in summary.items():
         for i, item in detail.items():
             if i in ['ok', 'message']:
@@ -33,8 +33,7 @@ def test_tables():
                 count = 0
                 for data in item:
                     for j, datum in data.items():
-                        if j in ['style_ok']:
+                        if j.endswith('_ok'):
                             assert summary[index][i][count][j] == new_summary[index][i][count][j], \
                                 f"{index} - {i} - {j} in summary does not match"
                     count = count + 1
-
