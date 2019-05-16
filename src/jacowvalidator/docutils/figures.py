@@ -33,6 +33,8 @@ FIGURE_MULTI_DETAILS = {
     'desc': 'Multi Line',
 }
 
+VALID_FIGURE_STYLES = ['Figure Caption', 'Figure Caption Multi Line', 'Caption', 'Caption Multi Line']
+
 
 def _fig_to_int(s):
     return int(''.join(filter(str.isdigit, s)))
@@ -53,10 +55,10 @@ def extract_figures(doc):
 
             style_ok, detail = check_style(p, figure_compare)
             style_name = p.style.name
-            if p.style.name not in ['Figure Caption', 'Caption Multi Line', 'Caption']:
+            if p.style.name not in VALID_FIGURE_STYLES:
                 final_style_ok = 2
             else:
-                final_style_ok = style_ok and p.style.name in ['Figure Caption', 'Caption Multi Line', 'Caption']
+                final_style_ok = style_ok and p.style.name in VALID_FIGURE_STYLES
 
             if 40 < len(text) < 80:
                 final_style_ok = 2
@@ -83,10 +85,10 @@ def extract_figures(doc):
 
             style_ok, detail = check_style(p, figure_compare)
             style_name = p.style.name
-            if p.style.name not in ['Figure Caption', 'Caption Multi Line', 'Caption']:
+            if p.style.name not in VALID_FIGURE_STYLES:
                 final_style_ok = 2
             else:
-                final_style_ok = style_ok and p.style.name in ['Figure Caption', 'Caption Multi Line', 'Caption']
+                final_style_ok = style_ok and p.style.name in VALID_FIGURE_STYLES
 
             if 40 < len(text) < 80:
                 final_style_ok = 2
