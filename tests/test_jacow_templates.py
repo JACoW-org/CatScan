@@ -2,8 +2,8 @@ from pathlib import Path
 
 from jacowvalidator.docutils.margins import check_margins, check_margins_A4, check_margins_letter
 from jacowvalidator.docutils.styles import check_jacow_styles, get_paragraph_style_exceptions
-from jacowvalidator.docutils.page import get_page_size, get_abstract_and_author
-from jacowvalidator.docutils.title import extract_title
+from jacowvalidator.docutils.page import get_page_size
+from jacowvalidator.docutils.doc import parse_paragraphs
 
 
 test_dir = Path(__file__).parent / 'data'
@@ -54,22 +54,7 @@ def template_test(doc, abstract_valid=False, figure_issues=[]):
 
     assert get_paragraph_style_exceptions(doc) == []
 
-    title = extract_title(doc)
+    summary, reference_csv_details, title = parse_paragraphs(doc)
+    title = summary['Title']
     assert title['style_ok'], f"title style check failed - {title['style']}"
     assert title['case_ok'], f"title case check failed - {title['text']}"
-
-    abstract, authors = get_abstract_and_author(doc)
-    # if abstract_valid:
-    #     assert abstract['style_ok'], f"abstract style check failed - {abstract['style']}"
-    # else:
-    #     assert abstract['style_ok'] is False, f"abstract style check passes but it should fail - {abstract['style']}"
-    # assert authors['style_ok'], f"author case check failed - {authors['style']}"
-
-    # figures = extract_figures(doc)
-    # for i, figure in figures.items():
-    #     assert figure['found'], f"figure {figure['name']} not found"
-    #     assert figure['used'], f"figure {figure['name']} not used"
-    #     if 'style_ok' in figure_issues[i]:
-    #         assert figure['style_ok'] is False, f"figure {figure['style']} style check passes but it should fail"
-    #     else:
-    #         assert figure['style_ok'], f"figure {figure['style']} style check failed"
