@@ -372,8 +372,5 @@ def transliterate_accents(name):
     for letter in name:
         if ord(letter) > 127:
             if letter in ACCENTED_CHARS_DICT:
-                print('replacing', letter)
-                print("with", ACCENTED_CHARS_DICT[letter])
                 name_copy = name_copy.replace(letter, ACCENTED_CHARS_DICT[letter])
-                print(name_copy)
     return name_copy

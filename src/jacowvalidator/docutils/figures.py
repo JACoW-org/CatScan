@@ -40,6 +40,28 @@ def _fig_to_int(s):
     return int(''.join(filter(str.isdigit, s)))
 
 
+def get_figure_style_details(p):
+    text = p.text.strip()
+    figure_compare = FIGURE_DETAILS
+
+    # 55 chars is approx where it changes from 1 line to 2 lines
+    if len(text) > 55:
+        figure_compare = FIGURE_MULTI_DETAILS
+
+    style_ok, detail = check_style(p, figure_compare)
+    style_name = p.style.name
+    if p.style.name not in VALID_FIGURE_STYLES:
+        final_style_ok = 2
+    else:
+        final_style_ok = style_ok and p.style.name in VALID_FIGURE_STYLES
+
+    if 40 < len(text) < 80:
+        final_style_ok = 2
+        style_name = f"'{style_name}' checking against type '{figure_compare['styles']['jacow']}'"
+
+    return final_style_ok, style_name, detail
+
+
 def extract_figures(doc):
     figures_refs = []
     figures_captions = []
@@ -47,22 +69,8 @@ def extract_figures(doc):
 
     def _find_figure_captions(p):
         for f in RE_FIG_TITLES.findall(p.text.strip()):
-            figure_compare = FIGURE_DETAILS
-            # 55 chars is approx where it changes from 1 line to 2 lines
             text = p.text.strip()
-            if len(text) > 55:
-                figure_compare = FIGURE_MULTI_DETAILS
-
-            style_ok, detail = check_style(p, figure_compare)
-            style_name = p.style.name
-            if p.style.name not in VALID_FIGURE_STYLES:
-                final_style_ok = 2
-            else:
-                final_style_ok = style_ok and p.style.name in VALID_FIGURE_STYLES
-
-            if 40 < len(text) < 80:
-                final_style_ok = 2
-                style_name = f"'{style_name}' checking against type '{figure_compare['styles']['jacow']}'"
+            final_style_ok, style_name, detail = get_figure_style_details(p)
 
             _id = _fig_to_int(f)
             figure_detail = dict(
@@ -77,22 +85,9 @@ def extract_figures(doc):
 
         # find test for wrong versions
         for f in RE_WRONG_TITLES.findall(p.text.strip()):
-            figure_compare = FIGURE_DETAILS
             # 55 chars is approx where it changes from 1 line to 2 lines
             text = p.text.strip()
-            if len(text) > 55:
-                figure_compare = FIGURE_MULTI_DETAILS
-
-            style_ok, detail = check_style(p, figure_compare)
-            style_name = p.style.name
-            if p.style.name not in VALID_FIGURE_STYLES:
-                final_style_ok = 2
-            else:
-                final_style_ok = style_ok and p.style.name in VALID_FIGURE_STYLES
-
-            if 40 < len(text) < 80:
-                final_style_ok = 2
-                style_name = f"'{style_name}' checking against type '{figure_compare['styles']['jacow']}'"
+            final_style_ok, style_name, detail = get_figure_style_details(p)
 
             _id = _fig_to_int(f)
             figure_detail = dict(
