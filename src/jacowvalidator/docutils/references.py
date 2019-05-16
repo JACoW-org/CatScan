@@ -27,7 +27,7 @@ REFERENCE_LESS_DETAILS = {
     'font_size': 9.0,
     'space_before': 0.0,
     'space_after': 3.0,
-    'hanging_indent': 0,  # 0.16 cm,
+    'hanging_indent': 4.53,  # 0.16 cm,  57600
     'first_line_indent': -14.75,  # 0.52 cm,
 }
 
@@ -81,7 +81,7 @@ def extract_references(doc, strict_styles=False):
                 if int(ref) == 1:
                     ref_list_start = i
                 references_list.append(
-                    dict(id=int(ref), text=p.text.strip(), style=p.style.name)
+                    dict(id=int(ref), text=p.text.strip(), style=p.style.name, p=p)
                 )
         elif ref_list_start > 0:
             should_find = references_list[-1]['id'] + 1
@@ -91,6 +91,7 @@ def extract_references(doc, strict_styles=False):
                         id=should_find,
                         text=p.text.strip(),
                         style=p.style.name,
+                        p=p,
                         text_ok=False,
                         text_error=f"Number format wrong should be [{should_find}]"
                     )
@@ -137,7 +138,7 @@ def extract_references(doc, strict_styles=False):
             ref['text_ok'] = False
 
         if ref_count <= 9:
-            style_ok, detail = check_style(p, REFERENCE_DETAILS)
+            style_ok, detail = check_style(ref['p'], REFERENCE_DETAILS)
             if strict_styles:
                 ref['style_ok'] = ref['style'] == 'JACoW_Reference when <= 9 Refs'
                 if not ref['style_ok']:
@@ -146,7 +147,7 @@ def extract_references(doc, strict_styles=False):
                 ref['style_ok'] = style_ok
         else:
             if i <= 9:
-                style_ok, detail = check_style(p, REFERENCE_LESS_DETAILS)
+                style_ok, detail = check_style(ref['p'], REFERENCE_LESS_DETAILS)
                 if strict_styles:
                     ref['style_ok'] = ref['style'] == 'JACoW_Reference #1-9 when >= 10 Refs'
                     if not ref['style_ok']:
@@ -155,7 +156,7 @@ def extract_references(doc, strict_styles=False):
                     ref['style_ok'] = style_ok
 
             else:
-                style_ok, detail = check_style(p, REFERENCE_MORE_DETAILS)
+                style_ok, detail = check_style(ref['p'], REFERENCE_MORE_DETAILS)
                 if strict_styles:
                     ref['style_ok'] = ref['style'] == 'JACoW_Reference #10 onwards'
                     if not ref['style_ok']:

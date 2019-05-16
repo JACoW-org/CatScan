@@ -1,5 +1,6 @@
 import operator
-
+from docx.shared import Inches, Mm, Twips
+from docx.oxml.text.parfmt import CT_PPr, CT_Ind
 
 VALID_STYLES = ['JACoW_Abstract_Heading',
                 'JACoW_Author List',
@@ -74,25 +75,48 @@ def get_paragraph_alignment(paragraph):
         return None
 
 
+def get_indents(style_format):
+    first_line_indent, hanging_indent, left_indent = None, None, None
+    for i in style_format.element.iterchildren():
+        if isinstance(i, CT_PPr):
+            for j in i.iterchildren():
+                if isinstance(j, CT_Ind):
+                    first_line_indent, hanging_indent, left_indent = j.firstLine, j.hanging, j.left
+    return first_line_indent, hanging_indent, left_indent
+
+
 def get_paragraph_space(paragraph):
     # paragraph formatting style can be overridden by more local definition
-    before, after, first_line_indent = \
+    before, after = \
         paragraph.style.paragraph_format.space_before, \
-        paragraph.style.paragraph_format.space_after, \
-        paragraph.style.paragraph_format.first_line_indent
-    if before is None and paragraph.style.base_style is not None:
-        before = paragraph.style.base_style.paragraph_format.space_before
-    if after is None and paragraph.style.base_style is not None:
-        after = paragraph.style.base_style.paragraph_format.space_after
-    if first_line_indent is None and paragraph.style.base_style is not None:
-        first_line_indent = paragraph.style.base_style.paragraph_format.first_line_indent
+        paragraph.style.paragraph_format.space_after
+
+    first_line_indent, hanging_indent, left_indent = get_indents(paragraph.style.paragraph_format)
+
+    if paragraph.style.base_style is not None:
+        first_line, hanging, left = get_indents(paragraph.style.base_style.paragraph_format)
+        if before is None:
+            before = paragraph.style.base_style.paragraph_format.space_before
+        if after is None:
+            after = paragraph.style.base_style.paragraph_format.space_after
+        if first_line_indent is None:
+            first_line_indent = first_line
+        if hanging_indent is None:
+            hanging_indent = hanging
+        if left_indent is None:
+            left_indent = left
 
     if paragraph.paragraph_format.space_before is not None:
         before = paragraph.paragraph_format.space_before
     if paragraph.paragraph_format.space_after is not None:
         after = paragraph.paragraph_format.space_after
-    if paragraph.paragraph_format.first_line_indent is not None:
-        first_line_indent = paragraph.paragraph_format.first_line_indent
+    first_line, hanging, left = get_indents(paragraph.paragraph_format)
+    if first_line is not None:
+        first_line_indent = first_line
+    if hanging is not None:
+        hanging_indent = hanging
+    if left is not None:
+        left_indent = left
 
     if before:
         before = before.pt
@@ -100,8 +124,14 @@ def get_paragraph_space(paragraph):
         after = after.pt
     if first_line_indent:
         first_line_indent = first_line_indent.pt
+    elif hanging_indent:
+        first_line_indent = -hanging_indent.pt
+    if hanging_indent:
+        hanging_indent = hanging_indent.pt
+    if left_indent:
+        left_indent = left_indent.pt
 
-    return before, after, first_line_indent
+    return before, after, first_line_indent, hanging_indent, left_indent
 
 
 def get_style_font(paragraph):
@@ -150,7 +180,7 @@ def get_style_font(paragraph):
 
 
 def get_style_details(p):
-    space_before, space_after, first_line_indent = get_paragraph_space(p)
+    space_before, space_after, first_line_indent, hanging_indent, left_indent = get_paragraph_space(p)
     bold, italic, font_size, all_caps = get_style_font(p)
     alignment = get_paragraph_alignment(p)
     return locals()
