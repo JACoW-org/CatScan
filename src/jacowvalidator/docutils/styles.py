@@ -20,7 +20,9 @@ VALID_STYLES = ['JACoW_Abstract_Heading',
 VALID_NON_JACOW_STYLES = ['Figure Caption',
                           'Figure Caption Multi Line',
                           'Table Caption',
-                          'Table Caption Multi Line']
+                          'Table Caption Multi Line',
+                          'Caption',
+                          'Caption Multi Line']
 
 # These are in the jacow templates so may be in docs created from them
 # Caption and Normal for table title and figure title
