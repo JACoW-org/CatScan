@@ -30,7 +30,7 @@
     file.onchange = function(){
         if(file.files.length > 0) {
           document.getElementById('filename').innerHTML = file.files[0].name;
-          document.getElementById('fileform').action = '{{ url_for('upload') }}?filename=' + encodeURIComponent(file.files[0].name);
+          document.getElementById('fileform').action = '{{ url_for(action) }}?filename=' + encodeURIComponent(file.files[0].name);
         }
     };
 </script>

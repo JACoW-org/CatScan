@@ -6,12 +6,14 @@ from jacowvalidator.docutils.references import extract_references
 test_dir = Path(__file__).parent / 'data'
 
 
+TYPE_OF_CHECKS = ['used_ok', 'order_ok', 'text_ok', 'style_ok']
+
+
 def test_references():
     from docx import Document
     doc = Document(test_dir / 'test1.docx')
 
     # hard code known issues for the moment
-    type_of_checks = ['used_ok', 'order_ok', 'style_ok']
     issues = {
         1: ['style_ok'],
         2: ['style_ok'],
@@ -63,9 +65,30 @@ def test_references():
     references_in_text, references_list = extract_references(doc)
     assert len(references_list) == 45
 
+    check_list(references_list, issues)
+
+
+def test_references():
+    from docx import Document
+    doc = Document(test_dir / 'test2.docx')
+
+    # hard code known issues for the moment
+    issues = {
+        1: ['style_ok'],
+        2: ['style_ok'],
+        3: ['style_ok'],
+    }
+
+    references_in_text, references_list = extract_references(doc)
+    assert len(references_list) == 3
+
+    check_list(references_list, issues)
+
+
+def check_list(references_list, issues):
     for item in references_list:
         # TODO optimise this
-        for check in type_of_checks:
+        for check in TYPE_OF_CHECKS:
             if check in issues[item['id']]:
                 assert item[check] is False, f"{item['id']} {check} check passes but it should fail"
             else:

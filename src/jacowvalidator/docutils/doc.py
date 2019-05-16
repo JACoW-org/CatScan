@@ -357,16 +357,6 @@ def parse_paragraphs(doc):
     if abstract_index == -1:
         raise AbstractNotFoundError("Abstract header not found")
 
-        # abstract_index = 2
-        # summary['Abstract'] = {
-        #     'details': [],
-        #     'rules': DETAILS['Abstract'],
-        #     'title': 'Abstract Heading',
-        #     'ok': False,
-        #     'message': 'Abstract issues',
-        #     'anchor': 'abstract'
-        # }
-
     # authors is all the text between title and abstract heading
     author_details = []
     for p in doc.paragraphs[title_index+1: abstract_index]:
