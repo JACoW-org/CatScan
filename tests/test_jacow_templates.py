@@ -54,7 +54,10 @@ def template_test(doc, abstract_valid=False, figure_issues=[]):
 
     assert get_paragraph_style_exceptions(doc) == []
 
-    summary, reference_csv_details, title = parse_paragraphs(doc)
+    summary = parse_paragraphs(doc)
     title = summary['Title']
-    assert title['style_ok'], f"title style check failed - {title['style']}"
-    assert title['case_ok'], f"title case check failed - {title['text']}"
+    details = title['details']
+    assert title['ok'], f"title ok check failed but should pass"
+    for detail in details:
+        assert detail['case_ok'], f"title case check failed - {detail['text']}"
+        assert detail['style_ok'], f"title style check failed - {detail['style']}"
