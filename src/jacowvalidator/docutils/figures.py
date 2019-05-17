@@ -48,7 +48,12 @@ EXTRA_RULES = [
     'Figures must have a “.” On the end of the final line.',
 ]
 HELP_INFO = 'CSEFigures'
-
+EXTRA_INF0 = {
+    'title':'Use Breakdown',
+    'headers': '<thead><tr><th>No.</th><th colspan="2">Caption</th><th>Unique</th><th colspan="2">References</th><th width="30%">Text</th></tr></thead>',
+    'columns': ['id', 'name', 'caption_ok', 'unique_ok', 'refs', 'used_ok', 'text'],
+    'multi': True
+}
 
 def _fig_to_int(s):
     return int(''.join(filter(str.isdigit, s)))
@@ -221,6 +226,7 @@ def get_figure_summary(doc):
         'rules': STYLES,
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
+        'extra_info': EXTRA_INF0,
         'ok': ok,
         'message': 'Figure issues',
         'details': figures,

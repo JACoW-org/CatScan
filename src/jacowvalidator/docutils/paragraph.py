@@ -19,6 +19,11 @@ PARAGRAPH_STYLES = {
 EXTRA_RULES = ''
 HELP_INFO = 'SCEParag'
 ALL_HELP_INFO = 'CSEParsedDocument'
+ALL_EXTRA_INFO = {
+    'title':'Breakdown',
+    'headers': '<thead><tr><th style="width:60%">Text</th><th style="width:15%">Style</th><th style="width:15%">In Table</th><th style="width:10%">JACoW Style</th> </tr></thead>',
+    'columns': ['text', 'style', 'in_table', 'style_ok']
+}
 
 PARAGRAPH_SIZE_MIN = 50
 
@@ -138,6 +143,7 @@ def get_all_paragraph_summary(doc):
     return {
         'title': 'Parsed Document',
         'help_info': ALL_HELP_INFO,
+        'extra_info': ALL_EXTRA_INFO,
         'ok': ok,
         'message': 'Not using only JACoW Styles',
         'details': all_summary,

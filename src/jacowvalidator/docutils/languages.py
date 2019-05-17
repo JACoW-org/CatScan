@@ -44,11 +44,19 @@ def get_language_tags_location(doc):
 def get_language_summary(doc):
     language_summary = get_language_tags(doc)
     languages = get_language_tags_location(doc)
+    ok = len([languages[lang] for lang in languages if languages[lang] not in VALID_LANGUAGES]) == 0
+
+    if ok:
+        extra_info = 'English proofing languages were found.'
+    else:
+        extra_info = 'Non English proofing languages were found in document, please set all document content proofing language to English.'
+
     return {
         'title': 'Languages',
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
-        'ok': len([languages[lang] for lang in languages if languages[lang] not in VALID_LANGUAGES]) == 0,
+        'extra_info': extra_info,
+        'ok': ok,
         'message': 'Language issues',
         'details': language_summary,
         'extra': languages,

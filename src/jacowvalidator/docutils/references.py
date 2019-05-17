@@ -54,6 +54,11 @@ EXTRA_RULES = [
     'All references must be numbered [n] and have a tab between the ] and the start of the reference text. (note many authors put spaces in which stuffs up the spacing.',
 ]
 HELP_INFO = 'SCEReferences'
+EXTRA_INFO = {
+    'title':'Use Breakdown',
+    'headers': '<thead><tr><th>No.</th><th colspan="3">Text</th><th>Used</th><th>Order</th><th>Unique</th></tr></thead>',
+    'columns': ['id', 'text', 'text_error', 'text_ok', 'used_ok', 'order_ok', 'unique_ok']
+}
 
 
 def _ref_to_int(ref):
@@ -193,6 +198,7 @@ def get_reference_summary(doc):
         'rules': STYLES,
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
+        'extra_info': EXTRA_INFO,
         'ok': ok,
         'message': 'Reference issues',
         'details': references_list,

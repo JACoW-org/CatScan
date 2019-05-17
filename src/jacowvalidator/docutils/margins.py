@@ -28,7 +28,11 @@ EXTRA_RULES = [
     '''
 ]
 HELP_INFO = 'CSEPageSizeandMargins'
-
+EXTRA_INFO = {
+    'title':'Style Breakdown',
+    'headers': '<thead><tr><th>Section</th><th>Page Size</th><th colspan="2">Margins</th><th>Columns</th><th colspan="2">Column Gutter (cm)</th></tr> </thead>',
+    'columns': ['loop.index', 'page_size', 'margins', 'margins_ok', 'col_number', 'col_gutter', 'col_ok']
+}
 
 def check_sections(doc):
     sections = []
@@ -113,6 +117,7 @@ def get_margin_summary(doc):
         'title': 'Page Size and Margins',
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
+        'extra_info': EXTRA_INFO,
         'ok': ok,
         'message': 'Margins',
         'details': sections,

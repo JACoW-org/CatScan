@@ -41,6 +41,12 @@ Standard JACoW Style’s must embedded in the document.</p>
     '''
 ]
 HELP_INFO = 'CSEJACoWStyles'
+EXTRA_INFO = {
+    'title':'Style Breakdown',
+    'headers': '<thead><tr><th>Style</th><th>Embedded in Document</th></tr></thead>',
+    'columns': ['style', 'style_ok']
+}
+
 
 # check if th
 def check_jacow_styles(doc):
@@ -281,6 +287,7 @@ def get_style_summary(doc):
         'title': 'JACoW Styles',
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
+        'extra_info': EXTRA_INFO,
         'ok': all([tick['style_ok'] for tick in jacow_styles]),
         'message': 'Styles issues',
         'details': jacow_styles,

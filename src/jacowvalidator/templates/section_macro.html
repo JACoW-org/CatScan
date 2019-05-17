@@ -1,4 +1,4 @@
-{% macro add_section(section, args, extra_info='') -%}
+{% macro add_section(section, args={}) -%}
  <div class="box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
     <a href="#top" class="link-color">Top <i class="fas fa-arrow-circle-up"></i></a>
     <h2 class="subtitle" style="padding:10px;background-color:#{{ section.ok|pastel_background_style }}">
@@ -50,14 +50,15 @@
     </details>
     <br/>
     {% endif %}
-    {% if 'ok' in extra_info %}
-        {% if not (section.showTotal and section['details']|length == 0) %}
-        <details {% if extra_info['ok'] == false %} open {% endif %} style="border:1px lightgray solid;border-radius:2px">
-        <summary style="padding:5px;border:1px solid grey;border-radius:2px; background-color:#fcfcfc">{{ extra_info['title'] }} for {{ section['title'] }}</summary>
+    {% set extra_info = section.extra_info %}
+    {% if 'title' in extra_info %}
+        {% if not (section.show_total and section.details|length == 0) %}
+        <details {% if section.ok == false %} open {% endif %} style="border:1px lightgray solid;border-radius:2px">
+        <summary style="padding:5px;border:1px solid grey;border-radius:2px; background-color:#fcfcfc">{{ extra_info.title }} for {{ section.title }}</summary>
             {% if extra_info['multi'] %}
-                {{ make_table_multi(section['details'], extra_info['headers'], extra_info['columns'], args) }}
+                {{ make_table_multi(section.details, extra_info.headers, extra_info.columns, args) }}
             {%  else %}
-                {{ make_table(section['details'], extra_info['headers'], extra_info['columns'], args) }}
+                {{ make_table(section.details, extra_info.headers, extra_info.columns, args) }}
             {% endif %}
         </details>
         <br/>
@@ -119,6 +120,7 @@
                         <th>{{ get_style_column_header(rule) }}</th>
                     {% endif %}
                 {% endfor %}
+                <th>Ok</th>
             </tr>
         </thead>
     {% elif header %}
@@ -131,25 +133,7 @@
         {{ make_table_header(rules, headers) }}
         <tbody>
         {% for row in data %}
-            <tr>
-            {% if rules %}
-                 {% set rule_list = rules|first_value_in_dict %}
-                 {{ make_cell('text', row['text'], loop, args) }}
-                 {{ make_cell('style', row['style'], loop, args) }}
-                 {% for rule, value in rule_list.items() %}
-                     {% if rule not in ['type','styles'] %}
-                         {% set value = row[rule] %}
-                         {{ make_cell(rule, value, loop, args) }}
-                    {% endif %}
-                {% endfor %}
-                {{ make_cell('style_ok', row['style_ok'], loop, args) }}
-            {% else %}
-                {% for col in columns %}
-                    {% set value = row[col] %}
-                    {{ make_cell(col, value, loop, args) }}
-                {% endfor %}
-            {% endif %}
-            </tr>
+            {{ make_table_row(loop.index, row, columns, args, rules) }}
         {% endfor %}
         </tbody>
     </table>
@@ -158,32 +142,39 @@
 {% macro make_table_multi(data, headers, columns, args={}, rules=false) -%}
     <table class="table is-bordered is-fullwidth">
         {{ make_table_header(rules, headers) }}
+        <tbody>
         {% for id, id_row in data.items() %}
-            {% for item in id_row %}
-            <tr>
-            {% if rules %}
-                 {{ make_cell('text', item['text'], loop, args) }}
-                 {{ make_cell('style', item['style'], loop, args) }}
-                 {% for col in rules %}
-                     {% if col not in ['type','styles'] %}
-                         {% set value = item[col] %}
-                         {{ make_cell(col, value, loop, args) }}
-                     {% endif %}
-                {% endfor %}
-                {{ make_cell('style_ok', item['style_ok'], loop, args) }}
-            {% else %}
-                {% for col in columns %}
-                    {% set value = item[col] %}
-                    {% if col == 'id' %}
-                        {% set value = id %}
-                    {% endif %}
-                    {{ make_cell(col, value, loop, args) }}
-                {% endfor %}
-            {% endif %}
-            </tr>
+            {% for row in id_row %}
+                {{ make_table_row(id, row, columns, args, rules) }}
             {% endfor %}
         {% endfor %}
+        </tbody>
     </table>
+{%- endmacro %}
+
+{% macro make_table_row(id, row, columns, args, rules=false) -%}
+    <tr>
+    {% if rules %}
+         {% set rule_list = rules|first_value_in_dict %}
+         {{ make_cell('text', row['text'], loop, args) }}
+         {{ make_cell('style', row['style'], loop, args) }}
+         {% for rule, value in rule_list.items() %}
+             {% if rule not in ['type','styles'] %}
+                 {% set value = row[rule] %}
+                 {{ make_cell(rule, value, loop, args) }}
+             {% endif %}
+        {% endfor %}
+        {{ make_cell('style_ok', row['style_ok'], loop, args) }}
+    {% else %}
+        {% for col in columns %}
+            {% set value = row[col] %}
+            {% if col == 'id' %}
+                {% set value = id %}
+            {% endif %}
+            {{ make_cell(col, value, loop, args) }}
+        {% endfor %}
+    {% endif %}
+    </tr>
 {%- endmacro %}
 
 {% macro make_cell(col, value, loop, args) -%}

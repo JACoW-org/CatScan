@@ -8,6 +8,12 @@ from jacowvalidator.docutils.authors import get_author_list
 
 RE_MULTI_SPACE = re.compile(r' +')
 HELP_INFO = 'CSESPMSCeck'
+EXTRA_INFO = {
+    'title':'Title and Author Breakdown',
+    'headers': '<thead><tr><th>Type</th><th>Match</th><th>Docx</th><th>SPMS</th></tr></thead>',
+    'columns': ['type', 'match_ok', 'docx', 'spms']
+}
+
 
 class PaperNotFoundError(Exception):
     """Raised when the paper submitted by a user has no matching entry in the

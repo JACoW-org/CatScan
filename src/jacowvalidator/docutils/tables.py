@@ -51,6 +51,11 @@ EXTRA_RULES = [
     'All tables must be referred to in the main text and use “Table n”.'
 ]
 HELP_INFO = 'CSETables'
+EXTRA_INFO = {
+    'title':'Use Breakdown',
+    'headers': '<thead><tr><th>No.</th><th colspan="3">Caption</th><th colspan="2">Used</th><th>Order</th><th>Table</th></tr></thead>',
+    'columns': ['id', 'text', 'text_format_ok', 'text_format_message', 'used', 'used_ok', 'order_ok', 'table']
+}
 VALID_FIGURE_STYLES = ['Table Caption', 'Table Caption Multi Line', 'Caption', 'Caption Multi Line']
 
 def iter_block_items(parent):
@@ -273,6 +278,7 @@ def get_table_summary(doc):
         'rules': STYLES,
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
+        'extra_info': EXTRA_INFO,
         'ok': ok,
         'message': 'Table issues',
         'details': table_titles,

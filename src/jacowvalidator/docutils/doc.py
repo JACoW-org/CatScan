@@ -10,7 +10,7 @@ from jacowvalidator.docutils.paragraph import get_paragraph_summary, get_all_par
 from jacowvalidator.docutils.references import get_reference_summary
 from jacowvalidator.docutils.figures import get_figure_summary
 from jacowvalidator.docutils.tables import get_table_summary
-from jacowvalidator.spms import reference_csv_check, HELP_INFO as SPMS_HELP_INFO
+from jacowvalidator.spms import reference_csv_check, HELP_INFO as SPMS_HELP_INFO, EXTRA_INFO as SPMS_EXTRA_INFO
 
 
 class AbstractNotFoundError(Exception):
@@ -113,6 +113,7 @@ def create_spms_variables(paper_name, authors, title):
         summary['SPMS'] = {
             'title': 'SPMS Abstract Title Author Check',
             'help_info': SPMS_HELP_INFO,
+            'extra_info': SPMS_EXTRA_INFO,
             'ok': reference_csv_details['title']['match'] and reference_csv_details['author']['match'],
             'message': 'SPMS Abstract Title Author Check issues',
             'details': reference_csv_details['summary'],

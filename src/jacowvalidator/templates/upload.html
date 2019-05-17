@@ -49,112 +49,26 @@
             </div>
 
             <p><button class="button" style="background-color:lightblue" onclick="js:closeDetails()">Close All Expanded Sections Below </button><br/><br/></p>
-            {% set section = summary['Styles'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Style Breakdown', 'headers': '<thead><tr>
-                            <th>Style</th><th>Embedded in Document</th>
-                        </tr></thead>',
-                'columns': ['style', 'style_ok']}
-            %}
-            {{ section_helper.add_section(section, {}, extra_info) }}
-
-            {% set section = summary['List'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Breakdown', 'headers': '<thead><tr>
-                            <th style="width:60%">Text</th><th style="width:15%">Style</th><th style="width:15%">In Table</th><th style="width:10%">JACoW Style</th>
-                        </tr></thead>',
-                'columns': ['text', 'style', 'in_table', 'style_ok']}
-            %}
-            {{ section_helper.add_section(section, {}, extra_info) }}
-
-
-            {% set section = summary['Margins'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Style Breakdown', 'headers': '<thead><tr>
-                            <th>Section</th><th>Page Size</th><th colspan="2">Margins</th>
-                            <th>Columns</th><th colspan="2">Column Gutter (cm)</th>
-                        </tr> </thead>',
-                'columns': ['loop.index', 'page_size', 'margins', 'margins_ok', 'col_number', 'col_gutter', 'col_ok']}
-            %}
-            {{ section_helper.add_section(section, {}, extra_info) }}
-
-
-            {% set section = summary['Languages'] %}
-            {% if summary['Languages']['ok'] == False %}
-                {% set extra_info = 'Non English proofing languages were found in document, please set all document content proofing language to English.' %}
-            {% else %}
-                {% set extra_info = 'English proofing languages were found.' %}
-            {% endif %}
-            {{ section_helper.add_section(section, {}, extra_info) }}
-
-            {% set section = summary['Title'] %}
-            {% if not title.case_ok %}
-                {% set extra_info = '<p class="has-text-weight-bold has-text-danger">Title should be at least 70% uppercase</p>' %}
-            {% else %}
-                {% set extra_info = '' %}
-            {% endif %}
-            {{ section_helper.add_section(section, {}, extra_info) }}
-
+            {{ section_helper.add_section(summary['Styles']) }}
+            {{ section_helper.add_section(summary['List']) }}
+            {{ section_helper.add_section(summary['Margins']) }}
+            {{ section_helper.add_section(summary['Languages']) }}
+            {{ section_helper.add_section(summary['Title']) }}
             {{ section_helper.add_section(summary['Authors'], {}) }}
             {{ section_helper.add_section(summary['Abstract'], {}) }}
             {{ section_helper.add_section(summary['Headings'], {}) }}
             {{ section_helper.add_section(summary['Paragraphs'], {'truncate_text':200}) }}
-
-
-            {% set section = summary['References'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Use Breakdown', 'headers': '<thead>
-                            <tr>
-                                <th>No.</th>
-                                <th colspan="3">Text</th>
-                                <th>Used</th>
-                                <th>Order</th>
-                                <th>Unique</th>
-                            </tr>
-                        </thead>',
-                'columns': ['id', 'text', 'text_error', 'text_ok', 'used_ok', 'order_ok', 'unique_ok']}
-            %}
-            {{ section_helper.add_section(section, {'truncate_text':50}, extra_info) }}
-
-            {% set section = summary['Figures'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Use Breakdown', 'headers': '<thead>
-                        <tr>
-                            <th>No.</th>
-                            <th colspan="2">Caption</th>
-                            <th>Unique</th>
-                            <th colspan="2">References</th>
-                            <th width="30%">Text</th>
-                        </tr>
-                    </thead>',
-                'columns': ['id', 'name', 'caption_ok', 'unique_ok', 'refs', 'used_ok', 'text'],'multi':true}
-            %}
-            {{ section_helper.add_section(section, {'style_multi':true}, extra_info) }}
-
-            {% set section = summary['Tables'] %}
-            {% set extra_info = {'ok':section['ok'],'title':'Use Breakdown', 'headers': '<thead>
-                        <tr>
-                            <th>No.</th>
-                            <th colspan="3">Caption</th>
-                            <th colspan="2">Used</th>
-                            <th>Order</th>
-                            <th>Table</th>
-                        </tr>
-                    </thead>',
-                'columns': ['id', 'text', 'text_format_ok', 'text_format_message', 'used', 'used_ok', 'order_ok', 'table']}
-            %}
-
-            {{ section_helper.add_section(section, {'extra_info':'CSETables'}, extra_info) }}
+            {{ section_helper.add_section(summary['References'], {'truncate_text':50}) }}
+            {{ section_helper.add_section(summary['Figures'], {'style_multi':true}) }}
+            {{ section_helper.add_section(summary['Tables']) }}
 
             {% if summary['SPMS'] %}
-                {% set section = summary['SPMS'] %}
-                {% set extra_info = {'ok':section['ok'],'title':'Title and Author Breakdown', 'headers': '<thead>
-                    <tr><th>Type</th><th>Match</th><th>Docx</th><th>SPMS</th></tr>
-                </thead>',
-                    'columns': ['type', 'match_ok', 'docx', 'spms']}
-                %}
                 {% if reference_csv_url is defined %}
                     {% set title = 'Conformance with <a href=' + reference_csv_url + '>references.csv</a>' %}
                 {% else %}
                    {% set title = 'Conformance with references.csv' %}
                 {% endif %}
-
-                {{ section_helper.add_section(section, {'section_header':title,'extra_info':'CSESPMSCeck'}, extra_info) }}
+                {{ section_helper.add_section(summary['SPMS'], {'section_header':title}) }}
             </div>
             {% endif %}
         {% endif %}
