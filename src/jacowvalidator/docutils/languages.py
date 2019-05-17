@@ -2,6 +2,21 @@ from docx.oxml.text.font import CT_RPr
 from lxml.etree import _Element
 
 VALID_LANGUAGES = ['en-US', 'en-GB', 'en-AU', 'en-NZ']
+EXTRA_RULES = [
+'''<p>Document overall language should be set to English for proofing tools.<br/>
+Below are the codes that should be in the list</p>
+<table class="table is-bordered">
+    <thead><tr><th colspan="2">English Codes</th></tr></thead>
+    <tbody>
+    <tr><td>en-GB</td><td>English (United Kingdom)</td></tr>
+    <tr><td>en-US</td><td>English (United States)</td></tr>
+    <tr><td>en-AU</td><td>English (Australia)</td></tr>
+    <tr><td>en-nz</td><td>English (New Zealand)</td></tr>
+    </tbody>
+</table>
+If you want to look up other codes, you can do so <a href="https://www.andiamo.co.uk/resources/iso-language-codes/" target="_blank">here</a>'''
+]
+HELP_INFO = 'SCELanguages'
 
 
 # simple unique list of languages
@@ -24,3 +39,18 @@ def get_language_tags_location(doc):
                             tags[r.text] = cc.items()[0][1]
     # get unique list
     return tags
+
+
+def get_language_summary(doc):
+    language_summary = get_language_tags(doc)
+    languages = get_language_tags_location(doc)
+    return {
+        'title': 'Languages',
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': len([languages[lang] for lang in languages if languages[lang] not in VALID_LANGUAGES]) == 0,
+        'message': 'Language issues',
+        'details': language_summary,
+        'extra': languages,
+        'anchor': 'language'
+    }

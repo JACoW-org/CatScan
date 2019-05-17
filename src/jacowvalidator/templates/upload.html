@@ -27,7 +27,7 @@
                 <div class="list is-hoverable">
                 {% for i, item in summary.items() %}
                    <a href="#{{ item.anchor }}" class="list-item link-color" style="background-color:#{{ item.ok|pastel_background_style }}">
-                    {{ item.ok|tick_cross|safe }} {{ item.title }} {% if item.showTotal %} ({{ item.details|length }}){% endif %}
+                    {{ item.ok|tick_cross|safe }} {{ item.title }} {% if item.show_total %} ({{ item.details|length }}){% endif %}
                        {% if item.ok == False %} - {{ item.message }}{% endif %}
                    </a>
                 {% endfor%}
@@ -55,12 +55,7 @@
                         </tr></thead>',
                 'columns': ['style', 'style_ok']}
             %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'CSEJACoWStyles'},
-                    '',
-                    '<p>The latest JACoW Template must be used.<br/>
-                        Standard JACoW Style’s must embedded in the document.</p>',
-                    extra_info, False) }}
+            {{ section_helper.add_section(section, {}, extra_info) }}
 
             {% set section = summary['List'] %}
             {% set extra_info = {'ok':section['ok'],'title':'Breakdown', 'headers': '<thead><tr>
@@ -68,11 +63,7 @@
                         </tr></thead>',
                 'columns': ['text', 'style', 'in_table', 'style_ok']}
             %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'CSEParsedDocument'},
-                    '',
-                    '',
-                    extra_info, False) }}
+            {{ section_helper.add_section(section, {}, extra_info) }}
 
 
             {% set section = summary['Margins'] %}
@@ -82,33 +73,7 @@
                         </tr> </thead>',
                 'columns': ['loop.index', 'page_size', 'margins', 'margins_ok', 'col_number', 'col_gutter', 'col_ok']}
             %}
-
-            {{ section_helper.add_section(section,
-                    {'extra_info':'CSEPageSizeandMargins'},
-                    '',
-                    '<h3 class="subtitle is-6">Documents MUST be based on A4 or US Letter</h3>
-                    <table class="table is-bordered">
-                        <thead><tr><th colspan="2">A4</th></tr></thead>
-                        <tbody>
-                        <tr><td>Page Width</td><td>210mm</td></tr>
-                        <tr><td>Top</td><td>37mm</td></tr>
-                        <tr><td>Bottom</td><td>19mm</td></tr>
-                        <tr><td>Left</td><td>20mm</td></tr>
-                        <tr><td>Right</td><td>20mm</td></tr>
-                        </tbody>
-                    </table>
-                    <table class="table is-bordered">
-                        <thead><tr><th colspan="2">US Letter</th></tr></thead>
-                        <tbody>
-                        <tr><td>Page Width</td><td>8.5in</td></tr>
-                        <tr><td>Top</td><td>0.75in</td></tr>
-                        <tr><td>Bottom</td><td>0.75in</td></tr>
-                        <tr><td>Left</td><td>0.79in</td></tr>
-                        <tr><td>Right</td><td>1.02in</td></tr>
-                        </tbody>
-                    </table>
-                    Check gutter setting (Space between columns), for all section with more than 1 column, should be 0.51cm.',
-                    extra_info, False) }}
+            {{ section_helper.add_section(section, {}, extra_info) }}
 
 
             {% set section = summary['Languages'] %}
@@ -117,22 +82,7 @@
             {% else %}
                 {% set extra_info = 'English proofing languages were found.' %}
             {% endif %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'SCELanguages'},
-                    '',
-                    '<p>Document overall language should be set to English for proofing tools.<br/>
-                    Below are the codes that should be in the list</p>
-                    <table class="table is-bordered">
-                        <thead><tr><th colspan="2">English Codes</th></tr></thead>
-                        <tbody>
-                        <tr><td>en-GB</td><td>English (United Kingdom)</td></tr>
-                        <tr><td>en-US</td><td>English (United States)</td></tr>
-                        <tr><td>en-AU</td><td>English (Australia)</td></tr>
-                        <tr><td>en-nz</td><td>English (New Zealand)</td></tr>
-                        </tbody>
-                    </table>
-                    If you want to look up other codes, you can do so <a href="https://www.andiamo.co.uk/resources/iso-language-codes/" target="_blank">here</a>',
-                    extra_info, False) }}
+            {{ section_helper.add_section(section, {}, extra_info) }}
 
             {% set section = summary['Title'] %}
             {% if not title.case_ok %}
@@ -140,54 +90,12 @@
             {% else %}
                 {% set extra_info = '' %}
             {% endif %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'SCEPaperTitle'},
-                    '',
-                    'Case: Title should contain greater than 70% of CAPITAL Letters, can’t be simple Title Case.',
-                    extra_info) }}
+            {{ section_helper.add_section(section, {}, extra_info) }}
 
-            {% set section = summary['Authors'] %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'SCEAuthors'},
-                    '',
-                    'Case: UPPER and lowercase') }}
-
-            {% set section = summary['Abstract'] %}
-            {{ section_helper.add_section(section,
-                    {'extra_info':'SCEAbsract'},
-                    '',
-                    '<ul>
-                        <li>Must Say Abstract</li>
-                        <li>Be in the “JACoW_Abstract_Heading” style.</li>
-                    </ul>') }}
-
-            {% set section = summary['Headings'] %}
-            {{ section_helper.add_section(section,
-                        {'extra_info':'SCEHeadings'},
-                        '<tr>
-                            <td>SECTION  HEADING</td>
-                            <td>“JACoW_Section Heading” Style, or equivalent style.</td>
-                            <td>Centered</td><td>12 pt</td><td>Bold</td><td>All Caps where appropriate</td><td>9 pt</td><td>3 pt</td><td>NA</td>
-                        </tr>
-                        <tr>
-                            <td>Sub-Section Heading</td>
-                            <td>“JACoW_Subsection Heading” Style, or equivalent style.</td>
-                            <td>Left or None</td><td>12 pt</td><td>Italic</td><td>Title Case.</td><td>6 pt</td><td>3 pt</td><td>NA</td>
-                        </tr>
-                        <tr>
-                            <td>Third Level Heading</td>
-                            <td>“JACoW_Third-Level Heading” Style, or equivalent style</td>
-                            <td>Left or None</td><td>10 pt</td><td>Bold</td><td>Title Case, and run into the paragraph.</td><td>6 pt</td><td>0 pt</td><td>NA</td>
-                        </tr>') }}
-
-            {% set section = summary['Paragraphs'] %}
-            {{ section_helper.add_section(section,
-                        {'truncate_text':200,'extra_info':'SCEParag'},
-                        '<tr>
-                            <td>Paragraph</td>
-                            <td>“JACoW_Body Text Indent” Style, or equivalent style.</td>
-                            <td>Justified</td><td>10 pt</td><td>NA</td><td>NA</td><td>0</td><td>0</td><td>0.33cm or 9.35pt</td>
-                        </tr>') }}
+            {{ section_helper.add_section(summary['Authors'], {}) }}
+            {{ section_helper.add_section(summary['Abstract'], {}) }}
+            {{ section_helper.add_section(summary['Headings'], {}) }}
+            {{ section_helper.add_section(summary['Paragraphs'], {'truncate_text':200}) }}
 
 
             {% set section = summary['References'] %}
@@ -202,33 +110,7 @@
                         </thead>',
                 'columns': ['id', 'text', 'text_error', 'text_ok', 'used_ok', 'order_ok', 'unique_ok']}
             %}
-            {{ section_helper.add_section(section,
-                    {'truncate_text':50,'extra_info':'SCEReferences'},
-                    '<tr>
-                        <td>Reference</td>
-                        <td>“JACoW_References when ≤ 9” Style, or equivalent style.</td><td>Justified</td>
-                        <td>9 pt</td><td>NA</td><td>NA</td><td>0 pt</td><td>3 pt</td><td>Hanging: 0<br/>First Line: -14.75pt or 0.52 cm</td>
-                    </tr>
-                    <tr>
-                        <td>Reference</td>
-                        <td>“JACoW_Reference #1-9 when >= 10 Refs” Style, or equivalent style.</td><td>Justified</td>
-                        <td>9 pt</td><td>NA</td><td>NA</td><td>0 pt</td><td>3 pt</td><td>Hanging: 0.16cm<br/>First Line: -14.75pt or 0.52cm</td>
-                    </tr>
-                    <tr>
-                        <td>Reference</td>
-                        <td>“JACoW_Reference #10 onwards” Style, or equivalent style.</td><td>Justified</td>
-                        <td>9 pt</td><td>NA</td><td>NA</td><td>0 pt</td><td>3 pt</td><td>Hanging: 0<br/>First Line:  -19.3pt or 0.68cm</td>
-                    </tr>',
-                    '<ul>
-                    <li>All references must be ordered in the reference list based on when they first are referred to in the main text.</li>
-                    <li>References in the main text can be [n], or [n1, n2, n5, etc.], or [n – n3].</li>
-                    <li>A reference can be referred to multiple times in the main text as required.</li>
-                    <li>All references in the reference list must be sited in the main text at least once.</li>
-                    <li>Reference lists which have 9 or less references must be “JACoW_Reference when &lt;= 9 Refs” Style.</li>
-                    <li>When greater than 9 references the first 9 must be “JACoW_Reference #1-9 when &gt;= 10 Refs” Style, and 10 and onwards must be “JACoW_Reference #10 onwards” Style.</li>
-                    <li>All references must be numbered [n] and have a tab between the ] and the start of the reference text. (note many authors put spaces in which stuffs up the spacing.</li>
-                    </ul>',
-                    extra_info, True) }}
+            {{ section_helper.add_section(section, {'truncate_text':50}, extra_info) }}
 
             {% set section = summary['Figures'] %}
             {% set extra_info = {'ok':section['ok'],'title':'Use Breakdown', 'headers': '<thead>
@@ -242,29 +124,7 @@
                     </thead>',
                 'columns': ['id', 'name', 'caption_ok', 'unique_ok', 'refs', 'used_ok', 'text'],'multi':true}
             %}
-            {{ section_helper.add_section(section,
-                    {'style_multi':true,'extra_info':'CSEFigures'},
-                    '<tr>
-                            <td>Figure Caption</td>
-                            <td>“Figure Caption” Style, or equivalent style.</td>
-                            <td>Centered</td><td>10 pt</td><td>NA</td><td>NA</td><td>3 pt</td><td>≥3 pt</td><td>NA</td>
-                        </tr>
-                        <tr>
-                            <td>Figure Caption Multi Line</td>
-                            <td>“Figure Caption Multi Line” Style, or equivalent style.</td>
-                            <td>Justified</td><td>10 pt</td><td>NA</td><td>NA</td><td>3 pt</td><td>≥3 pt</td><td>NA</td>
-                        </tr>',
-                    '<ul>
-                        <li>Figure captions must be directly below the figure</li>
-                        <li>Figure must be numbered in the order they are referred to in the main text.</li>
-                        <li>Figure numbers must be unique and not duplicated, or skip numbers in the series.</li>
-                        <li>Figure Captions 1 line long must be “centred” (“Figure Caption” Style). Figure captions 2 or more lines must be “justified” (“Caption Multi Line” Style).</li>
-                        <li>Figure captions and figures are not to be indented.</li>
-                        <li>Figure captions must start with “Figure n:”.</li>
-                        <li>In text references to the figure if mid-sentence must be “Fig. n”, at the start of a sentence it maybe “Figure n”.</li>
-                        <li>Figures must have a “.” On the end of the final line.</li>
-                    </ul>',
-                    extra_info, True) }}
+            {{ section_helper.add_section(section, {'style_multi':true}, extra_info) }}
 
             {% set section = summary['Tables'] %}
             {% set extra_info = {'ok':section['ok'],'title':'Use Breakdown', 'headers': '<thead>
@@ -279,26 +139,7 @@
                 'columns': ['id', 'text', 'text_format_ok', 'text_format_message', 'used', 'used_ok', 'order_ok', 'table']}
             %}
 
-            {{ section_helper.add_section(section,
-                    {'extra_info':'CSETables'},
-                        '<tr>
-                            <td>Table Caption</td>
-                            <td>“Table Caption” Style, or equivalent style.</td>
-                            <td>Centered</td><td>10 pt</td><td>NA</td><td>NA</td><td>≥3 pt</td><td>3 pt</td><td>NA</td>
-                        </tr>
-                        <tr>
-                            <td>Table Caption Multi Line</td>
-                            <td>“Table Caption Multi Line” Style, or equivalent style.</td>
-                            <td>Justified</td><td>10 pt</td><td>NA</td><td>NA</td><td>≥3 pt</td><td>3 pt</td><td>NA</td>
-                        </tr>',
-                    '<ul>
-                        <li>Table captions are actually titles, this means that they are in Title Case, and don’t have a “.” At the end, well unless exceeds 2 lines.</li>
-                        <li>The table caption is centred if 1 line (“Table Caption” Style), and Justified if 2 or more (“Table Caption Multi Line” Style.  The table caption must appear above the Table.</li>
-                        <li>All tables must be numbered in the order they appear in the document and not skip a number in the sequence.</li>
-                        <li>All tables start with “Table n:”.</li>
-                        <li>All tables must be referred to in the main text and use “Table n”. </li>
-                    </ul>',
-                    extra_info, True) }}
+            {{ section_helper.add_section(section, {'extra_info':'CSETables'}, extra_info) }}
 
             {% if summary['SPMS'] %}
                 {% set section = summary['SPMS'] %}
@@ -313,11 +154,7 @@
                    {% set title = 'Conformance with references.csv' %}
                 {% endif %}
 
-                {{ section_helper.add_section(section,
-                        {'section_header':title,'extra_info':'CSESPMSCeck'},
-                        '',
-                        '',
-                        extra_info, False) }}
+                {{ section_helper.add_section(section, {'section_header':title,'extra_info':'CSESPMSCeck'}, extra_info) }}
             </div>
             {% endif %}
         {% endif %}

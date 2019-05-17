@@ -1,25 +1,75 @@
 import re
-from jacowvalidator.docutils.styles import check_style
-from jacowvalidator.docutils.heading import HEADING_DETAILS
+from jacowvalidator.docutils.styles import check_style, VALID_STYLES, VALID_NON_JACOW_STYLES
+from jacowvalidator.docutils.heading import HEADING_STYLES
+from jacowvalidator.docutils.page import get_text
 
-PARAGRAPH_DETAILS = {
-    'styles': {
-        'jacow': 'JACoW_Body Text Indent',
-        'normal': 'Body Text Indent',
-    },
-    'alignment': 'JUSTIFY',
-    'font_size': 10.0,
-    'space_before': 0.0,
-    'space_after': 0.0,
-    'first_line_indent': 9.35  # 0.33cm
+PARAGRAPH_STYLES = {
+    'normal': {
+        'styles': {
+            'jacow': 'JACoW_Body Text Indent',
+            'normal': 'Body Text Indent',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 10.0,
+        'space_before': 0.0,
+        'space_after': 0.0,
+        'first_line_indent': 9.35  # 0.33cm
+    }
 }
+EXTRA_RULES = ''
+HELP_INFO = 'SCEParag'
+ALL_HELP_INFO = 'CSEParsedDocument'
 
 PARAGRAPH_SIZE_MIN = 50
+
+
+def parse_all_paragraphs(doc):
+    all_paragraphs = []
+    for i, p in enumerate(doc.paragraphs):
+        if p.text.strip():
+            style_ok = p.style.name in VALID_STYLES or p.style.name in VALID_NON_JACOW_STYLES
+            if not style_ok:
+                style_ok = 2
+            all_paragraphs.append({
+                'index': i,
+                'style': p.style.name,
+                'text': get_text(p),
+                'style_ok': style_ok,
+                'in_table': 'No',
+            })
+
+    # search for paragraphs in tables
+    count = 1
+    show_all = True
+    for t in doc.tables:
+        if len(t.rows) > 2 and not show_all:
+            continue
+        for r in t.rows:
+            if len(r.cells) > 2 and not show_all:
+                continue
+            cell_count = 1
+            for c in r.cells:
+                for p in c.paragraphs:
+                    if p.text.strip():
+                        style_ok = p.style.name in VALID_STYLES or p.style.name in VALID_NON_JACOW_STYLES
+                        if not style_ok:
+                            style_ok = 2
+                        all_paragraphs.append({
+                            'index': 0,
+                            'style': p.style.name,
+                            'text': get_text(p),
+                            'style_ok': style_ok,
+                            'in_table': f"Table {count}:<br/>row {r._index + 1}, col {cell_count}"
+                        })
+                cell_count = cell_count + 1
+        count = count + 1
+    return all_paragraphs
 
 
 def get_paragraphs(doc):
     data = iter(doc.paragraphs)
     paragraphs = []
+    style_compare = PARAGRAPH_STYLES['normal']
     # don't start looking until abstract header
     for p in data:
         if p.text.strip().lower() == 'abstract':
@@ -41,17 +91,15 @@ def get_paragraphs(doc):
                 continue
 
             # ignore if heading style
-            name = [name for name, h in HEADING_DETAILS.items() if
-                        p.style.name in [h['styles']['jacow'], h['styles']['normal']]]
-
-            if name:
+            if [name for name, h in HEADING_STYLES.items() if
+                        p.style.name in [h['styles']['jacow'], h['styles']['normal']]]:
                 continue
 
             # short paragraphs are probably headings
             if len(text) < PARAGRAPH_SIZE_MIN:
                 continue
 
-            style_ok, detail = check_style(p, PARAGRAPH_DETAILS)
+            style_ok, detail = check_style(p, style_compare)
             if detail['all_caps']:
                 text = text.upper()
 
@@ -65,3 +113,34 @@ def get_paragraphs(doc):
             paragraphs.append(paragraph_details)
 
     return paragraphs
+
+
+def get_paragraph_summary(doc):
+    paragraphs = get_paragraphs(doc)
+    return {
+        'title': 'Paragraphs',
+        'rules': PARAGRAPH_STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': all([tick['style_ok'] for tick in paragraphs]),
+        'message': 'Paragraph issues',
+        'details': paragraphs,
+        'anchor': 'paragraph',
+        'show_total': True,
+    }
+
+
+def get_all_paragraph_summary(doc):
+    all_summary = parse_all_paragraphs(doc)
+    ok = all([tick['style_ok'] is True for tick in all_summary])
+    if not ok:
+        ok = 2
+    return {
+        'title': 'Parsed Document',
+        'help_info': ALL_HELP_INFO,
+        'ok': ok,
+        'message': 'Not using only JACoW Styles',
+        'details': all_summary,
+        'anchor': 'list',
+        'show_total': True,
+    }

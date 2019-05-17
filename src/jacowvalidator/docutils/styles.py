@@ -2,27 +2,31 @@ import operator
 from docx.shared import Inches, Mm, Twips
 from docx.oxml.text.parfmt import CT_PPr, CT_Ind
 
-VALID_STYLES = ['JACoW_Abstract_Heading',
-                'JACoW_Author List',
-                'JACoW_Body Text Indent',
-                'JACoW_Bulleted List',
-                'JACoW_Numbered list',
-                'JACoW_Paper Title',
-                'JACoW_Reference #10 onwards',
-                'JACoW_Reference #1-9 when >= 10 Refs',
-                'JACoW_Reference when <= 9 Refs',
-                'JACoW_Reference Italics',
-                'JACoW_Reference url_doi',
-                'JACoW_Third-level Heading',
-                'JACoW_Section Heading',
-                'JACoW_Subsection Heading']
+VALID_STYLES = [
+    'JACoW_Abstract_Heading',
+    'JACoW_Author List',
+    'JACoW_Body Text Indent',
+    'JACoW_Bulleted List',
+    'JACoW_Numbered list',
+    'JACoW_Paper Title',
+    'JACoW_Reference #10 onwards',
+    'JACoW_Reference #1-9 when >= 10 Refs',
+    'JACoW_Reference when <= 9 Refs',
+    'JACoW_Reference Italics',
+    'JACoW_Reference url_doi',
+    'JACoW_Third-level Heading',
+    'JACoW_Section Heading',
+    'JACoW_Subsection Heading'
+]
 
-VALID_NON_JACOW_STYLES = ['Figure Caption',
-                          'Figure Caption Multi Line',
-                          'Table Caption',
-                          'Table Caption Multi Line',
-                          'Caption',
-                          'Caption Multi Line']
+VALID_NON_JACOW_STYLES = [
+    'Figure Caption',
+    'Figure Caption Multi Line',
+    'Table Caption',
+    'Table Caption Multi Line',
+    'Caption',
+    'Caption Multi Line'
+]
 
 # These are in the jacow templates so may be in docs created from them
 # Caption and Normal for table title and figure title
@@ -30,6 +34,13 @@ VALID_NON_JACOW_STYLES = ['Figure Caption',
 # 'Heading 3' for Acronyms header
 OTHER_VALID_STYLES = ['Body Text Indent', 'Normal', 'Caption', 'Heading 3']
 
+EXTRA_RULES = [
+    '''
+<p>The latest JACoW Template must be used.<br/>
+Standard JACoW Style’s must embedded in the document.</p>   
+    '''
+]
+HELP_INFO = 'CSEJACoWStyles'
 
 # check if th
 def check_jacow_styles(doc):
@@ -262,3 +273,16 @@ def check_style_detail(p, compare):
         if key not in ['all_caps','style_ok'] and key not in compare.keys():
             detail[key] = 'NA'
     return detail
+
+
+def get_style_summary(doc):
+    jacow_styles = check_jacow_styles(doc)
+    return {
+        'title': 'JACoW Styles',
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': all([tick['style_ok'] for tick in jacow_styles]),
+        'message': 'Styles issues',
+        'details': jacow_styles,
+        'anchor': 'styles'
+    }

@@ -1,6 +1,34 @@
 from lxml.etree import _Element
 from jacowvalidator.docutils.page import get_page_size, convert_twips_to_cm
 
+EXTRA_RULES = [
+    '''
+    <h3 class="subtitle is-6">Documents MUST be based on A4 or US Letter</h3>
+    <table class="table is-bordered">
+        <thead><tr><th colspan="2">A4</th></tr></thead>
+        <tbody>
+        <tr><td>Page Width</td><td>210mm</td></tr>
+        <tr><td>Top</td><td>37mm</td></tr>
+        <tr><td>Bottom</td><td>19mm</td></tr>
+        <tr><td>Left</td><td>20mm</td></tr>
+        <tr><td>Right</td><td>20mm</td></tr>
+        </tbody>
+    </table>
+    <table class="table is-bordered">
+        <thead><tr><th colspan="2">US Letter</th></tr></thead>
+        <tbody>
+        <tr><td>Page Width</td><td>8.5in</td></tr>
+        <tr><td>Top</td><td>0.75in</td></tr>
+        <tr><td>Bottom</td><td>0.75in</td></tr>
+        <tr><td>Left</td><td>0.79in</td></tr>
+        <tr><td>Right</td><td>1.02in</td></tr>
+        </tbody>
+    </table>
+    Check gutter setting (Space between columns), for all section with more than 1 column, should be 0.51cm.
+    '''
+]
+HELP_INFO = 'CSEPageSizeandMargins'
+
 
 def check_sections(doc):
     sections = []
@@ -75,3 +103,18 @@ def get_columns(section):
     if num == 1 or ( num == 2 and space == 0.51):
         ok = True
     return num, space, ok
+
+
+def get_margin_summary(doc):
+    # get page size and margin details
+    sections = check_sections(doc)
+    ok = all([tick['margins_ok'] for tick in sections]) and all([tick['col_ok'] for tick in sections])
+    return {
+        'title': 'Page Size and Margins',
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': ok,
+        'message': 'Margins',
+        'details': sections,
+        'anchor': 'pagesize'
+    }

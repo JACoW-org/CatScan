@@ -7,7 +7,7 @@ import re
 from jacowvalidator.docutils.authors import get_author_list
 
 RE_MULTI_SPACE = re.compile(r' +')
-
+HELP_INFO = 'CSESPMSCeck'
 
 class PaperNotFoundError(Exception):
     """Raised when the paper submitted by a user has no matching entry in the

@@ -6,42 +6,54 @@ RE_REFS_LIST = re.compile(r'^\[([\d]+)\]')
 RE_REFS_LIST_TAB = re.compile(r'^\[([\d]+)\]\t')
 RE_REFS_INTEXT = re.compile(r'(?<!^)\[([\d ,-]+)\]')
 
-
-REFERENCE_DETAILS = {
-    'styles': {
-        'jacow': 'JACoW_References when ≤ 9',
+STYLES = {
+    'LessThanNineTotal': {
+        'type': 'References when ≤ 9',
+        'styles': {
+            'jacow': 'JACoW_References when ≤ 9',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 9.0,
+        'space_before': 0.0,
+        'space_after': 3.0,
+        # 'hanging_indent':  0.0,
+        'first_line_indent': -14.75,  # 0.52 cm,
     },
-    'alignment': 'JUSTIFY',
-    'font_size': 9.0,
-    'space_before': 0.0,
-    'space_after': 3.0,
-    # 'hanging_indent':  0.0,
-    'first_line_indent': -14.75,  # 0.52 cm,
-}
-
-REFERENCE_LESS_DETAILS = {
-    'styles': {
-        'jacow': 'JACoW_Reference #1-9 when >= 10 Refs',
+    'LessThanNine': {
+        'type': 'Reference #1-9 when >= 10 Refs',
+        'styles': {
+            'jacow': 'JACoW_Reference #1-9 when >= 10 Refs',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 9.0,
+        'space_before': 0.0,
+        'space_after': 3.0,
+        # 'hanging_indent': 0,  # 0.16 cm,
+        'first_line_indent': -14.75,  # 0.52 cm,
     },
-    'alignment': 'JUSTIFY',
-    'font_size': 9.0,
-    'space_before': 0.0,
-    'space_after': 3.0,
-    # 'hanging_indent': 4.53,  # 0.16 cm,  57600
-    'first_line_indent': -14.75,  # 0.52 cm,
+    'MoreThanNine': {
+        'type': 'Reference #10 onwards',
+        'styles': {
+            'jacow': 'JACoW_Reference #10 onwards',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 9.0,
+        'space_before': 0.0,
+        'space_after': 3.0,
+        # 'hanging_indent':  0.0,
+        'first_line_indent': -19.3,  # 0.68 cm,
+    }
 }
-
-REFERENCE_MORE_DETAILS = {
-    'styles': {
-        'jacow': 'JACoW_Reference #10 onwards',
-    },
-    'alignment': 'JUSTIFY',
-    'font_size': 9.0,
-    'space_before': 0.0,
-    'space_after': 3.0,
-    # 'hanging_indent':  0.0,
-    'first_line_indent': -19.3,  # 0.68 cm,
-}
+EXTRA_RULES = [
+    'All references must be ordered in the reference list based on when they first are referred to in the main text.',
+    'References in the main text can be [n], or [n1, n2, n5, etc.], or [n – n3].',
+    'A reference can be referred to multiple times in the main text as required..',
+    'All references in the reference list must be sited in the main text at least once.',
+    'Reference lists which have 9 or less references must be “JACoW_Reference when &lt;= 9 Refs” Style.',
+    'When greater than 9 references the first 9 must be “JACoW_Reference #1-9 when &gt;= 10 Refs” Style, and 10 and onwards must be “JACoW_Reference #10 onwards” Style.',
+    'All references must be numbered [n] and have a tab between the ] and the start of the reference text. (note many authors put spaces in which stuffs up the spacing.',
+]
+HELP_INFO = 'SCEReferences'
 
 
 def _ref_to_int(ref):
@@ -138,31 +150,52 @@ def extract_references(doc, strict_styles=False):
             ref['text_ok'] = False
 
         if ref_count <= 9:
-            style_ok, detail = check_style(ref['p'], REFERENCE_DETAILS)
-            if strict_styles:
-                ref['style_ok'] = ref['style'] == 'JACoW_Reference when <= 9 Refs'
-                if not ref['style_ok']:
-                    ref['style'] = f"{ref['style']} should be 'JACoW_Reference when <= 9 Refs'"
-            else:
-                ref['style_ok'] = style_ok
+            style_compare = STYLES['LessThanNineTotal']
         else:
             if i <= 9:
-                style_ok, detail = check_style(ref['p'], REFERENCE_LESS_DETAILS)
-                if strict_styles:
-                    ref['style_ok'] = ref['style'] == 'JACoW_Reference #1-9 when >= 10 Refs'
-                    if not ref['style_ok']:
-                        ref['style'] = f"{ref['style']} should be 'JACoW_Reference #1-9 when >= 10 Refs'"
-                else:
-                    ref['style_ok'] = style_ok
-
+                style_compare = STYLES['LessThanNine']
             else:
-                style_ok, detail = check_style(ref['p'], REFERENCE_MORE_DETAILS)
-                if strict_styles:
-                    ref['style_ok'] = ref['style'] == 'JACoW_Reference #10 onwards'
-                    if not ref['style_ok']:
-                        ref['style'] = f"{ref['style']} should be 'JACoW_Reference #10 onwards'"
-                else:
-                    ref['style_ok'] = style_ok
+                style_compare = STYLES['MoreThanNine']
+
+        style_ok, detail = check_style(ref['p'], style_compare)
+        if strict_styles:
+            ref['style_ok'] = ref['style'] == style_compare['styles']['jacow']
+            if not ref['style_ok']:
+                ref['style'] = f"{ref['style']} should be '{style_compare['styles']['jacow']}'"
+        else:
+            ref['style_ok'] = style_ok
+
         ref.update(detail)
 
     return references_in_text, references_list
+
+
+def get_reference_summary(doc):
+    references_in_text, references_list = extract_references(doc)
+    # Use checks first
+    ok = references_list and all([
+            all([tick['text_ok'], tick['used_ok'], tick['order_ok'], tick['unique_ok']])
+            for tick in references_list])
+
+    # Check style use checks pass
+    if ok:
+        for tick in references_list:
+            if not tick['style_ok']:
+                # If find a false then the result is false
+                ok = False
+                break
+            elif tick['style_ok'] == 2:
+                # If find a 2 (?) then result is 2 unless a false is found later
+                ok = 2
+
+    return {
+        'title': 'References',
+        'rules': STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': ok,
+        'message': 'Reference issues',
+        'details': references_list,
+        'anchor': 'references',
+        'show_total': True,
+    }

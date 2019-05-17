@@ -1,23 +1,48 @@
+from jacowvalidator.docutils.styles import check_style_detail
+
+STYLES = {
+    'normal': {
+        'type': 'Abstract Heading',
+        'styles': {
+            'jacow': 'JACoW_Abstract_Heading',
+            'normal': 'Abstract_Heading',
+        },
+        'alignment': None,
+        'font_size': 12.0,
+        'space_before': 0.0,
+        'space_after': 3.0,
+        'bold': None,
+        'italic': True,
+    }
+}
+EXTRA_RULES = [
+    "Text must be <b>Abstract</b>",
+]
+HELP_INFO = 'SCEAbsract'
 
 
-# def extract_abstract(doc):
-#     for i, p in enumerate(doc.paragraphs):
-#         if p.text.strip().lower() == 'abstract':
-#             abstract = {
-#                 'start': i,
-#                 'text': p.text,
-#                 'style': p.style.name,
-#                 'style_ok': p.style.name in 'JACoW_Abstract_Heading',
-#             }
-#
-#     author_paragraphs = doc.paragraphs[1: abstract['start']]
-#     authors = {
-#         'text': ''.join(p.text for p in author_paragraphs),
-#         'style': set(p.style.name for p in author_paragraphs if p.text.strip()),
-#         'style_ok': all(
-#             p.style.name in ['JACoW_Author List']
-#             for p in author_paragraphs
-#             if p.text.strip()
-#         ),
-#     }
-#     return abstract, authors
+def get_abstract_detail(p):
+    abstract_detail = {
+        'text': p.text,
+        'original_text': p.text,
+    }
+    return abstract_detail
+
+
+def get_abstract_summary(p):
+    style_compare = STYLES['normal']
+    details = get_abstract_detail(p)
+    details.update(check_style_detail(p, style_compare))
+    title_style_ok = p.style.name == style_compare['styles']['jacow']
+    details.update({'title_style_ok': title_style_ok, 'style': p.style.name})
+
+    return {
+        'details': [details],
+        'rules': STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'title': 'Abstract Heading',
+        'ok': details['style_ok'],
+        'message': 'Abstract issues',
+        'anchor': 'abstract'
+    }

@@ -1,47 +1,52 @@
 import re
 from jacowvalidator.docutils.styles import check_style
 
-HEADING_DETAILS = {
+HEADING_STYLES = {
     'Section': {
         'styles': {
             'jacow': 'JACoW_Section Heading',
             'normal': 'Section Heading',
         },
+        'type': 'Section Heading',
         'alignment': 'CENTER',
         'font_size': 12.0,
         'space_before': 9.0,
         'space_after': 3.0,
         'bold': True,
         'italic': None,
-        'case': 'uppercase',
+        'case': 'UPPER CASE',
     },
     'Subsection': {
         'styles': {
             'jacow': 'JACoW_Subsection Heading',
             'normal': 'Subsection Heading',
         },
+        'type': 'Subsection Heading',
         'alignment': None,
         'font_size': 12.0,
         'space_before': 6.0,
         'space_after': 3.0,
         'bold': None,
         'italic': True,
-        'case': 'initialcaps',
+        'case': 'Initial Caps',
     },
     'Third': {
         'styles': {
             'jacow': 'JACoW_Third - Level Heading',
             'normal': 'Third - Level Heading',
         },
+        'type': 'Third Level Heading',
         'alignment': None,
         'font_size': 10.0,
         'space_before': 6.0,
         'space_after': 0.0,
         'bold': True,
         'italic': None,
-        'case': 'initialcaps',
-    },
+        'case': 'Initial Caps',
+    }
 }
+EXTRA_RULES = []
+HELP_INFO = 'SCEHeadings'
 
 
 def guess_heading_type(p):
@@ -70,12 +75,12 @@ def get_headings(doc):
             break
 
         # find matching style
-        name = [name for name, h in HEADING_DETAILS.items() if p.style.name in [h['styles']['jacow'], h['styles']['normal']]]
+        name = [name for name, h in HEADING_STYLES.items() if p.style.name in [h['styles']['jacow'], h['styles']['normal']]]
         text = p.text.strip()
         text = re.sub(' +', ' ', text)
 
         if name:
-            style_ok, detail = check_style(p, HEADING_DETAILS[name[0]])
+            style_ok, detail = check_style(p, HEADING_STYLES[name[0]])
             if detail['all_caps']:
                 text = text.upper()
 
@@ -108,3 +113,18 @@ def get_headings(doc):
         #     headings.append(heading_details)
 
     return headings
+
+
+def get_heading_summary(doc):
+    headings = get_headings(doc)
+    return {
+        'title': 'Headings',
+        'rules': HEADING_STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': all([tick['style_ok'] is True for tick in headings]),
+        'message': 'Heading issues',
+        'details': headings,
+        'anchor': 'heading',
+        'show_total': True,
+    }

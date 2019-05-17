@@ -70,6 +70,16 @@ def display_report(s):
     return report
 
 
+@app.template_filter('dict_to_list')
+def dict_to_list(s):
+    return [value for index, value in s.items()]
+
+
+@app.template_filter('first_value_in_dict')
+def first_value_in_dict(s):
+    return [value for index, value in s.items()][0]
+
+
 @app.route("/")
 def hello():
     return redirect(url_for('upload'))
@@ -106,12 +116,12 @@ def upload():
             # db.session.commit()
 
             return render_template("upload.html", processed=True, **locals())
-        except (PackageNotFoundError, ValueError):
-            return render_template(
-                "upload.html",
-                filename=filename,
-                error=f"Failed to open document {filename}. Is it a valid Word document?",
-                admin=admin)
+        # except (PackageNotFoundError, ValueError):
+        #     return render_template(
+        #         "upload.html",
+        #         filename=filename,
+        #         error=f"Failed to open document {filename}. Is it a valid Word document?",
+        #         admin=admin)
         except TrackingOnError as err:
             return render_template(
                 "upload.html",
@@ -176,7 +186,7 @@ def convert():
             os.remove(full_path)
             # PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: '/var/tmp\\document\\test_THPMK148_2.docx'
             # only happens on windows I think.
-            os.remove(new_doc_path)
+            # os.remove(new_doc_path)
 
     return render_template("convert.html", admin=admin, action='convert')
 

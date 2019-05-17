@@ -5,35 +5,49 @@ from jacowvalidator.docutils.styles import check_style
 
 RE_FIG_TITLES = re.compile(r'(^Figure \d+[.:])')
 RE_WRONG_TITLES = re.compile(r'(^Fig.\s?\d+|^Figure\s?\d+[.\s]+)')
-RE_FIG_IN_TEXT = re.compile(r'(Fig.\s?\d+|Figure\s?\d+[.\s]+)')
+RE_FIG_IN_TEXT = re.compile(r'(Fig.\s?\d+|Figure\s?\d+[.\-\s]+)')
 
-FIGURE_DETAILS = {
-    'styles': {
-        'jacow': 'Figure Caption',
+STYLES = {
+    'SingleLine': {
+        'type': 'Figure - Single Line',
+        'styles': {
+            'jacow': 'Figure Caption',
+            'normal': 'Caption',
+        },
+        'alignment': 'CENTER',
+        'font_size': 10.0,
+        'space_before': 3.0,
+        'space_after': ['>=', 3.0],
+        'bold': None,
+        'italic': None,
     },
-    'alignment': 'CENTER',
-    'font_size': 10.0,
-    'space_before': 3.0,
-    'space_after': ['>=', 3.0],
-    'bold': None,
-    'italic': None,
-    'desc': 'Single Line',
-}
-
-FIGURE_MULTI_DETAILS = {
-    'styles': {
-        'jacow': 'Figure Caption Multi Line',
-    },
-    'alignment': 'JUSTIFY',
-    'font_size': 10.0,
-    'space_before': 3.0,
-    'space_after': ['>=', 3.0],
-    'bold': None,
-    'italic': None,
-    'desc': 'Multi Line',
+    'MultiLine': {
+        'type': 'Figure - Multi Line',
+        'styles': {
+            'jacow': 'Figure Caption Multi Line',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 10.0,
+        'space_before': 3.0,
+        'space_after': ['>=', 3.0],
+        'bold': None,
+        'italic': None,
+    }
 }
 
 VALID_FIGURE_STYLES = ['Figure Caption', 'Figure Caption Multi Line', 'Caption', 'Caption Multi Line']
+
+EXTRA_RULES = [
+    'Figure captions must be directly below the figure',
+    'Figure must be numbered in the order they are referred to in the main text.',
+    'Figure numbers must be unique and not duplicated, or skip numbers in the series.',
+    'Figure Captions 1 line long must be “centred” (“Figure Caption” Style). Figure captions 2 or more lines must be “justified” (“Caption Multi Line” Style).',
+    'Figure captions and figures are not to be indented.',
+    'Figure captions must start with “Figure n:”.',
+    'In text references to the figure if mid-sentence must be “Fig. n”, at the start of a sentence it must be “Figure n”.',
+    'Figures must have a “.” On the end of the final line.',
+]
+HELP_INFO = 'CSEFigures'
 
 
 def _fig_to_int(s):
@@ -42,11 +56,11 @@ def _fig_to_int(s):
 
 def get_figure_style_details(p):
     text = p.text.strip()
-    figure_compare = FIGURE_DETAILS
+    figure_compare = STYLES['SingleLine']
 
     # 55 chars is approx where it changes from 1 line to 2 lines
     if len(text) > 55:
-        figure_compare = FIGURE_MULTI_DETAILS
+        figure_compare = STYLES['MultiLine']
 
     style_ok, detail = check_style(p, figure_compare)
     style_name = p.style.name
@@ -174,5 +188,42 @@ def extract_figures(doc):
                 'used_ok': len(refs) > 0
             })
 
-
     return figures
+
+
+def get_figure_summary(doc):
+    figures = extract_figures(doc)
+    ok = True
+    # Use checks first
+    for _, sub in figures.items():
+        ok = ok and all(
+            [item['caption_ok'] and item['unique_ok'] and item['used_ok'] and item['found_ok'] for item in sub]
+        )
+
+    # Check style use checks pass
+    if ok:
+        for _, sub in figures.items():
+            # Break out of outer loop too if false
+            if not ok:
+                break
+
+            for item in sub:
+                if not item['style_ok']:
+                    # If find a false then the result is false
+                    ok = False
+                    break
+                elif item['style_ok'] == 2:
+                    # If find a 2 (?) then result is 2 unless a false is found later
+                    ok = 2
+
+    return {
+        'title': 'Figures',
+        'rules': STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': ok,
+        'message': 'Figure issues',
+        'details': figures,
+        'anchor': 'figures',
+        'show_total': True,
+    }

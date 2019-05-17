@@ -17,31 +17,41 @@ RE_TABLE_TITLE_CAPS = re.compile(r'^(?:[A-Z][^\s]*\s?)+$')
 RE_SPECIAL_CHAR = re.compile(r'[^a-zA-Z ]')
 RE_MULTI_SPACE = re.compile(r' +')
 
-
-TABLE_DETAILS = {
-    'styles': {
-        'jacow': 'Table Caption',
+STYLES = {
+    'SingleLine': {
+        'type': 'Table - Single Line',
+        'styles': {
+            'jacow': 'Table Caption',
+        },
+        'alignment': 'CENTER',
+        'font_size': 10.0,
+        'space_before': ['>=', 3.0],
+        'space_after': 3.0,
+        'bold': None,
+        'italic': None,
     },
-    'alignment': 'CENTER',
-    'font_size': 10.0,
-    'space_before': ['>=', 3.0],
-    'space_after': 3.0,
-    'bold': None,
-    'italic': None,
+    'MultiLine': {
+        'type': 'Table - Multi Line',
+        'styles': {
+            'jacow': 'Table Caption Multi Line',
+        },
+        'alignment': 'JUSTIFY',
+        'font_size': 10.0,
+        'space_before': ['>=', 3.0],
+        'space_after': 3.0,
+        'bold': None,
+        'italic': None,
+    }
 }
-
-TABLE_MULTI_DETAILS = {
-    'styles': {
-        'jacow': 'Table Caption Multi Line',
-    },
-    'alignment': 'JUSTIFY',
-    'font_size': 10.0,
-    'space_before': ['>=', 3.0],
-    'space_after': 3.0,
-    'bold': None,
-    'italic': None,
-}
-
+EXTRA_RULES = [
+    'Table captions are actually titles, this means that they are in Title Case, and don’t have a “.” At the end, well unless exceeds 2 lines',
+    'The table caption is centred if 1 line (“Table Caption” Style), and Justified if 2 or more (“Table Caption Multi Line” Style).  The table caption must appear above the Table.',
+    'All tables must be numbered in the order they appear in the document and not skip a number in the sequence.',
+    'All tables start with “Table n:”.',
+    'All tables must be referred to in the main text and use “Table n”.'
+]
+HELP_INFO = 'CSETables'
+VALID_FIGURE_STYLES = ['Table Caption', 'Table Caption Multi Line', 'Caption', 'Caption Multi Line']
 
 def iter_block_items(parent):
     """
@@ -205,14 +215,14 @@ def check_table_titles(doc):
 
         floating = check_is_floating(table['table'])
 
-        table_compare = TABLE_DETAILS
+        table_compare = STYLES['SingleLine']
         # 55 chars is approx where it changes from 1 line to 2 lines
         if len(text) > 55:
-            table_compare = TABLE_MULTI_DETAILS
+            table_compare = STYLES['MultiLine']
 
         style_ok, detail = check_style(p, table_compare)
         style_name = p.style.name
-        if p.style.name not in ['Caption', 'Table Caption', 'Table Caption Multi Line']:
+        if p.style.name not in VALID_FIGURE_STYLES:
             final_style_ok = 2
         else:
             final_style_ok = style_ok
@@ -238,3 +248,34 @@ def check_table_titles(doc):
         count = count+1
 
     return title_details
+
+
+def get_table_summary(doc):
+    table_titles = check_table_titles(doc)
+    # Use checks first
+    ok = all([
+            all([tick['text_format_ok'], tick['order_ok'], tick['style_ok'], tick['order_ok']])
+            for tick in table_titles])
+
+    # Check style use checks pass
+    if ok:
+        for tick in table_titles:
+            if not tick['style_ok']:
+                # If find a false then the result is false
+                ok = False
+                break
+            elif tick['style_ok'] == 2:
+                # If find a 2 (?) then result is 2 unless a false is found later
+                ok = 2
+
+    return {
+        'title': 'Tables',
+        'rules': STYLES,
+        'extra_rules': EXTRA_RULES,
+        'help_info': HELP_INFO,
+        'ok': ok,
+        'message': 'Table issues',
+        'details': table_titles,
+        'anchor': 'tables',
+        'show_total': True,
+    }
