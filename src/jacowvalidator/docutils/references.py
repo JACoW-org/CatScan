@@ -50,12 +50,15 @@ EXTRA_RULES = [
     'A reference can be referred to multiple times in the main text as required..',
     'All references in the reference list must be sited in the main text at least once.',
     'Reference lists which have 9 or less references must be “JACoW_Reference when &lt;= 9 Refs” Style.',
-    'When greater than 9 references the first 9 must be “JACoW_Reference #1-9 when &gt;= 10 Refs” Style, and 10 and onwards must be “JACoW_Reference #10 onwards” Style.',
-    'All references must be numbered [n] and have a tab between the ] and the start of the reference text. (note many authors put spaces in which stuffs up the spacing.',
+    'When greater than 9 references the first 9 must be “JACoW_Reference #1-9 when &gt;= 10 Refs” Style, '
+    'and 10 and onwards must be “JACoW_Reference #10 onwards” Style.',
+    'All references must be numbered [n] and have a tab between the ] and the start of the reference text. '
+    '(note many authors put spaces in which stuffs up the spacing.',
+    'DOIs and URLs should be font 8pt Liberation Mono',
 ]
 HELP_INFO = 'SCEReferences'
 EXTRA_INFO = {
-    'title':'Use Breakdown',
+    'title': 'Use Breakdown',
     'headers': '<thead><tr><th>No.</th><th colspan="3">Text</th><th>Used</th><th>Order</th><th>Unique</th></tr></thead>',
     'columns': ['id', 'text', 'text_error', 'text_ok', 'used_ok', 'order_ok', 'unique_ok']
 }
@@ -149,10 +152,33 @@ def extract_references(doc, strict_styles=False):
         ref['order_ok'] = i == ref['id'] and i not in out_of_order
         ref['used_ok'] = i in used_references
         ref['text_ok'] = True
+        ref['text_error'] = ''
 
         if not RE_REFS_LIST_TAB.search(ref['text']):
             ref['text_error'] = f"Number format error should be [{i}] followed by a tab"
             ref['text_ok'] = False
+
+        # check for doi or urls
+        starts = ['doi:', 'http://', 'https://', 'www.']
+        url_font = {'name': 'Liberation Mono', 'size': 8}
+        has_url = has_url_error = False
+        for r in ref['p'].runs:
+            text = r.text.strip()
+            for s in starts:
+                if text.startswith(s):
+                    has_url = True
+                    if not r.font or not r.font.size or not r.font.name == url_font['name'] \
+                            or not r.font.size.pt == url_font['size']:
+                        has_url_error = True
+                elif s in text:
+                    # means that the font name and size did not change at start.
+                    # may be an issue if two DOIs or URLs after one another
+                    has_url = True
+                    has_url_error = True
+
+        if has_url_error:
+            ref['text_error'] = ref['text_error'] + \
+                                f"URLs and DOIs should be {url_font['name']} and size {url_font['size']}pt"
 
         if ref_count <= 9:
             style_compare = STYLES['LessThanNineTotal']
@@ -162,7 +188,11 @@ def extract_references(doc, strict_styles=False):
             else:
                 style_compare = STYLES['MoreThanNine']
 
-        style_ok, detail = check_style(ref['p'], style_compare)
+        style_ok, detail = check_style(
+            ref['p'],
+            style_compare,
+            url={'has_url': has_url, 'url_font': url_font, 'starts': starts}
+        )
         if strict_styles:
             ref['style_ok'] = ref['style'] == style_compare['styles']['jacow']
             if not ref['style_ok']:

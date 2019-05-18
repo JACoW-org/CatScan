@@ -42,7 +42,7 @@ Standard JACoW Style’s must embedded in the document.</p>
 ]
 HELP_INFO = 'CSEJACoWStyles'
 EXTRA_INFO = {
-    'title':'Style Breakdown',
+    'title': 'Style Breakdown',
     'headers': '<thead><tr><th>Style</th><th>Embedded in Document</th></tr></thead>',
     'columns': ['style', 'style_ok']
 }
@@ -153,7 +153,7 @@ def get_paragraph_space(paragraph):
     return before, after, first_line_indent, hanging_indent, left_indent
 
 
-def get_style_font(paragraph):
+def get_style_font(paragraph, url):
     # use paragraph style if values set
     style = paragraph.style
     bold, italic, font_size, all_caps = style.font.bold, style.font.italic, style.font.size, style.font.all_caps
@@ -171,8 +171,18 @@ def get_style_font(paragraph):
 
     # TODO get distinct list
     for r in paragraph.runs:
-        if not r.text.strip():
+        text = r.text.strip()
+        if not text:
             continue
+
+        if 'has_url' in url and url['has_url']:
+            found = False
+            for s in url['starts']:
+                if text.startswith(s):
+                    found = True
+            # ignore font if url found at start
+            if found:
+                continue
 
         if r.font is not None:
             if r.font.size is not None:
@@ -198,9 +208,9 @@ def get_style_font(paragraph):
     return bold, italic, font_size, all_caps
 
 
-def get_style_details(p):
+def get_style_details(p, url={}):
     space_before, space_after, first_line_indent, hanging_indent, left_indent = get_paragraph_space(p)
-    bold, italic, font_size, all_caps = get_style_font(p)
+    bold, italic, font_size, all_caps = get_style_font(p, url)
     alignment = get_paragraph_alignment(p)
     return locals()
 
@@ -214,8 +224,9 @@ def get_compare(inp, relate, cut):
     return ops[relate](inp, cut)
 
 
-def check_style(p, compare):
-    detail = get_style_details(p)
+# TODO work out why two almost identical functions below
+def check_style(p, compare, url={}):
+    detail = get_style_details(p, url)
     # remove paragraph from dict returned since it is not json serialisable
     del detail['p']
 
@@ -276,7 +287,7 @@ def check_style_detail(p, compare):
 
     # if key not in compare, then change to NA
     for key, value in detail.items():
-        if key not in ['all_caps','style_ok'] and key not in compare.keys():
+        if key not in ['all_caps', 'style_ok'] and key not in compare.keys():
             detail[key] = 'NA'
     return detail
 
