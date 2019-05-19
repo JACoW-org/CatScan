@@ -170,11 +170,14 @@ def extract_references(doc, strict_styles=False):
                     if not r.font or not r.font.size or not r.font.name == url_font['name'] \
                             or not r.font.size.pt == url_font['size']:
                         has_url_error = True
+                        ref['text_ok'] = False
                 elif s in text:
                     # means that the font name and size did not change at start.
                     # may be an issue if two DOIs or URLs after one another
                     has_url = True
                     has_url_error = True
+                    ref['text_ok'] = False
+
 
         if has_url_error:
             ref['text_error'] = ref['text_error'] + \
