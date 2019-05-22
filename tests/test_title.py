@@ -8,9 +8,8 @@ test_dir = Path(__file__).parent / 'data'
 def test_title():
     from docx import Document
 
-    paper_name = 'test1'
     doc = Document(test_dir / 'test1.docx')
-    summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+    summary, reference_csv_details, title = create_upload_variables(doc,)
 
     summary_detail = summary['Title']
     assert summary_detail['ok'], "Title has issues but should have no issues"
@@ -25,9 +24,8 @@ def test_title():
 def test_author():
     from docx import Document
 
-    paper_name = 'test1'
     doc = Document(test_dir / 'test1.docx')
-    summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+    summary, reference_csv_details, title = create_upload_variables(doc)
 
     summary_detail = summary['Authors']
     assert summary_detail['ok'], "Author has issues but should have no issues"
@@ -41,9 +39,8 @@ def test_author():
 def test_abstract():
     from docx import Document
 
-    paper_name = 'test1'
     doc = Document(test_dir / 'test1.docx')
-    summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+    summary, reference_csv_details, title = create_upload_variables(doc)
 
     summary_detail = summary['Abstract']
     assert summary_detail['ok'], "Abstract has issues but should have no issues"
@@ -57,11 +54,10 @@ def test_abstract():
 def test_no_abstract():
     from docx import Document
 
-    paper_name = 'correct_a4_margins'
     doc = Document(test_dir / 'correct_a4_margins.docx')
     summary, reference_csv_details, title = None, None, None
     try:
-        summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+        summary, reference_csv_details, title = create_upload_variables(doc)
         assert False, 'AbstractNotFoundError not raised'
     except AbstractNotFoundError as err:
         assert str(err) == "Abstract header not found", 'AbstractNotFoundError found but not correct message'
@@ -73,9 +69,8 @@ def test_no_abstract():
 def test_headings():
     from docx import Document
 
-    paper_name = 'test1'
     doc = Document(test_dir / 'test1.docx')
-    summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+    summary, reference_csv_details, title = create_upload_variables(doc)
 
     summary_detail = summary['Headings']
     assert summary_detail['ok'], "Headings has issues but should have no issues"
@@ -87,9 +82,8 @@ def test_headings():
 def test_paragraphs():
     from docx import Document
 
-    paper_name = 'test1'
     doc = Document(test_dir / 'test1.docx')
-    summary, reference_csv_details, title = create_upload_variables(doc, paper_name)
+    summary, reference_csv_details, title = create_upload_variables(doc)
 
     summary_detail = summary['Paragraphs']
     assert summary_detail['ok'], "Paragraphs has issues but should have no issues"
