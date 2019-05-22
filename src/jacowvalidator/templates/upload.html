@@ -4,7 +4,7 @@
         <div class="container is-clearfix">
         {% if commit_sha and commit_date %}<p class="is-size-7 is-pulled-right"><b>Updated:</b> {{ commit_date.strftime('%H:%M %d/%m/%Y') }} [<b>{{ commit_sha }}</b>]</p>{% endif %}
         </div>
-        {% set action = 'upload' %}
+        {% set action = args['action'] %}
         {% include "_fileupload.html" ignore missing %}
 
         <div class="container">
@@ -34,6 +34,7 @@
                 </div>
             </div>
 
+            {% if metadata %}
             <div class="box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
                 <h2 class="subtitle"><a name="meta"></a>Word Document loaded successfully</h2>
                 <p>Author: {{ metadata.author }}</p>
@@ -47,20 +48,22 @@
                     <p>Language: {{ metadata.language }}</p>
                 {% endif %}
             </div>
+            {% endif %}
 
             <p><button class="button" style="background-color:lightblue" onclick="js:closeDetails()">Close All Expanded Sections Below </button><br/><br/></p>
-            {{ section_helper.add_section(summary['Styles']) }}
-            {{ section_helper.add_section(summary['List']) }}
-            {{ section_helper.add_section(summary['Margins']) }}
-            {{ section_helper.add_section(summary['Languages']) }}
-            {{ section_helper.add_section(summary['Title']) }}
-            {{ section_helper.add_section(summary['Authors'], {}) }}
-            {{ section_helper.add_section(summary['Abstract'], {}) }}
-            {{ section_helper.add_section(summary['Headings'], {}) }}
-            {{ section_helper.add_section(summary['Paragraphs'], {'truncate_text':200}) }}
-            {{ section_helper.add_section(summary['References'], {'truncate_text':50}) }}
-            {{ section_helper.add_section(summary['Figures'], {'style_multi':true}) }}
-            {{ section_helper.add_section(summary['Tables']) }}
+            {% for index, section in summary.items() %}
+                {% if index == 'Paragraphs' %}
+                    {{ section_helper.add_section(summary[index], {'truncate_text':200}) }}
+                {% elif index == 'References' %}
+                    {{ section_helper.add_section(summary[index], {'truncate_text':50}) }}
+                {% elif index == 'Figures' %}
+                    {{ section_helper.add_section(summary[index], {'style_multi':true}) }}
+                {% elif index == 'SPMS' %}
+                    {#  do nothing #}
+                {% else %}
+                    {{ section_helper.add_section(summary[index]) }}
+                {% endif %}
+            {% endfor %}
 
             {% if summary['SPMS'] %}
                 {% if reference_csv_url is defined %}

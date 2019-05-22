@@ -10,8 +10,8 @@ RE_MULTI_SPACE = re.compile(r' +')
 HELP_INFO = 'CSESPMSCeck'
 EXTRA_INFO = {
     'title':'Title and Author Breakdown',
-    'headers': '<thead><tr><th>Type</th><th>Match</th><th>Docx</th><th>SPMS</th></tr></thead>',
-    'columns': ['type', 'match_ok', 'docx', 'spms']
+    'headers': '<thead><tr><th>Type</th><th>Match</th><th>Document</th><th>SPMS</th></tr></thead>',
+    'columns': ['type', 'match_ok', 'document', 'spms']
 }
 
 
@@ -82,32 +82,32 @@ def reference_csv_check(filename_minus_ext, title, authors):
                     summary_list = [{
                         'type': 'Author',
                         'match_ok': 2 if result['match'] and not result['exact'] else result['match'],
-                        'docx': result['docx'],
+                        'document': result['document'],
                         'spms': result['spms']} for result in report]
 
                     return {
                         'title': {
                             'match': title_match,
-                            'docx': title,
+                            'document': title,
                             'spms': reference_title
                         },
                         'author': {
                             'match': authors_match,
-                            'docx': authors,
+                            'document': authors,
                             'spms': spms_row[authors_col],
-                            'docx_list': get_author_list(authors),
+                            'document_list': get_author_list(authors),
                             'spms_list': get_author_list(spms_row[authors_col]),
                             'report': report
                         },
                         'summary': [{
                             'type': 'Title',
                             'match_ok': title_match,
-                            'docx': title,
+                            'document': title,
                             'spms': reference_title
                         }, {
                             'type': 'Extracted Author List',
                             'match_ok': authors_match,
-                            'docx': authors,
+                            'document': authors,
                             'spms': spms_row[authors_col],
                         }, *summary_list],
                     }
@@ -117,26 +117,26 @@ def reference_csv_check(filename_minus_ext, title, authors):
             return {
                 'title': {
                     'match': False,
-                    'docx': title.upper(),
+                    'document': title.upper(),
                     'spms': 'No matching paper found in the spms csv file'
                 },
                 'author': {
                     'match': False,
-                    'docx': authors,
+                    'document': authors,
                     'spms': 'No matching paper found in the spms csv file',
-                    'docx_list': list(),
+                    'document_list': list(),
                     'spms_list': list(),
                     'report': list()
                 },
                 'summary': [{
                     'type': 'title',
                     'match': False,
-                    'docx': title.upper(),
+                    'document': title.upper(),
                     'spms': 'No matching paper found in the spms csv file'
                     }, {
                     'type': 'author',
                     'match': False,
-                    'docx': authors,
+                    'document': authors,
                     'spms': 'No matching paper found in the spms csv file',
                 }],
 
@@ -145,37 +145,37 @@ def reference_csv_check(filename_minus_ext, title, authors):
             raise PaperNotFoundError("No matching paper found in the spms csv file")
 
 
-def get_author_list_report(docx_text, spms_text):
-    """Compares two lists of authors (one sourced from the uploaded docx file
+def get_author_list_report(document_text, spms_text):
+    """Compares two lists of authors (one sourced from the uploaded document file
     and one sourced from the corresponding paper's entry in the SPMS references
     csv file) and produces a dict array report of the form:
         [
             {
             match: True,
             exact: True,
-            docx: "Y. Z. Gómez Martínez",
+            document: "Y. Z. Gómez Martínez",
             spms: "Y. Gomez Martinez"
             },
             {
             match: True,
             exact: False,
-            docx: "T. X. Therou",
+            document: "T. X. Therou",
             spms: "T. Therou"
             },
             {
             match: False,
             exact: False,
-            docx: "A. Tiller",
+            document: "A. Tiller",
             spms: ""
             },
         ]
     """
-    extracted_docx_authors = get_author_list(docx_text)
+    extracted_document_authors = get_author_list(document_text)
     extracted_spms_authors = get_author_list(spms_text)
-    # extracted_docx_authors = ['Y. Z. Gómez Martínez', 'T. X. Therou', 'A. Tiller']
-    docx_list = build_comparison_author_objects(extracted_docx_authors)
+    # extracted_document_authors = ['Y. Z. Gómez Martínez', 'T. X. Therou', 'A. Tiller']
+    document_list = build_comparison_author_objects(extracted_document_authors)
     spms_list = build_comparison_author_objects(extracted_spms_authors)
-    # docx_list = [
+    # document_list = [
     # {
     #   original-value: 'Y. Z. Gómez Martínez',
     #   compare-value: 'Y. Z. Gomez Martinez',
@@ -187,20 +187,20 @@ def get_author_list_report(docx_text, spms_text):
 
     spms_matched = list()
     spms_unmatched = list()
-    docx_matched = list()
+    document_matched = list()
     results = list()
 
     # perform first round of matching, looking for exact matches:
 
     all_authors_match = True  # assume they all match until left with unpaired authors
     for spms_author in spms_list[:]:
-        docx_author = next((docx_author for docx_author in docx_list if docx_author['compare-value'] == spms_author['compare-value']), None)
-        if docx_author:
-            docx_matched.append(docx_author)
-            docx_list.remove(docx_author)
+        document_author = next((document_author for document_author in document_list if document_author['compare-value'] == spms_author['compare-value']), None)
+        if document_author:
+            document_matched.append(document_author)
+            document_list.remove(document_author)
             spms_matched.append(spms_author)
             spms_list.remove(spms_author)
-            results.append({'docx': docx_author['original-value'],
+            results.append({'document': document_author['original-value'],
                             'spms': spms_author['original-value'],
                             'exact': True,
                             'match': True})
@@ -208,20 +208,20 @@ def get_author_list_report(docx_text, spms_text):
             spms_unmatched.append(spms_author)
             spms_list.remove(spms_author)
 
-    # Move remaining authors in docx_list to docx_unmatched:
+    # Move remaining authors in document_list to document_unmatched:
 
-    docx_unmatched = docx_list
+    document_unmatched = document_list
 
     # if any unmatched authors remain, perform second round of matching, looking for loose matches (missing initials)
 
     for spms_author in spms_unmatched[:]:
-        docx_author = next((docx_author for docx_author in docx_unmatched if docx_author['compare-first-last'] == spms_author['compare-first-last'] or docx_author['compare-transliterated'] == spms_author['compare-transliterated']), None)
-        if docx_author:
-            docx_matched.append(docx_author)
-            docx_unmatched.remove(docx_author)
+        document_author = next((document_author for document_author in document_unmatched if document_author['compare-first-last'] == spms_author['compare-first-last'] or document_author['compare-transliterated'] == spms_author['compare-transliterated']), None)
+        if document_author:
+            document_matched.append(document_author)
+            document_unmatched.remove(document_author)
             spms_matched.append(spms_author)
             spms_unmatched.remove(spms_author)
-            results.append({'docx': docx_author['original-value'],
+            results.append({'document': document_author['original-value'],
                             'spms': spms_author['original-value'],
                             'exact': False,
                             'match': True})
@@ -229,14 +229,14 @@ def get_author_list_report(docx_text, spms_text):
     # unmatched lists are added to results with a match value of false:
 
     for spms_author in spms_unmatched:
-        results.append({'docx': '',
+        results.append({'document': '',
                         'spms': spms_author['original-value'],
                         'exact': False,
                         'match': False})
         all_authors_match = False
 
-    for docx_author in docx_unmatched:
-        results.append({'docx': docx_author['original-value'],
+    for document_author in document_unmatched:
+        results.append({'document': document_author['original-value'],
                         'spms': '',
                         'exact': False,
                         'match': False})
@@ -270,7 +270,7 @@ def normalize_author_name(author_name):
     normalized_name = author_name.replace('.', '. ').replace('  ', ' ')
     # remove hyphens (sometimes inconsistently applied):
     normalized_name = normalized_name.replace('-', '')
-    # remove asterisks (sometimes included in docx authors text):
+    # remove asterisks (sometimes included in document authors text):
     normalized_name = normalized_name.replace('*', '')
     # remove formatting characters occasionally observed:
     normalized_name = normalized_name.replace('†', '')

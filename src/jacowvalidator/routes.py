@@ -4,10 +4,11 @@ from datetime import datetime
 from subprocess import run
 from docx import Document
 from docx.opc.exceptions import PackageNotFoundError
+from TexSoup import TexSoup
 from flask import redirect, render_template, request, url_for, send_file, abort
 from flask_uploads import UploadNotAllowed
 
-from jacowvalidator import app, documents
+from jacowvalidator import app, document_docx, document_tex
 from .models import Log
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, AbstractNotFoundError
@@ -42,11 +43,11 @@ def tick_cross2(s):
 @app.template_filter('tick_cross')
 def tick_cross(s):
     if s == 1 or s is True:
-        return '<span style="color:darkgreen">✓</span>' # '<span style="color:darkgreen"><i class="fas fa-check"></i></span>'
+        return '<span style="color:darkgreen">✓</span>'
     elif s == 2:
-        return '<span style="color:darkorange"><i class="fas fa-question"></i></span>' # ' 	🤷'
+        return '<span style="color:darkorange"><i class="fas fa-question"></i></span>'
     else:
-        return '<span style="color:darkred">✗</span>' # '<span style="color:darkred"><i class="fas fa-times"></i></span>'
+        return '<span style="color:darkred">✗</span>'
 
 
 @app.template_filter('background_style')
@@ -87,65 +88,101 @@ def hello():
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload():
+    documents = document_docx
+    args = {'extension': '*.docx', 'description': 'Word', 'action': 'upload'}
+    return upload_common(documents, args)
+
+
+@app.route("/upload_latex", methods=["GET", "POST"])
+def upload_latex():
+    documents = document_tex
+    args = {'extension': '*.tex', 'description': 'Latex', 'action': 'upload_latex'}
+    return upload_common(documents, args)
+
+
+def upload_common(documents, args):
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
     if request.method == "POST" and documents.name in request.files:
         try:
             filename = documents.save(request.files[documents.name])
             paper_name = os.path.splitext(filename)[0]
         except UploadNotAllowed:
-            return render_template("upload.html", error=f"Wrong file extension. Please upload .docx files only")
+            return render_template(
+                "upload.html",
+                error=f"Wrong file extension. Please upload {args['extension']} files only",
+                admin=admin,
+                args=args)
         fullpath = documents.path(filename)
 
         try:
-            doc = Document(fullpath)
-            metadata = doc.core_properties
+            if args['description'] == 'Word':
+                doc = Document(fullpath)
+                parse_type = 'docx'
+                metadata = doc.core_properties
 
-            # check whether tracking on
-            result = check_tracking_on(doc)
+                # check whether tracking on
+                result = check_tracking_on(doc)
 
-            # get variables to pass to template
-            summary, authors, title = create_upload_variables(doc, paper_name)
-            spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
-            if spms_summary:
-                summary.update(spms_summary)
+                # get variables to pass to template
+                summary, authors, title = create_upload_variables(doc, paper_name)
+                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
+                if spms_summary:
+                    summary.update(spms_summary)
+            elif args['description'] == 'Latex':
+                doc = TexSoup(open(fullpath, encoding="utf8"))
+                authors = [{'text': doc.author.string}]
+                title = {'text': doc.title.string}
+                summary = {}
+                metadata = []
+                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
+                if spms_summary:
+                    summary.update(spms_summary)
 
-            # log = Log()
-            # log.filename = filename
-            # log.report = json.dumps(json_serialise(locals()))
-            # db.session.add(log)
-            # db.session.commit()
+            if 'DATABASE_URL' in os.environ:
+                upload_log = Log()
+                upload_log.filename = filename
+                # upload_log.report = json.dumps(json_serialise(locals()))
+                # db.session.add(upload_log)
+                # db.session.commit()
 
             return render_template("upload.html", processed=True, **locals())
-        # except (PackageNotFoundError, ValueError):
-        #     return render_template(
-        #         "upload.html",
-        #         filename=filename,
-        #         error=f"Failed to open document {filename}. Is it a valid Word document?",
-        #         admin=admin)
+        except (PackageNotFoundError, ValueError):
+            return render_template(
+                "upload.html",
+                filename=filename,
+                error=f"Failed to open document {filename}. Is it a valid {args['description']} document?",
+                admin=admin,
+                args=args)
         except TrackingOnError as err:
             return render_template(
                 "upload.html",
                 filename=filename,
                 error=err,
-                admin=admin)
+                admin=admin,
+                args=args)
         except OSError:
             return render_template(
                 "upload.html",
                 filename=filename,
                 error=f"It seems the file {filename} is corrupted",
-                admin=admin)
+                admin=admin,
+                args=args)
         except PaperNotFoundError:
             return render_template(
                 "upload.html",
                 processed=True,
                 **locals(),
                 error=f"It seems the file {filename} has no corresponding entry in the SPMS references list. "
-                      f"Is your filename the same as your Paper name?")
+                      f"Is your filename the same as your Paper name?",
+                admin=admin,
+                args=args)
         except AbstractNotFoundError as err:
             return render_template(
                 "upload.html",
                 filename=filename,
-                error=err)
+                error=err,
+                admin=admin,
+                args=args)
         except Exception:
             if app.debug:
                 raise
@@ -154,16 +191,18 @@ def upload():
                 return render_template(
                     "upload.html",
                     error=f"Failed to process document: {filename}",
-                    admin=admin)
+                    admin=admin,
+                    args=args)
         finally:
             os.remove(fullpath)
 
-    return render_template("upload.html", admin=admin)
+    return render_template("upload.html", admin=admin, args=args)
 
 
 @app.route("/convert", methods=["GET", "POST"])
 def convert():
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
+    documents = document_docx
     if not admin:
         abort(403)
 

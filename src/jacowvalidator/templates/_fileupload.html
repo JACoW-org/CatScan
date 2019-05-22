@@ -17,7 +17,7 @@
                         </span>
                     </label>
                 </div><br/>
-                <button class="button" style="background-color:lightblue" type="submit" alt="scan">{{ 'Scan' if action == 'upload' else 'Convert' }}</button>
+                <button class="button" style="background-color:lightblue" type="submit" alt="scan">{{ 'Scan' if action in ['upload','upload_latex'] else 'Convert' }}</button>
             </div>
             <div class="column">
                 <img src="{{ url_for('static', filename='cat.png')}}" width="104" height="122" alt="jacow validator logo">
