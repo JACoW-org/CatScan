@@ -17,6 +17,8 @@ PARAGRAPH_STYLES = {
     }
 }
 EXTRA_RULES = ''
+PARAGRAPH_STYLE_EXCEPTIONS = ['JACoW_Bulleted List', 'JACoW_Numbered list', 'Bulleted List', 'Numbered list']
+
 HELP_INFO = 'SCEParag'
 ALL_HELP_INFO = 'CSEParsedDocument'
 ALL_EXTRA_INFO = {
@@ -30,11 +32,18 @@ PARAGRAPH_SIZE_MIN = 50
 
 def parse_all_paragraphs(doc):
     all_paragraphs = []
+    styles = []
     for i, p in enumerate(doc.paragraphs):
         if p.text.strip():
             style_ok = p.style.name in VALID_STYLES or p.style.name in VALID_NON_JACOW_STYLES
             if not style_ok:
                 style_ok = 2
+            s = [s for s in styles if p.style.name == s['name']]
+            if s:
+                s[0]['count'] = s[0]['count'] + 1
+            else:
+                styles.append({'name': p.style.name, 'count': 1})
+
             all_paragraphs.append({
                 'index': i,
                 'style': p.style.name,
@@ -42,6 +51,10 @@ def parse_all_paragraphs(doc):
                 'style_ok': style_ok,
                 'in_table': 'No',
             })
+
+    # TODO Display style summary (and decide whether to include styles of items in tables
+    # for s in styles:
+    #    print(f"{s['name']}: {s['count']}")
 
     # search for paragraphs in tables
     count = 1
@@ -98,6 +111,10 @@ def get_paragraphs(doc):
             # ignore if heading style
             if [name for name, h in HEADING_STYLES.items() if
                         p.style.name in [h['styles']['jacow'], h['styles']['normal']]]:
+                continue
+
+            # ignore if one of the style exceptions like lists
+            if p.style.name in PARAGRAPH_STYLE_EXCEPTIONS:
                 continue
 
             # short paragraphs are probably headings
