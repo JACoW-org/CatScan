@@ -117,6 +117,10 @@ def get_paragraphs(doc):
             if p.style.name in PARAGRAPH_STYLE_EXCEPTIONS:
                 continue
 
+            # ignore if starts with lowercase
+            if text[0:1].islower():
+                continue
+
             # short paragraphs are probably headings
             if len(text) < PARAGRAPH_SIZE_MIN:
                 continue
