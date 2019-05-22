@@ -11,7 +11,8 @@ from flask_uploads import UploadNotAllowed
 from jacowvalidator import app, document_docx, document_tex
 from .models import Log
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
-from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, AbstractNotFoundError
+from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
+    AbstractNotFoundError
 from .test_utils import replace_identifying_text
 from .spms import PaperNotFoundError
 
@@ -100,6 +101,18 @@ def upload_latex():
     return upload_common(documents, args)
 
 
+def get_summary_latex(part, title):
+    if part and part.string:
+        return {'text': part.string, 'title': title, 'ok': True, 'extra_info': f'{title}: {part.string}'}
+    elif part and part.contents:
+        # TODO join if multiple contents
+        for i, p in enumerate(part.contents):
+            return {'text': p, 'title': title, 'ok': True, 'extra_info': f'{title}: {p}'}
+    else:
+        return {'text': '', 'title': title, 'ok': False, 'extra_info': f'No {title} found'}
+    return {}
+
+
 def upload_common(documents, args):
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
     if request.method == "POST" and documents.name in request.files:
@@ -124,15 +137,13 @@ def upload_common(documents, args):
                 result = check_tracking_on(doc)
 
                 # get variables to pass to template
-                summary, authors, title = create_upload_variables(doc, paper_name)
+                summary, authors, title = create_upload_variables(doc)
                 spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
                 if spms_summary:
                     summary.update(spms_summary)
             elif args['description'] == 'Latex':
                 doc = TexSoup(open(fullpath, encoding="utf8"))
-                authors = [{'text': doc.author.string}]
-                title = {'text': doc.title.string}
-                summary = {}
+                summary, authors, title = create_upload_variables_latex(doc)
                 metadata = []
                 spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
                 if spms_summary:

@@ -46,3 +46,14 @@ def get_abstract_summary(p):
         'message': 'Abstract issues',
         'anchor': 'abstract'
     }
+
+
+def get_abstract_summary_latex(part):
+    if part and part.contents:
+        text = 'Abstract'
+        for i, p in enumerate(part.contents):
+            # make sure abstract has text
+            if not p == '':
+                return {'text': text, 'title': 'Abstract', 'ok': True, 'extra_info': f'Abstract: {text}'}
+
+    return {'text': '', 'title': 'Abstract', 'ok': False, 'extra_info': f'No Abstract found'}

@@ -60,6 +60,14 @@ def get_author_summary(paragraphs):
     }
 
 
+def get_author_summary_latex(part):
+    if part and part.string:
+        text = part.string
+        return {'text': text, 'title': 'Author', 'ok': True, 'extra_info': f'Author: {text}'}
+
+    return {'text': '', 'title': 'Author', 'ok': False, 'extra_info': f'No Author found'}
+
+
 def get_author_list(text):
     """function to extract authors from some text that will also include
     associations

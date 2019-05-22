@@ -54,3 +54,11 @@ def get_title_summary(p):
         'message': 'Title issues',
         'anchor': 'title'
     }
+
+
+def get_title_summary_latex(part):
+    if part and part.string:
+        text = part.string
+        return {'text': text, 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
+
+    return {'text': '', 'title': 'Title', 'ok': False, 'extra_info': f'No Title found'}

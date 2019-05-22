@@ -2,9 +2,9 @@ import os
 from jacowvalidator.docutils.styles import get_style_summary
 from jacowvalidator.docutils.margins import get_margin_summary
 from jacowvalidator.docutils.languages import get_language_summary
-from jacowvalidator.docutils.title import get_title_summary
-from jacowvalidator.docutils.authors import get_author_summary
-from jacowvalidator.docutils.abstract import get_abstract_summary
+from jacowvalidator.docutils.title import get_title_summary, get_title_summary_latex
+from jacowvalidator.docutils.authors import get_author_summary, get_author_summary_latex
+from jacowvalidator.docutils.abstract import get_abstract_summary, get_abstract_summary_latex
 from jacowvalidator.docutils.heading import get_heading_summary
 from jacowvalidator.docutils.paragraph import get_paragraph_summary, get_all_paragraph_summary
 from jacowvalidator.docutils.references import get_reference_summary
@@ -79,23 +79,25 @@ def parse_paragraphs(doc):
     return summary
 
 
-def create_upload_variables(doc, paper_name):
+def create_upload_variables(doc):
     summary = {}
     doc_summary = parse_paragraphs(doc)
 
     # get style details
-    summary['Styles'] = get_style_summary(doc)
-    summary['Margins'] = get_margin_summary(doc)
-    summary['Languages'] = get_language_summary(doc)
-    summary['List'] = get_all_paragraph_summary(doc)
-    summary['Title'] = doc_summary['Title']
-    summary['Authors'] = doc_summary['Authors']
-    summary['Abstract'] = doc_summary['Abstract']
-    summary['Headings'] = get_heading_summary(doc)
-    summary['Paragraphs'] = get_paragraph_summary(doc)
-    summary['References'] = get_reference_summary(doc)
-    summary['Figures'] = get_figure_summary(doc)
-    summary['Tables'] = get_table_summary(doc)
+    summary = {
+        'Styles': get_style_summary(doc),
+        'Margins': get_margin_summary(doc),
+        'Languages': get_language_summary(doc),
+        'List': get_all_paragraph_summary(doc),
+        'Title': doc_summary['Title'],
+        'Authors': doc_summary['Authors'],
+        'Abstract': doc_summary['Abstract'],
+        'Headings': get_heading_summary(doc),
+        'Paragraphs': get_paragraph_summary(doc),
+        'References': get_reference_summary(doc),
+        'Figures': get_figure_summary(doc),
+        'Tables': get_table_summary(doc)
+    }
 
     # get title and author to use in SPMS check
     title = summary['Title']['details'][0]
@@ -125,5 +127,16 @@ def create_spms_variables(paper_name, authors, title):
     return summary, reference_csv_details
 
 
+def create_upload_variables_latex(doc):
+    summary = {
+        'Title': get_title_summary_latex(doc.title),
+        'Authors': get_author_summary_latex(doc.author),
+        'Abstract': get_abstract_summary_latex(doc.abstract)
+    }
 
+    # get title and author to use in SPMS check
+    title = summary['Title']
+    authors = [summary['Authors']]
+
+    return summary, authors, title
 
