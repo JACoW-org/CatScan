@@ -97,9 +97,10 @@ def parse_author_latex(part):
 def get_author_summary_latex(part):
     """
     Example from JACoW example latex file
-    \author{A. N. Author\thanks{email address}, H. Coauthor, Name of Institute or Affiliation, City, Country \\
-    		P. Contributor\textsuperscript{1}, Name of Institute or Affiliation, City, Country \\
-    		\textsuperscript{1}also at Name of Secondary Institute or Affiliation, City, Country}
+    (double \\ before author, thanks and textsuperscript were single in example but causes issues in this comment)
+    \\author{A. N. Author\\thanks{email address}, H. Coauthor, Name of Institute or Affiliation, City, Country \\
+    		P. Contributor\\textsuperscript{1}, Name of Institute or Affiliation, City, Country \\
+    		\\textsuperscript{1}also at Name of Secondary Institute or Affiliation, City, Country}
 
     :param part: author component of the parsed tex document
     :return: dict with summary result info

@@ -59,7 +59,8 @@ def get_title_summary(p):
 def get_title_summary_latex(part):
     """
     Example from JACoW example latex file
-    \title{preparation OF papers for \NoCaseChange{JACoW} conferences\thanks{Work supported by ...}}
+    (double \\ for title, NoCaseChange and thanks were single in example but causes issues in this comment)
+    \\title{preparation OF papers for \\NoCaseChange{JACoW} conferences\\thanks{Work supported by ...}}
 
     :param part: title component of the parsed tex document
     :return: dict with summary result info
