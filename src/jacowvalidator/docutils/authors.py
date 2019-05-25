@@ -60,12 +60,64 @@ def get_author_summary(paragraphs):
     }
 
 
-def get_author_summary_latex(part):
-    if part and part.string:
-        text = part.string
-        return {'text': text, 'title': 'Author', 'ok': True, 'extra_info': f'Author: {text}'}
+def parse_author_latex(part):
+    # TODO finish this better way of parsing author and affiliation
+    authors = ['']
+    author_count = 0
+    for i, p in enumerate(part.contents):
+        if isinstance(p, str):
+            # check whether there is \\ optionally followed by \n\t\t which is used to split authors
+            if '\\' in p:
+                author_split = p.split('\\')
+                for j, author in enumerate(author_split):
+                    author_text = author.replace('\n\t\t', '')
+                    if j == 0:
+                        if author_count + 1 > len(authors):
+                            authors.append(author_text)
+                        else:
+                            authors[author_count] = authors[author_count] + author_text
+                    elif not author_text == '':
+                        author_count = author_count + 1
+                        authors.append(author_text)
+            else:
+                if author_count + 1 > len(authors):
+                    authors.append(p)
+                else:
+                    authors[author_count] = authors[author_count] + p
+        elif p.name in ['thanks']:
+            # ignore thanks but assume that indicates the start of new author info
+            author_count = author_count + 1
+            continue
+        elif p.name in ['textsuperscript']:
+            # ignore textsuperscript notes
+            continue
+    return authors
 
-    return {'text': '', 'title': 'Author', 'ok': False, 'extra_info': f'No Author found'}
+
+def get_author_summary_latex(part):
+    """
+    Example from JACoW example latex file
+    \author{A. N. Author\thanks{email address}, H. Coauthor, Name of Institute or Affiliation, City, Country \\
+    		P. Contributor\textsuperscript{1}, Name of Institute or Affiliation, City, Country \\
+    		\textsuperscript{1}also at Name of Secondary Institute or Affiliation, City, Country}
+
+    :param part: author component of the parsed tex document
+    :return: dict with summary result info
+    """
+    if part and part.string:
+        text = ''
+        for i, p in enumerate(part.contents):
+            if isinstance(p, str):
+                author_text = p.replace('\n\t\t', '')
+                author_text = author_text.replace('\\\\', ',')
+                text = text + author_text
+            elif p.name in ['thanks', 'textsuperscript']:
+                # ignore text in thanks and textsuperscript
+                continue
+
+        return {'original_text': part.string, 'text': text, 'title': 'Author', 'ok': True, 'extra_info': f'Author: {text}'}
+
+    return {'original_text': '', 'text': '', 'title': 'Author', 'ok': False, 'extra_info': f'No Author found'}
 
 
 def get_author_list(text):

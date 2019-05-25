@@ -57,8 +57,23 @@ def get_title_summary(p):
 
 
 def get_title_summary_latex(part):
-    if part and part.string:
-        text = part.string
-        return {'text': text, 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
+    """
+    Example from JACoW example latex file
+    \title{preparation OF papers for \NoCaseChange{JACoW} conferences\thanks{Work supported by ...}}
 
-    return {'text': '', 'title': 'Title', 'ok': False, 'extra_info': f'No Title found'}
+    :param part: title component of the parsed tex document
+    :return: dict with summary result info
+    """
+    if part and part.string:
+        text = ''
+        for i, p in enumerate(part.contents):
+            if isinstance(p, str):
+                text = text + p.upper()
+            elif p.name == 'NoCaseChange':
+                text = text + p.string
+            elif p.name in ['thanks']:
+                # ignore
+                continue
+        return {'original_text': part.string, 'text': text, 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
+
+    return {'original_text': '', 'text': '', 'title': 'Title', 'ok': False, 'extra_info': f'No Title found'}
