@@ -1,8 +1,16 @@
 {% macro add_section(section, args={}) -%}
  <div class="box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
-    <a href="#top" class="link-color">Top <i class="fas fa-arrow-circle-up"></i></a>
+ <a name="{{section.anchor }}"></a>
+ <a href="#top" class="link-color">Top <i class="fas fa-arrow-circle-up"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+  {% if args['prev'] %}
+    <a href="#{{ args['prev'] }}" class="link-color"><i class="fas fa-arrow-circle-left"></i> Prev</a>{% if args['next'] %} | {% endif %}
+  {% endif %}
+
+  {% if args['next'] %}
+    <a href="#{{ args['next'] }}" class="link-color">Next <i class="fas fa-arrow-circle-right"></i></a>
+  {% endif %}
     <h2 class="subtitle" style="padding:10px;background-color:#{{ section.ok|pastel_background_style }}">
-        <a name="{{section.anchor }}"></a>{{ section.ok|tick_cross|safe }}
+        {{ section.ok|tick_cross|safe }}
         {% if args['section_header'] %} {{ args['section_header']|safe }} {% else %}{{ section.title }} {% endif %}
         {% if section.show_total %} ({{ section.details|length }}){% endif %}
         {% if section.help_info %} - <a href="https://www.jacow.org/Authors/{{ section.help_info }}" target="_target">Author Help for {{ section.title }}</a>{%  endif %}

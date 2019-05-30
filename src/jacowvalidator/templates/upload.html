@@ -52,28 +52,26 @@
 
             <p><button class="button" style="background-color:lightblue" onclick="js:closeDetails()">Close All Expanded Sections Below </button><br/><br/></p>
             {% for index, section in summary.items() %}
+                {% set prev = loop.previtem[1].anchor if loop.previtem else '' %}
+                {% set next = loop.nextitem[1].anchor if loop.nextitem else '' %}
+
                 {% if index == 'Paragraphs' %}
-                    {{ section_helper.add_section(summary[index], {'truncate_text':200}) }}
+                    {{ section_helper.add_section(summary[index], {'truncate_text':200, 'prev':prev, 'next':next}) }}
                 {% elif index == 'References' %}
-                    {{ section_helper.add_section(summary[index], {'truncate_text':50}) }}
+                    {{ section_helper.add_section(summary[index], {'truncate_text':50, 'prev':prev, 'next':next}) }}
                 {% elif index == 'Figures' %}
-                    {{ section_helper.add_section(summary[index], {'style_multi':true}) }}
+                    {{ section_helper.add_section(summary[index], {'style_multi':true, 'prev':prev, 'next':next}) }}
                 {% elif index == 'SPMS' %}
-                    {#  do nothing #}
+                    {% if reference_csv_url is defined %}
+                        {% set title = 'Conformance with <a href=' + reference_csv_url + '>references.csv</a>' %}
+                    {% else %}
+                       {% set title = 'Conformance with references.csv' %}
+                    {% endif %}
+                    {{ section_helper.add_section(summary[index], {'section_header':title, 'prev':prev, 'next':mext}) }}
                 {% else %}
-                    {{ section_helper.add_section(summary[index]) }}
+                    {{ section_helper.add_section(summary[index], {'prev':prev, 'next':next}) }}
                 {% endif %}
             {% endfor %}
-
-            {% if summary['SPMS'] %}
-                {% if reference_csv_url is defined %}
-                    {% set title = 'Conformance with <a href=' + reference_csv_url + '>references.csv</a>' %}
-                {% else %}
-                   {% set title = 'Conformance with references.csv' %}
-                {% endif %}
-                {{ section_helper.add_section(summary['SPMS'], {'section_header':title}) }}
-            </div>
-            {% endif %}
         {% endif %}
     </section>
    <script type="application/javascript">
