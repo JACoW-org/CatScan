@@ -69,12 +69,19 @@ def get_title_summary_latex(part):
         text = ''
         for i, p in enumerate(part.contents):
             if isinstance(p, str):
+                # TODO add parse properly for end of section
+                if p[0:9] == '%\\thanks{':
+                    continue
                 text = text + p.upper()
             elif p.name == 'NoCaseChange':
                 text = text + p.string
+            elif p.name in ['&']:
+                # add escaped characters
+                text = text + p.name
             elif p.name in ['thanks']:
                 # ignore
                 continue
-        return {'original_text': part.string, 'text': text, 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
+
+        return {'original_text': part.string, 'text': text.strip(), 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
 
     return {'original_text': '', 'text': '', 'title': 'Title', 'ok': False, 'extra_info': f'No Title found'}

@@ -25,6 +25,7 @@ STYLES = {
 EXTRA_RULES = ['Case: UPPER and lowercase']
 HELP_INFO = 'SCEAuthors'
 
+IGNORE = ['P.R. China']
 
 def get_author_details(p):
     superscript_removed_text = ''  # remove superscript footnotes
@@ -99,8 +100,8 @@ def get_author_summary_latex(part):
     Example from JACoW example latex file
     (double \\ before author, thanks and textsuperscript were single in example but causes issues in this comment)
     \\author{A. N. Author\\thanks{email address}, H. Coauthor, Name of Institute or Affiliation, City, Country \\
-    		P. Contributor\\textsuperscript{1}, Name of Institute or Affiliation, City, Country \\
-    		\\textsuperscript{1}also at Name of Secondary Institute or Affiliation, City, Country}
+            P. Contributor\\textsuperscript{1}, Name of Institute or Affiliation, City, Country \\
+            \\textsuperscript{1}also at Name of Secondary Institute or Affiliation, City, Country}
 
     :param part: author component of the parsed tex document
     :return: dict with summary result info
@@ -110,7 +111,11 @@ def get_author_summary_latex(part):
         for i, p in enumerate(part.contents):
             if isinstance(p, str):
                 author_text = p.replace('\n\t\t', '')
-                author_text = author_text.replace('\\\\', ',')
+                author_text = author_text.replace('\\\\', ', ')
+                author_text = author_text.replace(',,', ',')
+                author_text = author_text.replace('  ', ' ')
+                for item in IGNORE:
+                    author_text = author_text.replace(item, '')
                 text = text + author_text
             elif p.name in ['thanks', 'textsuperscript']:
                 # ignore text in thanks and textsuperscript
