@@ -184,9 +184,7 @@ def upload_common(documents, args):
                 processed=True,
                 **locals(),
                 error=f"It seems the file {filename} has no corresponding entry in the SPMS references list. "
-                      f"Is your filename the same as your Paper name?",
-                admin=admin,
-                args=args)
+                      f"Is your filename the same as your Paper name?")
         except AbstractNotFoundError as err:
             return render_template(
                 "upload.html",
