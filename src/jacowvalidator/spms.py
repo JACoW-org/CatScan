@@ -2,6 +2,7 @@
    references csv file and if so, verifies that the title and authors match """
 
 import os
+import json
 import csv
 import re
 from jacowvalidator.docutils.authors import get_author_list
@@ -41,21 +42,25 @@ class CSVFileNotFound(Exception):
 
 # runs conformity checks against the references csv file and returns a dict of
 # results, eg: result = { title_match: True, authors_match: False }
-def reference_csv_check(filename_minus_ext, title, authors):
+def reference_csv_check(filename_minus_ext, title, authors, conference_id):
     result = {
         'title_match': False, 'authors_match': False,
     }
-    if 'PATH_TO_JACOW_REFERENCES_CSV' not in os.environ:
+    if 'JACOW_CONFERENCES' not in os.environ:
         raise CSVPathNotDeclared("The environment variable "
-                                 "PATH_TO_JACOW_REFERENCES_CSV is not "
+                                 "JACOW_CONFERENCES is not "
                                  "set! Unable to locate references.csv file for "
                                  "title checking")
-    if not os.path.isfile(os.environ['PATH_TO_JACOW_REFERENCES_CSV']):
-        raise CSVFileNotFound(f"No file was found at the location {os.environ['PATH_TO_JACOW_REFERENCES_CSV']}")
+
+    conferences = json.loads(os.environ['JACOW_CONFERENCES'])
+    selected = conferences[conference_id]
+    if not os.path.isfile(selected['path']):
+        raise CSVFileNotFound(f"No file was found at the location {selected['path']}")
+
     # the encoding value is one that should work for most documents.
     # the encoding for a file can be detected with the command:
     #    ` file -i FILE `
-    with open(os.environ['PATH_TO_JACOW_REFERENCES_CSV'], encoding="ISO-8859-1") as f:
+    with open(selected['path'], encoding="ISO-8859-1") as f:
         reader = csv.reader(f)
         reading_header_row = True
         match_found = False

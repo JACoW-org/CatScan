@@ -106,20 +106,21 @@ def create_upload_variables(doc):
     return summary, authors, title
 
 
-def create_spms_variables(paper_name, authors, title):
+def create_spms_variables(paper_name, authors, title, conference_id):
     summary = {}
-    if "URL_TO_JACOW_REFERENCES_CSV" in os.environ:
-        reference_csv_url = os.environ["URL_TO_JACOW_REFERENCES_CSV"]
+    if "JACOW_CONFERENCES" in os.environ:
+        # reference_csv_url = os.environ["JACOW_CONFERENCES"][conference_id]['url']
         author_text = ''.join([a['text'] + ", " for a in authors])
-        reference_csv_details = reference_csv_check(paper_name, title['text'], author_text)
+        reference_csv_details = reference_csv_check(paper_name, title['text'], author_text, conference_id)
         summary['SPMS'] = {
-            'title': 'SPMS Abstract Title Author Check',
+            'title': ' SPMS ('+conference_id+') Abstract Title Author Check',
             'help_info': SPMS_HELP_INFO,
             'extra_info': SPMS_EXTRA_INFO,
             'ok': reference_csv_details['title']['match'] and reference_csv_details['author']['match'],
             'message': 'SPMS Abstract Title Author Check issues',
             'details': reference_csv_details['summary'],
-            'anchor': 'spms'
+            'anchor': 'spms',
+            'conference': conference_id
         }
     else:
         reference_csv_details = False

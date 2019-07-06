@@ -115,6 +115,7 @@ def get_summary_latex(part, title):
 
 def upload_common(documents, args):
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
+    conferences = json.loads(os.environ['JACOW_CONFERENCES'])
     if request.method == "POST" and documents.name in request.files:
         try:
             filename = documents.save(request.files[documents.name])
@@ -125,11 +126,14 @@ def upload_common(documents, args):
                 error=f"Wrong file extension. Please upload {args['extension']} files only",
                 admin=admin,
                 args=args)
-        fullpath = documents.path(filename)
-
+        full_path = documents.path(filename)
+        # set a default
+        conference_id = next(iter(conferences))
+        if 'conference_id' in request.form and request.form["conference_id"] in conferences.keys():
+            conference_id = request.form["conference_id"]
         try:
             if args['description'] == 'Word':
-                doc = Document(fullpath)
+                doc = Document(full_path)
                 parse_type = 'docx'
                 metadata = doc.core_properties
 
@@ -138,14 +142,15 @@ def upload_common(documents, args):
 
                 # get variables to pass to template
                 summary, authors, title = create_upload_variables(doc)
-                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
+
+                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title, conference_id)
                 if spms_summary:
                     summary.update(spms_summary)
             elif args['description'] == 'Latex':
-                doc = TexSoup(open(fullpath, encoding="utf8"))
+                doc = TexSoup(open(full_path, encoding="utf8"))
                 summary, authors, title = create_upload_variables_latex(doc)
                 metadata = []
-                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title)
+                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title, conference_id)
                 if spms_summary:
                     summary.update(spms_summary)
 
@@ -161,6 +166,7 @@ def upload_common(documents, args):
             return render_template(
                 "upload.html",
                 filename=filename,
+                conferences=conferences,
                 error=f"Failed to open document {filename}. Is it a valid {args['description']} document?",
                 admin=admin,
                 args=args)
@@ -168,6 +174,7 @@ def upload_common(documents, args):
             return render_template(
                 "upload.html",
                 filename=filename,
+                conferences=conferences,
                 error=err,
                 admin=admin,
                 args=args)
@@ -175,6 +182,7 @@ def upload_common(documents, args):
             return render_template(
                 "upload.html",
                 filename=filename,
+                conferences=conferences,
                 error=f"It seems the file {filename} is corrupted",
                 admin=admin,
                 args=args)
@@ -183,12 +191,13 @@ def upload_common(documents, args):
                 "upload.html",
                 processed=True,
                 **locals(),
-                error=f"It seems the file {filename} has no corresponding entry in the SPMS references list. "
+                error=f"It seems the file {filename} has no corresponding entry in the SPMS ({conference_id}) references list. "
                       f"Is your filename the same as your Paper name?")
         except AbstractNotFoundError as err:
             return render_template(
                 "upload.html",
                 filename=filename,
+                conferences=conferences,
                 error=err,
                 admin=admin,
                 args=args)
@@ -200,12 +209,12 @@ def upload_common(documents, args):
                 return render_template(
                     "upload.html",
                     error=f"Failed to process document: {filename}",
-                    admin=admin,
+                    conferences=conferences,
                     args=args)
         finally:
-            os.remove(fullpath)
+            os.remove(full_path)
 
-    return render_template("upload.html", admin=admin, args=args)
+    return render_template("upload.html", admin=admin, args=args, conferences=conferences)
 
 
 @app.route("/convert", methods=["GET", "POST"])

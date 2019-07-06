@@ -17,6 +17,19 @@
                         </span>
                     </label>
                 </div><br/>
+            <label style="display:inline" for="conference_id">Select Conference</label>
+                <div class="control has-icons-left">
+                <div class="select is-info">
+                  <select id="conference_id" name="conference_id">
+                      {% for conference in conferences %}
+                           <option value="{{ conference }}" {% if conference_id == conference %} selected {% endif %}>{{ conference }}</option>
+                      {% endfor %}
+                  </select>
+                  </div>
+                  <span class="icon is-medium is-left">
+                    <i class="fas fa-globe"></i>
+                  </span>
+                </div><br/>
                 <button class="button" style="background-color:lightblue" type="submit" alt="scan">{{ 'Scan' if action in ['upload','upload_latex'] else 'Convert' }}</button>
             </div>
             <div class="column">

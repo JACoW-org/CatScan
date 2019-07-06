@@ -16,13 +16,12 @@ https://spms.kek.jp/pls/ipac19/references.csv
 
 grab a copy of it and save it to your computer
 
-Create two environment variables:
+Create an environment variables:
 
-    URL_TO_JACOW_REFERENCES_CSV=https://spms.kek.jp/pls/ipac19/references.csv
-    PATH_TO_JACOW_REFERENCES_CSV=/home/user/Documents/jacow/References.csv
+    JACOW_CONFERENCES='{"SRF19":{"url":"https://oraweb.cern.ch/pls/srf2019/references.csv","path":"/home/user/Documents/jacow/References_srf19.csv"},"IPAC19":{"url":"https://spms.kek.jp/pls/ipac19/references.csv","path":"/home/user/Documents/jacow/References_ipac19.csv"}}'
 
-Where **URL_TO_JACOW_REFERENCES_CSV** is set to the currently applicable url
-and **PATH_TO_JACOW_REFERENCES_CSV** is set to the location on your filesystem 
+Where for each conference, **url** is set to the currently applicable url
+and **path** is set to the location on your filesystem 
 where you saved the file. 
 
 ##  Setup using forked jacow-validator

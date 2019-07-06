@@ -30,7 +30,7 @@
                     {{ item.ok|tick_cross|safe }} {{ item.title }} {% if item.show_total %} ({{ item.details|length }}){% endif %}
                        {% if item.ok == False %} - {{ item.message }}{% endif %}
                    </a>
-                {% endfor%}
+                {% endfor %}
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                     {% if reference_csv_url is defined %}
                         {% set title = 'Conformance with <a href=' + reference_csv_url + '>references.csv</a>' %}
                     {% else %}
-                       {% set title = 'Conformance with references.csv' %}
+                       {% set title = 'Conformance with ' + summary['SPMS']['conference'] + ' references.csv' %}
                     {% endif %}
                     {{ section_helper.add_section(summary[index], {'section_header':title, 'prev':prev, 'next':mext}) }}
                 {% else %}
