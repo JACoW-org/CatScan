@@ -21,6 +21,7 @@
                 <div class="control has-icons-left">
                 <div class="select is-info">
                   <select id="conference_id" name="conference_id">
+                      <option value="">No specific Conference</option>
                       {% for conference in conferences %}
                            <option value="{{ conference }}" {% if conference_id == conference %} selected {% endif %}>{{ conference }}</option>
                       {% endfor %}

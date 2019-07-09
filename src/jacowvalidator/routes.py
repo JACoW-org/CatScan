@@ -128,7 +128,7 @@ def upload_common(documents, args):
                 args=args)
         full_path = documents.path(filename)
         # set a default
-        conference_id = next(iter(conferences))
+        conference_id = False  # next(iter(conferences))
         if 'conference_id' in request.form and request.form["conference_id"] in conferences.keys():
             conference_id = request.form["conference_id"]
         try:
@@ -143,9 +143,11 @@ def upload_common(documents, args):
                 # get variables to pass to template
                 summary, authors, title = create_upload_variables(doc)
 
-                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title, conference_id)
-                if spms_summary:
-                    summary.update(spms_summary)
+                if conference_id:
+                    spms_summary, reference_csv_details = \
+                        create_spms_variables(paper_name, authors, title, conference_id)
+                    if spms_summary:
+                        summary.update(spms_summary)
             elif args['description'] == 'Latex':
                 doc = TexSoup(open(full_path, encoding="utf8"))
                 summary, authors, title = create_upload_variables_latex(doc)
