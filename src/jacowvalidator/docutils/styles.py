@@ -1,6 +1,7 @@
 import operator
 from docx.shared import Inches, Mm, Twips
 from docx.oxml.text.parfmt import CT_PPr, CT_Ind
+from docx.text.paragraph import Paragraph
 
 VALID_STYLES = [
     'JACoW_Abstract_Heading',
@@ -156,12 +157,14 @@ def get_paragraph_space(paragraph):
 def get_style_font(paragraph, url):
     # use paragraph style if values set
     style = paragraph.style
-    bold, italic, font_size, all_caps = style.font.bold, style.font.italic, style.font.size, style.font.all_caps
+    bold, italic, font_size, font_name, all_caps = style.font.bold, style.font.italic, style.font.size, style.font.name, style.font.all_caps
     if paragraph.style.base_style is not None:
         style = paragraph.style.base_style
         # if values not set, use base style
         if font_size is None:
             font_size = style.font.size
+        if font_name is None:
+            font_name = style.font.name
         if bold is None:
             bold = style.font.bold
         if italic is None:
@@ -170,7 +173,11 @@ def get_style_font(paragraph, url):
             all_caps = style.font.all_caps
 
     # TODO get distinct list
-    for r in paragraph.runs:
+    sections = [paragraph]
+    if isinstance(paragraph, Paragraph):
+        sections = paragraph.runs
+
+    for r in sections:
         text = r.text.strip()
         if not text:
             continue
@@ -187,6 +194,8 @@ def get_style_font(paragraph, url):
         if r.font is not None:
             if r.font.size is not None:
                 font_size = r.font.size
+            if r.font.name is not None:
+                font_name = r.font.name
             if r.font.bold is not None:
                 bold = r.font.bold
             if r.font.italic is not None:
@@ -205,12 +214,15 @@ def get_style_font(paragraph, url):
     else:
         font_size = font_size.pt
 
-    return bold, italic, font_size, all_caps
+    if not font_name:
+        font_name = 'Times new Roman'
+
+    return bold, italic, font_size, font_name, all_caps
 
 
 def get_style_details(p, url={}):
     space_before, space_after, first_line_indent, hanging_indent, left_indent = get_paragraph_space(p)
-    bold, italic, font_size, all_caps = get_style_font(p, url)
+    bold, italic, font_size, font_name, all_caps = get_style_font(p, url)
     alignment = get_paragraph_alignment(p)
     return locals()
 
