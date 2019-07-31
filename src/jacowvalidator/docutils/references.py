@@ -159,7 +159,7 @@ def extract_references(doc, strict_styles=False):
             ref['text_ok'] = False
 
         # check for doi or urls
-        starts = ['doi:', 'http://', 'https://', 'www.']
+        starts = ['doi:', 'http://www.', 'http://', 'https://', 'www.']
         url_font = {'name': 'Liberation Mono', 'size': 8}
         has_url = has_url_error = False
         for r in ref['p'].runs:
@@ -174,6 +174,7 @@ def extract_references(doc, strict_styles=False):
                             or not font_size == url_font['size']:
                         has_url_error = True
                         ref['text_ok'] = False
+                    break
                 elif s in text:
                     # means that the font name and size did not change at start.
                     # may be an issue if two DOIs or URLs after one another
