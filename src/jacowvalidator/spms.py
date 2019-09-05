@@ -40,12 +40,7 @@ class CSVFileNotFound(Exception):
     pass
 
 
-# runs conformity checks against the references csv file and returns a dict of
-# results, eg: result = { title_match: True, authors_match: False }
-def reference_csv_check(filename_minus_ext, title, authors, conference_id):
-    result = {
-        'title_match': False, 'authors_match': False,
-    }
+def get_conference_path(conference_id):
     if 'JACOW_CONFERENCES' not in os.environ:
         raise CSVPathNotDeclared("The environment variable "
                                  "JACOW_CONFERENCES is not "
@@ -57,10 +52,20 @@ def reference_csv_check(filename_minus_ext, title, authors, conference_id):
     if not os.path.isfile(selected['path']):
         raise CSVFileNotFound(f"No file was found at the location {selected['path']}")
 
+    return selected['path']
+
+
+# runs conformity checks against the references csv file and returns a dict of
+# results, eg: result = { title_match: True, authors_match: False }
+def reference_csv_check(filename_minus_ext, title, authors, conference_path):
+    result = {
+        'title_match': False, 'authors_match': False,
+    }
+
     # the encoding value is one that should work for most documents.
     # the encoding for a file can be detected with the command:
     #    ` file -i FILE `
-    with open(selected['path'], encoding="ISO-8859-1") as f:
+    with open(conference_path, encoding="ISO-8859-1") as f:
         reader = csv.reader(f)
         reading_header_row = True
         match_found = False
