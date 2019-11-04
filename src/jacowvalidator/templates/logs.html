@@ -3,23 +3,39 @@
     <section class="section">
     <div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
         <div class="is-size-3">Logs</div><br/>
+    {% for log in logs %}
+    <details style="border:1px lightgray solid;border-radius:2px">
+        <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Log for {{ log.filename }}</summary>
         <table class="table is-bordered">
-        {% for log in logs %}
             <tr>
-                <td>{{ log.id }}</td>
-                <td>{{ log.filename }}</td>
-                <td>{{ log.timestamp.strftime('%d/%m/%Y %H:%M ') }}</td>
-                <td>
+                <td style="width:5%">{{ log.id }}</td>
+                <td style="width:10%">{{ log.filename }}</td>
+                <td style="width:10%">{{ log.timestamp.strftime('%d/%m/%Y %H:%M ') }}</td>
+                <td style="width:75%">
                 {% set report = log.report|display_report %}
                     <table>
                         {% for item, data in report.items() %}
-                        <tr><td>{{ item }}</td><td>{{ data }}</td></tr>
+                            {% if data is iterable and data is not string %}
+                                    <details style="border:1px lightgray solid;border-radius:2px">
+        <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Details for {{ i }}</summary>
+        <table class="table is-bordered">
+                                <tr><td rowspan="{{ data.items()|length }}">{{ item }}</td><tr>
+                                    {% for i, d in data.items() %}
+                                        <tr><td>{{ i }}</td><td>{{ d }}</td></tr>
+                                    {% endfor %}
+                                        </table>
+    </details>
+                            {% else %}
+                                 <tr><td>{{ item }}</td><td>{{ data }}</td></tr>
+                            {% endif %}
                         {% endfor %}
                     </table>
                 </td>
             </tr>
-        {%  endfor %}
+
         </table>
+    </details>
+    {%  endfor %}
     </div>
     </section>
 {% endblock %}

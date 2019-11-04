@@ -54,13 +54,16 @@ def reference_csv_check(filename_minus_ext, title, authors, conference_id):
 
     conferences = json.loads(os.environ['JACOW_CONFERENCES'])
     selected = conferences[conference_id]
-    if not os.path.isfile(selected['path']):
-        raise CSVFileNotFound(f"No file was found at the location {selected['path']}")
+
+    selected_path = os.path.join(os.environ['JACOW_REFERENCES_PATH'], selected['path'])
+    print(selected_path, flush=True)
+    if not os.path.isfile(selected_path):
+        raise CSVFileNotFound(f"No file was found at the location {selected_path}")
 
     # the encoding value is one that should work for most documents.
     # the encoding for a file can be detected with the command:
     #    ` file -i FILE `
-    with open(selected['path'], encoding="ISO-8859-1") as f:
+    with open(selected_path, encoding="ISO-8859-1") as f:
         reader = csv.reader(f)
         reading_header_row = True
         match_found = False

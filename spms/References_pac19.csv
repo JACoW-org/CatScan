@@ -1,0 +1,117 @@
+"paper","authors","title","position","contribution ID"
+"FRCHC1","A.S. Romanenko","SC Cavities for Quantum Computers",,1405
+"FRCHC2","M.-E. Couprie","Possibilities for Future Synchrotron Radiation Sources",,1566
+"FRCHC3","G.R. Piefer","SHINE: Addressing the Tc-99 Shortage with Accelerator Technology",,1429
+"FRXBA1","S. Nagaitsev","Review of Recent Advances in Cooling Techniques",,1462
+"FRXBA2","Y. Yuri, T. Yuyama, M. Fukuda","Diverse Beam Profile Shapings Through Nonlinear Focusing of Multipole Magnets in a Beam Transport Line",,1969
+"FRXBA3","G. Ha, M.E. Conde, J.G. Power, M. Chung, J. Seok","Applications and Opportunities of the Emittance Exchange Beamline",,2061
+"FRXBA4","F.W. Cropp V, Denham, P.E. Denham, E.T. Liu, P. Musumeci, N. Burger, L. Phillips, J. Giner Navarro","Maximizing 2-D Beam Brightness Using the Flat Beam Transform in an Ultralow Charge Regime",,1842
+"FRXBA5","J. Tang, S. Carbajo, F.-J. Decker, J. Krzywinski, R.A. Lemons, W. Liu, A.A. Lutman, G. Marcus, T.J. Maxwell, S.P. Moeller, D.F. Ratner, S. Vetter, Z. Huang","The Role of Laser Shaping in Microbunching Instability Suppression and Seeded X-Ray Free Electron Emission",,1855
+"MOOHC1","T. Glasmacher","Status of FRIB Project",,1565
+"MOOHC2","A. Seryi","Electron Ion Collider Accelerator Designs",,1400
+"MOYBA1","X. Buffat","LHC Status and Plans",,1282
+"MOYBA2","S. Nakamura","Commissioning of the Phase 2 and Phase 3 SuperKEKB B-Factory",,1190
+"MOYBA3","Y. Zhang","JLEIC: A High Luminosity Polarized Electron-Ion Collider at Jefferson Lab",,2261
+"MOYBA4","C. Montag, G. Bassi, J. Beebe-Wang, J.S. Berg, M. Blaskiewicz, A. Blednykh, J.M. Brennan, S.J. Brooks, K.A. Brown, K.A. Drees, A.V. Fedotov, W. Fischer, D.M. Gassner, Y. Hao, A. Hershcovitch, D. Holmes, H. Huang, W.A. Jackson, J. Kewisch, Y. Li, C. Liu, H. Lovelace III, Y. Luo, F. Meot, M.G. Minty, R.B. Palmer, B. Parker, S. Peggs, V. Ptitsyn, V.H. Ranjbar, G. Robert-Demolaize, S. Seletskiy, V.V. Smaluk, K.S. Smith, S. Tepikian, P. Thieberger, D. Trbojevic, N. Tsoupas, S. Verdu-Andres, W.-T. Weng, F.J. Willeke, H. Witte, Q. Wu, W. Xu, A. Zaltsman, W. Zhang, C. Hetzel","eRHIC Design Update",,2055
+"MOYBA5","L.J. Wang, J.Y. Tang, T. Sen","Weak-Strong Simulation of Beam-Beam Effects in Super Proton-Proton Collider",,1761
+"MOYBA6","C. Liu","Accelerator Performance During the Beam Energy Scan II in 2019",,2009
+"MOYBB1","M. Martinello","Recent Advance in SRF Cavity Technologies",,1433
+"MOYBB2","G. Machicoane","Recent Advance in ECR Heavy Ion Sources",,1435
+"MOYBB3","R.D. Porter, M. Liepe, J.T. Maniscalco, Z. Sun","Progress in Nb3Sn SRF Cavities at Cornell University",,2110
+"MOYBB4","C. Zhang, W. Chang, W. Hartung, S.H. Kim, J.T. Popielarski, K. Saito, J.F. Schwartz, T. Xu","Large-Scale Dewar Testing of FRIB Production Cavities: Statistical Analysis",,1995
+"MOYBB5","I.V. Konoplev, M. Topp-Mugglestone, F. Marhauser, A. Seryi, A.M. Bulygin, Ya.V. Shashkov","SRF Dual Axis Cavity for ERL: Studies and Design for Ultimate Performance",,1641
+"MOYBB6","M. Sanchez Barrueta, G.O. Bolme, J.T.M. Lyles, J.E. Zane","X-Ray Detector Array for Spatial and Temporal Diagnostic at the LANSCE Linac",,2203
+"MOZBA1","M.C. Ross","LCLS-II SC Linac: Challenges and Status",,1404
+"MOZBA2","K.C. Harkay","Operational Experience with Superconducting Undulators at APS",,1427
+"MOZBA3","T.J. Campese, W. Berg, A. Zholents, R.B. Agustsson, A.Y. Murokh, I.I. Gadjev, Denham, P.E. Denham, P. Musumeci, Y. Park","Strongly Tapered Helical Undulator System for TESSA-266",,2281
+"MOZBA4","A. Halavanau, C. Pellegrini","Double Bunch Self-Seeding at LCLS-II",,1916
+"MOZBA5","Y.P. Sun","Optimized Linear and Second Order Chromaticity Setpoints for the Advanced Photon Source Upgrade",,1920
+"MOZBA6","D. Wang, S. De Santis, H.Q. Feng, D. Li, T.H. Luo, M. Venturini, K.L.F. Bane","The Broad-Band Impedance Budget of the Accumulator Ring in the ALS-U",,1971
+"MOZBB1","S. Baturin","Beam Dynamics in Structure-Based Beam-Driven Accelerators",,1419
+"MOZBB2","X. Lu, M.E. Conde, D.S. Doran, J.G. Power, J.H. Shao, E.E. Wisniewski, C.-J. Jing, I. Mastovsky, J.F. Picard, M.A. Shapiro, R.J. Temkin","Experiments with Metamaterial-Based Metallic Accelerating Structures",,1226
+"MOZBB3","J.H. Shao, M.E. Conde, G. Ha, J.G. Power, C.-J. Jing","Conceptual Design of a Compact 500 MeV Short-Pulse Two-Beam Acceleration Demonstrator at Argonne Wakefield Accelerator",,2130
+"MOZBB4","I. Petrushina, V. Litvinenko","High Brightness CW Electron Beams From Superconducting RF Photoinjector",,1951
+"MOZBB5","R. Suleiman, P.A. Adderley, J. F. Benesch, D.B. Bullard, J.M. Grames, J. Guo, F.E. Hannon, J. Hansknecht, C. Hernandez-Garcia, R. Kazimi, M.A. Mamun, M. Poelker, M.G. Tiefenback, Y.W. Wang, S. Zhang, G.A. Krafft","Magnetized Electron Source for JLEIC Electron Cooler",,2146
+"MOZBB6","C. M. Pierce, I.V. Bazarov, L. Cultrera, J.M. Maxson","Measuring the Mean Transverse Energy of Pump-Probe Photoemitted Electrons",,2116
+"THXBA1","A.L. Edelen","Machine Learning Demonstrations on Accelerators",,1382
+"THXBA2","Y. Li, R.S. Rainer, W.X. Cheng, Y. Hao","Analysis of Beam Position Monitor Requirements With Bayesian Gaussian Regression",,2058
+"THXBA3","A. Scheinker","Adaptive Machine Learning and Feedback Control for Automatic Particle Accelerator Tuning",,2223
+"THXBA4","W. Liu, M.E. Conde, D.S. Doran, G. Ha, J.G. Power, J.H. Shao, C. Whiteford, E.E. Wisniewski, C. Jing","Update on BPM Signal Processing Circuitry Development at AWA",,2068
+"THXBA5","K.D. Hunt-Stone, R.A. Ariniello, C.E. Doss, J.R. Cary, M.D. Litos","Electro-Optic Sampling Beam Position Monitor",,1992
+"THYBA1","K.E. Deitrick","Status of the CBETA Cornell-BNL ERL Prototype",,1216
+"THYBA2","N. Pogue, M.T. Crawford, C. Ekdahl, B. McHale","Multi-Pulse Scorpius Linear Induction Accelerator for Flash X-Ray Radiography",,1379
+"THYBA3","M. Borland, H. Cease, J.C. Dooling","Use of Solid Xenon as a Beam Dump Material for 4th-Generation Storage Rings",,1950
+"THYBA4","F.E. Hannon, M.S. Stefani","Measurements of a Magnetized Thermionic Electron Source",,2263
+"THYBA5","I. Lobach, K. Kim, T.V. Shaftan, V.A. Lebedev, S. Nagaitsev, A.L. Romanov, G. Stancari, A.Y. Murokh, A. Halavanau, Z. Huang, V. Yakimenko","Study of Fluctuations in Undulator Radiation in the IOTA Ring at Fermilab",,2098
+"THYBA6","L.K. Nguyen, A.J. Curcio, W.J. Eisele, A.V. Fedotov, A. Fernando, W. Fischer, P. Inacker, J.P. Jamilkowski, D. Kayran, K. Kulmatycski, D. Lehn, T.A. Miller, M.G. Minty, A. Sukhanov, Z. Zhao","Active Pointing Stabilization Techniques Applied to the Low Energy RHIC Electron Cooling Laser Transport",,2106
+"THYBB1","J. Munilla, S. Izquierdo Bermudez","16 Tesla Magnets for the Future Circular Collider Proton-Proton",,1315
+"THYBB2","P.R. Carriere, A.Y. Murokh, T. Horn, P. Frigola, D. Gamzina","Additive Manufacturing of Electrical and Thermal Devices: Challenges and Opportunities",,1196
+"THYBB3","S.V. Kuzikov, S.P. Antipov, E. Gomez","Compact 1 MeV Electron Accelerator",,2126
+"THYBB4","M. A. K. Othman, V.A. Dolgashev, A.A. Haase, E.A. Nanni, J. Neilson, S.G. Tantawi, B. Spataro, S. C. Schaub, S. Jawla, J.F. Picard, R.J. Temkin","High-Gradient Tests of W-Band Accelerating Structures",,1562
+"THYBB5","S.V. Kutsaev, J. Condori, M. Ruelas, A.Yu. Smirnov, S. C. Schaub, J.F. Picard, B.T. Jacobson, V.A. Dolgashev, E.A. Nanni","Nanosecond RF Power Switch for Gyrotron-Driven Millimeter-Wave Accelerators",,1913
+"THYBB6","M.N. Polyanskiy, M. Babzien, M.A. Palmer, I. Pogorelsky","Multi-TW Picosecond Long-Wave Infrared Laser for Particle Acceleration at ATF",,2143
+"THZBA1","J.S. Eldred","Physics Studies for High Intensity Proton Beams at the Fermilab Booster",,1180
+"THZBA2","H. Podlech","The MYRRHA Project - Challenges of a Reliable High Power Proton Linac",,1212
+"THZBA3","T. Maruta, S. Cogan, K. Fukushima, M. Ikegami, S.H. Kim, S.M. Lidia, G. Machicoane, F. Marti, D.G. Morris, P.N. Ostroumov, A.S. Plastun, J.T. Popielarski, J. Wei, T. Xu, T. Yoshimoto, T. Zhang, Q. Zhao, S. Zhao","Status of Beam Commissioning in FRIB Driver Linac",,2085
+"THZBA4","K.J. Ruisard, A.V. Aleksandrov, S.M. Cousineau, Z.L. Zhang","Characterization and Modeling of High-Intensity Evolution in the SNS Beam Test Facility",,2060
+"THZBB1","S.M. Lidia","Commissioning of the FRIB Beam Instrumentation",,1083
+"THZBB2","Q. Gao","Single-Shot Wakefield Measurement System",,1327
+"THZBB3","K.A. Schultz, G.T. Ortiz, M.E. Schulze, C. Carlson, D. Guerrero","Novel Emittance Measurement Combining Foil Focusing and Pepper-Pot Techniques",,1583
+"THZBB4","R. Shane, S. Cogan, S.M. Lidia, T. Maruta","Beam Loss in the First Segment of the FRIB Linac",,2136
+"THZBB6","C.Y. Wong, S.M. Lund","Error Minimization in Transverse Phase-Space Measurements Using Quadrupole and Solenoid Scans",,2179
+"TUXBA1","M.A. Garland","Department of Energy Isotope Program Accelerator Production of Isotopes",,1481
+"TUXBA3","S.K. Patch, B.M. Brahim, D. Santiago-Gonzalez","Robust Thermoacoustic Range Verification for Pulsed Ion Beam Therapy",,1941
+"TUXBA4","E.A. Nanni, G.B. Bowden, V.A. Dolgashev, Z. Li, X. Lu, A.V. Sy, S.G. Tantawi","Rapid Radio-Frequency Beam Energy Modulator for Proton Therapy",,2047
+"TUYBA1","S. Li","Generation and Characterization of  Attosecond Pulses From X-Ray Free-Electron Laser",,1385
+"TUYBA2","F. Ji","Ultrafast Relativistic Nanoprobes",,1341
+"TUYBA3","N.R. Neveu, C.E. Mayes","Benchmarking the LCLS-II Photoinjector",,1601
+"TUYBA4","A. Liu, P.V. Avrakhov, C. Jing","Optimization of an SRF Gun Design for UEM Applications",,1973
+"TUYBA5","M. Gaowei, J. Cen","New Methods of Synthesizing Ultra-Smooth and High Efficiency Alkali Antimonide Photocathodes for Future Light Sources",,2073
+"TUYBA6","Z. Zhang, J.P. Duris, Z. Huang, J.P. MacArthur, A. Marinelli","Attosecond Pulses and Advanced Techniques Planned for LCLS-II",,1955
+"TUYBB1","O. Omolayo","Vacuum System Solutions for Small Vacuum Chamber Next Generation Storage Rings",,1260
+"TUYBB2","A. Rakhman, A.V. Aleksandrov, S.M. Cousineau, T.V. Gorlov, Y. Liu, A.P. Shishlo","Manipulating H- Beams with Lasers",,1194
+"TUYBB3","J.A. Carter, B. Billett, R.R. Swanson","NEG-Coated Inconel Vacuum Chambers for the APS-Upgrade Storage Ring Vacuum System",,2140
+"TUYBB4","N. Kuklev","Online Modelling and Optimization of Nonlinear Integrable Systems",,1982
+"TUYBB5","C.J. Marshall, J. Ruan, P. Piot, S.V. Benson, J. Gubeli","Design and Analysis of a Halo-Measurement Diagnostics",,2190
+"TUYBB6","F. Toufexis, V.A. Dolgashev","Beam Dynamics in a High Gradient RF Streak Camera",,2187
+"TUZBA1","D. Kayran, Z. Altinbas, D. Bruno, M.R. Costanzo, K.A. Drees, A.V. Fedotov, W. Fischer, M. Gaowei, D.M. Gassner, X. Gu, R.L. Hulsart, P. Inacker, J.P. Jamilkowski, Y.C. Jing, J. Kewisch, C.J. Liaw, C. Liu, J. Ma, K. Mernick, T.A. Miller, M.G. Minty, L.K. Nguyen, M.C. Paniccia, I. Pinayev, V. Ptitsyn, V. Schoefer, S. Seletskiy, F. Severino, T.C. Shrey, L. Smart, K.S. Smith, A. Sukhanov, P. Thieberger, J.E. Tuozzolo, E. Wang, G. Wang, W. Xu, A. Zaltsman, H. Zhao, Z. Zhao","Commissioning of Electron Accelerator LEReC for Bunch Beam Cooling",,1318
+"TUZBA2","B. Parker, V. Ptitsyn","Electron Ion Collider Machine Detector Interface",,1401
+"TUZBA3","B. Mustapha, J.L. Martinez Marin, Y.S. Derbenev, F. Lin, V.S. Morozov, Y. Zhang","A High-Energy Design for JLEIC Ion Complex",,2129
+"TUZBA4","R. Rajput-Ghoshal, F. Lin, T.J. Michalski, V.S. Morozov, M. Wiseman, C. Hutton","Interaction Region Magnets for Future Electron-Ion Collider at Jefferson Lab",,2241
+"TUZBA5","J.F. Cardona","Algorithms Used in Action and Phase Jump Analysis to Estimate Corrections to Quadrupole Errors  in the Interaction Regions of the LHC",,2018
+"TUZBA6","I.V. Pogorelov, D.T. Abell, D.L. Bruhwiler, Y.I. Eidelman, S.D. Webb","Computation of Magnetized Dynamic Friction Force Based on a Reduced Binary Interaction Model",,2043
+"TUZBB1","R.R. Lindberg","Physics of the MBA Lattice",,1461
+"TUZBB2","G.M. Wang","Reaching Low Emittance in Synchrotron Light Sources by Using Complex Bends",,1235
+"TUZBB3","S. Seletskiy, M. Blaskiewicz, K.A. Drees, A.V. Fedotov, D.M. Gassner, R.L. Hulsart, D. Kayran, J. Kewisch, K. Mernick, R.J. Michnoff, T.A. Miller, G. Robert-Demolaize, V. Schoefer, H. Song, P. Thieberger, P. Wanderer","Precise Beam Energy Matching for the Experimental Demonstration of Ion Cooling With a Bunched Electron Beam",,1985
+"TUZBB4","S.A.K. Wijethunga, J.R. Delayen, J. F. Benesch, F.E. Hannon, C. Hernandez-Garcia, M.A. Mamun, M. Poelker, R. Suleiman, S. Zhang, G.A. Krafft","Space Charge Study of the Jefferson Lab Magnetized Electron Beam",,2017
+"TUZBB5","C. Mallick, M. Bandyopadhyay, R.K. Kumar","Transverse Ion Beam Emittance Growth Due to Low Frequency Instabilities in Microwave Ion Source Plasma",,1781
+"TUZBB6","S. Szustkowski, A. Valishev, S. Chattopadhyay","Nonlinear Tune-Shift Measurements in the Integrable Optics Test Accelerator",,2154
+"WEXBA1","B. Podobedov","Beam Dynamics Measurements with New Generation BPMs",,1351
+"WEXBA2","A.L. Romanov, D.R. Broemmelsiek, K. Carlson, D.J. Crawford, N. Eddy, D.R. Edstrom, J.D. Jarvis, S. Nagaitsev, J. Ruan, J.K. Santucci, V.D. Shiltsev, G. Stancari, A. Valishev, A. Warner, N. Kuklev, I. Lobach","Recent Results and Opportunities at the IOTA Facility",,1068
+"WEXBA3","W. Lou, G.H. Hoffstaetter","CSR Phase Space Dilution in CBETA",,1844
+"WEXBA4","F.Y. Li, B.E. Carlsten, R. Garimella, C. Huang, T.J. Kwan","Comparison of Numerical Methods for the Calculation of Synchrotron Radiation From Electrons",,1928
+"WEYBA07","B.C. Brown, P. Adamson, R. Ainsworth, D. Capista, K.J. Hazelwood, I. Kourbanis, N.V. Mokhov, D.K. Morris, V.S. Pronskikh, I.L. Rakhno, I.S. Tropin, M. Xiao, M.-J. Yang","Design Considerations and Operational Features of the Collimators for the Fermilab Main Injector and Recycler",,2026
+"WEYBA1","S.J. Gessner","AWAKE, Proton Bunch Self-Modulation and Electron Acceleration",,1224
+"WEYBA2","A.J. Gonsalves","Petawatt Laser Guiding and Electron Beam Acceleration to 8 GeV in a Laser-Heated Capillary Discharge Waveguide",,1184
+"WEYBA3","G.R. White, T.O. Raubenheimer","Tolerances for Plasma Wakefield Acceleration Drivers",,2049
+"WEYBA4","N. Vafaei-Najafabadi, L.D. Amorim","Beam Induced Ionization Injection of Shaped Electron Bunches",,2145
+"WEYBA5","K.E. Nichols, H.L. Andrews, D. Kim, E.I. Simakov, M.E. Conde, D.S. Doran, G. Ha, W. Liu, J.F. Power, J.H. Shao, C. Whiteford, E.E. Wisniewski, S.P. Antipov, G. Chen","Diamond Field Emitter Array Cathode Experimental Tests in RF Gun",,2086
+"WEYBA6","A.J. Tencate, B. Erdelyi","A High-Precision Emission (HiPE) Computational Model for Ultracold Electron Sources",,1801
+"WEYBB1","D. Gamba","ELENA Commissioning",,1289
+"WEYBB2","N.J. Evans","Foil R&D and Temperature Measurements at the SNS",,1320
+"WEYBB3","K. Seiya, C.M. Bhat, S. Chaurize, J.S. Eldred, V.A. Lebedev, S. Nagaitsev, C.-Y. Tan, R. Tesarek","Foil Scattering Model for Fermilab Booster",,1958
+"WEYBB4","T. Kanemura, J. Gao, F. Marti, Y. Momozaki","Progress of Liquid Lithium Stripper for FRIB",,2174
+"WEYBB5","A.V. Aleksandrov, S.M. Cousineau, T.V. Gorlov, Y. Liu, A. Rakhman, A.P. Shishlo","A Crab-Crossing Scheme for Laser-Ion Beam Applications",,2121
+"WEYBB6","A.V. Fedotov, Z. Altinbas, M. Blaskiewicz, J.M. Brennan, D. Bruno, J.C. Brutus, M.R. Costanzo, K.A. Drees, W. Fischer, J.M. Fite, M. Gaowei, D.M. Gassner, X. Gu, J. Halinski, K. Hamdi, T. Hayes, R.L. Hulsart, P. Inacker, J.P. Jamilkowski, Y.C. Jing, P. K. Kankiya, D. Kayran, J. Kewisch, D. Lehn, C.J. Liaw, C. Liu, J. Ma, G.J. Mahler, M. Mapes, A. Marusic, K. Mernick, C. Mi, R.J. Michnoff, T.A. Miller, M.G. Minty, S.K. Nayak, L.K. Nguyen, M.C. Paniccia, I. Pinayev, S. Polizzo, V. Ptitsyn, G. Robert-Demolaize, T. Roser, J. Sandberg, V. Schoefer, S. Seletskiy, F. Severino, T.C. Shrey, L. Smart, K.S. Smith, A. Sukhanov, R. Than, P. Thieberger, S. Trabocchi, J.E. Tuozzolo, E. Wang, G. Wang, D. Weiss, B. P. Xiao, T. Xin, W. Xu, A. Zaltsman, H. Zhao, Z. Zhao","First Electron Cooling of Hadron Beams Using a Bunched Electron Beam",,2014
+"WEZBA1","C.N. Barbier","Status and Future Directions for High Power Neutron Production Targets",,1207
+"WEZBA2","S.H. Kim, H. Ao, F. Casagrande, W. Chang, C. Compton, A. Facco, V. Ganni, W. Hartung, P. Knudsen, T. Larter, H. Maniar, S.J. Miller, D.G. Morris, P.N. Ostroumov, A.S. Plastun, J.T. Popielarski, L. Popielarski, H.T. Ren, K. Saito, M. Thrush, D.R. Victory, J. Wei, M. Xu, T. Xu, Y. Yamazaki, C. Zhang, S. Zhao","Experience and Lessons in FRIB Superconducting Quarter-Wave Resonator RF Commissioning",,1392
+"WEZBA3","K. Fukushima, T. Maruta, P.N. Ostroumov, T. Yoshimoto","No Beam-Loss Quadrupole Scan for Transverse Phase Space Measurements",,1991
+"WEZBA4","L.V. Saturday, D.P. Briggs, S.T. Retterer, P.D. Rack, N.J. Evans, C.F. Luck, L.L. Wilson","Characterization and Analysis of Nanocrystalline Diamond as Stripper Foils",,1996
+"WEZBA5","T.A. Butler, F.G. Garcia, M.R. Kufer, K.S. Martin, H. Pfeffer","Development of a Marx Modulator for FNAL Linac",,1581
+"WEZBA6","M.E. Read, T. Bui, G. Collins, R.L. Ives, J.R. Conant, C.M. Walker, B.E. Chase, J. Reid","A 100 KW, 1.3 GHz, Magnetron System with Amplitude and Phase Control",,1846
+"WEZBB1","J.C.T. Thangaraj","Accelerators for Industry",,1564
+"WEZBB2","A. Simon, S. Charisopoulos, D. Ridikas, N. Skukan, I.P. Swainson","IAEA Activities in Support of the Accelerator-Based Research and Applications",,2078
+"WEZBB3","S. Boucher, R.B. Agustsson, A. Arodzero, S.V. Kutsaev, A.Yu. Smirnov","Ultra-Compact Accelerator for Radioactive Isotope Sources Replacement, Security, NDT and Medical Applications",,1912
+"WEZBB4","C.H. Boulware, S. Baurac, J. Diemer, T.L. Grimm, A.B. Schnepp","High-Power Superconducting Electron Linacs for Commercial Applications",,1963
+"WEZBB5","N.M. Cook, J.P. Edelen, C.C. Hall, Y. Hu, M.V. Keilman, P. Moeller, R. Nagler, J.-L. Vay","Modeling and Evaluation Thermionic Energy Converters in the Space-Charge Limit",,2177
+"WEZBB6","A. García, M.E. Higgins, N.C. Hoppis, D.W. Storm","Development of a 19Ne Source in Search of Chirality Flipping Interactions",,1944

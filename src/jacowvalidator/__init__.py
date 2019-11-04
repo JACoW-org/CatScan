@@ -9,13 +9,8 @@ document_tex = UploadSet("document", "tex")
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config.update(
-    dict(
-        UPLOADS_DEFAULT_DEST=os.environ.get("UPLOADS_DEFAULT_DEST", "/var/tmp"),
-        SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db'),
-        SQLALCHEMY_TRACK_MODIFICATIONS=False,
-    )
-)
+app.config.from_object('jacowvalidator.config.Config')
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 

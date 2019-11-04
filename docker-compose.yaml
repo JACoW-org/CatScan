@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  jacow_db:
+    image: postgres:12.0
+    container_name: jacow-db
+    environment:
+      POSTGRES_USER: jacow
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: jacow
+    volumes:
+      - jacow-db-vol:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  app:
+    build: .
+    image: app
+    container_name: app
+    environment:
+      JACOW_REFERENCES_PATH: /home/jacow/spms
+      JACOW_CONFERENCES: '{"FEL19":{"url":"https://oraweb.cern.ch/pls/fel2019/references.csv","path":"References_fel19.csv"},"NAPAC19":{"url":"https://spms.fnal.gov/pls/pac19/references.csv","path":"References_pac19.csv"},"IBIC19":{"url":"https://oraweb.cern.ch/pls/ibic2019/references.csv","path":"References_ibic19.csv"},"ERL19":{"url":"https://oraweb.cern.ch/pls/erl2019/references.csv","path":"References_erl19.csv"},"ICALEPCS19":{"url":"https://spms.fnal.gov/pls/icalepcs2019/references.csv","path":"References_icalepcs19.csv"},"Cyclotrons19":{"url":"https://oraweb.cern.ch/pls/cyc2019/references.csv","path":"References_cyclotrons19.csv"},"SRF19":{"url":"https://oraweb.cern.ch/pls/srf2019/references.csv","path":"References_srf19.csv"},"IPAC19":{"url":"https://spms.kek.jp/pls/ipac19/references.csv","path":"References_ipac19.csv"}}'
+      SPMS_DEBUG: 'True'
+      DEV_DEBUG: 'True'
+      API_DB_HOST: jacow_db
+      API_DB_PORT: 5432
+      API_DB_USER: jacow
+      API_DB_PASS: docker
+      API_DB_NAME: jacow
+    ports:
+      - "5000:5000"
+    depends_on:
+      - jacow_db
+
+volumes:
+  jacow-db-vol:
+

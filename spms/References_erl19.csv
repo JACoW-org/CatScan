@@ -1,0 +1,86 @@
+"paper","authors","title","position","contribution ID"
+"FRCOWBS01","K.W. Smolenski, N. Banerjee, A.C. Bartnik, J.A. Crittenden, K.E. Deitrick, C.M. Gulliford, G.H. Hoffstaetter, P. Quigley, J.S. Berg","Initial Commissioning of CBETA",,1357
+"FRCOWBS02","S. Seletskiy, Z. Altinbas, D. Bruno, M.R. Costanzo, K.A. Drees, A.V. Fedotov, D.M. Gassner, X. Gu, L.R. Hammons, J. Hock, R.L. Hulsart, P. Inacker, J.P. Jamilkowski, D. Kayran, J. Kewisch, C. Liu, K. Mernick, T.A. Miller, M.G. Minty, M.C. Paniccia, W.E. Pekrul, I. Pinayev, V. Ptitsyn, T.C. Shrey, L. Smart, K.S. Smith, R. Than, P. Thieberger, J.E. Tuozzolo, W. Xu, Z. Zhao","Design and Commissioning Experience with State of the Art MPS for LEReC Accelerator",,1682
+"FRCOWBS03","D. Kayran, Z. Altinbas, K.A. Drees, A.V. Fedotov, M. Gaowei, X. Gu, R.L. Hulsart, P. Inacker, J.P. Jamilkowski, Y.C. Jing, J. Kewisch, C. Liu, J. Ma, K. Mernick, T.A. Miller, M.G. Minty, M.C. Paniccia, I. Pinayev, V. Ptitsyn, V. Schoefer, S. Seletskiy, F. Severino, A. Sukhanov, P. Thieberger, J.E. Tuozzolo, E. Wang, G. Wang, H. Zhao, Z. Zhao","Beam Commissioning Experience at Low Energy RHIC Electron Cooler (LEReC)",,1356
+"FRCOXBS01","O.A. Shevchenko, E.V. Bykov, S.V. Tararyshkin, Ya.V. Getmanov, S.S. Serednyakov, M.V. Fedin, S.L. Veber","Electronic Modulation of the FEL-Oscillator Radiation Power Driven by ERL",,1343
+"FRCOXBS03","F. Schließmann, M. Arnold, M. Dutine, J. Pforr, N. Pietralla, M. Steinhorst","Beam Dynamics Simulations for the Twofold ERL Mode at the S-DALINAC*",,1344
+"FRCOXBS04","T. Birke","Status of the Control System for the Energy Recovery Linac bERLinPro at HZB",,1301
+"FRCOXBS05","B.C. Kuske, M. McAteer","Adjusting bERLinPro Optics to Commissioning Needs",,1461
+"MOCOWBS01","G.H. Hoffstaetter","CBETA, a 4-turn ERL Based on SRF Linacs: Construction and Commissioning",,1641
+"MOCOWBS02","T. Miyajima","Compact ERL (cERL), Stable 1 mA Operation with a Small Beam Emittance at KEK",,1761
+"MOCOXBS02","M. Arnold, T. Bahlo, M. Dutine, R. Grewe, J.H. Hanten, L.E. Juergensen, J. Pforr, N. Pietralla, F. Schließmann, M. Steinhorst, S. Weih","ERL Operation of S-DALINAC*",,1262
+"MOCOXBS03","N.A. Vinokurov","Status of Novosibirsk ERL",,1347
+"MOCOXBS04","A. Jankowiak, M. Abo-Bakr, W. Anders, Y. Bergmann, A.B. Büchel, K. Buerkmann-Gehrlein, A. Bundels, P. Echevarria, A. Frahm, H.-W. Glock, F. Glöckner, F. Goebel, B.D.S. Hall, S. Heling, H.-G. Hoberg, C. Kalus, T. Kamps, G. Klemz, J. Knobloch, J. Kolbe, G. Kourkafas, J. Kuehn, J. Kuszynski, A.N. Matveenko, M. McAteer, A. Meseck, R. Mueller, A. Neumann, N. Ohm, F. Pflocksch, L. Pichl, J. Rahn, M.A.H. Schmeisser, O. Schueler, M. Schuster, J. Ullrich, A. Ushakov, J. Voelker","The bERLinPro Project - Status and Perspectives",,1541
+"MOCOXBS05","F. Hug, R.G. Heine, D. Simon, T. Stengler, K. Aulenbacher","The MESA ERL Project",,1358
+"MOCOYBS01","W. Kaabi","PERLE: A High Power Energy Recovery Facility at Orsay",,1362
+"MOCOYBS02","P.H. Williams","A Hard X-Ray FEL and Nuclear Physics Facility Based on a Multi-Pass Recirculating Superconducting CW Linac with Energy Recovery",,1221
+"MOCOYBS03","N. Pietralla","Nuclear Photonics with an ERL-Based Hard X-Ray Source",,1041
+"MOCOYBS04","I. Friscic, T.W. Donnelly, R. Milner","Electrodisintegration of 16O and the Rate Determination of the Radiative Alpha Capture on 12C at Stellar Energies",,1702
+"MOCOZBS01","S.V. Benson, C. Tennant, Y. Zhang","The Use of ERLs to Cool High Energy Ions in Electron-Ion Colliders",,1061
+"MOCOZBS02","H. Sakai","Industrial Applications of cERL",,1282
+"MOCOZBS03","Y. Choporova, Ya.V. Getmanov, G.N. Kulipanov, O.A. Shevchenko, N.A. Vinokurov, B.A. Knyazev, V.V. Gerasimov","Recent Advances in Terahertz Photonics and Spectroscopy at Novosibirsk Free Electron Laser",,1421
+"MOCOZBS04","E. Jensen","ERL as a Versatile SRF Test Facility",,1762
+"THCOWBS03","S. Orth","System Identification Procedures for Resonance Frequency Control of SC Cavities",,1103
+"THCOWBS05","P. Zhang, J. Dai, R. Ge, R. Han, T.M. Huang, S.P. Li, Z.Q. Li, H.Y. Lin, Q. Ma, Z.H. Mi, Q.Y. Wang, X.Y. Zhang","The Development of HOM-damped 166.6MHz SRF Cavities for High Energy Photon Source in Beijing",,1102
+"THCOWBS06","C.P. Stoll, F. Hug","Beam Breakup Limit Estimations and Higher Order Mode Characterisation for MESA",,1351
+"THCOWBS07","N. Banerjee, G.H. Hoffstaetter, M. Liepe, P. Quigley","Passive and Active Control of Microphonics at CBETA and Elsewhere",,1121
+"THCOXBS01","J. Guo","Waveguide HOM Loads for High Current Elliptical Cavities",,1352
+"THCOXBS02","M. Sawamura, R. Hajima, M. Egi, K. Enami, T. Furuya, H. Sakai, K. Umemori","Development of HOM Coupler with C-Shaped Waveguide for ERL Operation",,1241
+"THCOXBS05","A. Macpherson","High Q 704 MHz Cavity Tests at CERN",,1521
+"THCOXBS06","E. Kako","Degradation and Recovery of Cavity Performance in Compact-ERL Injector Cryomodule at KEK",,1341
+"THCOYBS01","R. Xiang, A. Arnold, P. Murcek, J. Teichert","Metal/ Semiconductor Photocathode in HZDR SRF Gun",,1354
+"THCOYBS02","I. Pinayev, I. Ben-Zvi, J.C. Brutus, T. Hayes, Y.C. Jing, V. Litvinenko, J. Ma, K. Mihara, G. Narayan, I. Petrushina, F. Severino, K. Shih, J. Skaritka, E. Wang, G. Wang","High Charge High Current Beam From BNL 112 MHz SRF Gun",,1201
+"THCOYBS03","H.M. Xie","Peking Univ. DC-SC/SRF Gun Progressing",,1804
+"THCOZBS01","O.A. Shevchenko, V.S. Arbuzov, K.N. Chernov, O.I. Deichuli, E.N. Dementyev, B.A. Dovzhenko, A.A. Kondakov, V.R. Kozak, S.A. Krutikhin, G.N. Kulipanov, E.A. Kuper, I.V. Kuptsov, G.Y. Kurkin, A.S. Matveev, L.E. Medvedev, S.V. Motygin, V.N. Osipov, V.K. Ovchar, V.M. Petrov, A.M. Pilan, V.M. Popik, V.V. Repkov, T.V. Salikova, M.A. Scheglov, I.K. Sedlyarov, A.N. Skrinsky, S.V. Tararyshkin, V.G. Tcheskidov, V. Volkov, A.G. Tribendis, I.V. Davidyuk, Ya.V. Getmanov, E.V. Kozyrev, S.S. Serednyakov, N.A. Vinokurov","Novosibirsk ERL injector",,1304
+"THCOZBS02","A. Neumann, N. Al-Saokal, D. Böhlick, A.B. Büchel, M. Bürger, P. Echevarria, A. Frahm, H.-W. Glock, F. Goebel, S. Heling, K. Janke, A. Jankowiak, S. Klauke, G. Klemz, J. Knobloch, G. Kourkafas, J. Kuehn, O. Kugeler, N. Leuschner, A.N. Matveenko, S. Mistry, N. Ohm, E. Panofski, H. Plötz, S. Rotterdam, M.A.H. Schmeisser, M. Schuster, H. Stein, Y. Tamashevich, J. Ullrich, A. Ushakov, J. Voelker, T. Kamps","Status of SRF Gun for bERLinPro",,1302
+"THCOZBS03","S.V. Benson, P.A. Adderley, J. F. Benesch, D.B. Bullard, J.M. Grames, J. Guo, F.E. Hannon, J. Hansknecht, C. Hernandez-Garcia, R. Kazimi, G.A. Krafft, M.A. Mamun, M. Poelker, R. Suleiman, M.G. Tiefenback, Y.W. Wang, S. Zhang, J.R. Delayen","Magnetized Beam Generated from DC Gun for JLEIC Electron Cooler",,1721
+"THCOZBS04","T. Miyajima","Injector Development at KeK",,1805
+"TUCOWBS01","S.V. Benson, C. Tennant, D. Douglas, P.E. Evtushenko","Longitudinal Phase Space Dynamics in ERLs",,1741
+"TUCOWBS02","P.H. Williams","Beyond the Limits of 1D Coherent Synchrotron Radiation",,1763
+"TUCOWBS03","W. Lou","CSR Phase Space Dilution in ERLs",,1801
+"TUCOXBS01","O. A. Tanaka","Beam Halo in Energy Recovery Linacs",,1661
+"TUCOXBS03","F. Hug, D. Simon, K. Aulenbacher","Beam Dynamics Layout of the MESA ERL",,1360
+"TUCOXBS04","S.A. Bogacz","The LHeC ERL - Optics and Performance Optimizations",,1021
+"TUCOXBS05","R.M. Koscica","Beam Timing and Cavity Phasing",,1802
+"TUCOYBS01","H. Sakai, T. Furuya, E. Kako, T. Konomi, T. Miura, F. Qiu, K. Umemori","KEK ERL SRF Operation Experience",,1281
+"TUCOYBS02","A. Neumann, W. Anders, M. Bürger, V. Duerr, F. Goebel, B.D.S. Hall, S. Klauke, J. Knobloch, M. Schuster","Review of Fundamental High Power Couplers for ERLs",,1305
+"TUCOYBS03","J.R. Delayen","Superconducting Twin-Axis Cavity for ERL Applications",,1481
+"TUCOYBS04","F. Hug, S.D.W. Thomas","Integration of the MESA Modules to bERLinPro for High Power Beam Tests",,1359
+"TUCOZBS02","A. Macpherson, N.C. Shipman, I. Ben-Zvi, C.-J. Jing, A. Kanareykin","A Ferroelectric Fast Reactive Tuner (FRT) to Combat Microphonics",,1522
+"TUCOZBS04","F. Qiu, M. Egi, T. Konomi, T. Matsumoto, T. Miura, H. Sakai, K. Umemori","Characterization of Microphonics in the cERL Main Linac Superconducting Cavities",,1321
+"TUCOZBS05","M. Steinhorst, M. Arnold, T. Bahlo, R. Grewe, L.E. Juergensen, J. Pforr, N. Pietralla, F. Schließmann, S. Weih","LLRF ERL Experience at the S-DALINAC*",,1342
+"TUCOZBS06","T. Stengler, K. Aulenbacher, F. Hug","Cryomodules for the Mainz Energy-Recovering Superconducting Accelerator (MESA)",,1350
+"WECOWBS01","T. Konomi","Vertical Test Results and Preparation for Horizontal Test of the KEK SRF Gun #2",,1353
+"WECOWBS02","L. Cultrera, J. Bae, I.V. Bazarov, A. Galdi, F. Ikponmwen, J.M. Maxson","High Current Polarized Electron Source Development",,1621
+"WECOWBS03","J. Smedley","Using a Protective Layer for Alkali Cathodes",,1803
+"WECOXBS01","S. Mistry, A. Jankowiak, T. Kamps, J. Kuehn","Photocathode Preparation and Characterization at HZB.",,1501
+"WECOXBS02","M. Gaowei, A.V. Fedotov, D. Kayran, D. Lehn, C.J. Liaw, T. Rao, J.E. Tuozzolo, J. Walsh, E. Wang","Photocathode Performance for High Current Operation in LEReC",,1401
+"WECOXBS03","V. Volkov, V.S. Arbuzov, E. Kenzhebulatov, E.I. Kolobanov, A.A. Kondakov, S.A. Krutikhin, I.V. Kuptsov, G.Y. Kurkin, S.V. Motygin, A.A. Murasev, V.K. Ovchar, V.M. Petrov, A.M. Pilan, V.V. Repkov, M.A. Scheglov, I.K. Sedlyarov, O.A. Shevchenko, S.V. Tararyshkin, N.A. Vinokurov, A.G. Tribendis, E.V. Kozyrev, S.S. Serednyakov","Bench Test Results of CW 100 mA Electron RF Gun for Novosibirsk ERL based FEL",,1161
+"WECOYBS01","D. Trbojevic, J.S. Berg, S.J. Brooks, F. Meot, T. Roser, N. Tsoupas","ERL with Fixed Field Altrernating Gradient Role in EIC",,1381
+"WECOYBS02","W. Xu","HOM Damping for High Current SRF Cavity",,1561
+"WECOYBS04","B.C. Kuske, J. Voelker, A. Adelmann, M. Frey","Applying Machine Learning Approaches to bERLinPro",,1462
+"WECOYBS05","I.V. Konoplev, M. Topp-Mugglestone, F. Marhauser, A. Seryi, A.M. Bulygin, Ya.V. Shashkov","Asymmetric SRF Dual Axis Cavity for ERLs: Studies and Design for Ultimate Performance and Applications",,1141
+"WECOYBS06","M. Shimada, A. Aryshev, Y. Honda, T. Miyajima, T. Obina, R. Ryukou, R. Takai, N. Yamamoto","Demonstration of THz Oscillation via Resonant Coherent Diffraction Radiation",,1781
+"WEPNEC01","S.D. Rädel, M. Alcorta, F. Ames, E. Chapman, K. Fong, B. Humphries, O.K. Kester, D. Kishi, S.R. Koscielniak, R.E. Laxdal, Y. Ma, T. Planche, M. Rowe, V.A. Verzilov","Status and Future Perspective of the TRIUMF E-Linac",,1181
+"WEPNEC02","J.G. Hwang, J. Kuszynski","Investigation and Mitigation of the Mie-Scattering on the Surface of the First Objective Lens for Coronagraph-Based Halo Monitor",,1582
+"WEPNEC03","N. Al-Saokal, M. Bürger, M. Dirsat, A. Frahm, A. Jankowiak, T. Kamps, G. Klemz, J. Kuehn, S. Mistry, A. Neumann, H. Plötz","Thermal Load Studies on the Photocathode Insert with Exchangeable Plug for the bERLinPro SRF-Photoinjector",,1363
+"WEPNEC04","M. McAteer","Commissioning Plans for the bERLinPro Injector",,1441
+"WEPNEC05","L. Pichl, Y. Bergmann, A. Bundels, K. Ott","Radiation Protection Instrumentation of bERLinPro",,1581
+"WEPNEC06","J. Voelker, A. Adelmann","Comparison of Two Pareto Optimization Tools Using OPAL and ASTRA for a Dedicated bERLinPro Injector Optimization.",,1601
+"WEPNEC07","A. Khan, O. Boine-Frankenheim, K. Aulenbacher","Linear Optics Matching in the Presence of Space Charge and Dispersion in MESA",,1346
+"WEPNEC08","A. Arnold, S. Ma, P. Murcek, J. Schaber, J. Teichert, R. Xiang, P.Z. Zwartek","Thz User Operation With 200 pC CW Beam Generated by the ELBE SRF Gun II",,1261
+"WEPNEC09","G. Pöplau, A. Meseck","Investigation on the Ion Motion Towards Clearing Electrodes in High-Brightness Electron Accelerators",,1001
+"WEPNEC10","I. Drebot, A. Bacci, A.R. Rossi, L. Serafini, V. Petrillo","X-Ray ICS Source Based on Modified Push-Pull ERLs.",,1303
+"WEPNEC11","M. Shimada, Y. Honda, R. Kato, T. Miyajima, N. Nakamura, T. Obina","Beam Optics of Bunch Compression at Compact ERL",,1361
+"WEPNEC12","Q.T. Zhao, Z.M. Zhang, H.W. Zhao","Preliminary Investigations and Pre-Research Scheme of High Average Current Electron Injector at IMP",,1101
+"WEPNEC13","Ya.V. Shashkov","Optimization of Dual Axis Asymmetric Cavity for Energy Recovery Linac",,1841
+"WEPNEC14","Ya.V. Shashkov","Dual Mode Cavity",,1842
+"WEPNEC15","Ya.V. Getmanov, A.S. Matveev, O.A. Shevchenko, N.A. Vinokurov","Electron Outcoupling System of Novosibirsk Free Electron Laser Facility - Beam Dynamics Calculation and the First Experiments",,1348
+"WEPNEC16","L.B. Jones, B.L. Militsyn, T.C.Q. Noakes, D.P. Juarez-Lopez, L.A.J. Soomary, C.P. Welsch","Developments in Photocathode R&D at STFC Daresbury Laboratory: New Transverse Energy Spread Measurements and the Development of a Multi-Alkali Photocathode Preparation Facility",,1681
+"WEPNEC17","P.H. Williams, T.K. Charles, G. Perez-Segurana, I.R. Bailey","Analytic Longitudinal Phase Space Solutions for Multipass Energy Recovery Linacs",,1222
+"WEPNEC18","B. Hounsell, M. Klein, B.L. Militsyn, C.P. Welsch, W. Kaabi","Optimisation of the PERLE Injector",,1345
+"WEPNEC19","J. Crone, H.L. Owen, B.D. Muratori, K.E. Deitrick, C. Franck, K.W. Smolenski","A Hard X-ray Compact Compton Source at CBETA",,1349
+"WEPNEC20","N.P. Norvell","Emittance Benefits of a Perfect Cathode",,1263
+"WEPNEC21","G.-T. Park, J. Guo, M. Marchlik, R.A. Rimmer, H. Wang, S. Wang","Status of Development of a Fast Harmonic Kicker for the CCR of JLEIC",,1081
+"WEPNEC22","X. Gu, Z. Altinbas, D. Bruno, L. Cannizzo, M.R. Costanzo, A.V. Fedotov, D. Kayran, C.J. Liaw, M. Mapes, K. Mernick, C. Mi, T.A. Miller, M.G. Minty, J. Sandberg, L. Smart, P. Thieberger, J.E. Tuozzolo","Experience With LEReC High Current DC Gun",,1355
+"WEPNEC23","Y.C. Jing, I. Pinayev, Y.H. Wu, V. Litvinenko, K. Shih","Design of an Energy Recovery Linac for Coherent Electron Cooling Experiment",,1701

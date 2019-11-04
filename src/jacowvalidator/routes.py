@@ -8,8 +8,9 @@ from TexSoup import TexSoup
 from flask import redirect, render_template, request, url_for, send_file, abort
 from flask_uploads import UploadNotAllowed
 
-from jacowvalidator import app, document_docx, document_tex
+from jacowvalidator import app, db, document_docx, document_tex
 from .models import Log
+from .utils import json_serialise
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
     AbstractNotFoundError
@@ -156,12 +157,12 @@ def upload_common(documents, args):
                 if spms_summary:
                     summary.update(spms_summary)
 
-            if 'DATABASE_URL' in os.environ:
+            if 'SQLALCHEMY_DATABASE_URI' in app.config:
                 upload_log = Log()
                 upload_log.filename = filename
-                # upload_log.report = json.dumps(json_serialise(locals()))
-                # db.session.add(upload_log)
-                # db.session.commit()
+                upload_log.report = json.dumps(json_serialise(locals()))
+                db.session.add(upload_log)
+                db.session.commit()
 
             return render_template("upload.html", processed=True, **locals())
         except (PackageNotFoundError, ValueError):
@@ -261,5 +262,8 @@ def log():
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
     if not admin:
         abort(403)
-    logs = [] #Log.query.all()
+
+    logs = []
+    if 'SQLALCHEMY_DATABASE_URI' in app.config:
+        logs = Log.query.all()
     return render_template("logs.html", logs=logs, admin=admin)

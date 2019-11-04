@@ -207,6 +207,8 @@ def extract_references(doc, strict_styles=False):
             ref['style_ok'] = style_ok
 
         ref.update(detail)
+        # delete p from dictionary since it is un unserialisable Paragragh
+        del ref['p']
 
     return references_in_text, references_list
 
