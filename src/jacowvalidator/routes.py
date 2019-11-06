@@ -15,7 +15,7 @@ from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
     AbstractNotFoundError
 from .test_utils import replace_identifying_text
-from .spms import PaperNotFoundError
+from .spms import get_conference_path, PaperNotFoundError
 
 
 try:
@@ -130,8 +130,10 @@ def upload_common(documents, args):
         full_path = documents.path(filename)
         # set a default
         conference_id = False  # next(iter(conferences))
+        conference_path = ''
         if 'conference_id' in request.form and request.form["conference_id"] in conferences.keys():
             conference_id = request.form["conference_id"]
+            conference_path = get_conference_path(conference_id)
         try:
             if args['description'] == 'Word':
                 doc = Document(full_path)
@@ -146,16 +148,18 @@ def upload_common(documents, args):
 
                 if conference_id:
                     spms_summary, reference_csv_details = \
-                        create_spms_variables(paper_name, authors, title, conference_id)
+                        create_spms_variables(paper_name, authors, title, conference_path, conference_id)
                     if spms_summary:
                         summary.update(spms_summary)
             elif args['description'] == 'Latex':
                 doc = TexSoup(open(full_path, encoding="utf8"))
                 summary, authors, title = create_upload_variables_latex(doc)
                 metadata = []
-                spms_summary, reference_csv_details = create_spms_variables(paper_name, authors, title, conference_id)
-                if spms_summary:
-                    summary.update(spms_summary)
+                if conference_id:
+                    spms_summary, reference_csv_details = \
+                        create_spms_variables(paper_name, authors, title, conference_path, conference_id)
+                    if spms_summary:
+                        summary.update(spms_summary)
 
             if 'SQLALCHEMY_DATABASE_URI' in app.config:
                 upload_log = Log()
