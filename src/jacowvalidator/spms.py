@@ -50,7 +50,8 @@ def get_conference_path(conference_id):
     conferences = json.loads(os.environ['JACOW_CONFERENCES'])
     selected = conferences[conference_id]
 
-    return selected['path']
+    selected_path = os.path.join(os.environ['JACOW_REFERENCES_PATH'], selected['path'])
+    return selected_path
 
 
 # runs conformity checks against the references csv file and returns a dict of
