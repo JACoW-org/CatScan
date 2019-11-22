@@ -11,8 +11,9 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config.from_object('jacowvalidator.config.Config')
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+if app.config['USE_DB'] is True:
+    db = SQLAlchemy(app)
+    migrate = Migrate(app, db)
 
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True

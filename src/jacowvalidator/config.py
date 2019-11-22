@@ -16,11 +16,14 @@ class Config:
     JACOW_REFERENCES_PATH = os.environ.get("JACOW_REFERENCES_PATH", "./spms")
     JACOW_CONFERENCES = os.environ.get("JACOW_CONFERENCES", '{}')
 
-    db_host = os.environ.get("API_DB_HOST") or 'localhost'
-    db_port = os.environ.get("API_DB_PORT") or '5432'
-    db_user = os.environ.get("API_DB_USER") or 'jacow'
-    db_pass = os.environ.get("API_DB_PASS") or 'docker'
-    db_name = os.environ.get("API_DB_NAME") or 'jacow'
-    SQLALCHEMY_DATABASE_URI = f'postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+    if os.environ.get("USE_DB") == 'True':
+        USE_DB = True
+        db_host = os.environ.get("API_DB_HOST") or 'localhost'
+        db_port = os.environ.get("API_DB_PORT") or '5432'
+        db_user = os.environ.get("API_DB_USER") or 'jacow'
+        db_pass = os.environ.get("API_DB_PASS") or 'docker'
+        db_name = os.environ.get("API_DB_NAME") or 'jacow'
+        SQLALCHEMY_DATABASE_URI = f'postgresql://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}'
+        SQLALCHEMY_TRACK_MODIFICATIONS = False
+    else:
+        USE_DB = False

@@ -7,9 +7,7 @@ from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
 from flask import redirect, render_template, request, url_for, send_file, abort
 from flask_uploads import UploadNotAllowed
-
-from jacowvalidator import app, db, document_docx, document_tex
-from .models import Log
+from jacowvalidator import app, document_docx, document_tex
 from .utils import json_serialise
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
@@ -17,6 +15,9 @@ from jacowvalidator.docutils.doc import create_upload_variables, create_spms_var
 from .test_utils import replace_identifying_text
 from .spms import get_conference_path, PaperNotFoundError
 
+if app.config['USE_DB'] is True:
+    from jacowvalidator import db
+    from .models import Log
 
 try:
     p = run(['git', 'log', '-1', '--format=%h,%at'], capture_output=True, text=True, check=True)
@@ -161,7 +162,7 @@ def upload_common(documents, args):
                     if spms_summary:
                         summary.update(spms_summary)
 
-            if 'SQLALCHEMY_DATABASE_URI' in app.config:
+            if app.config['USE_DB'] is True:
                 upload_log = Log()
                 upload_log.filename = filename
                 upload_log.report = json.dumps(json_serialise(locals()))
