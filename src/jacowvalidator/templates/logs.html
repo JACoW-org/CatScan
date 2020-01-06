@@ -13,23 +13,20 @@
                 <td style="width:10%">{{ log.timestamp.strftime('%d/%m/%Y %H:%M ') }}</td>
                 <td style="width:75%">
                 {% set report = log.report|display_report %}
-                    <table>
-                        {% for item, data in report.items() %}
-                            {% if data is iterable and data is not string %}
-                                    <details style="border:1px lightgray solid;border-radius:2px">
-        <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Details for {{ i }}</summary>
-        <table class="table is-bordered">
-                                <tr><td rowspan="{{ data.items()|length }}">{{ item }}</td><tr>
-                                    {% for i, d in data.items() %}
-                                        <tr><td>{{ i }}</td><td>{{ d }}</td></tr>
-                                    {% endfor %}
-                                        </table>
-    </details>
-                            {% else %}
-                                 <tr><td>{{ item }}</td><td>{{ data }}</td></tr>
-                            {% endif %}
-                        {% endfor %}
-                    </table>
+                    {% for item, data in report.items() %}
+                        {% if item == 'summary' and data is iterable and data is not string %}
+                            <table class="table is-bordered">
+                            {% for i, d in data.items() %}
+                                <tr><td>
+                                <details style="border:1px lightgray solid;border-radius:2px">
+                                <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Details for {{ i }}</summary>
+                                    <table><tr><td>{{ d }}</td></tr></table>
+                                </details>
+                                </td></tr>
+                            {% endfor %}
+                            </table>
+                        {% endif %}
+                    {% endfor %}
                 </td>
             </tr>
 
