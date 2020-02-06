@@ -20,8 +20,8 @@ services:
     environment:
       JACOW_REFERENCES_PATH: /home/jacow/spms
       JACOW_CONFERENCES: '{"FEL19":{"url":"https://oraweb.cern.ch/pls/fel2019/references.csv","path":"References_fel19.csv"},"NAPAC19":{"url":"https://spms.fnal.gov/pls/pac19/references.csv","path":"References_pac19.csv"},"IBIC19":{"url":"https://oraweb.cern.ch/pls/ibic2019/references.csv","path":"References_ibic19.csv"},"ERL19":{"url":"https://oraweb.cern.ch/pls/erl2019/references.csv","path":"References_erl19.csv"},"ICALEPCS19":{"url":"https://spms.fnal.gov/pls/icalepcs2019/references.csv","path":"References_icalepcs19.csv"},"Cyclotrons19":{"url":"https://oraweb.cern.ch/pls/cyc2019/references.csv","path":"References_cyclotrons19.csv"},"COOL19":{"url":"https://oraweb.cern.ch/pls/cool2019/references.csv","path":"References_cool19.csv"},"SRF19":{"url":"https://oraweb.cern.ch/pls/srf2019/references.csv","path":"References_srf19.csv"},"IPAC19":{"url":"https://spms.kek.jp/pls/ipac19/references.csv","path":"References_ipac19.csv"}}'
-      SPMS_DEBUG: 'True'
-      DEV_DEBUG: 'True'
+      SPMS_DEBUG: 'False'
+      DEV_DEBUG: 'False'
       USE_DB: 'True'
       API_DB_HOST: jacow_db
       API_DB_PORT: 5432
