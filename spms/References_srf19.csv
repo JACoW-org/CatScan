@@ -1,25 +1,25 @@
 "paper","authors","title","position","contribution ID"
-"FRCAA1","S.U. De Silva","Overview of SRF Deflecting and Crabbing Cavities",,1747
+"FRCAA1","S.U. De Silva","Overview of SRF Deflecting and Crabbing Cavities",1192,1747
 "FRCAA2","Z.Y. Yao, R.E. Laxdal","Balloon Single Spoke Resonator - A New Variant for Reduced Multipacting",,1121
-"FRCAA3","D. Gonnella, S. Aderhold, A. Burrill, M.C. Ross, A. Grassellino, C.J. Grimm, T.N. Khabiboulline, O.S. Melnychuk, S. Posen, D.A. Sergatskov, E. Daly, G.K. Davis, F. Marhauser, A.D. Palczewski, K.M. Wilson","Industrial Cavity Production: Lessons Learned to Push the Boundaries of Nitrogen-Doping",,1308
-"FRCAA4","M. Miski-Oglu, M. Heilmann, A. Rubin, A. Schnase, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, S. Yaramyshev, S. Lauber, K. Aulenbacher, F.D. Dziuba, J. List, M. Basten, M. Busch, T. Conrad, H. Podlech, M. Schwarz","Progress in SRF CH-Cavities for the HELIAC CW Linac at GSI",,1301
+"FRCAA3","D. Gonnella, S. Aderhold, A. Burrill, M.C. Ross, A. Grassellino, C.J. Grimm, T.N. Khabiboulline, O.S. Melnychuk, S. Posen, D.A. Sergatskov, E. Daly, G.K. Davis, F. Marhauser, A.D. Palczewski, K.M. Wilson","Industrial Cavity Production: Lessons Learned to Push the Boundaries of Nitrogen-Doping",1199,1308
+"FRCAA4","M. Miski-Oglu, M. Heilmann, A. Rubin, A. Schnase, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, S. Yaramyshev, S. Lauber, K. Aulenbacher, F.D. Dziuba, J. List, M. Basten, M. Busch, T. Conrad, H. Podlech, M. Schwarz","Progress in SRF CH-Cavities for the HELIAC CW Linac at GSI",1206,1301
 "FRCAA5","F.S. He, F. Bing, J. Dai, C. Dong, T.M. Huang, S. Jin, D.B. Li, Z.Q. Li, H.Y. Lin, B.Q. Liu, Z.C. Liu, Q. Ma, F. Meng, Z.H. Mi, W.M. Pan, P. Sha, Q.Y. Wang, L.G. Xiao, F.Y. Yang, J.Y. Zhai, P. Zhang, X.Y. Zhang, H.J. Zheng, Q. Zhou","SRF Activities and Progress at IHEP",,1541
-"FRCAA6","T. Dohmae, H. Inoue, T. Kubo, H. Shimizu, K. Umemori, Y. Watanabe, M. Yamanaka","Investigation on 1, 3 and 9-Cell SRF Elliptical Cavities made of Large Grain Niobium",,1562
+"FRCAA6","T. Dohmae, H. Inoue, T. Kubo, H. Shimizu, K. Umemori, Y. Watanabe, M. Yamanaka","Investigation on 1, 3 and 9-Cell SRF Elliptical Cavities made of Large Grain Niobium",1213,1562
 "FRCAB1","H. Tian, M. Lester, J. Musson, H.L. Phillips, C.E. Reece, T.D. Hall, M.E. Inman, R. Radhakrishnan, E.J. Taylor","HF-Free Bi-Polar Electropolishing for Application on Multi-Cell Elliptical Cavities",,1367
 "FRCAB2","G.J. Rosaz, S. Atieh, S. Calatroni, L.M.A. Ferreira, E. Garcia-Tabares Valdivieso, C. Garion, L. Lain-Amador, A.T. Perez Fontenla, K. Scibor, M. Taborelli, C. Yin Vallgren","Electrodeposition of Copper Applied to the Manufacture of Seamless SRF Cavities",,1581
-"FRCAB3","H. Guo, Q.W. Chu, Y. He, C.L. Li, Y.K. Song, T. Tan, Z.M. You","The Design of an Automated High-Pressure Rinsing System for SRF Cavity and the Outlook for Future Automated Cleanroom on Strings Assembly",,2481
-"FRCAB4","T. Konomi, Y. Honda, E. Kako, Y. Kobayashi, S. Michizono, T. Miyajima, H. Sakai, K. Umemori, S. Yamaguchi","Development of High Intensity, High Brightness, CW SRF Gun with Bi-Alkali Photocathode",,1407
-"FRCAB5","T. Xin, I. Ben-Zvi, J.C. Brutus, C. Folz, T. Hayes, P. Inacker, Y.C. Jing, D. Kayran, V. Litvinenko, J. Ma, G.J. Mahler, M. Mapes, K. Mernick, T.A. Miller, G. Narayan, P. Orfin, I. Pinayev, S. Polizzo, T. Rao, F. Severino, J. Skaritka, K.S. Smith, R. Than, J.E. Tuozzolo, E. Wang, G. Wang, Q. Wu, B. P. Xiao, W. Xu, A. Zaltsman, S.A. Belomestnykh, C.H. Boulware, T.L. Grimm, K. Shih, I. Petrushina, K. Mihara","Performance of 112 MHz SRF Gun at BNL",,1802
-"FRCAB6","S.C. Huang, Q.W. Chu, Y. He, C.L. Li, A.D. Wu, S.X. Zhang","The Effect of Helium Processing and Plasma Cleaning for Low Beta HWR Cavity",,2483
-"FRCAB7","B. Giaccone, P. Berrutti, A. Grassellino, M. Martinello, J. Zasadzinski, M. Doleans, D. Gonnella, G. Lanza, M.C. Ross","Plasma Processing to Reduce Field Emission in LCLS-II 1.3 GHz SRF Cavities",,1742
-"FRCAB8","L. Steder, B. Bein, D. Reschke, W. Hillert","Systematic Studies of the Second Sound Method for Quench Detection of Superconducting Radio Frequency Cavities",,1441
+"FRCAB3","H. Guo, Q.W. Chu, Y. He, C.L. Li, Y.K. Song, T. Tan, Z.M. You","The Design of an Automated High-Pressure Rinsing System for SRF Cavity and the Outlook for Future Automated Cleanroom on Strings Assembly",1216,2481
+"FRCAB4","T. Konomi, Y. Honda, E. Kako, Y. Kobayashi, S. Michizono, T. Miyajima, H. Sakai, K. Umemori, S. Yamaguchi","Development of High Intensity, High Brightness, CW SRF Gun with Bi-Alkali Photocathode",1219,1407
+"FRCAB5","T. Xin, I. Ben-Zvi, J.C. Brutus, C. Folz, T. Hayes, P. Inacker, Y.C. Jing, D. Kayran, V. Litvinenko, J. Ma, G.J. Mahler, M. Mapes, K. Mernick, T.A. Miller, G. Narayan, P. Orfin, I. Pinayev, S. Polizzo, T. Rao, F. Severino, J. Skaritka, K.S. Smith, R. Than, J.E. Tuozzolo, E. Wang, G. Wang, Q. Wu, B. P. Xiao, W. Xu, A. Zaltsman, S.A. Belomestnykh, C.H. Boulware, T.L. Grimm, K. Shih, I. Petrushina, K. Mihara","Performance of 112 MHz SRF Gun at BNL",1223,1802
+"FRCAB6","S.C. Huang, Q.W. Chu, Y. He, C.L. Li, A.D. Wu, S.X. Zhang","The Effect of Helium Processing and Plasma Cleaning for Low Beta HWR Cavity",1228,2483
+"FRCAB7","B. Giaccone, P. Berrutti, A. Grassellino, M. Martinello, J. Zasadzinski, M. Doleans, D. Gonnella, G. Lanza, M.C. Ross","Plasma Processing to Reduce Field Emission in LCLS-II 1.3 GHz SRF Cavities",1231,1742
+"FRCAB8","L. Steder, B. Bein, D. Reschke, W. Hillert","Systematic Studies of the Second Sound Method for Quench Detection of Superconducting Radio Frequency Cavities",1239,1441
 "FRTU1","S.U. De Silva","Superconducting Cavities of Interesting Shapes (Non-Elliptical Cavities)",,3405
 "FRTU2","L. Popielarski","Cavity Processing and Cleanroom Techniques",,3406
 "FRTU3","A. Grassellino","Pushing Bulk Nb Limits (High Q, High Gradient, Reliable SRF Accelerators)",,3407
 "FRTU4","C.Z. Antoine","Materials Beyond Bulk Nb",,3408
-"MOFAA1","M.C. Ross","LCLS-II: Status, Issues and Plans",,1104
-"MOFAA2","M. Omet, V. Ayvazyan, J. Branlard, S. Choroba, W. Decking, V.V. Katalev, D. Kostin, L. Lilje, P. Morozov, Y. Nachtigal, H. Schlarb, V. Vogel, N. Walker, B. Yildirim","Operation of the European XFEL Towards the Maximum Energy",,1341
-"MOFAA3","J. Wei, H. Ao, S. Beher, B. Bird, N.K. Bultman, F. Casagrande, D. Chabot, W. Chang, S. Cogan, C. Compton, J. Curtin, K.D. Davidson, E. Daykin, K. Elliott, A. Fila, V. Ganni, A. Ganshyn, P.E. Gibson, T. Glasmacher, I. Grender, W. Hartung, L. Hodges, K. Holland, H.-C. Hseuh, A. Hussain, M. Ikegami, S. Jones, T. Kanemura, S.H. Kim, P. Knudsen, M.G. Konrad, J. LeTourneau, Z. Li, S.M. Lidia, G. Machicoane, P. Manwiller, F. Marti, T. Maruta, E.S. Metzgar, S.J. Miller, D.G. Morris, C. Nguyen, K. Openlander, P.N. Ostroumov, A.S. Plastun, J.T. Popielarski, L. Popielarski, J. Priller, M.A. Reaume, H.T. Ren, T. Russo, K. Saito, M. Shuptar, J.W. Stetson, D.R. Victory, R. Walker, X. Wang, J.D. Wenstrom, M. Wright, M. Xu, T. Xu, Y. Yamazaki, Q. Zhao, S. Zhao, M.P. Kelly, A. Facco, K. Dixon, M. Wiseman, K. Hosoyama, R.E. Laxdal","The FRIB SC-Linac - Installation and Phased Commissioning",,1103
+"MOFAA1","M.C. Ross","LCLS-II: Status, Issues and Plans",1,1104
+"MOFAA2","M. Omet, V. Ayvazyan, J. Branlard, S. Choroba, W. Decking, V.V. Katalev, D. Kostin, L. Lilje, P. Morozov, Y. Nachtigal, H. Schlarb, V. Vogel, N. Walker, B. Yildirim","Operation of the European XFEL Towards the Maximum Energy",9,1341
+"MOFAA3","J. Wei, H. Ao, S. Beher, B. Bird, N.K. Bultman, F. Casagrande, D. Chabot, W. Chang, S. Cogan, C. Compton, J. Curtin, K.D. Davidson, E. Daykin, K. Elliott, A. Fila, V. Ganni, A. Ganshyn, P.E. Gibson, T. Glasmacher, I. Grender, W. Hartung, L. Hodges, K. Holland, H.-C. Hseuh, A. Hussain, M. Ikegami, S. Jones, T. Kanemura, S.H. Kim, P. Knudsen, M.G. Konrad, J. LeTourneau, Z. Li, S.M. Lidia, G. Machicoane, P. Manwiller, F. Marti, T. Maruta, E.S. Metzgar, S.J. Miller, D.G. Morris, C. Nguyen, K. Openlander, P.N. Ostroumov, A.S. Plastun, J.T. Popielarski, L. Popielarski, J. Priller, M.A. Reaume, H.T. Ren, T. Russo, K. Saito, M. Shuptar, J.W. Stetson, D.R. Victory, R. Walker, X. Wang, J.D. Wenstrom, M. Wright, M. Xu, T. Xu, Y. Yamazaki, Q. Zhao, S. Zhao, M.P. Kelly, A. Facco, K. Dixon, M. Wiseman, K. Hosoyama, R.E. Laxdal","The FRIB SC-Linac - Installation and Phased Commissioning",12,1103
 "MOFAA4","P. Pierini","ESS: SRF Systems, Overview and Status",,1351
 "MOFAB1","F. Hug, D. Simon, T. Stengler, C.P. Stoll, S.D.W. Thomas, K. Aulenbacher","MESA: The Mainz Energy Recovering Superconducting Accelerator",,1353
 "MOFAB2","H.T. Hou, J.F. Chen, X. Hu, Y. Liu, Z.Y. Ma, S. Sun, D. Wang, L. Yin, S.J. Zhao, Y.B. Zhao","SRF Status of the SHINE Project at Shanghai",,1543
@@ -30,352 +30,352 @@
 "MOKN1","T. Tschentscher","Scientific Applications Using High Repetition Rate Hard X-Ray FELs",,1421
 "MOP001","N. Schäfer, L. Alff, M. Major","Nb3Sn Multitarget Sputtering for Nb SRF Cavities",,2807
 "MOP002","T. Tan, Q.W. Chu, M. Lu, F. Pan, R.X. Wang","Low Temperature Heat Treatment of Nb/Sn Multilayers and Nb/Cu/Sn Multilayers",,2521
-"MOP003","Z.Q. Yang, H. Guo, Y. He, C.L. Li, Z.Q. Lin, M. Lu, T. Tan, P.R. Xiong, S.H. Zhang, S.X. Zhang","Development of Nb3Sn Cavity Coating at IMP",,2561
-"MOP004","J. Lorkiewicz, I. Cieslik, P.J. Czuma, A.M. Kosinska, R. Nietuby&#263;, J.K. Sekutowicz","Preparation of Pb-Photocathodes at National Centre for Nuclear Research in Poland &ndash; State of the Art",,2939
-"MOP005","C. Compton","The Facility for Rare Isotope Beams Superconducting Cavity Production Status and Findings Concerning Surface Defects",,3251
+"MOP003","Z.Q. Yang, H. Guo, Y. He, C.L. Li, Z.Q. Lin, M. Lu, T. Tan, P.R. Xiong, S.H. Zhang, S.X. Zhang","Development of Nb3Sn Cavity Coating at IMP",21,2561
+"MOP004","J. Lorkiewicz, I. Cieslik, P.J. Czuma, A.M. Kosinska, R. Nietuby&#263;, J.K. Sekutowicz","Preparation of Pb-Photocathodes at National Centre for Nuclear Research in Poland &ndash; State of the Art",25,2939
+"MOP005","C. Compton, H. Ao, J. Asciutto, K. Elliott, W. Hartung, S.H. Kim, E.S. Metzgar, S.J. Miller, J.T. Popielarski, L. Popielarski, K. Saito, T. Xu, J. Craft","The Facility for Rare Isotope Beams Superconducting Cavity Production Status and Findings Concerning Surface Defects",31,3251
 "MOP006","R. Valizadeh, A.N. Hannah, D. Turner, O.B. Malyshev, T. Junginger, G.B.G. Stenning","PVD Deposition of Nb3Sn on Copper and Sapphire Substrate",,2830
-"MOP007","O. Azzolini, G. Keppel, C. Pira","400 MHz Seamless Copper Cavity in the Framework of FCC Study",,2843
+"MOP007","O. Azzolini, G. Keppel, C. Pira","400 MHz Seamless Copper Cavity in the Framework of FCC Study",36,2843
 "MOP008","J. Lee, D.L. Hall, M. Liepe, S. Posen, T. Spina, K. He, Z. Mao, D.N. Seidman","Performance-Limiting Imperfections in Nb3Sn Coatings for SRF Cavity Applications: Grain Boundary (GB) Segregations",,2855
 "MOP009","J. Lee, S. Posen, Y. Trenikhina, K. He, Z. Mao, D.N. Seidman","Performance-Limiting Imperfections in Nb3Sn Coatings for SRF Cavity Applications: Formation of Patchy Regions With Thin Grains",,2853
-"MOP010","N. Sitaraman, T. Arias, P. Cueva, M.M. Kelley, D.A. Muller, J.M. Carlson, A.R. Pack, M.K. Transtrum, M. Liepe, R.D. Porter, Z. Sun","Ab Initio Calculations on the Growth and Superconducting Properties of Nb3Sn",,2646
-"MOP011","R.D. Porter, M. Liepe, J.T. Maniscalco","High Frequency Nb3Sn Cavities",,2291
+"MOP010","N. Sitaraman, T. Arias, P. Cueva, M.M. Kelley, D.A. Muller, J.M. Carlson, A.R. Pack, M.K. Transtrum, M. Liepe, R.D. Porter, Z. Sun","Ab Initio Calculations on the Growth and Superconducting Properties of Nb3Sn",39,2646
+"MOP011","R.D. Porter, M. Liepe, J.T. Maniscalco","High Frequency Nb3Sn Cavities",44,2291
 "MOP012","R.D. Porter, M. Liepe, J.T. Maniscalco","Optimization of Nb3Sn Coatings for SRF Cavities",,2261
-"MOP013","H. Hu, M. Liepe, R.D. Porter","Reducing Surface Roughness of Nb3Sn Through Chemical Polishing Treatments",,2301
-"MOP014","Z. Sun, M. Liepe, T.E. Oseroff, R.D. Porter, A.B. Connolly, M.O. Thompson, T. Arias, J.M. Scholtz, N. Sitaraman, K.D. Dobson, X. Deng","Electroplating of Sn Film on Nb Substrate for Generating Nb3Sn Thin Films and Post Laser Annealing",,2582
-"MOP015","G.V. Eremeev, W. Crahen, J. Henry, F. Marhauser, C.E. Reece, U. Pudasaini","RF Performance Sensitivity to Tuning of Nb3Sn Coated CEBAF Cavities",,2816
-"MOP016","G.V. Eremeev, C.E. Reece, M.J. Kelley, U. Pudasaini","Insights Into Nb3Sn Coating of CEBAF Cavities From Witness Sample Analysis",,2815
+"MOP013","H. Hu, M. Liepe, R.D. Porter","Reducing Surface Roughness of Nb3Sn Through Chemical Polishing Treatments",48,2301
+"MOP014","Z. Sun, M. Liepe, T.E. Oseroff, R.D. Porter, A.B. Connolly, M.O. Thompson, T. Arias, J.M. Scholtz, N. Sitaraman, K.D. Dobson, X. Deng","Electroplating of Sn Film on Nb Substrate for Generating Nb3Sn Thin Films and Post Laser Annealing",51,2582
+"MOP015","G.V. Eremeev, W. Crahen, J. Henry, F. Marhauser, C.E. Reece, U. Pudasaini","RF Performance Sensitivity to Tuning of Nb3Sn Coated CEBAF Cavities",55,2816
+"MOP016","G.V. Eremeev, C.E. Reece, M.J. Kelley, U. Pudasaini","Insights Into Nb3Sn Coating of CEBAF Cavities From Witness Sample Analysis",60,2815
 "MOP017","A.R. Pack, J.M. Carlson, M.K. Transtrum, T. Arias, D. Liarte, A. Senanian, J.P. Sethna, N. Sitaraman, J. Lee, S. Posen","Analysis of Magnetic Vortex Dissipation in Sn Segregated Grain Boundaries in Nb3Sn Cavities",,2854
-"MOP018","U. Pudasaini, G. Ciovati, G.V. Eremeev, C.E. Reece, I.P. Parajuli, Md.N. Sayeed, M.J. Kelley","Recent Results From Nb3Sn Single Cell Cavities Coated at Jefferson Lab",,2606
-"MOP019","P. Mueller, M. Basten, M. Busch, T. Conrad, H. Podlech, W.A. Barth, K. Aulenbacher, F.D. Dziuba, M. Miski-Oglu","Surface Preparation and Optimization of SC CH Cavities",,2361
+"MOP018","U. Pudasaini, G. Ciovati, G.V. Eremeev, C.E. Reece, I.P. Parajuli, Md.N. Sayeed, M.J. Kelley","Recent Results From Nb3Sn Single Cell Cavities Coated at Jefferson Lab",65,2606
+"MOP019","P. Mueller, M. Basten, M. Busch, T. Conrad, H. Podlech, W.A. Barth, K. Aulenbacher, F.D. Dziuba, M. Miski-Oglu","Surface Preparation and Optimization of SC CH Cavities",71,2361
 "MOP020","D. Luo, E.S. Metzgar, L. Popielarski, K. Saito, S.M. Shanab, G.V. Simpson, T. Nakajima, I. Nasu, Y. Okii, J. Taguchi","Development of New Chemical Polishing Acid to Resolve High Field Q-slope",,3186
 "MOP021","P. Dhakal, G. Ciovati, S. Chetri, S. Balachandran, P.J. Lee","Surface Characterization of Nitrogen Doped SRF Grade Niobium Coupons and Cavities With Buffer Chemical Polishing and Electropolishing",,2765
-"MOP022","R. Grewe, L. Alff, M. Arnold, J. Conrad, S. Flege, M. Major, N. Pietralla, F. Hug","Superconducting RF Cavity Materials Research at the S-DALINAC",,2284
-"MOP023","C. Bate, A. Dangwal Pandey, A. Ermakov, B. Foster, T.F. Keller, D. Reschke, J. Schaffran, S. Sievers, N. Walker, H. Weise, M. Wenskat, G.D.L. Semione, V. Vonk, W. Hillert, A. Stierle","Nitrogen Infusion Sample R&D at DESY",,2288
-"MOP024","M. Wenskat, D. Reschke, H. Weise, J. Cizek, C. Bate, M. Butterling, E. Hirschmann, M.O. Liedke, A. Wagner","Vacancy-Hydrogen Dynamics in Samples During Low Temperature Baking",,2289
-"MOP025","M. Wenskat, T.F. Keller, D. Reschke, A. Jeromin, C. Bate, J.M. Köszegi, F. Kramer, O. Kugeler, J. Knobloch","Cavity Cut-out Studies of a 1.3 GHz Single-cell Cavity After a Failed Nitrogen Infusion Process",,2290
-"MOP026","M. Wenskat, D. Reschke, J. Schaffran, L. Steder, M. Wiencek, D. Bafia, A. Grassellino, O.S. Melnychuk, A.D. Palczewski","A Cross-Lab Qualification of Modified 120°C Baked Cavities",,2885
-"MOP027","K. Umemori, E. Kako, T. Konomi, S. Michizono, H. Sakai, J. Tamura, T. Okada","Study on Nitrogen-Infusion using KEK New Furnace",,2887
-"MOP028","M. Major, L. Alff, M. Arnold, J. Conrad, S. Flege, R. Grewe, N. Pietralla","Materials Science Investigations of Nitrogen-Doped Niobium for SRF Cavities",,2898
-"MOP029","J.F. Chen, H.T. Hou, Y.F. Liu, D. Wang, Y. Wang, Z. Wang, Y.W. Huang","N-Doping Studies With Single-Cell Cavities for the SHINE Project",,2881
-"MOP030","J.K. Spradlin, A.D. Palczewski, C.E. Reece, H. Tian","Analysis of Surface Nitrides Created During "Doping" Heat Treatments of Niobium",,3003
-"MOP031","D. Bafia, M. Checchin, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski","Investigation of Frequency Behavior Near Tc of Niobium Superconducting Radio-Frequency Cavities",,2626
-"MOP032","P.N. Koufalis, M. Ge, M. Liepe, J.T. Maniscalco","Effect of Low Temperature Infusion Heat Treatments and "2/0" Doping on Superconducting Cavity Performance",,2604
-"MOP033","A. Saini, V.P. Yakovlev, E. Pozdeyev","The Beam Dynamics Updates of the Fermilab PIP-II 800 MeV Superconducting Linac",,2994
-"MOP034","D. Kostin, J. Eschke, K. Jensch, N. Krupka, D. Reschke, S. Saegebarth, J. Schaffran, M. Schalwat, P. Schilling, M. Schmoekel, S. Sievers, N. Steinhau-Kuehl, B. van der Horst, E. Vogel, H. Weise, M. Wiencek","European XFEL: Accelerating Module Repair at DESY",,2764
-"MOP035","S. Heling, W. Anders, J. Heinrich, A. Hellwig, K. Janke, S. Rotterdam","Cryogenic Infrastructure at BESSY II -- Current Installations and Future Developments",,2722
-"MOP036","Y. Ma, K. Fong, J.J. Keir, D. Kishi, S.R. Koscielniak, D. Lang, R.E. Laxdal, S. Liu, R.S. Sekhon, X. Wang","Microphonics Suppression Study in ARIEL e-Linac Cryomodules",,2862
+"MOP022","R. Grewe, L. Alff, M. Arnold, J. Conrad, S. Flege, M. Major, N. Pietralla, F. Hug","Superconducting RF Cavity Materials Research at the S-DALINAC",74,2284
+"MOP023","C. Bate, A. Dangwal Pandey, A. Ermakov, B. Foster, T.F. Keller, D. Reschke, J. Schaffran, S. Sievers, N. Walker, H. Weise, M. Wenskat, G.D.L. Semione, V. Vonk, W. Hillert, A. Stierle","Nitrogen Infusion Sample R&D at DESY",77,2288
+"MOP024","M. Wenskat, D. Reschke, H. Weise, J. Cizek, C. Bate, M. Butterling, E. Hirschmann, M.O. Liedke, A. Wagner","Vacancy-Hydrogen Dynamics in Samples During Low Temperature Baking",83,2289
+"MOP025","M. Wenskat, T.F. Keller, D. Reschke, A. Jeromin, C. Bate, J.M. Köszegi, F. Kramer, O. Kugeler, J. Knobloch","Cavity Cut-out Studies of a 1.3 GHz Single-cell Cavity After a Failed Nitrogen Infusion Process",87,2290
+"MOP026","M. Wenskat, D. Reschke, J. Schaffran, L. Steder, M. Wiencek, D. Bafia, A. Grassellino, O.S. Melnychuk, A.D. Palczewski","A Cross-Lab Qualification of Modified 120°C Baked Cavities",90,2885
+"MOP027","K. Umemori, E. Kako, T. Konomi, S. Michizono, H. Sakai, J. Tamura, T. Okada","Study on Nitrogen Infusion using KEK New Furnace",95,2887
+"MOP028","M. Major, L. Alff, M. Arnold, J. Conrad, S. Flege, R. Grewe, N. Pietralla","Materials Science Investigations of Nitrogen-Doped Niobium for SRF Cavities",99,2898
+"MOP029","J.F. Chen, H.T. Hou, Y.F. Liu, D. Wang, Y. Wang, Z. Wang, Y.W. Huang","N-Doping Studies With Single-Cell Cavities for the SHINE Project",102,2881
+"MOP030","J.K. Spradlin, A.D. Palczewski, C.E. Reece, H. Tian","Analysis of Surface Nitrides Created During "Doping" Heat Treatments of Niobium",106,3003
+"MOP031","D. Bafia, M. Checchin, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski","Investigation of Frequency Behavior Near Tc of Niobium Superconducting Radio-Frequency Cavities",112,2626
+"MOP032","P.N. Koufalis, M. Ge, M. Liepe, J.T. Maniscalco","Effect of Low Temperature Infusion Heat Treatments and "2/0" Doping on Superconducting Cavity Performance",118,2604
+"MOP033","A. Saini, V.P. Yakovlev, E. Pozdeyev","The Beam Dynamics Updates of the Fermilab PIP-II 800 MeV Superconducting Linac",123,2994
+"MOP034","D. Kostin, J. Eschke, K. Jensch, N. Krupka, D. Reschke, S. Saegebarth, J. Schaffran, M. Schalwat, P. Schilling, M. Schmoekel, S. Sievers, N. Steinhau-Kuehl, B. van der Horst, E. Vogel, H. Weise, M. Wiencek","European XFEL: Accelerating Module Repair at DESY",127,2764
+"MOP035","S. Heling, W. Anders, J. Heinrich, A. Hellwig, K. Janke, S. Rotterdam","Cryogenic Infrastructure at BESSY II -- Current Installations and Future Developments",131,2722
+"MOP036","Y. Ma, K. Fong, J.J. Keir, D. Kishi, S.R. Koscielniak, D. Lang, R.E. Laxdal, S.L. Liu, R.S. Sekhon, X. Wang","Microphonics Suppression Study in ARIEL e-Linac Cryomodules",136,2862
 "MOP037","M. Checchin, A. Grassellino, M. Martinello, A.S. Romanenko","Evidence of High-Field Q-slope Mitigation Due to Impurity Profile in Superconducting Radio-Frequency Cavities",,2944
 "MOP038","M. Martinello, S.K. Chandrasekaran, A. Grassellino, O.S. Melnychuk, D.A. Sergatskov, G. Wu","Surface Treatment Optimization of 650 MHz Cavities for PIP-II",,2949
-"MOP039","S. Chen, M. Chen, L.W. Feng, J.K. Hao, L. Lin, K.X. Liu, S.W. Quan, F. Wang, F. Zhu","Nitrogen Doping Studies of Superconducting Cavities at Peking University",,2424
-"MOP040","M. Fouaidy","Low Temperature Thermal Conductivity of Niobium and Materials for SRF Cavities",,2950
-"MOP041","P. Xu, N.T. Wright, T.R. Bieler","Comparison of the Lattice Thermal Conductivity of Superconducting Tantalum and Niobium",,2842
+"MOP039","S. Chen, M. Chen, L.W. Feng, J.K. Hao, L. Lin, K.X. Liu, S.W. Quan, F. Wang, F. Zhu","Nitrogen Doping Studies of Superconducting Cavities at Peking University",141,2424
+"MOP040","M. Fouaidy","Low Temperature Thermal Conductivity of Niobium and Materials for SRF Cavities",144,2950
+"MOP041","P. Xu, N.T. Wright, T.R. Bieler","Comparison of the Lattice Thermal Conductivity of Superconducting Tantalum and Niobium",148,2842
 "MOP042","S. Posen, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, B. Tennis, J. Lee","Nb3Sn SRF Cavity Development at Fermilab",,2769
 "MOP043","S. Posen, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov","Novel Heat Treatment for High Q0",,2770
-"MOP045","D. Gonnella, S. Aderhold, A. Burrill, G.R. Hays, T.O. Raubenheimer, M.C. Ross, M. Ge, M. Liepe, S. Posen, D. Bafia, M. Checchin, A. Grassellino, M. Martinello, A.S. Romanenko, A.D. Palczewski, C.E. Reece","The LCLS-II HE High Q and Gradient R&D Program",,2767
+"MOP045","D. Gonnella, S. Aderhold, A. Burrill, G.R. Hays, T.O. Raubenheimer, M.C. Ross, M. Ge, M. Liepe, S. Posen, D. Bafia, M. Checchin, A. Grassellino, M. Martinello, A.S. Romanenko, A.D. Palczewski, C.E. Reece","The LCLS-II HE High Q and Gradient R&D Program",154,2767
 "MOP046","A. Tsymbaliuk, O. Azzolini, M.T. Barrera, E. Chyhyrynets, G. Keppel, S. Palazzese, C. Pira, F. Stivanello","High Beta QWR Cavities Sputtering for ALPI Upgrade in the Framework of SPES Project",,2928
-"MOP047","S. Ishida, A. Kasugai, K. Sakamoto, H. Dzitko, P. Cara","Progress of IFMIF/EVEDA Project and Prospects for A-FNS",,3341
+"MOP047","S. Ishida, A. Kasugai, K. Sakamoto, H. Dzitko, P. Cara","Progress of IFMIF/EVEDA Project and Prospects for A-FNS",159,3341
 "MOP048","C.U. Kim, G. Ni, L.D. Cooley, P.J. Lee, C. Reis","Surface Preparation of Single Phase Bronze and Cu Cavity: Electrochemical Routes",,3241
-"MOP049","H.T. Hou, J.F. Chen, Z.Y. Ma, J. Shi, Y. Wang, F.S. He, S.W. Quan","Prototypes Fabrication of 1.3 GHz Superconducting Rf Components for SHINE",,2900
-"MOP050","J. List, K. Aulenbacher, S. Lauber, M. Heilmann, A. Schnase, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, F.D. Dziuba, M. Basten, M. Busch, H. Podlech, M. Schwarz","Modular Power Couplers for 217 MHz Superconducting CH-Cavities",,2925
-"MOP051","S. Aderhold, A. Burrill, D.J. Bice, C.M. Ginsburg, C.J. Grimm, T.N. Khabiboulline, O.S. Melnychuk, D.A. Sergatskov, N. Solyak, G. Wu","3.9 GHz SRF Production Cavities for LCLS-II",,2858
+"MOP049","H.T. Hou, J.F. Chen, Z.Y. Ma, J. Shi, Y. Wang, F.S. He, S.W. Quan","Prototypes Fabrication of 1.3 GHz Superconducting Rf Components for SHINE",164,2900
+"MOP050","J. List, K. Aulenbacher, S. Lauber, M. Heilmann, A. Schnase, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, F.D. Dziuba, M. Basten, M. Busch, H. Podlech, M. Schwarz","Modular Power Couplers for 217 MHz Superconducting CH-Cavities",168,2925
+"MOP051","S. Aderhold, A. Burrill, D.J. Bice, C.M. Ginsburg, C.J. Grimm, T.N. Khabiboulline, O.S. Melnychuk, D.A. Sergatskov, N. Solyak, G. Wu","3.9 GHz SRF Production Cavities for LCLS-II",173,2858
 "MOP053","W. Xu, D. Holmes, G.T. McIntyre, S.K. Seberg, K.S. Smith, A. Zaltsman","External Q Adjusting Scheme With a Fixed High Power Coupler for a SRF Cavity",,2974
-"MOP054","T. Saeki, H. Hayano, H. Inoue, R. Katayama, T. Kubo, F.E. Hannon, R.A. Rimmer, A-M. Valente-Feliciano, Y. Iwashita, H. Tongu, H. Ito","Fabrication of 3.0-GHz Single-cell Cavities for Thin-film Study",,2789
-"MOP055","K. Suda, O. Kamigaito, K. Ozeki, N. Sakamoto, Y. Watanabe, K. Yamada, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Fabrication and Performance of Superconducting Quarter-Wavelength Resonators for SRILAC",,2937
-"MOP056","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, R. Paparella, D. Sertore, D. Rizzetto, M. Rizzi, A. Visentin, C. Pagani","Surface Treatments for the Series Production of ESS Medium Beta Cavities",,2966
-"MOP057","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, R. Paparella, D. Sertore, A. Gresele, D. Rizzetto, M. Rizzi, A. Visentin, C. Pagani","Electropolishing of PIP-II Low Beta Cavity Prototypes",,2973
-"MOP058","D. Sertore, M. Bertucci, A. Bignami [on leave], A. Bosotti, M. Chiodini, A. D'Ambros, G. Fornasier, P. Michelato, L. Monaco, R. Paparella, D. Reschke, A. Sulimov, M. Wiencek, L. Sagliano, A. Gresele, D. Rizzetto, M. Rizzi, A. Visentin, S. Aurnia, O. Leonardi, A. Miraglia, G. Vecchio, C. Pagani","ESS Medium Beta Activity at INFN LASA",,2955
+"MOP054","T. Saeki, H. Hayano, H. Inoue, R. Katayama, T. Kubo, F.E. Hannon, R.A. Rimmer, A-M. Valente-Feliciano, Y. Iwashita, H. Tongu, H. Ito","Fabrication of 3.0-GHz Single-cell Cavities for Thin-film Study",177,2789
+"MOP055","K. Suda, O. Kamigaito, K. Ozeki, N. Sakamoto, Y. Watanabe, K. Yamada, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Fabrication and Performance of Superconducting Quarter-Wavelength Resonators for SRILAC",182,2937
+"MOP056","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, R. Paparella, D. Sertore, D. Rizzetto, M. Rizzi, A. Visentin, C. Pagani","Surface Treatments for the Series Production of ESS Medium Beta Cavities",188,2966
+"MOP057","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, R. Paparella, D. Sertore, A. Gresele, D. Rizzetto, M. Rizzi, A. Visentin, C. Pagani","Electropolishing of PIP-II Low Beta Cavity Prototypes",194,2973
+"MOP058","D. Sertore, M. Bertucci, A. Bignami [on leave], A. Bosotti, M. Chiodini, A. D'Ambros, G. Fornasier, P. Michelato, L. Monaco, R. Paparella, D. Reschke, A. Sulimov, M. Wiencek, L. Sagliano, A. Gresele, D. Rizzetto, M. Rizzi, A. Visentin, S. Aurnia, O. Leonardi, A. Miraglia, G. Vecchio, C. Pagani","ESS Medium Beta Activity at INFN LASA",199,2955
 "MOP059","T. Spina, S. Posen, B. Tennis, J. Lee","The Role of Sn Sources on the Nb3Sn Coating of 9-cell Coupon Cavity",,2954
-"MOP060","R. Paparella, M. Bertucci, A. Bignami [on leave], A. Bosotti, M. Chiodini, A. D'Ambros, P. Michelato, L. Monaco, D. Sertore, L. Sagliano, J.F. Chen, C. Pagani","INFN-LASA for the PIP-II Project",,2956
-"MOP061","P. Naisson, S. Atieh, K. Scibor, P. Trubacova, F. Dumont, D. Fabre, F. Valiorgue","State of the Art of Niobium Machining for SRF Applications",,2947
-"MOP062","A. Miyamoto, H. Hara, K. Kanaoka","Fabrication of SRF Cavity",,2682
-"MOP063","A.V. Tsakanian, H.-W. Glock, J. Knobloch, A.V. Velez","Beam Loading in the BESSY VSR SRF Cavities",,2266
-"MOP064","R.L. Geng, H. Hayano, Y. Fuwa, Y. Iwashita, Z. Li, H. Ito","Performance of First Prototype Multi-Cell Low-Surface-Field Shape Cavity",,2294
-"MOP065","S. Weih, M. Arnold, J. Enders, N. Pietralla, D.B. Bazyl, H. De Gersem, W.F.O. Müller","Upgrade of the S-DALINAC Injector Capture Section",,2285
+"MOP060","R. Paparella, M. Bertucci, A. Bignami [on leave], A. Bosotti, M. Chiodini, A. D'Ambros, P. Michelato, L. Monaco, D. Sertore, L. Sagliano, J.F. Chen, C. Pagani","INFN-LASA for the PIP-II Project",205,2956
+"MOP061","P. Naisson, S. Atieh, K. Scibor, P. Trubacova, F. Dumont, D. Fabre, F. Valiorgue","State of the Art of Niobium Machining for SRF Applications",210,2947
+"MOP062","K. Kanaoka, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa, E. Kako, K. Umemori","Fabrication of SRF Cavity",214,2682
+"MOP063","A.V. Tsakanian, H.-W. Glock, J. Knobloch, A.V. Velez","Beam Loading in the BESSY VSR SRF Cavities",217,2266
+"MOP064","R.L. Geng, H. Hayano, Y. Fuwa, Y. Iwashita, Z. Li, H. Ito","Performance of First Prototype Multi-Cell Low-Surface-Field Shape Cavity",222,2294
+"MOP065","S. Weih, M. Arnold, J. Enders, N. Pietralla, D.B. Bazyl, H. De Gersem, W.F.O. Müller","Upgrade of the S-DALINAC Injector Capture Section",227,2285
 "MOP066","Ya.V. Shashkov","Dual Mode Cavity",,3222
 "MOP067","Ya.V. Shashkov","Optimization of Dual Axis Asymmetric Cavity for Energy Recovery Linac",,3221
 "MOP068","E.F. Davis","SRF Cavities Applied to Energy Recovery Linear Accelerator",,2945
-"MOP070","J.C. Wolff, J.I. Iversen, D. Klinke, D. Kostin, D. Reschke, S. Sievers, A. Sulimov, J.H. Thie, M. Wiencek, R. Wendel","Investigation of the Critical RF Fields of Superconducting Cavity Connections",,2812
+"MOP070","J.C. Wolff, J.I. Iversen, D. Klinke, D. Kostin, D. Reschke, S. Sievers, A. Sulimov, J.H. Thie, M. Wiencek, R. Wendel","Investigation of the Critical RF Fields of Superconducting Cavity Connections",230,2812
 "MOP071","J.T. Popielarski, S.H. Kim, K. Saito, C. Wei, M.S. Wilbur, T. Xu, K. Elliott","FRIB Coupler Performance and Lessons Learned",,3253
-"MOP072","K. Saito, H. Ao, B. Bird, R. Bliton, N.K. Bultman, F. Casagrande, C. Compton, J. Curtin, K. Elliott, A. Ganshyn, W. Hartung, L. Hodges, K. Holland, S.H. Kim, S.M. Lidia, D. Luo, S.J. Miller, D.G. Morris, L. Nguyen, D. Norton, J.T. Popielarski, L. Popielarski, J.F. Schwartz, S.M. Shanab, M. Shuptar, D.R. Victory, C. Wei, J. Wei, M. Xu, T. Xu, Y. Yamazaki, C. Zhang, Q. Zhao, A. Facco, K. Hosoyama, M. Masuzawa, R.E. Laxdal","FRIB Solenoid Package in Cryomodule and Local Magnetic Shield",,3185
-"MOP073","Z.Q. Lin, Y. He, S.C. Huang, Y.L. Huang, T.C. Jiang, C.L. Li, Y.M. Li, M. Lu, F. Pan, T. Tan, R.X. Wang, Z. Xue, Z.Q. Yang, S.X. Zhang","The Study of High Power Couplers for CIADS",,2487
-"MOP074","S. Lee, B.H. Choi, M.O. Hyun, Y. Jung, J.W. Kim, Y. Kim, J. Lee, K.T. Seol","External Q Measurement for Quarter Wave Resonators in RISP",,2081
-"MOP075","F. Zhu, M. Chen, A.Q. Cheng, J.K. Hao, S.W. Quan, F. Wang","Design of RF Power Coupler Transmitting both 162.5 MHz and 81.25 MHz Power to SRF Cavities for BISOL R&D Research",,2886
-"MOP076","R.E. Laxdal, Y. Ma, B. Matheson, B.S. Waraich, Z.Y. Yao, V. Zvyagintsev","Fundamental Power Coupler Design for a 325 MHz Balloon SSR Cavity",,2866
-"MOP077","Y. Yamamoto, S. Michizono","Ceramic Study on RF Windows for Power Coupler, Waveguide, and Klystron in Particle Accelerator",,2761
-"MOP078","S.V. Matsievskiy, M.V. Lalayan, D. Bychanok, M. Gusarova","Adjustable Power Coupler for NICA HWR Cavities",,2806
+"MOP072","K. Saito, H. Ao, B. Bird, R. Bliton, N.K. Bultman, F. Casagrande, C. Compton, J. Curtin, K. Elliott, A. Ganshyn, W. Hartung, L. Hodges, K. Holland, S.H. Kim, S.M. Lidia, D. Luo, S.J. Miller, D.G. Morris, L. Nguyen, D. Norton, J.T. Popielarski, L. Popielarski, T. Russo, J.F. Schwartz, S.M. Shanab, M. Shuptar, D.R. Victory, C. Wei, J. Wei, M. Xu, T. Xu, Y. Yamazaki, C. Zhang, Q. Zhao, A. Facco, K. Hosoyama, M. Masuzawa, R.E. Laxdal","FRIB Solenoid Package in Cryomodule and Local Magnetic Shield",235,3185
+"MOP073","Z.Q. Lin, Y. He, S.C. Huang, Y.L. Huang, T.C. Jiang, C.L. Li, Y.M. Li, M. Lu, F. Pan, T. Tan, R.X. Wang, Z. Xue, Z.Q. Yang, S.X. Zhang","The Study of High Power Couplers for CIADS",241,2487
+"MOP074","S. Lee, B.H. Choi, M.O. Hyun, Y. Jung, J.W. Kim, Y. Kim, J. Lee, K.T. Seol","External Q Measurement for Quarter Wave Resonators in RISP",245,2081
+"MOP075","F. Zhu, M. Chen, A.Q. Cheng, J.K. Hao, S.W. Quan, F. Wang","Design of RF Power Coupler Transmitting both 162.5 MHz and 81.25 MHz Power to SRF Cavities for BISOL R&D Research",249,2886
+"MOP076","R.E. Laxdal, Y. Ma, B. Matheson, B.S. Waraich, Z.Y. Yao, V. Zvyagintsev","Fundamental Power Coupler Design for a 325 MHz Balloon SSR Cavity",252,2866
+"MOP077","Y. Yamamoto, S. Michizono","Ceramic Study on RF Windows for Power Coupler, Waveguide, and Klystron in Particle Accelerator",255,2761
+"MOP078","S.V. Matsievskiy, M.V. Lalayan, D. Bychanok, M. Gusarova","Adjustable Power Coupler for NICA HWR Cavities",260,2806
 "MOP079","M. Gusarova, M.V. Lalayan, D. Bychanok, S.V. Matsievskiy, R.E. Nemchenko, S.M. Polozov, A.V. Samoshin","Design of 325 MHz Medium Beta Half Wave Resonator Cavity for the New Injector Linac for Nuclotron-Nica",,2883
-"MOP080","S. Kazakov, B.M. Hanna, O.V. Pronitchev, N. Solyak","Latest Progress in Designs and Testings of PIP-II Power Couplers",,2965
-"MOP081","C. Burandt, W.A. Barth, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, S. Yaramyshev, M. Heilmann, A. Schnase, K. Aulenbacher, F.D. Dziuba, S. Lauber, J. List, M. Basten, M. Busch, H. Podlech, M. Schwarz","Considerations for Efficient RF Operation for the Advanced cw-Linac Demonstrator at GSI",,2852
-"MOP082","S. Barbanotti, C. Engling, K. Jensch","Measurement of the Vibration Response of the EXFEL RF Coupler and Comparison With Simulated Data (Finite Element Analyses)",,2543
-"MOP083","Y. Okii, J. Taguchi, H. Takahashi, H. Yasutake, E. Kako, S. Michizono, Y. Yamamoto","R&D of Copper Electroplating Process for Power Couplers: Effect of Microstructures on RRR",,2801
-"MOP084","G. Ciovati, L. Turlington","A Simple Variable Coupler for the Cryogenic Test of SRF Cavities",,2725
-"MOP085","A.D. Wu, Q.W. Chu, H. Guo, Y. He, S.C. Huang, T.C. Jiang, C.L. Li, Z.Q. Lin, F. Pan, Y.K. Song, T. Tan, W.M. Yue, S.H. Zhang, H.W. Zhao","The Destructive Effects to the RF Coupler by the Plasma Discharge",,2486
-"MOP086","C. Arcambal, M. Baudrier, P. Bosland, G. Devanz, T. Hamelin, C. Marchand, M. Oublaid, G. Perreu, S. Regnaud, C. Servouin, C. Simon, G. Monnereau","Conditioning of the First Mass Production Power Couplers for the ESS Elliptical Cavities",,2840
-"MOP087","G. Devanz, M. Baudrier, P. Carbonnier, F. Eozénou, E. Fayette, D. Roudier, P. Sahuquet, C. Servouin, N. Bazin, S. Chel, L. Maurice","IFMIF Resonators Development and Performance",,2791
-"MOP089","P. Neri, F. Bucchi, D. Passarelli","Development of a Suspension System for the Road Transportation of Cryomodule SSR1 through a Multilevel Finite Element-Multibody Approach",,2991
+"MOP080","S. Kazakov, B.M. Hanna, O.V. Pronitchev, N. Solyak","Latest Progress in Designs and Testings of PIP-II Power Couplers",263,2965
+"MOP081","C. Burandt, W.A. Barth, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, S. Yaramyshev, M. Heilmann, A. Schnase, K. Aulenbacher, F.D. Dziuba, S. Lauber, J. List, M. Basten, M. Busch, H. Podlech, M. Schwarz","Considerations for Efficient RF Operation for the Advanced cw-Linac Demonstrator at GSI",267,2852
+"MOP082","S. Barbanotti, C. Engling, K. Jensch","Measurement of the Vibration Response of the EXFEL RF Coupler and Comparison With Simulated Data (Finite Element Analyses)",273,2543
+"MOP083","Y. Okii, J. Taguchi, H. Takahashi, H. Yasutake, E. Kako, S. Michizono, Y. Yamamoto","R&D of Copper Electroplating Process for Power Couplers: Effect of Microstructures on RRR",278,2801
+"MOP084","G. Ciovati, L. Turlington","A Simple Variable Coupler for the Cryogenic Test of SRF Cavities",282,2725
+"MOP085","A.D. Wu, Q.W. Chu, H. Guo, Y. He, S.C. Huang, T.C. Jiang, C.L. Li, Z.Q. Lin, F. Pan, Y.K. Song, T. Tan, W.M. Yue, S.H. Zhang, H.W. Zhao","The Destructive Effects to the RF Coupler by the Plasma Discharge",285,2486
+"MOP086","C. Arcambal, M. Baudrier, P. Bosland, G. Devanz, T. Hamelin, C. Marchand, M. Oublaid, G. Perreu, S. Regnaud, C. Servouin, C. Simon, G. Monnereau","Conditioning of the First Mass Production Power Couplers for the ESS Elliptical Cavities",288,2840
+"MOP087","G. Devanz, M. Baudrier, P. Carbonnier, F. Eozénou, E. Fayette, D. Roudier, P. Sahuquet, C. Servouin, N. Bazin, S. Chel, L. Maurice","IFMIF Resonators Development and Performance",293,2791
+"MOP089","P. Neri, F. Bucchi, D. Passarelli","Development of a Suspension System for the Road Transportation of Cryomodule SSR1 through a Multilevel Finite Element-Multibody Approach",297,2991
 "MOP090","J.P. Holzbauer, T.T. Arkan, J.N. Blowers, C.M. Ginsburg, E.R. Harms, B.D. Hartsell, J.A. Kaluzny, T.H. Nicol, Y.O. Orlov, Y.M. Pischalnikov, K.S. Premo, N. Solyak, R.P. Stanek, J. Theilacker, A.D. Wixson, E. Daly, N.A. Huque, C. Adolphsen, T.J. Peterson","LCLS-II Cryomodule Transportation: Failures, Successes, and Lessons Learned",,3141
 "MOP091","J.P. Holzbauer, S.K. Chandrasekaran, D. Passarelli, G. Wu","PIP-II Cryomodule Transportation Overview",,3142
-"MOP092","R.P. Stanek, T.T. Arkan, J.N. Blowers, C.M. Ginsburg, A. Grassellino, C.J. Grimm, B.J. Hansen, E.R. Harms, B.D. Hartsell, J.P. Holzbauer, J.A. Kaluzny, A.L. Klebaner, A. Martinez, T.H. Nicol, Y.O. Orlov, K.S. Premo, N. Solyak, J. Theilacker, G. Wu","Overview of LCLS-II Project Status at Fermilab",,3163
+"MOP092","R.P. Stanek, T.T. Arkan, J.N. Blowers, C.M. Ginsburg, A. Grassellino, C.J. Grimm, B.J. Hansen, E.R. Harms, B.D. Hartsell, J.P. Holzbauer, J.A. Kaluzny, A.L. Klebaner, A. Martinez, T.H. Nicol, Y.O. Orlov, K.S. Premo, N. Solyak, J. Theilacker, G. Wu","Overview of LCLS-II Project Status at Fermilab",302,3163
 "MOP093","J.A. Kaluzny, T.T. Arkan, C.M. Ginsburg, C.J. Grimm, E.R. Harms, T.H. Nicol, Y.O. Orlov, Y.M. Pischalnikov, K.S. Premo, N. Solyak, R.P. Stanek","LCLS-II 3.9 GHz Cryomodule Design",,2984
-"MOP094","V. Roger, S.K. Chandrasekaran, D. Passarelli","Design Strategy of the PIP-II Cryomodules",,3224
+"MOP094","V. Roger, S.K. Chandrasekaran, D. Passarelli","Design Strategy of the PIP-II Cryomodules",307,3224
 "MOP095","S.K. Chandrasekaran, G. Wu","PIP-II 650 MHz Cryomodule Development",,2987
 "MOP096","F. Bai","Operation of Cryomodule for Chinese ADS Front-end Demo Linac",,2524
-"MOP097","T. Plomion, N. Bazin, N. Chauvin, G. Devanz, J. Plouin, K. Romieu, S. Chel","Preliminary Design of the IFMIF-DONES Superconducting Linac",,2721
-"MOP098","H. Saugnac, S. Blivet, N. Gandolfo, C. Joly, J. Lesrel, D. Longuevergne, G. Olivier, M. Pierens, W. Sarlin, W. Kaabi, M.A. Baylac, D. Bondoux, F. Bouly, P.-O. Dumont, Y. Gómez Martínez","Spoke Cryomodule Prototyping for the MINERVA Project",,2959
-"MOP099","T. Capelli, K. Artoos, A.B. Boucherie, K. Brodzinski, R. Calaga, S.J. Calvo, E. Cano-Pleite, O. Capatina, F. Carra, L. Dassa, F. Eriksson, M. Garlasché, R. Leuxe, P. Minginette, M. Sosin, M. Therasse, E. Montesinos, A. Krawczyk, B. Prochal, T.J. Jones, N. Templeton, S.M. Pattalwar","Design of Crab Cavity Cryomodule for HL-LHC",,2926
-"MOP100","J. Teichert, A. Arnold, S. Ma, P. Murcek, J. Schaber, H. Vennekate, R. Xiang, P.Z. Zwartek, K. Zhou","Design Upgrades of the Next Superconducting RF Gun for ELBE",,2935
-"MOP101","S. Cheban, D. Passarelli, V. Roger","Design and Manufacturing Challenges of the SSR1 Current Leads for PIP-II",,2986
-"MOP102","S. Cheban, D. Passarelli, S.Z. Zorzetti, G. Kautzmann","Alignment Monitoring System for the PIP-II Prototype SSR1 Cryomodule",,2990
+"MOP097","T. Plomion, N. Bazin, N. Chauvin, G. Devanz, J. Plouin, K. Romieu, S. Chel","Preliminary Design of the IFMIF-DONES Superconducting Linac",311,2721
+"MOP098","H. Saugnac, S. Blivet, N. Gandolfo, C. Joly, W. Kaabi, J. Lesrel, D. Longuevergne, G. Olivier, M. Pierens, W. Sarlin, M.A. Baylac, D. Bondoux, F. Bouly, P.-O. Dumont, Y. Gómez Martínez","Spoke Cryomodule Prototyping for the MINERVA Project",315,2959
+"MOP099","T. Capelli, K. Artoos, A.B. Boucherie, K. Brodzinski, R. Calaga, S.J. Calvo, E. Cano-Pleite, O. Capatina, F. Carra, L. Dassa, F. Eriksson, M. Garlasché, R. Leuxe, P. Minginette, M. Sosin, M. Therasse, E. Montesinos, A. Krawczyk, B. Prochal, T.J. Jones, N. Templeton, S.M. Pattalwar","Design of Crab Cavity Cryomodule for HL-LHC",320,2926
+"MOP100","J. Teichert, A. Arnold, S. Ma, P. Murcek, J. Schaber, H. Vennekate, R. Xiang, P.Z. Zwartek, K. Zhou","Design Upgrades of the Next Superconducting RF Gun for ELBE",326,2935
+"MOP101","S. Cheban, D. Passarelli, V. Roger","Design and Manufacturing Challenges of the SSR1 Current Leads for PIP-II",329,2986
+"MOP102","S. Cheban, D. Passarelli, S.Z. Zorzetti, G. Kautzmann","Alignment Monitoring System for the PIP-II Prototype SSR1 Cryomodule",332,2990
 "MOP103","C.L. Li","Consideration of the Remanent Magnetic Field for SRF Cavities at IMP",,2482
-"MOP105","J. Voelker, A. Frahm, A. Jankowiak, S. Keckert, J. Knobloch, G. Kourkafas, O. Kugeler, A. Neumann, H. Plötz","A Superconducting Magnetic Shield for the Photoelectron Injector of bERLinPro",,2809
+"MOP105","J. Voelker, A. Frahm, A. Jankowiak, S. Keckert, J. Knobloch, G. Kourkafas, O. Kugeler, A. Neumann, H. Plötz","A Superconducting Magnetic Shield for the Photoelectron Injector of bERLinPro",335,2809
 "SATU1","S.A. Belomestnykh","Beam-cavity Interaction and Operational Aspects of SRF Systems With Beam",,3409
 "SATU2","J. Branlard","LLRF Controls and RF Operation",,3410
 "SATU3","B. Petersen","Fundamentals of Cryomodule Design and Cryogenics",,3411
 "SATU4","H.-W. Glock","Methods and Simulation Tools for Cavity Design",,3412
-"THFUA1","S. Keckert, J. Knobloch, O. Kugeler, D.B. Tikhonov, A-M. Valente-Feliciano","RF Characterization of an S-I-S' Multilayer Sample",,1082
-"THFUA2","R. Katayama, H. Hayano, T. Kubo, T. Saeki, C.Z. Antoine, Y. Iwashita, H. Tongu, H. Ito, R. Ito, T. Nagata","Evaluation of the Superconducting Characteristics of Multi-Layer Thin-Film Structures of NbN/SiO2 on Pure Nb Substrate",,1406
+"THFUA1","S. Keckert, J. Knobloch, O. Kugeler, D.B. Tikhonov, A-M. Valente-Feliciano","RF Characterization of an S-I-S' Multilayer Sample",800,1082
+"THFUA2","R. Katayama, H. Hayano, T. Kubo, T. Saeki, C.Z. Antoine, Y. Iwashita, H. Tongu, H. Ito, R. Ito, T. Nagata","Evaluation of the Superconducting Characteristics of Multi-Layer Thin-Film Structures of NbN and SiO2 on Pure Nb Substrate",807,1406
 "THFUA3","A-M. Valente-Feliciano, D.R. Beverstock, C.E. Reece, C.Z. Antoine, S. Keckert, O. Kugeler, D.B. Tikhonov, R. Valizadeh, M.J. Kelley","Material and Superconducting Properties of  NbTiN/AlN Multilayer Films",,1385
 "THFUA4","T. Kubo, A.V. Gurevich","Field-Dependent Nonlinear Surface Resistance and Its Optimization by Surface Nano-Structuring of the SRF Cavities",,1405
 "THFUA5","R.D. Porter","Field Limitation in Nb3Sn Cavities",,1365
-"THFUA6","U. Pudasaini, G.V. Eremeev, C.E. Reece, M.J. Kelley, J.W. Angle, J. Tuggle","Nb3Sn Films for SRF Cavities: Genesis and RF Properties",,1368
+"THFUA6","U. Pudasaini, G.V. Eremeev, C.E. Reece, M.J. Kelley, J.W. Angle, J. Tuggle","Nb3Sn Films for SRF Cavities: Genesis and RF Properties",810,1368
 "THFUA7","M. Arzeo, S. Fernandez, E.A. Ilyina, W. Venturini Delsolaro, G.J. Rosaz, M. Bonura, C. Senatore","RF Performances of Nb3Sn Coatings on a Copper Substrate for Accelerating Cavities Applications",,1582
-"THFUB1","S. Posen, O.S. Melnychuk, Y.M. Pischalnikov, D.A. Sergatskov, B. Tennis, J. Lee, D.N. Seidman","Nb3Sn at Fermilab: Exploring Performance",,1701
-"THFUB2","M.C. Burton, A.D. Palczewski, C.E. Reece, A-M. Valente-Feliciano","Progress with Nb Hipims Films on 1.3 GHz Cu Cavities",,1384
+"THFUB1","S. Posen, O.S. Melnychuk, Y.M. Pischalnikov, D.A. Sergatskov, B. Tennis, J. Lee, D.N. Seidman","Nb3Sn at Fermilab: Exploring Performance",818,1701
+"THFUB2","M.C. Burton, A.D. Palczewski, C.E. Reece, A-M. Valente-Feliciano","Progress with Nb Hipims Films on 1.3 GHz Cu Cavities",823,1384
 "THFUB3","F. Avino, P. Naisson, T. Richard, G.J. Rosaz, A. Sublet, M. Taborelli, S. Calatroni, D. Fonnesu, A. Grudiev, H. Neupert, A.T. Perez Fontenla","Nb/Cu Coatings Characterization in HiPIMS With Biased Substrate and Application of a Positive Pulse",,1821
 "THFUB4","J.A. Sauls","Effect of Inhomogeneous Disorder on the Superheating Field of SRF Cavities",,1506
 "THFUB5","A.S. Romanenko","Employing SRF to Boost Coherence of 3D Quantum Systems",,1241
 "THHT1","H. Padamsee, C.E. Reece","Maximizing Peak Surface Fields - Time  Barrier vs. Surface Barrier",,1221
-"THP002","O. Hryhorenko, M. Chabot, D. Longuevergne, C.Z. Antoine","Metallographic Polishing Pathway to the Future of Large Scale SRF Facilities",,2405
-"THP003","G. Martinet","Results on Bulk Niobium Surface Resistance Measurement With Pillbox Cavity on TE011 and TE012 Modes",,2932
-"THP004","R. Monroy-Villa, D. Reschke, S. Keckert, O. Kugeler, D.B. Tikhonov, P. Putek, S.G. Zadeh, U. van Rienen, W. Hillert, M. Wenskat","Design and Fabrication of a Quadrupole-Resonator for Sample R&D",,2787
+"THP002","O. Hryhorenko, M. Chabot, C.Z. Antoine, D. Longuevergne","Metallographic Polishing Pathway to the Future of Large Scale SRF Facilities",828,2405
+"THP003","G. Martinet","Results on Bulk Niobium Surface Resistance Measurement With Pillbox Cavity on TE011 and TE012 Modes",833,2932
+"THP004","R. Monroy-Villa, D. Reschke, S. Keckert, O. Kugeler, D.B. Tikhonov, P. Putek, S.G. Zadeh, U. van Rienen, W. Hillert, M. Wenskat","Design and Fabrication of a Quadrupole-Resonator for Sample R&D",838,2787
 "THP005","G.D.L. Semione, A. Dangwal Pandey, T.F. Keller, H. Noei, J. Pfrommer, S. Tober, V. Vonk, A. Stierle","Near-Surface Region of Nb(100) During Thermal Treatments Relevant for Superconducting Radio-Frequency Cavities",,3162
 "THP006","R. Nietuby&#263;, P.J. Czuma, W.C. Grabowski, P. Krawczyk, J. Krzywinski, J. Lorkiewicz, R. M. Mirowski, K. Szamota-Leandersson, J. Szewinski, J.K. Sekutowicz","Polfel Free Electron Laser Project",,2895
-"THP007","P. Rothweiler, B. Bornmann, J. Klaes, D. Lützenkirchen-Hecht, S. von Polheim, R. Wagner","In-Situ EXAFS Investigations of Nb-Treatments in N2 at Elevated Temperatures",,3181
-"THP008","L. Xiao, X.Y. Lu, W.W. Tan, D. Xie, Y. Yang, L. Zhu","The Technical Study of Nb3Sn Film Deposition on Copper by HiPIMS",,2641
-"THP009","Y. Yang, X.Y. Lu, W.W. Tan, L. Xiao, D. Xie, L. Zhu","Pulse Laser Annealing of Niobium Film on Copper for SRF Cavities",,2642
-"THP010","Q.W. Chu, H. Guo, S.C. Huang, A.D. Wu, Z.M. You","The Mechanism of Electropolishing of Niobium from Choline Chloride-based Deep Eutectic Solvents",,2823
-"THP011","M.V. Alekseev, I.M. Abdyukhanov, V.A. Drobyshev, M.V. Kravtsova, M.V. Krylova, P.A. Lykianov, K.A. Mareev, V.I. Pantsyrny, M.V. Polikarpova, M.M. Potapenko, A.G. Silaev, A.S. Tsapleva, M.Y. Shlyakhov, S.M. Zernov","Niobium Semiproducts for the Superconducting Strands and SRF Cavities in Russia",,2884
-"THP012","A. Gallifa Terricabras, A. Amorim Carvalho, I. Aviles Santillana, S. Barrière, R. Calaga, E. Cano-Pleite, O. Capatina, L. Dassa, M.S. Meyer, N. Valverde Alonso, M.D. Crouvizier, A. Hlavacs, G.J. Krallics, V. Mertinger, M. Sepsi, M. Benke, A.B. Palotas, G. Szabó, M. Szucs","Assessment of the Mechanical Properties of Ultra-High Purity Niobium After Cold Work and Heat Treatment With the HL-LHC Crab Cavities as Benchmark",,2281
+"THP007","P. Rothweiler, B. Bornmann, J. Klaes, D. Lützenkirchen-Hecht, S. von Polheim, R. Wagner","In-Situ EXAFS Investigations of Nb-Treatments in N2 at Elevated Temperatures",842,3181
+"THP008","L. Xiao, X.Y. Lu, W.W. Tan, D. Xie, Y. Yang, L. Zhu","The Technical Study of Nb3Sn Film Deposition on Copper by HiPIMS",846,2641
+"THP009","Y. Yang, X.Y. Lu, W.W. Tan, L. Xiao, D. Xie, L. Zhu","Pulse Laser Annealing of Niobium Film on Copper for SRF Cavities",848,2642
+"THP010","Q.W. Chu, H. Guo, S.C. Huang, A.D. Wu, Z.M. You","The Mechanism of Electropolishing of Niobium from Choline Chloride-based Deep Eutectic Solvents",852,2823
+"THP011","M.V. Alekseev, I.M. Abdyukhanov, V.A. Drobyshev, M.V. Kravtsova, M.V. Krylova, P.A. Lykianov, K.A. Mareev, V.I. Pantsyrny, M.V. Polikarpova, M.M. Potapenko, A.G. Silaev, A.S. Tsapleva, M.Y. Shlyakhov, S.M. Zernov","Niobium Semiproducts for the Superconducting Strands and SRF Cavities in Russia",857,2884
+"THP012","A. Gallifa Terricabras, A. Amorim Carvalho, I. Aviles Santillana, S. Barrière, R. Calaga, E. Cano-Pleite, O. Capatina, L. Dassa, M.S. Meyer, N. Valverde Alonso, M.D. Crouvizier, A. Hlavacs, G.J. Krallics, V. Mertinger, M. Sepsi, M. Benke, A.B. Palotas, G. Szabó, M. Szucs","Assessment of the Mechanical Properties of Ultra-High Purity Niobium After Cold Work and Heat Treatment With the HL-LHC Crab Cavities as Benchmark",860,2281
 "THP013","M. Martinello, A. Grassellino, S. Posen, A.S. Romanenko, Z-H. Sung, J. Lee","Microscopic Investigation of Pinning Sites in Production Grade Niobium",,2946
-"THP014","A.S. Romanenko, A. Grassellino, M. Martinello, Y. Trenikhina, D. Bafia","First Direct Imaging and Profiling TOF-SIMS Studies on Cutouts from Cavities Prepared by State-of-the-Art Treatments",,2041
+"THP014","A.S. Romanenko, A. Grassellino, M. Martinello, Y. Trenikhina, D. Bafia","First Direct Imaging and Profiling TOF-SIMS Studies on Cutouts from Cavities Prepared by State-of-the-Art Treatments",866,2041
 "THP015","T. Spina, A. Grassellino, A.S. Romanenko","Electron Irradiation Effects on Hydrides Formation in Nb for SRF Cavity",,2968
 "THP016","Z-H. Sung, A. Grassellino, A.S. Romanenko, D. Bafia","AFM (Atomic Force Microscopy) Investigation of Nano-Hydrides in Nb SRF Cavity Cutouts At and Above Room Temperature",,2970
-"THP017","J.W. Angle, J. Tuggle, G.V. Eremeev, C.E. Reece, M.J. Kelley, U. Pudasaini","Crystallographic Characterization of Nb3Sn Coatings and N-Doped Niobium via EBSD and SIMS",,2961
+"THP017","J.W. Angle, J. Tuggle, G.V. Eremeev, C.E. Reece, M.J. Kelley, U. Pudasaini","Crystallographic Characterization of Nb3Sn Coatings and N-Doped Niobium via EBSD and SIMS",871,2961
 "THP018","S. M. Anlage, B.G. Oripov","High Frequency Nonlinear Response of Superconducting Cavity-Grade Nb surfaces",,2864
 "THP019","S. M. Anlage, B.G. Oripov, G. Ciovati","Superconducting Radio Frequency Cavity Residual Losses at mK Temperatures",,2958
-"THP020","M. Wang, T.R. Bieler, A. Polyanskii, S. Chetri, C. Compton, S. Balachandran, P.J. Lee","Study of Dislocation Content Near Grain Boundaries using Electron Channeling Contrast Imaging and its Effect on Superconducting Properties of Niobium",,2901
+"THP020","M. Wang, T.R. Bieler, A. Polyanskii, S. Chetri, C. Compton, S. Balachandran, P.J. Lee","Study of Dislocation Content Near Grain Boundaries using Electron Channeling Contrast Imaging and its Effect on Superconducting Properties of Niobium",876,2901
 "THP021","S. Balachandran, S. Chetri, D.C. Larbalestier, P.J. Lee, A. Polyanskii, P. Dhakal","Changes in Flux Trapping With Heat Treatment Observed in Polycrystalline Nb",,2979
 "THP022","S. Chetri, P. Dhakal, S. Balachandran, L.D. Cooley, D.C. Larbalestier, P.J. Lee","Changes in Surface Superconductivity of SRF Grade High Purity Nb Coupons Driven by Heat Treatments in Nitrogen Atmosphere",,2644
-"THP023","N. Banerjee, J. Dobbins, G.H. Hoffstaetter, R.P.K. Kaplan, M. Liepe, C.W. Miller, P. Quigley, E.N. Smith, V. Veshcherevich","RF Commissioning of the CBETA Main Linac Cryomodule",,2381
+"THP023","N. Banerjee, J. Dobbins, G.H. Hoffstaetter, R.P.K. Kaplan, M. Liepe, C.W. Miller, P. Quigley, E.N. Smith, V. Veshcherevich","RF Commissioning of the CBETA Main Linac Cryomodule",881,2381
 "THP024","F. Bing, T.M. Huang, H.Y. Lin, Q. Ma, W.M. Pan","Development of the Variable Fundamental Power Coupler of the 650 MHz SRF Cavity",,2321
-"THP025","C. Christou, P. Gu, P.J. Marten, S.A. Pande, A.F. Rankin, D. Spink, L.T. Stant, A. Tropp","Overview of Superconducting RF Cavity Reliability at Diamond Light Source",,3246
-"THP026","C. Adolphsen, A.L. Benwell, G.W. Brown, M.P. Dunning, S. Gilevich, K. Grouev, X. Liu, J.F. Schmerge, T. Vecchione, F.Y. Wang, F. Zhou, G. Huang, M.J. Johnson, T.H. Luo, F. Sannibale, S.P. Virostek","Initial Operation of the LCLS-II Electron Source",,2847
-"THP027","S.M. Pattalwar, R.K. Buckley, P.C. Hornickel, K.J. Middleman, M.D. Pendleton, P. Pizzol, P.A. Smith, T.M. Weston, A.E. Wheelhouse, S. Wilde, A.J. May, A. Oates, J.T.G. Wilson","Cryogenics Performance of the Vertical Cryostat for Qualifying ESS-SRF High Beta Cavities",,2846
-"THP028","C. Kaya, Ö. Karsli, B. Koc, A.A. Aksoy, O.F. Elcim","Superconducting RF Modules of TARLA",,3245
-"THP029","M. Bawatna, A. Arnold, J.-C. Deinert, B.W. Green, S. Kovalev","Towards Real-time Data Processing using FPGA Technology for High-speed Data Acquisition Systm at MHz Repetition Rates",,3203
+"THP025","C. Christou, P. Gu, P.J. Marten, S.A. Pande, A.F. Rankin, D. Spink, L.T. Stant, A. Tropp","Overview of Superconducting RF Cavity Reliability at Diamond Light Source",885,3246
+"THP026","C. Adolphsen, A.L. Benwell, G.W. Brown, M.P. Dunning, S. Gilevich, K. Grouev, X. Liu, J.F. Schmerge, T. Vecchione, F.Y. Wang, F. Zhou, G. Huang, M.J. Johnson, T.H. Luo, F. Sannibale, S.P. Virostek","Initial Operation of the LCLS-II Electron Source",891,2847
+"THP027","S.M. Pattalwar, R.K. Buckley, P.C. Hornickel, K.J. Middleman, M.D. Pendleton, P. Pizzol, P.A. Smith, T.M. Weston, A.E. Wheelhouse, S. Wilde, A.J. May, A. Oates, J.T.G. Wilson","Cryogenics Performance of the Vertical Cryostat for Qualifying ESS-SRF High Beta Cavities",895,2846
+"THP028","C. Kaya, Ö. Karsli, &#304;.B. Koc, A. Aksoy, O.F. Elcim","Superconducting RF Modules of TARLA",900,3245
+"THP029","M. Bawatna, A. Arnold, J.-C. Deinert, B.W. Green, S. Kovalev","Towards Real-time Data Processing using FPGA Technology for High-speed Data Acquisition System at MHz Repetition Rates",905,3203
 "THP030","M. Bawatna, A. Arnold, J.-C. Deinert, B.W. Green, S. Kovalev, U. Lehnert, J. Teichert, R. Xiang","Experience With the Superradiant THz User Facility Driven by a Quasi-CW SRF Accelerator at ELBE",,3202
-"THP031","K. Turaj, P. Baudrenghien, O. Brunner, F. Gerigk, P. Maesen, E. Montesinos, F. Peauger, G.J. Rosaz, D. Smekens, M. Taborelli, M. Therasse, H. Timko, D. Valuch, N. Valverde Alonso, W. Venturini Delsolaro, L. Arnaudon, A.C. Butterworth, M. Karppinen, E.N. Shaposhnikova","Operation Experience with the LHC ACS RF System",,2931
-"THP032","R. Xiang, A. Arnold, P.E. Evtushenko, S. Kovalev, U. Lehnert, P.N. Lu, S. Ma, P. Michel, P. Murcek, A.A. Ryzhov, J. Schaber, Ch. Schneider, J. Teichert, I. Will, H. Vennekate","SRF Gun and SRF Linac Driven THz at ELBE Successfully in User Operation",,2831
-"THP033","O. Kochebina, F. Dieudegard, T. Junquera, D. Vandeplassche","Cryogenic Systems Studies for the MINERVA 100 MeV Proton SC LINAC Project",,2829
-"THP034","J.P. Thermeau, T. Junquera, O. Kochebina, K.J. Gajewski, L. Hermansson, R.J.M.Y. Ruber, R. Santiago Kern","The First Tests on Vertical Cryostat GERSEMI at FREIA Facility",,2837
-"THP035","S. Verdu-Andres, R. Calaga, E. Cano-Pleite, R. Leuxe, J.A. Mitchell","Design of LHC Crab Cavities Based on DQW Cryomodule Test Experience",,2845
-"THP036","E. Cano-Pleite, A. Amorim Carvalho, K. Artoos, R. Calaga, O. Capatina, T. Capelli, F. Carra, L. Dassa, M. Garlasché, R. Leuxe, S. Verdu-Andres, E. Montesinos, J.A. Mitchell","An Insight on the Thermal and Mechanical Numerical Evaluations for the High-Luminosity LHC Crab Cavities",,2286
+"THP031","K. Turaj, P. Baudrenghien, O. Brunner, F. Gerigk, P. Maesen, E. Montesinos, F. Peauger, G.J. Rosaz, D. Smekens, M. Taborelli, M. Therasse, H. Timko, D. Valuch, N. Valverde Alonso, W. Venturini Delsolaro, L. Arnaudon, A.C. Butterworth, M. Karppinen, E.N. Shaposhnikova","Operation Experience with the LHC ACS RF System",911,2931
+"THP032","R. Xiang, A. Arnold, P.E. Evtushenko, S. Kovalev, U. Lehnert, P.N. Lu, S. Ma, P. Michel, P. Murcek, A.A. Ryzhov, J. Schaber, Ch. Schneider, J. Teichert, I. Will, H. Vennekate","SRF Gun and SRF Linac Driven THz at ELBE Successfully in User Operation",915,2831
+"THP033","O. Kochebina, F. Dieudegard, T. Junquera, D. Vandeplassche","Cryogenic Systems Studies for the MINERVA 100 MeV Proton SC LINAC Project",918,2829
+"THP034","J.P. Thermeau, T. Junquera, O. Kochebina, K.J. Gajewski, L. Hermansson, R.J.M.Y. Ruber, R. Santiago Kern","The First Tests on Vertical Cryostat GERSEMI at FREIA Facility",921,2837
+"THP035","S. Verdu-Andres, R. Calaga, E. Cano-Pleite, R. Leuxe, J.A. Mitchell","Design of LHC Crab Cavities Based on DQW Cryomodule Test Experience",925,2845
+"THP036","E. Cano-Pleite, A. Amorim Carvalho, K. Artoos, R. Calaga, O. Capatina, T. Capelli, F. Carra, L. Dassa, M. Garlasché, R. Leuxe, S. Verdu-Andres, E. Montesinos, J.A. Mitchell","An Insight on the Thermal and Mechanical Numerical Evaluations for the High-Luminosity LHC Crab Cavities",929,2286
 "THP040","Th. Proslier, C.Z. Antoine, M. Liepe, A. Grassellino, A.S. Romanenko, G. Ciovati, A-M. Valente-Feliciano","Correlations Between Tunneling Spectroscopy and SRF Nb and Nb3Sn Cavities Performances",,2957
-"THP041","C. Pira, E. Chyhyrynets, C.Z. Antoine, A. Sublet, O. Kugeler, A. Katasevs, J. Kaupuzs, A. Medvids, P. Onufrijevs, O.B. Malyshev, R. Valizadeh, R. Ries, E. Seiler, X. Jiang, S.B. Leith, M. Vogel","Impact of the Cu Substrate Surface Preparation on the Morphological, Superconductive and RF Properties of the Nb Superconductive Coatings",,2808
-"THP042","S.B. Leith, X. Jiang, Z. Khalil, A.S.H. Mohamed, M. Vogel","Initial Results from Investigations into Different Surface Peparation Techniques of OFHC Copper for SRF Applications",,3361
-"THP043","S.B. Leith, X. Jiang, M. Vogel, R. Ries, E. Seiler","Deposition Parameter Effects on Niobium Nitride (NbN) Thin Films Deposited Onto Copper Substrates with DC Magnetron Sputtering",,2461
-"THP044","T.E. Oseroff, M. Liepe, Z. Sun, B. Moeckly, M.J. Sowa","RF Characterization of Novel Superconducting Materials and Multilayers",,2265
-"THP045","T.E. Oseroff, M. Liepe","Improvements to the Cornell Sample Host System",,2489
-"THP046","S.N. Lobo, M. Liepe, T.E. Oseroff","Magnetic Field Mapping System for Cornell Sample Host Cavity",,3223
-"THP047","E. Thoeng, R.A. Baartman, P. Kolb, R.E. Laxdal, B. Matheson, G. Morris, N. Muller, S. Saminathan, T. Junginger","Progress of TRIUMF Beta-SRF Facility for Novel SRF Materials",,2441
-"THP048","D. Turner, A.J. May, G. Burt, L. Gurran, T. Junginger, O.B. Malyshev, K.D. Dumbell, N. Pattalwar, S.M. Pattalwar","Characterization of Flat Multilayer Thin Film Superconductors",,2293
-"THP049","C. Hovater, R. Bachimanchi, E. Daly, M.A. Drury, L.E. Farrish, J. Gubeli, N.A. Huque, K. Jordan, M.E. Joyce, L.K. King, M. Marchlik, W. Moore, T. E. Plawski, A.D. Solopova, C.M. Wilson, L.R. Doolittle, S. Paiagua, C. Serrano, A.L. Benwell, C. Bianchini, D. Gonnella, S. L. Hoobler, K.J. Mattison, J. Nelson, A. Ratti, B.H. Ripman, S. Saraf, L.M. Zacarias","Commissioning the JLab LERF Cryomodule Test Facility",,2264
-"THP050","I. H. Senevirathne, G. Ciovati, J.R. Delayen","Measurement of the Magnetic Field Penetration into Superconducting Thin Films",,2465
-"THP051","N.A. Huque, E. Daly, T. Wijeratne","Upgrades to Cryogenic Capabilities for Cryomodule Testing at JLab",,2993
-"THP052","V.D. Bookwalter, M. Dickey, M.G. McDonald, E.A. McEwen","Pansophy Enhancements for SRF Through Collecting and Analyzing Inputs/Outputs to Further Project Efficiency in Reporting and Performance",,2848
-"THP053","N. Bazin, S. Chel, M. Desmons, G. Devanz, H. Jenhani, O. Piquet","Analysis of the Results of the Tests of IFMIF Accelerating Units",,2962
-"THP054","F. Hug, E. Schilling, D. Simon, T. Stengler, S.D.W. Thomas, T. Kuerzeder, K. Aulenbacher, A. Skora","Cryogenic Installations for Module Tests at Mainz",,2967
-"THP055","G. Wu, S.K. Chandrasekaran","Magnetic Field Induced by Thermo Electric Current in LCLS-II Cryomodules",,2923
-"THP056","M.A. Drury, E. Daly, N.A. Huque, L.K. King, A.D. Solopova, J. Nelson, B.H. Ripman, L.M. Zacarias","Current Results From Acceptance Testing of LCLS-II Cryomodules at Jefferson Lab",,2951
+"THP041","C. Pira, E. Chyhyrynets, C.Z. Antoine, A. Sublet, O. Kugeler, A. Katasevs, J. Kaupuzs, A. Medvids, P. Onufrijevs, O.B. Malyshev, R. Valizadeh, R. Ries, E. Seiler, X. Jiang, S.B. Leith, M. Vogel","Impact of the Cu Substrate Surface Preparation on the Morphological, Superconductive and RF Properties of the Nb Superconductive Coatings",935,2808
+"THP042","S.B. Leith, X. Jiang, Z. Khalil, A.S.H. Mohamed, M. Vogel","Initial Results from Investigations into Different Surface Peparation Techniques of OFHC Copper for SRF Applications",941,3361
+"THP043","S.B. Leith, X. Jiang, M. Vogel, R. Ries, E. Seiler","Deposition Parameter Effects on Niobium Nitride (NbN) Thin Films Deposited Onto Copper Substrates with DC Magnetron Sputtering",945,2461
+"THP044","T.E. Oseroff, M. Liepe, Z. Sun, B. Moeckly, M.J. Sowa","RF Characterization of Novel Superconducting Materials and Multilayers",950,2265
+"THP045","T.E. Oseroff, M. Liepe","Improvements to the Cornell Sample Host System",956,2489
+"THP046","S.N. Lobo, M. Liepe, T.E. Oseroff","Magnetic Field Mapping System for Cornell Sample Host Cavity",961,3223
+"THP047","E. Thoeng, R.A. Baartman, P. Kolb, R.E. Laxdal, B. Matheson, G. Morris, N. Muller, S. Saminathan, T. Junginger","Progress of TRIUMF Beta-SRF Facility for Novel SRF Materials",964,2441
+"THP048","D. Turner, A.J. May, G. Burt, L. Gurran, T. Junginger, O.B. Malyshev, K.D. Dumbell, N. Pattalwar, S.M. Pattalwar","Characterization of Flat Multilayer Thin Film Superconductors",968,2293
+"THP049","C. Hovater, R. Bachimanchi, E. Daly, M.A. Drury, L.E. Farrish, J. Gubeli, N.A. Huque, K. Jordan, M.E. Joyce, L.K. King, M. Marchlik, W. Moore, T. E. Plawski, A.D. Solopova Shabalina, C.M. Wilson, L.R. Doolittle, S. Paiagua, C. Serrano, A.L. Benwell, C. Bianchini, D. Gonnella, S. L. Hoobler, K.J. Mattison, J. Nelson, A. Ratti, B.H. Ripman, S. Saraf, L.M. Zacarias","Commissioning the JLab LERF Cryomodule Test Facility",973,2264
+"THP050","I. H. Senevirathne, G. Ciovati, J.R. Delayen","Measurement of the Magnetic Field Penetration into Superconducting Thin Films",978,2465
+"THP051","N.A. Huque, E. Daly, T. Wijeratne","Upgrades to Cryogenic Capabilities for Cryomodule Testing at JLab",983,2993
+"THP052","V.D. Bookwalter, M. Dickey, M.G. McDonald, E.A. McEwen","Pansophy Enhancements for SRF Through Collecting and Analyzing Inputs/Outputs to Further Project Efficiency in Reporting and Performance",988,2848
+"THP053","N. Bazin, S. Chel, M. Desmons, G. Devanz, H. Jenhani, O. Piquet","Analysis of the Results of the Tests of IFMIF Accelerating Units",992,2962
+"THP054","F. Hug, E. Schilling, D. Simon, T. Stengler, S.D.W. Thomas, T. Kuerzeder, K. Aulenbacher, A. Skora","Cryogenic Installations for Module Tests at Mainz",997,2967
+"THP055","G. Wu, S.K. Chandrasekaran","Magnetic Field Induced by Thermo Electric Current in LCLS-II Cryomodules",1003,2923
+"THP056","M.A. Drury, E. Daly, N.A. Huque, L.K. King, A.D. Solopova Shabalina, J. Nelson, B.H. Ripman, L.M. Zacarias","Current Results From Acceptance Testing of LCLS-II Cryomodules at Jefferson Lab",1007,2951
 "THP057","R. Santiago Kern, K.J. Gajewski, L. Hermansson, H. Li, A. Miyazaki, R.J.M.Y. Ruber, P. Duthil, M. Pierens, D. Reynet","Cryogenic Testing of the Double-Spoke Prototype Cryomodule for ESS at FREIA",,2802
-"THP058","A. Miyazaki, K. Fransson, K.J. Gajewski, L. Hermansson, H. Li, R.J.M.Y. Ruber, R. Santiago Kern, R. Wedberg","Conditioning Experience of the ESS Spoke Cryomodule Prototype",,2181
-"THP059","S. Aderhold, C. Adolphsen, A. Burrill, D. Gonnella, J. Nelson","RF Incoming Inspection of 1.3 GHz Cryomodules for LCLS-II at SLAC National Accelerator Laboratory",,2857
-"THP060","E.R. Harms, E. Cullerton, C.M. Ginsburg, B.J. Hansen, B.D. Hartsell, J.P. Holzbauer, J. Hurd, V.S. Kashikhin, M.J. Kucera, F.L. Lewis, A. Lunin, D.L. Newhart, D.J. Nicklaus, P.S. Prieto, O.V. Prokofiev, J. Reid, N. Solyak, R.P. Stanek, M.A. Tartaglia, G. Wu, C. Contreras-Martinez, J. Einstein-Curtis","Experience With LCLS-II Cryomodule Testing at Fermilab",,3061
-"THP061","W. Hartung, S.H. Kim, D. Norton, J.T. Popielarski, K. Saito, J.F. Schwartz, C. Wei, T. Xu, C. Zhang","Performance of FRIB Production Quarter-Wave and Half-Wave Resonators in Dewar Certification Tests",,3187
-"THP062","W. Chang, S. Caton, A. Ganshyn, W. Hartung, S.H. Kim, B. Laumer, H. Maniar, J.T. Popielarski, K. Saito, M. Xu, T. Xu, C. Zhang, S. Zhao","Progress in FRIB Cryomodule Bunker Tests",,3252
-"THP063","S.M. Shanab, K. Saito, Y. Yamazaki","Inivestigation of the Possibility of High Efficiency L-Band SRF Cavity for Medium-Beta Heavy Ion Multi-Charge-State Beams",,3183
-"THP064","A.D. Wu, Q.W. Chu, H. Guo, Y. He, S.C. Huang, C.L. Li, F. Pan, Y.K. Song, T. Tan, P.R. Xiong, W.M. Yue, S.H. Zhang, H.W. Zhao","The Cryostat Results of Carbon Contamination and Plasma Cleaning for the Field Emission on the SRF Cavity",,2485
-"THP067","J.H. Wei, N. Baboi, T. Hellert","Cavity Tilt Measurement in a 1.3 GHz Superconducting Cryo-Module at FLASH",,3244
-"THP068","G. Cheng, G. Ciovati, M.L. Morrone","Evaluation of Low Heat Conductivity RF Cables",,2726
+"THP058","A. Miyazaki, K. Fransson, K.J. Gajewski, L. Hermansson, H. Li, R.J.M.Y. Ruber, R. Santiago Kern, R. Wedberg","Conditioning Experience of the ESS Spoke Cryomodule Prototype",1011,2181
+"THP059","S. Aderhold, C. Adolphsen, A. Burrill, D. Gonnella, J. Nelson","RF Incoming Inspection of 1.3 GHz Cryomodules for LCLS-II at SLAC National Accelerator Laboratory",1014,2857
+"THP060","E.R. Harms, E. Cullerton, C.M. Ginsburg, B.J. Hansen, B.D. Hartsell, J.P. Holzbauer, J. Hurd, V.S. Kashikhin, M.J. Kucera, F.L. Lewis, A. Lunin, D.L. Newhart, D.J. Nicklaus, P.S. Prieto, O.V. Prokofiev, J. Reid, N. Solyak, R.P. Stanek, M.A. Tartaglia, G. Wu, C. Contreras-Martinez, J. Einstein-Curtis","Experience With LCLS-II Cryomodule Testing at Fermilab",1018,3061
+"THP061","W. Hartung, W. Chang, S.H. Kim, D. Norton, J.T. Popielarski, K. Saito, J.F. Schwartz, T. Xu, C. Zhang","Performance of FRIB Production Quarter-Wave and Half-Wave Resonators in Dewar Certification Tests",1023,3187
+"THP062","W. Chang, S. Caton, A. Ganshyn, W. Hartung, S.H. Kim, B. Laumer, H. Maniar, J.T. Popielarski, K. Saito, M. Xu, T. Xu, C. Zhang, S. Zhao","Progress in FRIB Cryomodule Bunker Tests",1029,3252
+"THP063","S.M. Shanab, K. Saito, Y. Yamazaki","Inivestigation of the Possibility of High Efficiency L-Band SRF Cavity for Medium-Beta Heavy Ion Multi-Charge-State Beams",1035,3183
+"THP064","A.D. Wu, Q.W. Chu, H. Guo, Y. He, S.C. Huang, C.L. Li, F. Pan, Y.K. Song, T. Tan, P.R. Xiong, W.M. Yue, S.H. Zhang, H.W. Zhao","The Cryostat Results of Carbon Contamination and Plasma Cleaning for the Field Emission on the SRF Cavity",1038,2485
+"THP067","J.H. Wei, N. Baboi, T. Hellert","Cavity Tilt Measurement in a 1.3 GHz Superconducting Cryo-Module at FLASH",1041,3244
+"THP068","G. Cheng, G. Ciovati, M.L. Morrone","Evaluation of Low Heat Conductivity RF Cables",1045,2726
 "THP069","S.U. De Silva, J.R. Delayen, P. Berrutti, N.A. Huque, H. Park, Z. Li","Validation of LARP Prototype RF-Dipole Cavity Performance With Higher Order Mode Couplers",,2941
-"THP070","H.J. Zheng, F. Meng, P. Sha, J.Y. Zhai","CEPC HOM Coupler R&D",,2001
-"THP071","H.J. Zheng, F. Meng, J.Y. Zhai","HOM Measurement Results for CEPC 650 MHz 2-cell Cavity",,2002
-"THP072","T. Ota, S. Nakamura, K. Sato, M. Takasaki, E. Kako, T. Konomi, H. Sakai, K. Umemori, A. Miyamoto","Development of HOM Absorbers for CW Superconducting Cavities in Energy Recovery Linac",,2781
-"THP073","S. Pfeiffer, J. Branlard, M. Hoffmann, Ch. Schmidt","Advanced LLRF System Setup Tool for RF Field Regulation of SRF Cavities",,2784
-"THP074","M. Keikha, K. Fong, M. Moallem","Microphonics Noise Suppression with Observer Based Feedback",,1961
-"THP075","Q.Y. Wang, J.P. Dai, T.M. Huang, D.B. Li, H.Y. Lin, Z.H. Mi, P. Zhang","Development of a 166.6 MHz Digital LLRF System for HEPS-TF Project",,2929
-"THP076","R. Leewe, K. Fong","Simulation Analysis of Lorentz Force Induced Oscillations in RF Cavities in Vector Sum and Cw Operation",,2723
+"THP070","H.J. Zheng, F. Meng, P. Sha, J.Y. Zhai","CEPC HOM Coupler R&D",1050,2001
+"THP071","H.J. Zheng, F. Meng, J.Y. Zhai","HOM Measurement Results for CEPC 650 MHz 2-cell Cavity",1055,2002
+"THP072","T. Ota, S. Nakamura, K. Sato, M. Takasaki, E. Kako, T. Konomi, H. Sakai, K. Umemori, A. Miyamoto","Development of HOM Absorbers for CW Superconducting Cavities in Energy Recovery Linac",1060,2781
+"THP073","S. Pfeiffer, J. Branlard, M. Hoffmann, Ch. Schmidt","Advanced LLRF System Setup Tool for RF Field Regulation of SRF Cavities",1063,2784
+"THP074","M. Keikha, K. Fong, M. Moallem","Microphonics Noise Suppression with Observer Based Feedback",1068,1961
+"THP075","Q.Y. Wang, J.P. Dai, T.M. Huang, D.B. Li, H.Y. Lin, Z.H. Mi, P. Zhang","Development of a 166.6 MHz Digital LLRF System for HEPS-TF Project",1073,2929
+"THP076","R. Leewe, K. Fong","Simulation Analysis of Lorentz Force Induced Oscillations in RF Cavities in Vector Sum and Cw Operation",1078,2723
 "THP077","A. Maalberg, P.E. Evtushenko, M. Kuntzsch, A. Schwarz, K. Zenker, S. Pfeiffer, Ch. Schmidt","Development and Implementation of Beam-Based Feedback Algorithms for Continuous Wave Superconducting Linear Accelerators",,2851
-"THP078","N. Stapley, M.R. Coly, A.E. Ivanov, A. Macpherson, N.C. Shipman, K. Turaj, I. Ben-Zvi, J. Bastard, A. Castilla, M. Wartak, A. Zwozniak, K. Hernandez-Chahin","CERN's SRF Test Stand for Cavity Performance Measurements",,2834
+"THP078","N. Stapley, M.R. Coly, A.E. Ivanov, A. Macpherson, N.C. Shipman, K. Turaj, I. Ben-Zvi, J. Bastard, A. Castilla, M. Wartak, A. Zwozniak, K. Hernandez-Chahin","CERN's SRF Test Stand for Cavity Performance Measurements",1082,2834
 "THP079","K. Shih","Performance of the Coherent Electron Cooling SRF Accelerator",,3301
-"THP080","E. Vogel, S. Barbanotti, A. Brinkmann, Th. Buettner, J.I. Iversen, K. Jensch, D. Klinke, D. Kostin, W.-D. Moeller, A. Muhs, J. Schaffran, M. Schmoekel, J.K. Sekutowicz, S. Sievers, L. Steder, N. Steinhau-Kuehl, A. Sulimov, J.H. Thie, B. van der Horst, H. Weise, M. Wenskat, M. Wiencek, L. Winkelmann","Status of the All Superconducting Gun Cavity at DESY",,2833
-"THP081","H.J. Qian, G. Shu, F. Stephan, S. Barbanotti, B. Petersen, E. Vogel, A.A. Gorchakov, M. Gusarova","A Cryocooled Normal Conducting and Superconducting Hybrid CW RF Gun",,2897
-"THP082","K. Zhou, A. Arnold, S. Ma, J. Schaber, J. Teichert, R. Xiang","Geometry Dependent Beam Dynamics of a 3.5-cell SRF Gun Cavity at ELBE",,2824
-"THP083","S. Ma, A. Arnold, A.A. Ryzhov, J. Schaber, J. Teichert, R. Xiang, K. Zhou [on leave]","Quadrupole Scan Transverse Emittance Measurements at HZDR ELBE",,2890
+"THP080","E. Vogel, S. Barbanotti, A. Brinkmann, Th. Buettner, J.I. Iversen, K. Jensch, D. Klinke, D. Kostin, W.-D. Moeller, A. Muhs, J. Schaffran, M. Schmoekel, J.K. Sekutowicz, S. Sievers, L. Steder, N. Steinhau-Kuehl, A. Sulimov, J.H. Thie, B. van der Horst, H. Weise, M. Wenskat, M. Wiencek, L. Winkelmann","Status of the All Superconducting Gun Cavity at DESY",1087,2833
+"THP081","H.J. Qian, G. Shu, F. Stephan, S. Barbanotti, B. Petersen, E. Vogel, A.A. Gorchakov, M. Gusarova","A Cryocooled Normal Conducting and Superconducting Hybrid CW RF Gun",1091,2897
+"THP082","K. Zhou, A. Arnold, S. Ma, J. Schaber, J. Teichert, R. Xiang","Geometry Dependent Beam Dynamics of a 3.5-cell SRF Gun Cavity at ELBE",1095,2824
+"THP083","S. Ma, A. Arnold, A.A. Ryzhov, J. Schaber, J. Teichert, R. Xiang, K. Zhou [on leave]","Quadrupole Scan Transverse Emittance Measurements at HZDR ELBE",1100,2890
 "THP084","A. Arnold, P. Murcek, J. Schaber, J. Teichert, R. Xiang, P.Z. Zwartek","Thermo-Contact Measurements for the HZDR's SRF Gun Cathode Insert",,2934
 "THP085","J. Schaber, A. Arnold [on leave], P. Murcek [on leave], J. Teichert [on leave], R. Xiang [on leave], P.Z. Zwartek [on leave]","The Attempt of Using GaN as a Photocathode in SRF Photoinjector",,2902
-"THP086","S.H. Liu, S.Y. Chen, Y. Liu, C. Shi, P.C. Wang, B. Wu, X. Li, W. Long, H. Sun, S. Wang, C.L. Zhang, J.Y. Zhu","Preliminary Design of Superconducting Cavity Test Platform in CSNS Campus",,2462
-"THP087","L.R. Sun, R. Ge, R. Han, Y.C. Jiang, S.P. Li, C.C. Ma, M.J. Sang, M.F. Xu, R. Ye, J.H. Zhang, X.Z. Zhang, Z.Z. Zhang, T.X. Zhao","2 K SUPERFLUID HELIUM CRYOGENIC VERTICAL TEST STAND OF PAPS",,2882
-"THP088","Y. Iwashita, H. Tongu, H. Hayano, Y. Kuriyama","Updates on the Inspection System for SRF Cavities",,3122
-"THP089","Q. Zhou, F.S. He, W.M. Pan","Development of Superconducting RF Double Spoke Cavity at IHEP",,2528
-"THP090","A.I. Sukhanov, F.G. Garcia, B.M. Hanna, S. Kazakov, Y.M. Pischalnikov, O.V. Prokofiev, W. Schappert, I. Terechkine, V.P. Yakovlev, J.C. Yun, C. Contreras-Martinez, S. Samani","Characterization of SSR1 Cavities for PIP-II Linac",,2969
-"THP091","A.I. Sukhanov, S.K. Chandrasekaran, B.M. Hanna, T.H. Nicol, J.P. Ozelis, Y.M. Pischalnikov, D. Plant, O.V. Prokofiev, O.V. Pronitchev, V. Roger, W. Schappert, I. Terechkine, V.P. Yakovlev, C. Contreras-Martinez","Upgrade of the Fermilab Spoke Test Cryostat for Testing of PIP-II 650 MHz 5-Cell Elliptical Cavities",,3021
-"THP092","J. Branlard, V. Ayvazyan, A. Bellandi, J. Eschke, C. Gumus, D. Kostin, K.P. Przygoda, H. Schlarb, J.K. Sekutowicz","Status of Cryomodule Testing at CMTB for CW R&D",,3321
-"THP093","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, C. Pagani, R. Paparella, D. Sertore","Upgrade on the Experimental Activities for ESS at the LASA Vertical Test Facility",,2977
-"THP095","A.E. Ivanov, F. Gerigk, A. Macpherson","Direct Measurement of Thermoelectric Currents During Cool Down",,2836
-"THP096","E. Cenni, M. Baudrier, P. Carbonnier, G. Devanz, X. Hanus, L. Maurice, J. Plouin, D. Roudier, P. Sahuquet","ESS Prototype Cavities Developed at CEA Saclay",,1641
-"THP097","E. Cenni, M. Baudrier, G. Devanz, L. Maurice, O. Piquet, D. Roudier","Field Emission Studies on ESS Elliptical Prototype Cavities at CEA Saclay",,2766
-"THP099","P. Pierini, C.G. Maiano, E. Cenni, M. Wang, A. Bosotti, D. Sertore","The ESS Database for Elliptical Cavities",,3042
-"THP100","J.I. Iversen, A. Brinkmann, A. Ermakov, A. Muhs, J. Ziegler","Insight into DESY's Test Laboratory for Niobium Raw Material and Semi-finished Products",,2825
-"THP101","T. Kuerzeder, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, M. Miski-Oglu, K. Aulenbacher, F.D. Dziuba, S. Lauber, J. List, R.G. Heine, F. Hug, T. Stengler, J. Conrad","Commissioning of a Cleanroom for SRF Activities at the Helmholtz Institute Mainz",,2927
-"THP102","P. Putek, S. Gorgi Zadeh, M. Wenskat, W. Hillert, U. van Rienen","Uncertainty Quantification of a Quadrupole-Resonator for Radio Frequency Characterization of Superconductors",,3101
-"THP103","S. Lauber, K. Aulenbacher, F.D. Dziuba, P. Forck, M. Heilmann, T. Sieber, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, J. List, M. Miski-Oglu, H. Podlech, M. Schwarz","Reconstruction of the Longitudinal Phase Space for the Superconducting CW HELIAC",,2788
-"THP104","V. Volkov, V.M. Petrov","Numerical Estimation of Beam Break-Up Instability in TESLA Cavities",,2525
-"THP105","G. Vandoni, K. Turaj, T. Koettig, A. Macpherson, L. Vega Cid, H. Furci","Thermal Mapping of SRF Cavities by Second Sound Detection With Transition Edge Sensors and Oscillating Superleak Transducers",,2953
-"THP106","G. Vandoni, E. Montesinos, K. Artoos, V. Baglin, K. Brodzinski, R. Calaga, O. Capatina, S.D. Claudet, L.P. Delprat, S. Mehanneche, C. Pasquino, J.S. Swieszek [on leave]","An SRF Test Stand in High Intensity and High Energy Proton Beams",,2952
+"THP086","S.H. Liu, S.Y. Chen, Y. Liu, C. Shi, P.C. Wang, B. Wu, X. Li, W. Long, H. Sun, S. Wang, C.L. Zhang, J.Y. Zhu","Preliminary Design of Superconducting Cavity Test Platform in CSNS Campus",1104,2462
+"THP087","L.R. Sun, R. Ge, R. Han, Y.C. Jiang, S.P. Li, C.C. Ma, M.J. Sang, M.F. Xu, R. Ye, J.H. Zhang, X.Z. Zhang, Z.Z. Zhang, T.X. Zhao","2 K SUPERFLUID HELIUM CRYOGENIC VERTICAL TEST STAND OF PAPS",1107,2882
+"THP088","Y. Iwashita, H. Tongu, H. Hayano, Y. Kuriyama","Updates on the Inspection System for SRF Cavities",1111,3122
+"THP089","Q. Zhou, F.S. He, W.M. Pan","Development of Superconducting RF Double Spoke Cavity at IHEP",1114,2528
+"THP090","A.I. Sukhanov, F.G. Garcia, B.M. Hanna, S. Kazakov, Y.M. Pischalnikov, O.V. Prokofiev, W. Schappert, I. Terechkine, V.P. Yakovlev, J.C. Yun, C. Contreras-Martinez, S. Samani","Characterization of SSR1 Cavities for PIP-II Linac",1120,2969
+"THP091","A.I. Sukhanov, S.K. Chandrasekaran, B.M. Hanna, T.H. Nicol, J.P. Ozelis, Y.M. Pischalnikov, D. Plant, O.V. Prokofiev, O.V. Pronitchev, V. Roger, W. Schappert, I. Terechkine, V.P. Yakovlev, C. Contreras-Martinez","Upgrade of the Fermilab Spoke Test Cryostat for Testing of PIP-II 650 MHz 5-Cell Elliptical Cavities",1124,3021
+"THP092","J. Branlard, V. Ayvazyan, A. Bellandi, J. Eschke, C. Gumus, D. Kostin, K.P. Przygoda, H. Schlarb, J.K. Sekutowicz","Status of Cryomodule Testing at CMTB for CW R&D",1129,3321
+"THP093","M. Bertucci, A. Bosotti, A. D'Ambros, P. Michelato, L. Monaco, C. Pagani, R. Paparella, D. Sertore","Upgrade on the Experimental Activities for ESS at the LASA Vertical Test Facility",1133,2977
+"THP095","A.E. Ivanov, F. Gerigk, A. Macpherson","Direct Measurement of Thermoelectric Currents During Cool Down",1139,2836
+"THP096","E. Cenni, M. Baudrier, P. Carbonnier, G. Devanz, X. Hanus, L. Maurice, J. Plouin, D. Roudier, P. Sahuquet","ESS Prototype Cavities Developed at CEA Saclay",1143,1641
+"THP097","E. Cenni, M. Baudrier, G. Devanz, L. Maurice, O. Piquet, D. Roudier","Field Emission Studies on ESS Elliptical Prototype Cavities at CEA Saclay",1147,2766
+"THP099","P. Pierini, C.G. Maiano, E. Cenni, M. Wang, A. Bosotti, D. Sertore","The ESS Database for Elliptical Cavities",1152,3042
+"THP100","J.I. Iversen, A. Brinkmann, A. Ermakov, A. Muhs, J. Ziegler","Insight into DESY's Test Laboratory for Niobium Raw Material and Semi-finished Products",1157,2825
+"THP101","T. Kuerzeder, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, M. Miski-Oglu, K. Aulenbacher, F.D. Dziuba, S. Lauber, J. List, R.G. Heine, F. Hug, T. Stengler, J. Conrad","Commissioning of a Cleanroom for SRF Activities at the Helmholtz Institute Mainz",1162,2927
+"THP102","P. Putek, S. Gorgi Zadeh, M. Wenskat, W. Hillert, U. van Rienen","Uncertainty Quantification of a Quadrupole-Resonator for Radio Frequency Characterization of Superconductors",1168,3101
+"THP103","S. Lauber, K. Aulenbacher, F.D. Dziuba, P. Forck, M. Heilmann, T. Sieber, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, J. List, M. Miski-Oglu, H. Podlech, M. Schwarz","Reconstruction of the Longitudinal Phase Space for the Superconducting CW HELIAC",1173,2788
+"THP104","V. Volkov, V.M. Petrov","Numerical Estimation of Beam Break-Up Instability in TESLA Cavities",1178,2525
+"THP105","G. Vandoni, K. Turaj, T. Koettig, A. Macpherson, L. Vega Cid, H. Furci","Thermal Mapping of SRF Cavities by Second Sound Detection With Transition Edge Sensors and Oscillating Superleak Transducers",1182,2953
+"THP106","G. Vandoni, E. Montesinos, K. Artoos, V. Baglin, K. Brodzinski, R. Calaga, O. Capatina, S.D. Claudet, L.P. Delprat, S. Mehanneche, C. Pasquino, J.S. Swieszek [on leave]","An SRF Test Stand in High Intensity and High Energy Proton Beams",1187,2952
 "THP107","J.C. Brutus, I. Ben-Zvi, V. Litvinenko, I. Pinayev, J. Skaritka, L. Snydstrup, R. Than, J.E. Tuozzolo, W. Xu, S.A. Belomestnykh, Y. Huang, T.L. Grimm, R. Jecks, J.A. Yancey","Mechanical Design of the 112 MHz SRF Gun and the 704 MHz 5-Cell SRF Cavity for CeC PoP Experiment",,3381
 "THTU1","G. Ciovati","Basic Principles of RF Superconductivity",,3401
 "THTU2","E. Jensen","RF Basics and TM Cavities",,3402
 "THTU3","T. Powers","Practical Aspects of SRF Cavity Testing and Operations",,3403
 "THTU4","E. Kako","High Power Couplers and HOM Couplers",,3404
-"TUFUA1","J.T. Maniscalco, M. Ge, P.N. Koufalis, M. Liepe, T. Arias, D. Liarte, J.P. Sethna, N. Sitaraman","The Field-Dependent Surface Resistance of Doped Niobium: New Experimental and Theoretical Results",,1357
+"TUFUA1","J.T. Maniscalco, M. Ge, P.N. Koufalis, M. Liepe, T. Arias, D. Liarte, J.P. Sethna, N. Sitaraman","The Field-Dependent Surface Resistance of Doped Niobium: New Experimental and Theoretical Results",340,1357
 "TUFUA2","A. Grassellino","Overview of Progress in High Q and High G in Niobium Cavities",,1702
 "TUFUA3","A.D. Palczewski, C.E. Reece, J.K. Spradlin, J.W. Angle","Development of a Qualitative Model for N-Doping Effects on Nb SRF Cavities",,1386
-"TUFUA4","D. Bafia, M. Checchin, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski","New Insights on Nitrogen Doping",,1703
-"TUFUA5","P. Dhakal","Recent Development on Nitrogen Infusion Work Towards High Q and High Gradient",,1382
+"TUFUA4","D. Bafia, M. Checchin, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski","New Insights on Nitrogen Doping",347,1703
+"TUFUA5","P. Dhakal","Recent Development on Nitrogen Infusion Work Towards High Q and High Gradient",355,1382
 "TUFUA6","A. Dangwal Pandey, T.F. Keller, H. Noei, D. Reschke, J. Schaffran, G.D.L. Semione, V. Vonk, H. Weise, M. Wenskat, C. Bate, A. Stierle","Surface Analysis of Niobium After Thermal/Gas Treatments via Samples - Review",,1355
-"TUFUA7","T. Junginger, R.E. Laxdal","Review of Muon Spin Rotation Studies of SRF Materials",,1746
+"TUFUA7","T. Junginger, R.E. Laxdal","Review of Muon Spin Rotation Studies of SRF Materials",360,1746
 "TUFUB1","Z-H. Sung","Direct Correlation of State of the Art Cavity Performance With Surface Nb Nano-Hydrides Cutouts Observed via Cryogenic AFM",,1721
 "TUFUB2","M. Checchin","New Insights into RF Field Amplitude and Frequency Dependence of Vortex Surface Resistance",,1704
-"TUFUB3","F. Kramer, J.M. Köszegi, O. Kugeler, J. Knobloch","Mapping Flux Trapping in SRF Cavities to Analyze the Impact of Geometry",,1461
+"TUFUB3","F. Kramer, J.M. Köszegi, O. Kugeler, J. Knobloch","Mapping Flux Trapping in SRF Cavities to Analyze the Impact of Geometry",364,1461
 "TUFUB4","M. Martinello","Microscopic Investigation of Flux Trapping Sites in Bulk Nb",,1741
-"TUFUB5","M.K. Ng, Z.A. Conway, M.P. Kelly, K.W. Shepard","Effects of Static Magnetic Fields on a Low-frequency TEM Class Superconducting Cavity",,1901
-"TUFUB7","H. Park, S.U. De Silva, J.R. Delayen, J.K. Tiskumara","Measurement of Surface Resistance Properties with Coaxial Resonators - Review",,1356
-"TUFUB8","M. Ge, T. Gruber, J.J. Kaufman, M. Liepe, J.T. Maniscalco, T.E. Oseroff, R.D. Porter, Z. Sun, V.M. Arrieta, S.R. McNeal","CVD Coated Copper Substrate SRF Cavity Research at Cornell University",,1362
+"TUFUB5","M.K. Ng, Z.A. Conway, M.P. Kelly, K.W. Shepard","Effects of Static Magnetic Fields on a Low-frequency TEM Class Superconducting Cavity",370,1901
+"TUFUB7","H. Park, S.U. De Silva, J.R. Delayen","Measurement of Surface Resistance Properties with Coaxial Resonators - Review",374,1356
+"TUFUB8","M. Ge, T. Gruber, J.J. Kaufman, M. Liepe, J.T. Maniscalco, T.E. Oseroff, R.D. Porter, Z. Sun, V.M. Arrieta, S.R. McNeal","CVD Coated Copper Substrate SRF Cavity Research at Cornell University",381,1362
 "TUKN1","A.R. Maier","Pros and Cons of Laser-Plasma Accelerators: Where Are the Limits, and Will LPA Compete With SRF",,2790
 "TUP001","K. Romieu, N. Bazin, S. Chel, G. Devanz, L. Maurice, J. Plouin","Test of a Plunger Tuner Prototype for DONES Low Beta Superconducting Cavities",,2782
-"TUP002","M. Dominiczak, N. Gandolfo, C. Joly, F. Bouly","Modeling of Superconducting Spoke Cavity with its Control Loops Systems for the MYRRHA Linac Project",,2827
-"TUP003","S. Bira, S. Blivet, P. Duchesne, D. Longuevergne, G. Martinet, G. Olry","Design of a Multimodal Quadripole Resonator for Thin Films Characterization",,2803
-"TUP004","M. Basten, M. Busch, T. Conrad, H. Podlech, M. Schwarz, M. Heilmann, J. Salvatore, A. Schnase, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, K. Aulenbacher, S. Lauber, F.D. Dziuba, J. List","Latest Cryogenic Test Results of the Superconducting beta=0.069 CH-cavities for the HELIAC-project",,2222
-"TUP005","T. Conrad, M. Basten, M. Busch, H. Podlech, M. Schwarz, M. Heilmann, A. Rubin, A. Schnase, S. Yaramyshev, W.A. Barth, F.D. Dziuba, V. Gettmann, T. Kuerzeder, S. Lauber, J. List, M. Miski-Oglu, K. Aulenbacher","Cavity Designs for the CH3 to CH11 of the Superconducting Heavy Ion Accelerator HELIAC",,2121
+"TUP002","M. Dominiczak, F. Bouly, N. Gandolfo, C. Joly","Modeling of Superconducting Spoke Cavity with its Control Loops Systems for the MYRRHA Linac Project",387,2827
+"TUP003","S. Bira, S. Blivet, P. Duchesne, G. Martinet, G. Olry, D. Longuevergne","Design of a Multimodal Quadripole Resonator for Thin Films Characterization",,2803
+"TUP004","M. Basten, M. Busch, T. Conrad, H. Podlech, M. Schwarz, M. Heilmann, J. Salvatore, A. Schnase, S. Yaramyshev, W.A. Barth, C. Burandt, V. Gettmann, T. Kuerzeder, M. Miski-Oglu, K. Aulenbacher, S. Lauber, F.D. Dziuba, J. List","Latest Cryogenic Test Results of the Superconducting beta=0.069 CH-cavities for the HELIAC-project",392,2222
+"TUP005","T. Conrad, M. Basten, M. Busch, H. Podlech, M. Schwarz, M. Heilmann, A. Rubin, A. Schnase, S. Yaramyshev, W.A. Barth, F.D. Dziuba, V. Gettmann, T. Kuerzeder, S. Lauber, J. List, M. Miski-Oglu, K. Aulenbacher","Cavity Designs for the CH3 to CH11 of the Superconducting Heavy Ion Accelerator HELIAC",396,2121
 "TUP006","A. Pathak, S. Krishnagopal","Space-Charge and Cavity Induced Beam Instabilities in Single Spoke Cavities",,3081
-"TUP007","J. Tamura, K. Hasegawa, Y. Kondo, F.M. Maekawa, S.I. Meigo, B. Yee-Rendon, E. Kako, T. Konomi, H. Sakai, K. Umemori","Electromagnetic Design of the Prototype Spoke Cavity for the JAEA-ADS Linac",,2921
-"TUP008","X.R. Hao","HOMs Extraction Structure Design for HEPS 166.6 MHz Cavities",,1941
-"TUP010","X.Y. Zhang, X.R. Hao, D.B. Li, Z.Q. Li, H.Y. Lin, Q. Ma, Z.H. Mi, Q.Y. Wang, P. Zhang","Mechanical Design and Horizontal Tests of a Dressed 166.6 MHz Quarter-wave beta=1 SRF Cavity System",,2221
-"TUP011","M. Chen, S. Chen, A.Q. Cheng, J.K. Hao, K.X. Liu, Y.Q. Liu, D.M. Ouyang, S.W. Quan, F. Zhu, Z. Peng","QWR085 Design for Bisol Post Accelerator SCL2",,2527
-"TUP012","P. Dhakal, G. Ciovati, G.R. Myneni","Evaluation of High Performance Large Grain Medium Purity SRF Cavity From KEK",,2681
-"TUP013","H. Imao, O. Kamigaito, N. Sakamoto, T. Watanabe, Y. Watanabe, K. Yamada, K. Oyamada","Non-Evaporative Getter-Based Differential Pumping System for SRILAC at RIBF",,2822
-"TUP014","M. Parise, D. Passarelli, F. Ruiu, P. Duchesne, D. Longuevergne, D. Reynet","Mechanical Design and Fabrication Aspects of Prototype SSR2 Jacketed Cavities",,2982
+"TUP007","J. Tamura, K. Hasegawa, Y. Kondo, F.M. Maekawa, S.I. Meigo, B. Yee-Rendon, E. Kako, T. Konomi, H. Sakai, K. Umemori","Electromagnetic Design of the Prototype Spoke Cavity for the JAEA-ADS Linac",399,2921
+"TUP008","X.R. Hao","HOMs Extraction Structure Design for HEPS 166.6 MHz Cavities",403,1941
+"TUP010","X.Y. Zhang, X.R. Hao, D.B. Li, Z.Q. Li, H.Y. Lin, Q. Ma, Z.H. Mi, Q.Y. Wang, P. Zhang","Mechanical Design and Horizontal Tests of a Dressed 166.6 MHz Quarter-wave beta=1 SRF Cavity System",408,2221
+"TUP011","M. Chen, S. Chen, A.Q. Cheng, J.K. Hao, K.X. Liu, Y.Q. Liu, D.M. Ouyang, S.W. Quan, F. Zhu, Z. Peng","QWR085 Design for Bisol Post Accelerator SCL2",413,2527
+"TUP012","P. Dhakal, G. Ciovati, G.R. Myneni","Evaluation of High Performance Large Grain Medium Purity SRF Cavity From KEK",415,2681
+"TUP013","H. Imao, O. Kamigaito, N. Sakamoto, T. Watanabe, Y. Watanabe, K. Yamada, K. Oyamada","Non-Evaporative Getter-Based Differential Pumping System for SRILAC at RIBF",419,2822
+"TUP014","M. Parise, D. Passarelli, F. Ruiu, P. Duchesne, D. Longuevergne, D. Reynet","Mechanical Design and Fabrication Aspects of Prototype SSR2 Jacketed Cavities",424,2982
 "TUP015","P.B. Welander, Z. Li, M.H. Nasr, S.G. Tantawi","The Design and Construction of a Parallel-Feed SRF Linac",,2562
-"TUP016","S.V. Kutsaev, R.B. Agustsson, P.R. Carriere, A. Moro, A.Yu. Smirnov, Z.A. Conway, K.V. Taletski, A.N. Cleland, É. Dumur","Quarter-wave Resonator with the Optimized Shape for Quantum Information Systems",,3204
+"TUP016","S.V. Kutsaev, R.B. Agustsson, P.R. Carriere, A. Moro, A.Yu. Smirnov, Z.A. Conway, K.V. Taletski, A.N. Cleland, É. Dumur","Quarter-wave Resonator with the Optimized Shape for Quantum Information Systems",430,3204
 "TUP017","R.A. Kostin, A. Kanareykin, I.V. Gonin, V.P. Yakovlev","New SRF Disk and Spoke Structure",,2995
-"TUP018","T. Reid, Z.A. Conway, B.M. Guilfoyle, M. Kedzie, M.P. Kelly, M.K. Ng","New SRF Structures Processed at the ANL Cavity Processing Facility",,3255
-"TUP019","M. Fouaidy, F. Chatelet, V. Delpech, F. Galet, D. Le Dréan, D. Longuevergne, R. Martret, G. Olry, T. Pépin-Donat, M. Baudrier, P. Carbonnier, E. Fayette, X. Hanus, Th. Proslier, D. Roudier, P. Sahuquet, C. Servouin, E. Cenni, L. Maurice","Status of High Temperature Vacuum Heat Treatment Program at IPN Orsay",,2943
-"TUP020","L. Steder, D. Reschke","Statistical Analysis of the 120ºC Bake Procedure of Superconducting Radio Frequency Cavities",,2263
-"TUP021","V. Chouhan, Y.I. Ida, K.N. Nii, T.Y. Yamaguchi, H. Hayano, S. Kato, H. Monjushiro, T. Saeki","Effect of Cathode Rotation and Acid Flow in Vertical Electropolishing of 1.3 GHz Niobium Nine-Cell Cavity",,2162
-"TUP022","F. Furuta, D.J. Bice, A.C. Crawford, T.J. Ring","Fermilab EP Facility Improvement",,2899
-"TUP023","A. Sulimov, J.H. Thie, A. Gresele, A.D. Palczewski, A. Navitski","Experience of LCLS-II Cavities Radial Tuning at DESY",,2805
-"TUP024","A. Sulimov, J.H. Thie","Radial Tuning Devices for 1.3 GHz TESLA Shape Cavities",,2804
+"TUP018","T. Reid, Z.A. Conway, B.M. Guilfoyle, M. Kedzie, M.P. Kelly, M.K. Ng","New SRF Structures Processed at the ANL Cavity Processing Facility",434,3255
+"TUP019","M. Fouaidy, F. Chatelet, V. Delpech, F. Galet, D. Le Dréan, R. Martret, G. Olry, T. Pépin-Donat, M. Baudrier, P. Carbonnier, E. Fayette, X. Hanus, Th. Proslier, D. Roudier, P. Sahuquet, C. Servouin, E. Cenni, L. Maurice, D. Longuevergne","Status of High Temperature Vacuum Heat Treatment Program at IPN Orsay",438,2943
+"TUP020","L. Steder, D. Reschke","Statistical Analysis of the 120ºC Bake Procedure of Superconducting Radio Frequency Cavities",444,2263
+"TUP021","V. Chouhan, Y.I. Ida, K.N. Nii, T.Y. Yamaguchi, H. Hayano, S. Kato, H. Monjushiro, T. Saeki","Effect of Cathode Rotation and Acid Flow in Vertical Electropolishing of 1.3 GHz Niobium Nine-Cell Cavity",448,2162
+"TUP022","F. Furuta, D.J. Bice, A.C. Crawford, T.J. Ring","Fermilab EP Facility Improvement",453,2899
+"TUP023","A. Sulimov, J.H. Thie, A. Gresele, A.D. Palczewski, A. Navitski","Experience of LCLS-II Cavities Radial Tuning at DESY",456,2805
+"TUP024","A. Sulimov, J.H. Thie","Radial Tuning Devices for 1.3 GHz TESLA Shape Cavities",459,2804
 "TUP025","W. Xu, T. Hayes, D. Holmes, G.T. McIntyre, K. Mernick, P. Orfin, R. Porqueddu, S.K. Seberg, F. Severino, K.S. Smith, R. Than, B. P. Xiao, A. Zaltsman","Preliminary Vertical Test Result and Plan for 5-Cell 650 MHz Cavity",,2976
-"TUP026","E. Chyhyrynets, O. Azzolini, V. A. Garcia, G. Keppel, C. Pira, F. Stivanello, L. Zanotto","Vibro-tumbling as an Alternative to Standard Mechanical Polishing Techniques for SRF Cavities",,2841
-"TUP027","K.N. Nii, V. Chouhan, Y.I. Ida, T.Y. Yamaguchi, H. Hayano, S. Kato, H. Monjushiro, T. Saeki","Vertical Electropolishing of Niobium Nine-Cell Cavity with a Cavity Flipping System for Uniform Removal",,2741
-"TUP028","Y.I. Ida, V. Chouhan, K.N. Nii, T. Akabori, G. Mitoya, K. Miyano, H. Hayano, S. Kato, H. Monjushiro, T. Saeki, M. Sawabe, Y. Anetai, F. Takahashi","Development of Vertical Electropolishing Facility for Nb 9-Cell Cavity (3)",,2821
-"TUP029","C.E. Reece","An Experimental Analysis of Effective EP Parameters for Low-Frequency Cylindrical Nb Cavities",,2792
-"TUP030","J.K. Spradlin, C.E. Reece, O. Trofimova, A-M. Valente-Feliciano","Automation of Particulate Characterization",,2814
-"TUP031","Y. Jung, B.H. Choi, D.H. Gil, M.O. Hyun, H. Kim, J.W. Kim, M.S. Kim, D.Y. Lee, J. Lee, S. Lee","Heat Treatment for Jacketed Half-wave Resonator Cavity",,1981
-"TUP032","M.O. Hyun, H.C. Jung, Y. Kim, M. Lee","Modal Analysis and Vibration Test for Quarter Wave Resonator for RAON",,2161
-"TUP033","S. Barbanotti, A. Bellandi, J. Branlard, K. Jensch","Modal Analysis of the EXFEL 1.3 GHz Cavity and Cryomodule Main Components and Comparison with Measured Data",,2541
-"TUP034","T. Powers, N.C. Brock, G.K. Davis","Microphonics Testing of LCLS II Cryomodules at Jefferson Lab",,2783
+"TUP026","E. Chyhyrynets, O. Azzolini, V. A. Garcia, G. Keppel, C. Pira, F. Stivanello, L. Zanotto","Vibro-tumbling as an Alternative to Standard Mechanical Polishing Techniques for SRF Cavities",464,2841
+"TUP027","K.N. Nii, V. Chouhan, Y.I. Ida, T.Y. Yamaguchi, H. Hayano, S. Kato, H. Monjushiro, T. Saeki","Vertical Electropolishing of Niobium Nine-Cell Cavity with a Cavity Flipping System for Uniform Removal",467,2741
+"TUP028","Y.I. Ida, V. Chouhan, K.N. Nii, T. Akabori, G. Mitoya, K. Miyano, H. Hayano, S. Kato, H. Monjushiro, T. Saeki, M. Sawabe, Y. Anetai, F. Takahashi","Development of Vertical Electropolishing Facility for Nb 9-Cell Cavity (3)",470,2821
+"TUP029","C.E. Reece","An Experimental Analysis of Effective EP Parameters for Low-Frequency Cylindrical Nb Cavities",472,2792
+"TUP030","J.K. Spradlin, C.E. Reece, O. Trofimova, A-M. Valente-Feliciano","Automation of Particulate Characterization",477,2814
+"TUP031","Y. Jung, B.H. Choi, D.H. Gil, M.O. Hyun, H. Kim, J.W. Kim, M.S. Kim, D.Y. Lee, J. Lee, S. Lee","Heat Treatment for Jacketed Half-wave Resonator Cavity",482,1981
+"TUP032","M.O. Hyun, H.C. Jung, Y. Kim, M. Lee","Modal Analysis and Vibration Test for Quarter Wave Resonator for RAON",485,2161
+"TUP033","S. Barbanotti, A. Bellandi, J. Branlard, K. Jensch","Modal Analysis of the EXFEL 1.3 GHz Cavity and Cryomodule Main Components and Comparison with Measured Data",488,2541
+"TUP034","T. Powers, N.C. Brock, G.K. Davis","Microphonics Testing of LCLS II Cryomodules at Jefferson Lab",493,2783
 "TUP035","A.D. Yeremian, C. Adolphsen, J. Chan, A.A. Haase, C.D. Nantista, J. Olszewski","LCLS-II High Power RF Systems Overview and Progress",,2869
-"TUP036","B. Schriefer, W. Anders","Commissioning of Klystron Transmitters up to 270 kW at 1.3 GHz",,2891
-"TUP037","K. Yamada, T. Dantsuka, H. Imao, O. Kamigaito, K. Kusaka, H. Okuno, K. Ozeki, N. Sakamoto, K. Suda, T. Watanabe, Y. Watanabe, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Construction of Superconducting Linac Booster for Heavy-Ion Linac at RIKEN Nishina Center",,2936
+"TUP036","B. Schriefer, W. Anders, A. Heugel, H. Hoffmann, G. Mielczarek, H. Stein","Commissioning of Klystron Transmitters with 270 kW_{CW} at 1.3 GHz",499,2891
+"TUP037","K. Yamada, T. Dantsuka, H. Imao, O. Kamigaito, K. Kusaka, H. Okuno, K. Ozeki, N. Sakamoto, K. Suda, T. Watanabe, Y. Watanabe, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Construction of Superconducting Linac Booster for Heavy-Ion Linac at RIKEN Nishina Center",502,2936
 "TUP039","S. Posen, A. Grassellino, E.R. Harms, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, N. Solyak, G. Wu, A.D. Palczewski, D. Gonnella, T.J. Peterson","Flux Expulsion Lessons Learned from LCLS-II",,2768
-"TUP041","T. Stengler, F. Hug, S.D.W. Thomas, K. Aulenbacher","SRF testing for Mainz Energy Recovering Superconducting Accelerator MESA",,2282
-"TUP042","O. Kamigaito, K. Ozeki, N. Sakamoto, K. Suda, K. Yamada","Measurement of Mechanical Vibration of SRILAC Cavities",,2861
-"TUP043","A.B. Tesfamichael, T. Arias","Ab-initio Study of Atomic Scale Interaction Among Nb, Sn, Cl, and O",,2893
+"TUP041","T. Stengler, F. Hug, S.D.W. Thomas, K. Aulenbacher","SRF testing for Mainz Energy Recovering Superconducting Accelerator MESA",508,2282
+"TUP042","O. Kamigaito, K. Ozeki, N. Sakamoto, K. Suda, K. Yamada","Measurement of Mechanical Vibration of SRILAC Cavities",513,2861
+"TUP043","A.B. Tesfamichael, T. Arias","Ab-initio Study of Atomic Scale Interaction Among Nb, Sn, Cl, and O",518,2893
 "TUP044","M. Checchin, A. Grassellino, A.S. Romanenko","Vortex Dynamics and Dissipation for Random Pinning Potential",,2942
-"TUP045","N. Sitaraman, T. Arias, M. Liepe, J.T. Maniscalco, R.G. Farber, S.J. Sibener, R.D. Veit","Ab Initio Calculations on Impurity Doped Niobium and Niobium Surfaces",,2645
-"TUP046","P. Kolb, R.E. Laxdal, Z.Y. Yao","Low Frequency, Low Beta Cavity Performance Improvement Studies",,2501
+"TUP045","N. Sitaraman, T. Arias, M. Liepe, J.T. Maniscalco, R.G. Farber, S.J. Sibener, R.D. Veit","Ab Initio Calculations on Impurity Doped Niobium and Niobium Surfaces",523,2645
+"TUP046","P. Kolb, R.E. Laxdal, Z.Y. Yao","Low Frequency, Low Beta Cavity Performance Improvement Studies",527,2501
 "TUP047","P.N. Koufalis, M. Ge, M. Liepe, J.T. Maniscalco, R.D. Porter","Field and Frequency Dependence of the Surface Resistance of Superconducting Microwave Resonators",,2603
 "TUP048","M. Martinello, M. Checchin, A. Grassellino, O.S. Melnychuk, S. Posen, A.S. Romanenko, D.A. Sergatskov","Field Dependent Surface Resistance Variation as a Function of the Frequency",,2948
-"TUP049","G. Ciovati, A.V. Gurevich, I.P. Parajuli","Maximum Performance of Cavities Affected by the High-field Q-slope (HFQS)",,1381
-"TUP050","G. Ciovati, G. Cheng, E. Daly, G.V. Eremeev, J. Henry, R.A. Rimmer, I.P. Parajuli, U. Pudasaini","A Multi-layered SRF Cavity for Conduction Cooling Applications",,2727
-"TUP051","J.T. Maniscalco, T. Gruber, A.T. Holic, M. Liepe","Progress Towards Commissioning the Cornell DC Field Dependence Cavity",,2605
-"TUP052","I.P. Parajuli, A.V. Gurevich, J. Nice, G. Ciovati, W.A. Clemens, J.R. Delayen","Design and Commissioning of a Magnetic Field Scanning System for SRF Cavities",,2463
-"TUP053","R.L. Geng, F. Marhauser, P.D. Owen","Optimal Thermal Gradient for Flux Expulsion in 600°C Heat-treated CEBAF 12 GeV Upgrade Cavities",,2201
-"TUP054","D. Longuevergne","How Is Flux Expulsion Affected by Geometry: Experimental Evidence and Model",,2894
-"TUP055","M.R.P. Walive Pathiranage, A.V. Gurevich","Nonlinear Dynamics and Dissipation of Vortex Lines Driven by Strong RF Fields",,2623
-"TUP056","P. Garg, K.N. Solanki, T.R. Bieler, L.D. Cooley","A First-Principles Study on Magnetic Flux Trapping at Niobium Grain Boundaries",,3243
-"TUP057","A.D. Palczewski, O.S. Melnychuk, D.A. Sergatskov, D. Gonnella","Study of Flux Trapping Variability between Batches of Tokyo Denkai Niobium used for the LCLS-II Project and Subsequent 9-cell RF Loss Distribution between the Batches",,2964
-"TUP058","G. Martinet","Characterization of Small AMR Sensors in Liquid Helium to Measure Residual Magnetic Field on Superconducting Samples",,2933
-"TUP059","P. Nunez von Voigt, O. Kugeler, J. Knobloch","Investigation of Trapped Flux Dynamics via DC-Magnetic Quenching",,2940
-"TUP060","T. Okada, M. Masuzawa, K. Tsuchiya, R. Ueki, E. Kako, T. Konomi, H. Sakai, K. Umemori, A. Poudel, T. Tajima","Development of Temperature and Magnetic Field Mapping System for Superconducting Cavities at KEK",,2601
-"TUP061","D. Bafia, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, Z-H. Sung, J. Zasadzinski","Gradients of 50 MV/m in TESLA Shaped Cavities via Modified Low Temperature Bake",,2868
-"TUP062","D. Bafia, D.J. Bice, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski, A.D. Palczewski, D. Gonnella","New Insights in the Quench Mechanisms in Nitrogen Doped Cavities",,2724
+"TUP049","G. Ciovati, A.V. Gurevich, I.P. Parajuli","Maximum Performance of Cavities Affected by the High-field Q-slope (HFQS)",533,1381
+"TUP050","G. Ciovati, G. Cheng, E. Daly, G.V. Eremeev, J. Henry, R.A. Rimmer, I.P. Parajuli, U. Pudasaini","A Multi-layered SRF Cavity for Conduction Cooling Applications",538,2727
+"TUP051","J.T. Maniscalco, T. Gruber, A.T. Holic, M. Liepe","Progress Towards Commissioning the Cornell DC Field Dependence Cavity",543,2605
+"TUP052","I.P. Parajuli, A.V. Gurevich, J. Nice, G. Ciovati, W.A. Clemens, J.R. Delayen","Design and Commissioning of a Magnetic Field Scanning System for SRF Cavities",547,2463
+"TUP053","R.L. Geng, F. Marhauser, P.D. Owen","Optimal Thermal Gradient for Flux Expulsion in 600°C Heat-treated CEBAF 12 GeV Upgrade Cavities",550,2201
+"TUP054","D. Longuevergne","How Is Flux Expulsion Affected by Geometry: Experimental Evidence and Model",555,2894
+"TUP055","M.R.P. Walive Pathiranage, A.V. Gurevich","Nonlinear Dynamics and Dissipation of Vortex Lines Driven by Strong RF Fields",560,2623
+"TUP056","P. Garg, K.N. Solanki, T.R. Bieler, L.D. Cooley","A First-Principles Study on Magnetic Flux Trapping at Niobium Grain Boundaries",565,3243
+"TUP057","A.D. Palczewski, O.S. Melnychuk, D.A. Sergatskov, D. Gonnella","Study of Flux Trapping Variability between Batches of Tokyo Denkai Niobium used for the LCLS-II Project and Subsequent 9-cell RF Loss Distribution between the Batches",570,2964
+"TUP058","G. Martinet","Characterization of Small AMR Sensors in Liquid Helium to Measure Residual Magnetic Field on Superconducting Samples",576,2933
+"TUP059","P. Nunez von Voigt, O. Kugeler, J. Knobloch","Investigation of Trapped Flux Dynamics via DC-Magnetic Quenching",580,2940
+"TUP060","T. Okada, M. Masuzawa, K. Tsuchiya, R. Ueki, E. Kako, T. Konomi, H. Sakai, K. Umemori, A. Poudel, T. Tajima","Development of Temperature and Magnetic Field Mapping System for Superconducting Cavities at KEK",583,2601
+"TUP061","D. Bafia, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, Z-H. Sung, J. Zasadzinski","Gradients of 50 MV/m in TESLA Shaped Cavities via Modified Low Temperature Bake",586,2868
+"TUP062","D. Bafia, D.J. Bice, A. Grassellino, O.S. Melnychuk, A.S. Romanenko, D.A. Sergatskov, J. Zasadzinski, A.D. Palczewski, D. Gonnella","New Insights in the Quench Mechanisms in Nitrogen Doped Cavities",592,2724
 "TUP063","M. Ge, T. Gruber, J.J. Kaufman, P.N. Koufalis, M. Liepe, J.T. Maniscalco","Low Temperature Baking Study for High-gradient SRF Cavities at Cornell University",,2793
-"TUP064","X. Liu, Z. Gao, Y. He, G. Huang","Flashover on RF Window of HWR SRF Cavity",,2542
+"TUP064","X. Liu, Z. Gao, Y. He, G. Huang","Flashover on RF Window of HWR SRF Cavity",597,2542
 "TUP065","P. Berrutti, A. Grassellino, T.N. Khabiboulline, M. Martinello, B. Giaccone, M. Doleans, S.-H. Kim, D. Gonnella, G. Lanza, M.C. Ross","Low RF Power Plasma Ignition and Detection for In-situ Cleaning of 1.3 GHz 9-cell Cavities",,2975
-"TUP066","P. Berrutti, I.V. Gonin, T.N. Khabiboulline, M. Parise, D. Passarelli, G.V. Romanov, F. Ruiu, A.I. Sukhanov, V.P. Yakovlev","New Design of SSR2 Spoke Cavity for PIP II SRF Linac",,2972
-"TUP068","F.Y. Yang, J. Dai, P. He, Z.Q. Li, Y. Ma, P. Zhang","Study of Surface Treatment of 1.3 GHz Single-cell Copper Cavity for Niobium Sputtering",,2421
+"TUP066","P. Berrutti, I.V. Gonin, T.N. Khabiboulline, M. Parise, D. Passarelli, G.V. Romanov, F. Ruiu, A.I. Sukhanov, V.P. Yakovlev","New Design of SSR2 Spoke Cavity for PIP II SRF Linac",600,2972
+"TUP068","F.Y. Yang, J. Dai, P. He, Z.Q. Li, Y. Ma, P. Zhang","Study of Surface Treatment of 1.3 GHz Single-cell Copper Cavity for Niobium Sputtering",605,2421
 "TUP069","A-M. Valente-Feliciano, C.E. Reece, J.K. Spradlin, O. Trofimova, Th. Proslier, C.Z. Antoine, M. Arzeo","RF Behavior of ECR Nb/Cu Films",,2856
-"TUP070","O.B. Malyshev, J.A. Conlon, P. Goudket, N. Pattalwar, S.M. Pattalwar, G. Burt","The SRF Thin Film Test Facility in LHe-Free Cryostat",,2850
+"TUP070","O.B. Malyshev, J.A. Conlon, P. Goudket, N. Pattalwar, S.M. Pattalwar, G. Burt","The SRF Thin Film Test Facility in LHe-Free Cryostat",610,2850
 "TUP071","D. Fonnesu, F. Avino, J. Bremer, S. Fernandez, T. Koettig, G.J. Rosaz, A. Sublet, E.A. Ilyina","First Results From the T_c Test Stand for Superconducting Thin-Film Coatings",,2742
-"TUP072","J. Dai, P. He, Z.Q. Li, Y. Ma, F.Y. Yang, P. Zhang","The Development of Niobium Sputtering on Copper Cavities at IHEP",,2662
-"TUP073","D.B. Tikhonov, S. Keckert, J. Knobloch, O. Kugeler, Y. Tamashevich, A-M. Valente-Feliciano","Superconducting Thin Films Characterization at HZB with the Quadrupole Resonator",,2832
+"TUP072","J. Dai, P. He, Z.Q. Li, Y. Ma, F.Y. Yang, P. Zhang","The Development of Niobium Sputtering on Copper Cavities at IHEP",613,2662
+"TUP073","D.B. Tikhonov, S. Keckert, J. Knobloch, O. Kugeler, Y. Tamashevich, A-M. Valente-Feliciano","Superconducting Thin Films Characterization at HZB with the Quadrupole Resonator",616,2832
 "TUP074","C.U. Kim, G. Ni, L.D. Cooley, P.J. Lee","Understanding Electrochemistry of Nb in Thin Film Deposition Process",,3242
-"TUP075","F. Pan, H. Guo, Y. He, T.C. Jiang, C.L. Li, M. Lu, T. Tan","New Progress for Nb Sputtered 325 MHz QWR Cavities in IMP",,2526
-"TUP076","M. Lu, Q.W. Chu, Y. He, Z.Q. Lin, F. Pan, T. Tan, Z.Q. Yang","Electrochemical Deposition of  Nb3Sn on the Surface of Cu Substrates",,2522
-"TUP077","R. Ito, T. Nagata, H. Hayano, R. Katayama, T. Kubo, T. Saeki, Y. Iwashita, H. Ito","Nb3Sn Thin Film Coating Method for Superconducting Multilayered Structure",,2922
-"TUP078","H. Ito, C.Z. Antoine, H. Hayano, R. Katayama, T. Kubo, T. Saeki, Y. Iwashita, H. Tongu, R. Ito, T. Nagata","Lower Critical Field Measurement of NbN Multilayer Thin Film Superconductor at KEK",,2762
-"TUP079","Md.N. Sayeed, H. Elsayed-Ali, M.C. Burton, G.V. Eremeev, C.E. Reece, A-M. Valente-Feliciano, U. Pudasaini","Deposition of Nb3Sn Films by Multilayer Sequential Sputtering for SRF Cavity Application",,2581
-"TUP080","Z.H. Mi, Z.Q. Li, H.Y. Lin, W.M. Pan, Q.Y. Wang, P. Zhang, X.Y. Zhang, H.J. Zheng","Tuner Design and Test for 166.6 MHz SRF Cavity of HEPS",,2423
-"TUP081","K. Artoos, L. Arnaudon, R. Calaga, E. Cano-Pleite, O. Capatina, T. Capelli, D.F. Cartaxo dos Santos, M. Garlasché, R. Leuxe, P. Minginette, J.S. Swieszek, S. Verdu-Andres, D.C. Glenat, A. Krawczyk, B. Prochal, J.A. Mitchell, T.J. Jones","Status of the HL-LHC Crab Cavity Tuner",,2401
+"TUP075","F. Pan, H. Guo, Y. He, T.C. Jiang, C.L. Li, M. Lu, T. Tan","New Progress for Nb Sputtered 325 MHz QWR Cavities in IMP",621,2526
+"TUP076","M. Lu, Q.W. Chu, Y. He, Z.Q. Lin, F. Pan, T. Tan, Z.Q. Yang","Electrochemical Deposition of  Nb3Sn on the Surface of Cu Substrates",624,2522
+"TUP077","R. Ito, T. Nagata, H. Hayano, R. Katayama, T. Kubo, T. Saeki, Y. Iwashita, H. Ito","Nb3Sn Thin Film Coating Method for Superconducting Multilayered Structure",628,2922
+"TUP078","H. Ito, C.Z. Antoine, H. Hayano, R. Katayama, T. Kubo, T. Saeki, Y. Iwashita, H. Tongu, R. Ito, T. Nagata","Lower Critical Field Measurement of NbN Multilayer Thin Film Superconductor at KEK",632,2762
+"TUP079","Md.N. Sayeed, H. Elsayed-Ali, M.C. Burton, G.V. Eremeev, C.E. Reece, A-M. Valente-Feliciano, U. Pudasaini","Deposition of Nb3Sn Films by Multilayer Sequential Sputtering for SRF Cavity Application",637,2581
+"TUP080","Z.H. Mi, Z.Q. Li, H.Y. Lin, W.M. Pan, Q.Y. Wang, P. Zhang, X.Y. Zhang, H.J. Zheng","Tuner Design and Test for 166.6 MHz SRF Cavity of HEPS",642,2423
+"TUP081","K. Artoos, L. Arnaudon, R. Calaga, E. Cano-Pleite, O. Capatina, T. Capelli, D.F. Cartaxo dos Santos, M. Garlasché, R. Leuxe, P. Minginette, J.S. Swieszek, S. Verdu-Andres, D.C. Glenat, A. Krawczyk, B. Prochal, J.A. Mitchell, T.J. Jones","Status of the HL-LHC Crab Cavity Tuner",646,2401
 "TUP082","W. Schappert, B.E. Chase, J. Einstein-Curtis, J.P. Holzbauer, Y.M. Pischalnikov","Active Microphonics Compensation Development at FNAL.",,2980
-"TUP083","Y.M. Pischalnikov, S.K. Chandrasekaran, S. Cheban, I.V. Gonin, T.N. Khabiboulline, V.P. Yakovlev, J.C. Yun, C. Contreras-Martinez","Performance of the 650 MHz SRF Cavity Tuner for PIP II Project",,2703
-"TUP084","Y.M. Pischalnikov, J.C. Yun, C. Contreras-Martinez","Testing of the Piezo-actuators at High Dynamic Rate Operational Conditions",,2702
-"TUP085","Y.M. Pischalnikov, D.J. Bice, A. Grassellino, T.N. Khabiboulline, O.S. Melnychuk, R.V. Pilipenko, S. Posen, O.V. Pronitchev, A.S. Romanenko","Operation of an SRF Cavity Tuner Submerged into Liquid He",,2701
-"TUP086","D. Bychanok, S. Huseu, S.A. Maksimenko, E.A. Gurnevich, A.V. Butenko, E. Syresin, M. Gusarova, M.V. Lalayan, S.M. Polozov","Frequency Tuning System Based on Mobile Plungers For Superconductive Coaxial Half Wave Resonators",,2813
-"TUP087","N. Gandolfo, S. Blivet, P. Duchesne, D. Le Dréan","Development and Performances of Spoke Cavity Tuner for MYRRHA Linac Project",,2839
+"TUP083","Y.M. Pischalnikov, S.K. Chandrasekaran, S. Cheban, I.V. Gonin, T.N. Khabiboulline, V.P. Yakovlev, J.C. Yun, C. Contreras-Martinez","Performance of the 650 MHz SRF Cavity Tuner for PIP II Project",652,2703
+"TUP084","Y.M. Pischalnikov, J.C. Yun, C. Contreras-Martinez","Testing of the Piezo-actuators at High Dynamic Rate Operational Conditions",656,2702
+"TUP085","Y.M. Pischalnikov, D.J. Bice, A. Grassellino, T.N. Khabiboulline, O.S. Melnychuk, R.V. Pilipenko, S. Posen, O.V. Pronitchev, A.S. Romanenko","Operation of an SRF Cavity Tuner Submerged into Liquid He",660,2701
+"TUP086","D. Bychanok, S. Huseu, S.A. Maksimenko, E.A. Gurnevich, A.V. Butenko, E. Syresin, M. Gusarova, M.V. Lalayan, S.M. Polozov","Frequency Tuning System Based on Mobile Plungers For Superconductive Coaxial Half Wave Resonators",664,2813
+"TUP087","N. Gandolfo, S. Blivet, P. Duchesne, D. Le Dréan","Development and Performances of Spoke Cavity Tuner for MYRRHA Linac Project",667,2839
 "TUP088","X. Wang","Vacuum Barrier Design of ADS Injector Helium Cryogenic System",,2523
-"TUP089","M. Xu, H. Ao, B. Bird, R. Bliton, C. Compton, J. Curtin, L. Hodges, K. Holland, S.J. Miller, K. Saito, T. Xu, C. Zhang","FRIB LS1 Cryomodule's Solenoid Commissioning",,3250
+"TUP089","M. Xu, H. Ao, B. Bird, R. Bliton, C. Compton, J. Curtin, L. Hodges, K. Holland, S.J. Miller, K. Saito, T. Xu, C. Zhang","FRIB LS1 Cryomodule's Solenoid Commissioning",671,3250
 "TUP090","S.H. Kim, F. Casagrande, W. Chang, V. Ganni, W. Hartung, P. Knudsen, H. Maniar, S.J. Miller, D.G. Morris, A.S. Plastun, J.T. Popielarski, H.T. Ren, K. Saito, M. Thrush, J. Wei, T. Xu, C. Zhang, S. Zhao","Performance of Quarter Wave Resonators in the FRIB Superconducting Driver Linear Accelerator",,3254
 "TUP091","C. Compton, H. Ao, J. Asciutto, B. Bird, W. Hartung, S.J. Miller, J.T. Popielarski, L. Popielarski, K. Saito, M. Shuptar, B.P. Tousignant, M. Xu","Production Status of Superconducting Cryomodules for the Facility for Rare Isotope Beams",,3248
-"TUP092","K. Elliott, L. Popielarski","Experiences of Superconducting Radio Frequency Coldmass Production for the FRIB Linear Accelerator",,3247
-"TUP093","E.S. Metzgar, B.W. Barker, K. Elliott, W. Hartung, L. Popielarski, G.V. Simpson, D.R. Victory, J.D. Whaley","Summary of FRIB Cavity Processing in the SRF Coldmass Processing Facility and Lessons Learned",,3249
-"TUP094","N.A. Huque, E. Daly, P.D. Owen, B.D. Hartsell, J.P. Holzbauer","Improvements to LCLS-II Cryomodule Transportation",,2141
-"TUP095","D. Passarelli, D.J. Bice, M. Parise, T.J. Ring, G. Wu, S. Berry","Lessons Learned Assembling the SSR1 Cavities String for PIP-II",,2983
-"TUP096","G. Wu, S.D. Adams, T.T. Arkan, M.A. Battistoni, D.J. Bice, M.B. Chlebek, E.R. Harms, B.M. Kuhn, A.M. Rowe, S. Berry, O. Napoly","Optimization of Clean Room Infrastructure and Procedure During LCLS-II Cryomodule Production at Fermilab",,2924
-"TUP098","V. Gettmann, M. Heilmann, S. Yaramyshev, W.A. Barth, T. Kuerzeder, J. List, M. Miski-Oglu, K. Aulenbacher, F.D. Dziuba, S. Lauber, M. Basten, H. Podlech, M. Schwarz","Preparation for the Advanced Demonstrator Testing at GSI",,2938
-"TUP099","N. Krupka, C. Bate, D. Reschke, S. Saegebarth, M. Schalwat, P. Schilling, S. Sievers","Particulate Sampling and Analysis During Refurbishment of Prototype European XFEL Cryomodule",,2786
-"TUP100","J. Kuehn, N. Al-Saokal, M. Bürger, M. Dirsat, A. Frahm, A. Jankowiak, T. Kamps, G. Klemz, S. Mistry, A. Neumann, H. Plötz","Thermal Load Studies on the Photocathode Insert with Exchangeable Plug for the bERLinPro SRF-Photoinjector",,2838
-"TUP101","T.T. Arkan, J.N. Blowers, C.M. Ginsburg, C.J. Grimm, J.A. Kaluzny, T.H. Nicol, Y.O. Orlov, K.S. Premo, R.P. Stanek, G. Wu","LCLS-II Cryomodules Production Experience and Lessons Learned at Fermilab",,2978
-"TUP102","M.P. Kelly, Z.A. Conway, M. Kedzie, S.W.T. MacDonald, T. Reid, U. Wienands, G.P. Zinkann","Superconducting Harmonic Cavity for Bunch Lengthening in the APS Upgrade",,3041
-"TUP103","M.G. McDonald, V.D. Bookwalter, M. Dickey, E.A. McEwen","Pansophy Data as Used to Develop Metrics and Evaluate Trends Across SRF Projects and Facilities to Further Quality Improvement Initiatives",,2863
-"TUP104","H. Sakai, E. Kako, T. Konomi, K. Umemori, Y. Yamamoto, T. Ebisawa, A. Kasugai","Improvement of a Clean Assembly Work for Superconducting RF Cryomodule and Its Application to the KEK-STF Cryomodule",,2867
-"TUP105","T. Ebisawa, A. Kasugai, K. Kondo, S. Maebara, K. Sakamoto, N. Bazin, S. Berry, H. Dzitko, G. Phillips, P. Cara, E. Kako, H. Sakai, K. Umemori","Preparation of the Cryomodule Assembly for the Linear IFMIF Prototype Accelerator (LIPAc) in Rokkasho",,2826
-"TUP106","R.E. Laxdal, J.J. Keir, B. Matheson, N. Muller, Z.Y. Yao","Mechanical Tuner for a 325 MHz Balloon Single Spoke Resonator",,2865
+"TUP092","K. Elliott, B.W. Barker, C. Donald, E.S. Metzgar, L. Popielarski, D.R. Victory, J.D. Whaley, M.S. Wilbur","Experiences of Superconducting Radio Frequency Coldmass Production for the FRIB Linear Accelerator",675,3247
+"TUP093","E.S. Metzgar, B.W. Barker, K. Elliott, W. Hartung, L. Popielarski, G.V. Simpson, D.R. Victory, J.D. Whaley","Summary of FRIB Cavity Processing in the SRF Coldmass Processing Facility and Lessons Learned",680,3249
+"TUP094","N.A. Huque, E. Daly, P.D. Owen, B.D. Hartsell, J.P. Holzbauer","Improvements to LCLS-II Cryomodule Transportation",684,2141
+"TUP095","D. Passarelli, D.J. Bice, M. Parise, T.J. Ring, G. Wu, S. Berry","Lessons Learned Assembling the SSR1 Cavities String for PIP-II",690,2983
+"TUP096","G. Wu, S.D. Adams, T.T. Arkan, M.A. Battistoni, D.J. Bice, M.B. Chlebek, E.R. Harms, B.M. Kuhn, A.M. Rowe, S. Berry, O. Napoly","Optimization of Clean Room Infrastructure and Procedure During LCLS-II Cryomodule Production at Fermilab",695,2924
+"TUP098","V. Gettmann, M. Heilmann, S. Yaramyshev, W.A. Barth, T. Kuerzeder, J. List, M. Miski-Oglu, K. Aulenbacher, F.D. Dziuba, S. Lauber, M. Basten, H. Podlech, M. Schwarz","Preparation for the Advanced Demonstrator Testing at GSI",698,2938
+"TUP099","N. Krupka, C. Bate, D. Reschke, S. Saegebarth, M. Schalwat, P. Schilling, S. Sievers","Particulate Sampling and Analysis During Refurbishment of Prototype European XFEL Cryomodule",701,2786
+"TUP100","J. Kuehn, N. Al-Saokal, M. Bürger, M. Dirsat, A. Frahm, A. Jankowiak, T. Kamps, G. Klemz, S. Mistry, A. Neumann, H. Plötz","Thermal Load Studies on the Photocathode Insert with Exchangeable Plug for the bERLinPro SRF-Photoinjector",705,2838
+"TUP101","T.T. Arkan, J.N. Blowers, C.M. Ginsburg, C.J. Grimm, J.A. Kaluzny, T.H. Nicol, Y.O. Orlov, K.S. Premo, R.P. Stanek, G. Wu","LCLS-II Cryomodules Production Experience and Lessons Learned at Fermilab",709,2978
+"TUP102","M.P. Kelly, Z.A. Conway, M. Kedzie, S.W.T. MacDonald, T. Reid, U. Wienands, G.P. Zinkann","Superconducting Harmonic Cavity for Bunch Lengthening in the APS Upgrade",715,3041
+"TUP103","M.G. McDonald, V.D. Bookwalter, M. Dickey, E.A. McEwen","Pansophy Data as Used to Develop Metrics and Evaluate Trends Across SRF Projects and Facilities to Further Quality Improvement Initiatives",718,2863
+"TUP104","H. Sakai, E. Kako, T. Konomi, K. Umemori, Y. Yamamoto, T. Ebisawa, A. Kasugai","Improvement of a Clean Assembly Work for Superconducting RF Cryomodule and Its Application to the KEK-STF Cryomodule",721,2867
+"TUP105","T. Ebisawa, A. Kasugai, K. Kondo, S. Maebara, K. Sakamoto, N. Bazin, S. Berry, H. Dzitko, G. Phillips, P. Cara, E. Kako, H. Sakai, K. Umemori","Preparation of the Cryomodule Assembly for the Linear IFMIF Prototype Accelerator (LIPAc) in Rokkasho",726,2826
+"TUP106","R.E. Laxdal, J.J. Keir, B. Matheson, N. Muller, Z.Y. Yao","Mechanical Tuner for a 325 MHz Balloon Single Spoke Resonator",730,2865
 "WETEA1","G. Devanz","ESS Technology Development at IPNO and CEA Paris-Saclay",,1622
 "WETEA2","G. Wu","SRF Cryomodules for PIP-2 at Fermilab",,1503
-"WETEA3","N. Bazin, G. Devanz, H. Jenhani, O. Piquet, S. Chel, D. Regidor, F. Toral, G. Phillips, T. Ebisawa","Status of the IFMIF/EVEDA Superconducting Linac",,1481
+"WETEA3","N. Bazin, G. Devanz, H. Jenhani, O. Piquet, S. Chel, D. Regidor, F. Toral, G. Phillips, T. Ebisawa","Status of the IFMIF/EVEDA Superconducting Linac",735,1481
 "WETEA4","A. Burrill","Production and Performance of LCLS-II Cryomodules",,1807
-"WETEA5","S.J. Miller, H. Ao, B. Bird, B. Bullock, N.K. Bultman, F. Casagrande, C. Compton, J. Curtin, K. Elliott, V. Ganni, I. Grender, W. Hartung, J.D. Hulbert, S.H. Kim, P. Manwiller, E.S. Metzgar, D.G. Morris, P.N. Ostroumov, J.T. Popielarski, L. Popielarski, M.A. Reaume, K. Saito, M. Shuptar, J. Simon, B.P. Tousignant, D.R. Victory, J. Wei, J.D. Wenstrom, K. Witgen, M. Xu, T. Xu, M.P. Kelly, A. Facco, M. Wiseman","FRIBCavity and Cryomodule Performance, Comparison with the Design and Lessons Learned",,1361
+"WETEA5","S.J. Miller, H. Ao, B. Bird, B. Bullock, N.K. Bultman, F. Casagrande, C. Compton, J. Curtin, K. Elliott, V. Ganni, I. Grender, W. Hartung, J.D. Hulbert, S.H. Kim, P. Manwiller, E.S. Metzgar, D.G. Morris, P.N. Ostroumov, J.T. Popielarski, L. Popielarski, M.A. Reaume, K. Saito, M. Shuptar, J. Simon, B.P. Tousignant, D.R. Victory, J. Wei, J.D. Wenstrom, K. Witgen, M. Xu, T. Xu, M.P. Kelly, A. Facco, M. Wiseman","FRIBCavity and Cryomodule Performance, Comparison with the Design and Lessons Learned",742,1361
 "WETEA6","Y. Yamamoto, M. Akemoto, D.A. Arakawa, S. Araki, A. Aryshev, M. Egi, M.K. Fukuda, K. Hara, H. Hayano, Y. Honda, T. Honma, E. Kako, H. Katagiri, M. Kawamura, N. Kimura, Y. Kojima, Y. Kondou, T. Konomi, T. Matsumoto, S. Michizono, T. Miura, T. Miyajima, Y. Morikawa, H. Nakai, H. Nakajima, N. Nakamura, K. Nakanishi, T. Oyama, F. Qiu, T. Saeki, H. Sakai, T. Sanami, M. Shimada, H. Shimizu, T. Shishido, S.I. Takahara, K. Umemori, A. Yamamoto, M. Kuriki, S. Notsu, S. Matsuba, T. Obina, K. Sakaue","Successful Beam Commissioning in STF-2 Cryomodules for ILC",,1411
-"WETEB1","N. Sakamoto, T. Dantsuka, M. Fujimaki, H. Imao, O. Kamigaito, K. Kusaka, H. Okuno, K. Ozeki, K. Suda, A. Uchiyama, T. Watanabe, Y. Watanabe, K. Yamada, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Development of Superconducting Quarter-Wave Resonator and Cryomodule  for Low-Beta Ion Accelerators at RIKEN Radioactive Isotope Beam Factory",,1410
-"WETEB2","C.E. Reece, J.K. Spradlin, O. Trofimova, A-M. Valente-Feliciano","Identifying Specific Cryomodule and Cleanroom Particulate Contamination: Understanding Legacy Issues and Providing New Feedback Standards",,1387
-"WETEB3","T. Powers, A.D. Solopova","CEBAF C100 Fault Classification based on Time Domain RF Signals",,1388
-"WETEB4","P. Echevarria, J. Knobloch, A. Neumann, A. Ushakov, E. Aldekoa, J. Jugo","Virtual SRF Cavity: Testing SRF Cavity Support Systems Without the Hassle of Liquid Helium and Klystrons",,1081
+"WETEB1","N. Sakamoto, T. Dantsuka, M. Fujimaki, H. Imao, O. Kamigaito, K. Kusaka, H. Okuno, K. Ozeki, K. Suda, A. Uchiyama, T. Watanabe, Y. Watanabe, K. Yamada, E. Kako, H. Nakai, H. Sakai, K. Umemori, H. Hara, A. Miyamoto, K. Sennyu, T. Yanagisawa","Development of Superconducting Quarter-Wave Resonator and Cryomodule  for Low-Beta Ion Accelerators at RIKEN Radioactive Isotope Beam Factory",750,1410
+"WETEB2","C.E. Reece, J.K. Spradlin, O. Trofimova, A-M. Valente-Feliciano","Identifying Specific Cryomodule and Cleanroom Particulate Contamination: Understanding Legacy Issues and Providing New Feedback Standards",758,1387
+"WETEB3","T. Powers, A.D. Solopova Shabalina","CEBAF C100 Fault Classification based on Time Domain RF Signals",763,1388
+"WETEB4","P. Echevarria, J. Knobloch, A. Neumann, A. Ushakov, E. Aldekoa, J. Jugo","Virtual SRF Cavity: Testing SRF Cavity Support Systems Without the Hassle of Liquid Helium and Klystrons",770,1081
 "WETEB5","M. Kuntzsch, R. Steinbrück, K. Zenker, C. Gumus, M. Hierholzer, S. Pfeiffer, Ch. Schmidt","Modular Digital Low Level Radio Frequency Control (LLRF) for CW Operation at ELBE",,1305
-"WETEB6","N. Banerjee, G.H. Hoffstaetter, M. Liepe, P. Quigley","Active Suppression of Microphonics Detuning in High QL Cavities",,1307
-"WETEB7","N.C. Shipman, M.R. Coly, I. Ben-Zvi, J. Bastard, F. Gerigk, A. Macpherson, N. Stapley, E. Nenasheva, C.-J. Jing, A. Kanareykin, S. Kazakov, G. Burt, A. Castilla","A Ferroelectric Fast Reactive Tuner for Superconducting Cavities",,1584
-"WETEB8","T.M. Huang, F. Bing, R. Guo, H.Y. Lin, Q. Ma, W.M. Pan, J.Y. Zhai, Z. Zhang","The Fundamental Power Coupler for CEPC Booster Cavity",,2241
-"WETEB9","E. Sharples, M. Dirsat, J. Knobloch, Z. Muza, A.V. Velez","Design Development for the 1.5 GHz Couplers for BESSY VSR",,2243
+"WETEB6","N. Banerjee, G.H. Hoffstaetter, M. Liepe, P. Quigley","Active Suppression of Microphonics Detuning in High QL Cavities",776,1307
+"WETEB7","N.C. Shipman, M.R. Coly, I. Ben-Zvi, J. Bastard, F. Gerigk, A. Macpherson, N. Stapley, E. Nenasheva, C.-J. Jing, A. Kanareykin, S. Kazakov, G. Burt, A. Castilla","A Ferroelectric Fast Reactive Tuner for Superconducting Cavities",781,1584
+"WETEB8","T.M. Huang, F. Bing, R. Guo, H.Y. Lin, Q. Ma, W.M. Pan, J.Y. Zhai, Z. Zhang","The Fundamental Power Coupler for CEPC Booster Cavity",789,2241
+"WETEB9","E. Sharples, M. Dirsat, J. Knobloch, Z. Muza, A.V. Velez","Design Development for the 1.5 GHz Couplers for BESSY VSR",795,2243

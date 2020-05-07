@@ -1,2 +1,315 @@
 "paper","authors","title","position","contribution ID"
-"MOA01","G. Dattoli, C. Pellegrini","Riding the FEL Instability",,2444
+"FRA01","D. Noelle","FEL Operation at the European XFEL Facility",766,1581
+"FRA02","A. Brachmann, M. Dunham, J.F. Schmerge","LCLS-II - Status and Upgrades",772,2178
+"FRA03","J. Roensch-Schulenburg, K. Honkavaara, S. Schreiber, R. Treusch, M. Vogt","FLASH - Status and Upgrades",776,1721
+"FRA04","Z.T. Zhao","Status of SXFEL Test and User Facilities",,2261
+"MOA01","G. Dattoli, C. Pellegrini, M.-E. Couprie","Riding the FEL Instability (Dedicated to Alberto Renieri)",1,2444
+"MOA02","E. Allaria, A. Abrami, L. Badano, M. Bossi, F. Capotondi, D. Castronovo, M. Cautero, P. Cinquegrana, I. Cudin, M.B. Danailov, A.A. Demidovich, S. Di Mitri, B. Diviacco, W.M. Fawley, M. Ferianis, L. Foglia, G. Gaio, F. Giacuzzo, L. Giannessi, S. Grulja, F. Iazzourene, G. Kurdi, M. Lonza, N. Mahne, M. Malvestuto, M. Manfredda, C. Masciovecchio, N.S. Mirian, I. Nikolov, G. Penco, E. Principi, L. Raimondi, P. Rebernik Ribic, R. Sauro, C. Scafuri, P. Sigalotti, S. Spampinati, C. Spezzani, L. Sturari, M. Svandrlik, M. Trovo, M. Veronese, D. Vivoda, M. Zaccaria, D. Zangrando, M. Zangrando, D. Garzella, P. Miotti, M. Coreno, V. Grattoni, G. De Ninno, N. Bruchon, T. Tanikawa, G. Penn, F. Frassetto, L. P. Poletto, M.A. Pop, H.-H. Braun, E. Ferrari, E. Prat, S. Reiche, E. Roussel, C. Feng, E. Hemsing, M.-E. Couprie, A. Ghaith, D. Xiang","First Lasing of a Free Electron Laser in the Soft X-Ray Spectral Range with Echo Enabled Harmonic Generation",7,2088
+"MOA03","P. Li, T.H. He, M. Li, J. Liu, X. Luo, Q. Pan, L.J. Shan, X. Shen, H. Wang, J. Wang, D. Wu, D.X. Xiao, Y. Xu, L.G. Yan, P. Zhang, K. Zhou, Y. Liu","First Lasing at the CAEP THz FEL Facility",11,1601
+"MOA04","M. Scholz","First Lasing at the SASE2 and SASE3 FELs of European XFEL",,1874
+"MOA05","Z.T. Zhao, M. Gu, Q. Gu, Y.B. Leng, H.X. Deng, B. Liu, D. Wang, G.P. Fang, L. Yin, M. Zhang","First Lasing at SXFEL",,2524
+"MOA06","V. Litvinenko","Commissioning of CW FEL Amplifier for Coherent Electron Cooler",,2623
+"MOA07","H.T. Li, Q.K. Jia","Commissioning and First Lasing of the FELiChEM: A New IR and THz FEL Oscillator in China",15,1944
+"MOB01","H. Tanaka","Operation Status and Future Perspective of Warm XFEL",,2073
+"MOB02","H. Weise","Overview on Future Continuous Wave X-Ray Free Electron Lasers",,1343
+"MOC01","D.C. Nguyen, P.M. Anisimov, C.E. Buechler, Q.R. Marksteiner, R.L. Sheffield","Regenerative Amplifier FEL - from IR to X-Rays",20,1842
+"MOC02","E. Roussel, E. Ferrari","Microbunching Instability and Laser Heater Usage in Seeded Free-Electron Lasers",,2158
+"MOC03","E. Ferrari, E. Roussel","Laser Heater Impact on the Performances of Seeded High Gain FELs",,2194
+"MOC04","B.E. Carlsten","Accelerator Challenges for XFELs with Very High X-Ray Energies",,2183
+"MOD01","C.-Y. Tsai","Physics of Post-Saturation Tapered FEL Towards Single-Frequency Terawatt Output Power",,1341
+"MOD02","J.P. MacArthur","Microbunch Rotation and Coherent Undulator Radiation from a Kicked Electron Beam",,2159
+"MOD03","I. Vartaniants","Hanbury Brown and Twiss Interferometry at XFEL Sources",,1381
+"MOD04","X. Yang, L. Giannessi, N.S. Mirian","Post-Saturation Dynamics and Superluminal Propagation of a Super-Radiant Spike in a Free-Electrons Laser Amplifier",,2028
+"THA01","M.L. Grünbein","Serial Femtosecond Crystallography at MHz XFELs",,1936
+"THA02","K.H. Kim, K. Amann-Winkel, A. Nilsson","Searching for the Hypothesized Liquid-Liquid Critical Point in Supercooled Water with X-Ray Free Electron Laser",,1929
+"THA03","R. Kato, Y. Honda, H. Kawata, T. Miyajima, N. Nakamura, H. Sakai, M. Shimada, Y. Tanimoto, K. Tsuchiya","IR-FEL Project at the cERL and Future EUV-FEL Lithography",,1864
+"THA04","M. Riepp, K. Bagschik, T. Golz, G. Grübel, L. Müller, A. Philippi-Kobs, W.R. Roseker, R. Rysov, N. Stojanovic, M. Walther, F. Capotondi, M. Kiskinova, D. Naumenko, E. Pedersoli, R. Frömter, H.P. Oepen","Ultrafast Magnetisation Dynamics at the Low-Fluence Limit Supported by External Magnetic Fields",574,1995
+"THB01","P.M. Anisimov","Using an E-SASE Compression to Suppress Microbunch Instability and Resistive-Wall Wake Effects",,2099
+"THB02","A.D. Brynes","Understanding 1D to 3D Coherent Synchrotron Radiation Effects",578,1361
+"THB03","E. Prat, M. Aiba, S. Bettoni, P. Craievich, P. Dijkstal, E. Ferrari, R. Ischebeck, F. Loehl, A. Malyzhenkov, G.L. Orlandi, S. Reiche, T. Schietinger","Emittance Measurements and Minimization at SwissFEL",,2005
+"THB04","Q. Gu, Z. Wang","Longitudinal Phase Space Study on Injector Beam of High Repetition Rate X-Ray FEL",584,2074
+"THD01","V.A. Goryashko, P.M. Salen, G. K. Shamuilov","From Femtosecond to Attosecond Coherent Undulator Pulses",,2087
+"THD02","A. Marinelli, P.H. Bucksbaum, E. Champenois, J. Cryan, T.D.C. Driver, J.P. Duris, A.A. Lutman, Z. Zhang, A. Zholents, M. Kling, P. Rosenberger, Z. Huang, J.P. MacArthur, S. Li","Attosecond Pulses from Enhanced SASE at LCLS",,2199
+"THD03","S. Tomin, G. Geloni, M. Scholz","FEL Optimization: From Model-Free to Model-Dependent Approaches and ML Prospects",762,1991
+"THD04","W. Liu","A Novel Optical Undulator Using Array of Pulse-Front Tilted Laser Beams",,1869
+"THP001","N. Golubeva, V. Balandin, W. Decking, L. Froehlich, M. Scholz","Steffen Hard-Edge Model for Quadrupoles with Extended Fringe-Fields at the European XFEL",588,1870
+"THP002","M. Scholz, W. Decking, Y. Li","Beam Based Alignment in all Undulator Beamlines at European XFEL",592,2018
+"THP003","Ph. Amstutz, M. Vogt","Arbitrary Order Perturbation Theory for a Time-Discrete Model of Micro-Bunching Driven by Longitudinal Space Charge",596,1305
+"THP004","Ph. Amstutz, M. Vogt","A Tree-Code for Efficiently Representing and Evolving Exotic Phase Space Densities with Application to Micro-Bunching in FEL-like Beamlines",,1304
+"THP005","M. Vogt, K. Honkavaara, J. Roensch-Schulenburg, S. Schreiber, J. Zemella","Refurbishment and Upgrade Plans for FLASH for the Years After 2020",,1301
+"THP006","J. Zemella","Optics & Compression Schemes for the FLASH 2020+ Upgrade Program",,1303
+"THP007","Y. Chen, J.D. Good, M. Gross, P.W. Huang, I.I. Isaev, C. Koschitzki, M. Krasilnikov, S. Lal, X. Li, O. Lishilin, G. Loisch, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko, F. Brinker, W. Decking","Frequency-Detuning Dependent Transient Coaxial RF Coupler Kick",599,1722
+"THP008","D.B. Bazyl, H. De Gersem, W.F.O. Müller, J. Enders, S. Weih","Design of a Multi-Cell SRF Reduced-Beta Cavity for the Acceleration of Low Energy Electron Beams",603,2446
+"THP009","S. A. Schmid, H. De Gersem, E. Gjonaj, M. Krasilnikov, M. Dohlus","Space Charge Field Beam Dynamics Simulations for the THz SASE FEL at PITZ",606,1783
+"THP010","S. Di Mitri, R. Fabris, S. Spampinati, N. Thompson, G. De Ninno","Simple and Robust Free Electron Laser Doubler",609,1805
+"THP011","S. Di Mitri, L. Sturari, C. Venier, R. Vescovo","Experimental Benchmarking of Wakefields at the FERMI FEL Linac and Undulator Line",613,1808
+"THP012","M. Placidi, G. Penn, S. Di Mitri, C. Pellegrini","Compact FEL-Driven Inverse Compton Scattering Gamma-Ray Source",617,1804
+"THP013","S. Di Mitri, N. Adhlakha, E. Allaria, L. Badano, P. Di Pietro, G. Gaio, G. Penco, A. Perucchi, P. Rebernik Ribic, S. Spampinati, C. Spezzani, M. Trovo, M. Veronese, S. Lupi, L. Giannessi, E. Roussel, G. De Ninno, F. Piccirilli","User Operation of Sub-Picosecond THz Coherent Transition Radiation Parasitic to a VUV FEL",621,1802
+"THP015","Y. Yu, Z. Chen, G.K. Cheng, D.X. Dai, H.L. Ding, Z.G. He, L. Huang, Q.M. Li, Z.B. Li, L. Shi, J.T. Sun, K. Tao, Y.H. Tian, G.L. Wang, Z.Q. Wang, G.R. Wu, J.Y. Yang, X.M. Yang, W.Q. Zhang","The X-Band Linear Compression System in Dalian Coherent Light Source",625,2167
+"THP016","D. Huang, D. Gu, M. Zhang","Study of Microbunching Instability in SHINE Linac",629,2141
+"THP017","J.W. Yan, H.X. Deng","Large Bandwidth X-Ray Free Electron Laser Operation Mode of SXFEL User Facility.",,2445
+"THP018","J.W. Yan, H.X. Deng, B. Liu, D. Wang","Transverse Deflecting Structure Dynamics for Time-Resolved Machine Studies of Shine",632,1401
+"THP020","X.J. Deng, W.-H. Huang, C.-X. Tang, A. Chao","Microbunching Enhancement by Adiabatic Trapping",635,1222
+"THP022","Y. Zhang, X.J. Deng, W.-H. Huang, Z. Pan, C.-X. Tang","A General Optimization Method for High Harmonic Generation Beamline",638,1242
+"THP024","Yu.S. Oparina, V.L. Bratman, A.V. Savilov, N. Balal, Yu. Lurie","Spontaneous Coherent Radiation of Stabilized Dense Electron Bunches",643,1881
+"THP027","A.S. Matveev, I.V. Davidyuk, N.A. Vinokurov, O.A. Shevchenko, V.G. Tcheskidov, V. Volkov","Simulation and Optimization of the Transport Beamline for the NovoFEL RF Gun",647,1867
+"THP028","S. Bettoni, A. Dax, E. Ferrari, M. Huppert, A. Trisorio, C. Vicario","Laser Heater Commissioning at the SwissFEL Facility",,2281
+"THP030","W.K. Lau, C.K. Chan, C.-H. Chang, C.-C. Chang, L.-H. Chang, C.H. Chen, M.C. Chou, P.J. Chou, F. Z. Hsiao, K.T. Hsu, H.P. Hsueh, K.H. Hu, C.-S. Hwang, J.-Y. Hwang, J.C. Jan, C.K. Kuan, A.P. Lee, M.-C. Lin, G.-H. Luo, K.L. Tsai, S.Y. Teng, A. Chao, J. Wu","An Updated Design of the NSRRC Seeded VUV Free Electron Laser Test Facility",651,1906
+"THP031","N. Chaisueb, S. Rimjaem","Simulation and Optimization of Injector System for the Pre-bunched THz FEL",654,1243
+"THP032","S.B. van der Geer, M.J. de Loos, I. Setija, S. Di Mitri, A.D. Brynes, P.H. Williams","A CSR Model Based on Retarded LW Potentials",,2017
+"THP033","N. Thompson","XFEL Isochronous Chicanes: Feasibility Study",658,2448
+"THP034","S. Carbajo, F.-J. Decker, Z. Huang, J. Krzywinski, R.A. Lemons, W. Liu, A.A. Lutman, G. Marcus, T.J. Maxwell, S.P. Moeller, D.F. Ratner, J. Tang, S. Vetter","Laser Shaping for Microbunching Instability Suppression and Seeded X-Ray Free Electron Emission",,1938
+"THP035","Y. Ding, K.L.F. Bane, Y.M. Nosochkov","Beam Shaping for High-Repetition-Rate X-Ray FELs",661,2027
+"THP036","R.A. Margraf, Z. Huang, J.P. MacArthur, G. Marcus, X.J. Deng","Microbunch Rotation for Hard X-Ray Beam Multiplexing",665,2043
+"THP037","G. Stupakov","A Novel One-Dimensional Model for CSR Wakefields",669,1933
+"THP039","W.R. Roseker, G. Grübel, F.L. Lehmkühler, R. Rysov, H. Schulte-Schrepping, M. Sprung, M. Walther, S. Hruszkewycz, B. Stephenson, S. Lee, M. Sutton, T. Osaka, P. Fuoss, A.R. Robert","Studying Ultrafast Dynamics at Free Electron Laser Sources Enabled by Hard X-Ray Split-and-Delay Line",,1981
+"THP040","A.A. Yaroslavtsev, N. Agarwal, C. Broers, R. Carley, J.T. Delitz, F. Dietrich, N. Gerasimova, J. Grünert, M. Izquierdo, L. Le Guyader, Th. Maltezopoulos, L. Mercadier, G. Mercurio, A. Reich, A. Scherz, J. Schlappa, M. Teichmann, J. Zhu","Femtosecond X-Ray Absorption Spectroscopy at the SCS Instrument of European XFEL",,2096
+"THP041","I. Bahns, W. Hillert, P. Rauer, J. Rossbach, H. Sinn","Interaction of Powerful Electro-Magnetic Fields With Bragg Reflectors",673,2008
+"THP042","R. Hajima","Implementation of a Laser Compton Scattered Gamma Source in Geant4",,1945
+"THP043","Z. Chen, Y. Chang, D.X. Dai, H.L. Ding, Z.G. He, Q.M. Li, Z.B. Li, Z.J. Luo, L. Shi, K. Tao, Y.H. Tian, G.R. Wu, J.Y. Yang, X.M. Yang, Y. Yu, K.J. Yuan, W.Q. Zhang, Z.G. Zhang, J.M. Zhou, M.N.R. Ashfold","Imaging Molecular Photodissociation Dynamics at the Dalian Coherent Light Source (DCLS)",,2072
+"THP044","K.M. Nam, G.S. Yun, Y.W. Parc","The Simulation Study for Single and Multi Turn ERL Based EUV FEL",677,1947
+"THP046","H.K. Avetissian, G.F. Mkrtchian","Free Electron Nano-Laser in Graphene Nanostructures",,2121
+"THP047","A.Y. Molodozhentsev, J.T. Green, J. Hawke, M. Kaur, D. Kocon, G. Korn, K.O. Kruchinin, A.R. Maier","Laser-Driven Compact Free Electron Laser Development at ELI-Beamlines",680,1923
+"THP048","M.-E. Couprie, T. Andre, F. Blache, F. Bouvet, F. Briquez, Y. Dietrich, J.P. Duval, M. El Ajjouri, A. Ghaith, C. Herbeaux, N. Hubert, M. Khojoyan, C.A. Kitegi, M. Labat, N. Leclercq, A. Lestrade, A. Loulergue, O. Marcouillé, F. Marteau, D. Oumbarek Espinos, P. Rommeluere, M. Sebdaoui, K. Tavakoli, M. Valléau, C. Benabderrahmane, S. Corde, J. Gautier, J.-P. Goddet, O. S. Kononenko, G. Lambert, K. Ta Phuoc, A. Tafzi, C. Thaury, S. Bielawski, C. Evain, E. Roussel, C. Szwaj, I.A. Andriyash, V. Malka, S. Smartzev","Progress Towards Laser Plasma Electron Based Free Electron Laser on COXINEL",684,2148
+"THP049","F. Lemery, M. Dohlus, K. Floettmann, M. Marx, M. Ivanyan, V.M. Tsakanov","A Versatile THz Source for High-Repetition Rate XFELs",688,2171
+"THP051","S. Serkez, G. Geloni, Yu. Shvyd'ko, M.H. Cho, I.H. Nam, H.-S. Kang, G. Kim, C.-K. Min, J.H. Ko, C.H. Shim, F.-J. Decker","Generating Trains of Attosecond Pulses with a Free-Electron Laser",692,2029
+"THP052","M.G. Gerasimov, E. Dyunin, A. Friedman","Development of an Artificial Intelligence System for the Design of an Optical Mode Converter",695,2346
+"THP054","Q.H. Zhou","Nanosecond Pulse Enhancement in Narrow Linewidth Cavity for Steady-State Microbunching",697,2145
+"THP055","Z. Pan, X.J. Deng, W.-H. Huang, T. Rui, C.-X. Tang, Y. Zhang, A. Chao, W. Wan","A Storage Ring Design for Steady-State Microbunching to Generate Coherent EUV Light Source",700,1241
+"THP056","W. Liu","Tunable Terahertz Radiation Excited by Electron Beam in Sub-Wavelength Hole Array With Dielectric",,1901
+"THP059","C.H. Shim, Y.W. Parc, D.E. Kim","Optimization of Isolated Terawatt Attosecond X-Ray FEL Pulse Generation",,1941
+"THP060","A.V. Savilov, E.D. Abubakirov, N.S. Ginzburg, S.V. Kuzikov, N.Yu. Peskov, A.A. Vikharev, V.Yu. Zaslavsky","Development of RF-Undulators and Powering Sources for Compact Efficient Compton FEL-Scattrons",704,2241
+"THP061","J. Kirschner, A. Krause, M. Mutny, M. Nonnenmacher, A. Adelmann, N. Hiller, R. Ischebeck","Bayesian Optimisation for Fast and Safe Parameter Tuning of SwissFEL",707,1963
+"THP062","M. Ying","Analysis Cavity Coating Thermal Noise in FEL",,2142
+"THP063","O.J. Luiten, T.C.H. de Raadt, J.G.H. Franssen, P.H.A. Mutsaers, D.F.J. Nijhof, B.H. Schaap","ColdLight: From Laser-Cooled Atoms to Coherent Soft X-Rays",,2025
+"THP064","O.J. Luiten, P.H.A. Mutsaers, X.F.D. Stragier, T.G. Lucas","Smart*Light: A Tunable Inverse Compton Scattering (ICS) X-Ray Source for Imaging and Analysis",,2153
+"THP065","D.J. Dunning, H.M. Castaneda Cortes, J.K. Jones, N. Thompson","Multi-Objective FEL Design Optimisation Using Genetic Algorithms",711,2482
+"THP066","D.J. Dunning, J.K. Jones, L.S. Cowie","XARA: X-Band Accelerator for Research and Applications",715,2481
+"THP068","G.E. Wiemerslage, P.K. Den Hartog, J. Qian, M. White","LCLS-II Extruded Aluminum Undulator Vacuum Chambers &mdash; New Approaches to an Improved Aperture Surface Finish",719,1321
+"THP069","A.H. Lumpkin, D.W. Rule, M. Downer, M. LaBerge","Observations on Microbunching of Electrons in Laser-Driven Plasma Accelerators and Free-Electron Lasers",722,2042
+"THP070","A. Scheinker, B. Beutner, W. Decking, R. Kammering, H. Schlarb, M. Scholz, I. Zagorodnov, S. Tomin, D.K. Bohler","Development of Advanced Model-Independent Tuning Methods for Maximizing Free Electron Laser Pulse Energy at the EuXFEL at DESY",,1382
+"THP071","A. Halavanau, F.-J. Decker, Y. Ding, C. Emma, Z. Huang, A.K. Krasnykh, J. Krzywinski, A.A. Lutman, G. Marcus, A. Marinelli, A. Ratti, D. Zhu, C. Pellegrini","Progress in High Power High Brightness Double Bunch Self-Seeding at LCLS-II",726,2124
+"THP072","J.P. MacArthur","Phase-Stable Self-Modulation of an Electron-Beam in a Magnetic Wiggler",,2160
+"THP073","Y. Park, D.K. Dang, P.E. Denham, N.S. Sudar, Y. Sun, A. Zholents, R.B. Agustsson, A.Y. Murokh, T.J. Campese, I.I. Gadjev, C.C. Hall, S.D. Webb, P. Musumeci","Status Update for the High Gain High Efficiency TESSA-266 Experiment",730,1701
+"THP074","K. Honkavaara, S. Schreiber","FLASH: The Pioneering XUV and Soft X-Ray FEL User Facility",734,1989
+"THP076","U. Lehnert, A. Arnold, M. Chen, J.-C. Deinert, P.E. Evtushenko, B.W. Green, J.M. Klopf, S. Kovalev, S. Ma, P. Michel, J. Schaber, J. Teichert, R. Xiang","High Bunch Charge Operation of the TELBE Super-Radiant THz Source With the ELBE SRF Gun",,2447
+"THP077","A. Friedman, K. Cheverdine, E. Dyunin, Yu. Lurie, A. N. Nause, A. Gover","General Design and Status of the FEL Facility in Isreal",,2151
+"THP078","G. D'Auria, S. Di Mitri, R.A. Rochow, J. Marcos, E. Marin, R. Muñoz Horta, F. Perez, R. Hoekstra, R.T. Dowd, D. Zhu, A. Aksoy, Z. Nergiz, A. Latina, X. Liu, C. Rossi, W. Wuensch, D. Schulte, S. Stapnes, X.W. Wu, R. Apsimon, G. Burt, A. Castilla, G. Dattoli, F. Nguyen, A. Petralia, E. Tanke, E. Trachnas, M. Aicheler, D. Esperante Pereira, J. Fuster, D. Gonzalez-Iglesias, D. Alesini, M. Bellaveglia, B. Buonomo, F. Cardelli, M. Croia, M. Diomede, M. Ferrario, A. Gallo, L. Piersanti, J. Scifo, B. Spataro, C. Vaccarezza, A. Giribono, A. Bernhard, J. Gethmann, R. Geometrante, M. Kokole, E.N. Gazis, N. Gazis, M. Calvi, T. Schmidt, K. Zhang, W. Fang, H.M. Castaneda Cortes, J.A. Clarke, D.J. Dunning, N. Thompson, J.M. Arnesano, F. Bosco, L. Ficcadenti, A. Mostacci, L. Palumbo, O.J. Luiten, P.H.A. Mutsaers, X.F.D. Stragier, G. Taylor, A.W. Cross, L. Zhang, B. Gimeno, L.J.R. Nix, A. Faus-Golfe, Y. Han, V.A. Goryashko, M. Jacewicz, R.J.M.Y. Ruber, X.J.A. Janssen, J.M.A. Priem","Status of the CompactLight Design Study",738,2026
+"THP079","L. Giannessi, E. Allaria, L. Badano, S. Bassanese, F. Bencivenga, C. Callegari, F. Capotondi, D. Castronovo, F. Cilento, P. Cinquegrana, M. Coreno, I. Cudin, M.B. Danailov, G. D'Auria, R. De Monte, G. De Ninno, P. Delgiusto, A.A. Demidovich, M. Di Fraia, S. Di Mitri, B. Diviacco, A. Fabris, R. Fabris, W.M. Fawley, M. Ferianis, L. Foglia, P. Furlan Radivo, G. Gaio, F. Gelmetti, F. Iazzourene, S. Krecic, G. Kurdi, M. Lonza, N. Mahne, M. Malvestuto, M. Manfredda, C. Masciovecchio, M. Milloch, R. Mincigrucci, N.S. Mirian, I. Nikolov, F.H. O'Shea, G. Penco, A. Perucchi, O. Plekan, M. Predonzani, K.C. Prince, E. Principi, L. Raimondi, P. Rebernik Ribic, F. Rossi, L. Rumiz, C. Scafuri, C. Serpico, N. Shafqat, P. Sigalotti, A. Simoncig, S. Spampinati, C. Spezzani, M. Svandrlik, M. Trovo, A. Vascotto, M. Veronese, R. Visintini, D. Zangrando, M. Zangrando","Status and Perspectives of the FERMI FEL Facility (2019)",742,2089
+"THP080","W.Q. Zhang, X.M. Yang, D. Wang, Z.T. Zhao","The Status of Dalian Coherent Light Source and Future Plan",,2069
+"THP081","K. Szamota-Leandersson, P.J. Czuma, P. Krawczyk, J. Krzywinski, R. Nietuby&#263;, M. Staszczak, J. Szewinski, J.K. Sekutowicz, W. Bal, J. Poznanski, A. Bartnik, H. Fiedorowicz, K. Janulewicz, N. Palka","PolFEL &mdash; New Facility in Poland",746,2601
+"THP082","H.W. Kim, K. Oang, S. Park, N.A. Vinokurov, I.H. Baek, K.H. Jang, Y.U. Jeong, K. Lee, J. Kim, J. Shin, S. H. Park","Sub-100 Femtosecond Ultrafast Electron Diffraction at KAERI",,2150
+"THP084","F. Curbis, J. Andersson, L. Isaksson, M. Kotur, F. Lindau, E. Mansten, M.A. Pop, H. Tarawneh, P.F. Tavares, S. Thorin, S. Werin, M. Larsson, P.M. Salen, J.A. Sellberg, P. Johnsson, W. Qin, S. Bonetti, A. Nilsson, V.A. Goryashko","Status of the Soft X-Ray Laser (SXL) Project at MAX IV Laboratory",749,1985
+"THP085","R. Ganter, G. Aeppli, A. Al Haddad, J. Alex, C. Arrell, V.R. Arsov, S. Bettoni, C. Bostedt, H.-H. Braun, M. Calvi, T. Celcer, P. Craievich, R. Follath, F. Frei, N. Gaiffi, Z. Geng, C.H. Gough, M. Huppert, R. Ischebeck, H. Joehri, P.N. Juranic, B. Keil, F. Loehl, F. Marcellini, G. Marinkovic, G.L. Orlandi, C. Ozkan Loch, M. Paraliev, L. Patthey, M. Pedrozzi, C. Pradervand, E. Prat, S. Reiche, T. Schietinger, T. Schmidt, K. Schnorr, C. Svetina, A. Trisorio, C. Vicario, D. Voulot, U.H. Wagner, A.C. Zandonella","Status of Athos, the Soft X-Ray FEL Line of SwissFEL",753,1918
+"THP086","S. Reiche, E. Ferrari, E. Prat, T. Schietinger","Operation Modes of the SwissFEL Soft X-Ray Beamline Athos",757,2345
+"TUA01","S. Liu, F. Brinker, W. Decking, L. Froehlich, R. Kammering, D. Noelle, F. Obier, E. Schneidmiller, M. Scholz, T. Wilksen, M.V. Yurkov, R. Boll, N. Gerasimova, T. Mazza, M. Meyer, A. Scherz, H. Sinn","Parallel Operation of SASE1 and SASE3 at the European XFEL",25,1876
+"TUA02","A.A. Lutman","Two-Pulse Schemes in Soft and Hard X-Ray FELs: Robustness Analysis of State-of-the-Art Solutions",,1645
+"TUA03","A. Malyzhenkov, Y.P. Arbelo, S. Bettoni, P. Craievich, P. Dijkstal, E. Ferrari, P.N. Juranic, E. Prat, S. Reiche","Generation of Sub-Femtosecond X-Ray Pulses at SwissFEL",,2192
+"TUA04","E. Schneidmiller, F. Brinker, W. Decking, M.W. Guetg, S. Liu, D. Noelle, M. Scholz, M.V. Yurkov, I. Zagorodnov, N. Gerasimova, Y. Li, J. Liu, L. Samoylova, H. Sinn, F. Wolff-Fabris, G. Geloni, J. Grünert, S. Karabekyan, N.G. Kujala, J. Laksman, Th. Maltezopoulos, I. Petrov, S. Serkez","Harmonic Lasing Experiment at the European XFEL",29,1822
+"TUB01","P. Rebernik Ribic","Echo-Enabled Harmonic Generation Lasing of the FERMI FEL in the Soft X-Ray Spectral Region",33,1914
+"TUB02","I. Inoue, T. Hara","Reflection Self-Seeding at SACLA",,1871
+"TUB03","C.-K. Min, H. Heo, H.-S. Kang, C. Kim, G. Kim, D.H. Na, B.G. Oh, S.Y. Rah, H. Yang, K. Kim, D. Shu, Yu. Shvyd'ko, M.H. Cho, M.J. Kim, J.H. Ko, I.H. Nam, C.H. Shim, Y.J. Suh","Hard X-Ray Self-Seeding at PAL-XFEL",,2083
+"TUB04","S. Spampinati, E. Allaria, L. Badano, C. Callegari, G. De Ninno, M. Di Fraia, S. Di Mitri, L. Giannessi, N. Mahne, M. Manfredda, N.S. Mirian, G. Penco, O. Plekan, K.C. Prince, L. Raimondi, P. Rebernik Ribic, C. Spezzani, M. Trovo, M. Zangrando, X. Yang, T. Mazza, R. Feifel, R. Squibb","Generation and Measurement of Intense Few-Femtosecond Superradiant Soft X-Ray Free Electron Laser Pulses",,2179
+"TUD01","Y.K. Wu, H. Hao, P. Liu, S.F. Mikhailov, V. Popov, J. Yan, S.V. Benson","Generating Orbital Angular Momentum Beams in an FEL Oscillator",,2462
+"TUD02","R. Hajima, K. Kawase, R. Nagai, T. Miyajima, M. Shimada, H. Ohgaki, H. Zen, Y. Hayakawa, T. Sakai, Y. Sumitomo","Application of Infrared FEL Oscillators for Producing Isolated Attosecond X-Ray Pulses via High-Harmonic Generation in Rare Gases",272,1943
+"TUD03","V.V. Kubarev, Ya.V. Getmanov, O.A. Shevchenko, S. Bae, Y.U. Jeong","Fine and Hyperfine Structure of FEL Emission Spectra",276,1342
+"TUD04","G. Marcus, F.-J. Decker, G.L. Gassner, A. Halavanau, J.B. Hastings, Z. Huang, Y. Liu, J.P. MacArthur, R.A. Margraf, T.O. Raubenheimer, A. Sakdinawat, T.-F. Tan, D. Zhu, J.W.J. Anton, L. Assoufid, K. Goetze, W.G. Jansma, S.P. Kearney, K. Kim, R.R. Lindberg, A. Miceli, X. Shi, D. Shu, Yu. Shvyd'ko, J.P. Sullivan, M. White, B.T. Lantz","Cavity-Based Free-Electron Laser Research and Development: A Joint Argonne National Laboratory and SLAC National Laboratory Collaboration",282,2146
+"TUP001","P. Boonpornprasert, G.Z. Georgiev, G. Koss, M. Krasilnikov, X. Li, F. Mueller, A. Oppelt, S. Philipp, H. Shaker, F. Stephan, T. Weilbach, Z.G. Amirkhanyan","Extension of the PITZ Facility for a Proof-of-Principle Experiment on THz SASE FEL",38,2076
+"TUP002","X. Li, P. Boonpornprasert, Y. Chen, G.Z. Georgiev, J.D. Good, M. Gross, P.W. Huang, I.I. Isaev, C. Koschitzki, M. Krasilnikov, S. Lal, O. Lishilin, G. Loisch, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko","Progress in Preparing a Proof-of-Principle Experiment for THz SASE FEL at PITZ",41,1883
+"TUP003","H. Shaker, P. Boonpornprasert, G.Z. Georgiev, G. Koss, M. Krasilnikov, X. Li, A. Lueangaramwong, F. Mueller, A. Oppelt, S. Philipp, F. Stephan, G. Vashchenko, T. Weilbach","Design of a Magnetic Bunch Compressor for the THz SASE FEL Proof-of-Principle Experiment at PITZ",45,2521
+"TUP004","T. Tanikawa, G. Geloni, S. Karabekyan, S. Serkez, M. Gensch, S. Kovalev, S. Casalbuoni, V. B. Asgekar","A Superradiant THz Undulator Source for XFELs",48,1462
+"TUP005","T. Tanikawa, G. Geloni, S. Karabekyan, S. Serkez, M. Lederer, S. Tomin, M. Adachi","Feasibility Study of an External-Laser Seeding for the European XFEL",,2002
+"TUP006","W. Schöllkopf, M. De Pas, D. Dowell, S. Gewinner, H. Junkes, G. Meijer, G. von Helden, J. Rathke, T. Schultheiss, A.M.M. Todd, L.M. Young, W.B. Colson, S.C. Gottschalk","The FHI FEL Upgrade Design",52,1932
+"TUP007","M. Bawatna, B.W. Green","Experience with the Superradiant THz User Facility Driven by a Quasi-CW SRF Accelerator at ELBE",56,1161
+"TUP008","P.E. Evtushenko, T.E. Cowan, U. Lehnert, P. Michel","Concept of High-Power CW IR-THz Source for the Radiation Source Elbe Upgrade",59,2173
+"TUP009","P. Rauer, I. Bahns, W. Hillert, J. Rossbach, W. Decking, H. Sinn","Integration of an XFELO at the European XFEL Facility",62,1919
+"TUP010","Y. Honda, A. Aryshev, R. Kato, T. Miyajima, T. Obina, M. Shimada, R. Takai, T. Uchiyama, N. Yamamoto","Stimulated Emission of THz Coherent Diffraction Radiation",,1865
+"TUP011","Y. Honda, R. Kato, M. Shimada, F. Sakamoto, K. Kawase","Upgrade Options for Infrared FEL to be Constructed at cERL",,1866
+"TUP012","M.R. Asakawa, S. Yamaguchi","Smith-Purcell Radiation Emitted by Pico-second Electron Bunches from a 30 keV Photo-Electron Gun",66,1861
+"TUP013","H. Zen, H. Ohgaki, R. Hajima","High Extraction Efficiency Operation of Mid-Infrared Free Electron Laser in Kyoto University Enabled by Dynamic Cavity Desynchronization",,1801
+"TUP014","H. Saito, H. Hama, S. Kashiwagi, N. M. Morita, T. Muto, K. Nanbu, H. Yamada","Crossed-Undulator Configuration for Variable Polarized THz Source",69,1863
+"TUP015","D. Wu, T.H. He, L.B. Li, M. Li, P. Li, X. Luo, Q. Pan, L.J. Shan, X. Shen, H. Wang, J. Wang, D.X. Xiao, L.G. Yan, P. Zhang, K. Zhou","Design of High-Repetition Terahertz Super-Radiation Based on CAEP THz FEL Superconducting Beamline",73,2068
+"TUP016","S. Bae, M.Y. Jeon, T. Yun, B.A. Gudkov, K.H. Jang, Y.U. Jeong, K. Lee, S.V. Miginsky","Development of a Compact THz FEL Using a Hybrid Electro-Magnetic Planar Undulator With Horizontal Focusing Force",,2149
+"TUP017","J.H. Ko, H.-S. Kang","Terahertz FEL Simulation in PAL XFEL",77,1602
+"TUP018","A. Malkin, N.S. Ginzburg, A. Sergeev, I.V. Zheleznov, I.V. Zotova, M.I. Yalandin, V.Yu. Zaslavsky","Superradiant Emission of Electron Bunches Based on Cherenkov Excitation of Surface Waves in 1D and 2D Periodical Lattices: Theory and Experiments",80,2019
+"TUP019","A.V. Savilov, I.V. Bandurkin, Yu.S. Oparina, N.Yu. Peskov","Regime of Multi-Stage Non-Resonant Trapping in Free Electron Lasers",83,1875
+"TUP020","A.V. Savilov, Yu.S. Oparina, N.Yu. Peskov","Terahertz Free Electron Maser Based on Excitation of a Talbot-Type Super-Mode in an Oversized Microwave System",87,1917
+"TUP021","V.Yu. Zaslavsky, N.S. Ginzburg, A. Malkin, N.Yu. Peskov, A. Sergeev, A.V. Arzhannikov, E.S. Sandalov, S.L. Sinitsky, D.I. Skovorodin, A.A. Starostenko","Development of Powerful Long-Pulse Terahertz Band FELs Based on Linear Induction Accelerators",91,2166
+"TUP023","O.A. Shevchenko, N.A. Vinokurov","Analytical and Numerical Comparison of Different Approaches to the Description of SASE in High Gain FELs",94,2062
+"TUP024","O.A. Shevchenko, E.V. Bykov, S.V. Tararyshkin, Ya.V. Getmanov, S.S. Serednyakov, M.V. Fedin, A.R. Melnikov, S.L. Veber","Electronic Modulation of the FEL-Oscillator Radiation Power Driven by ERL",98,1983
+"TUP025","A. Aksoy, Ö. Karsli, C. Kaya, &#304;.B. Koc, O.F. Elcim","Current Status of Free Electron Laser @ TARLA",102,2021
+"TUP026","P. Pongchalee, B.W.J. McNeil","Unaveraged Simulation of a Regenerative Amplifier Free Electron Laser",106,2015
+"TUP027","R.R. Lindberg","Modelling Crystal Misaligments for the X-ray FEL Oscillator",110,1481
+"TUP028","R.R. Lindberg, K. Kim","Power Variations of an X-ray FEL Oscillator in Saturation",114,1823
+"TUP029","Yu. Shvyd'ko","Efficient Output Coupling From X-Ray Free-Electron Laser Cavities",,2094
+"TUP030","H. Freund, Yu. Shvyd'ko, P.J.M. van der Slot","An X-ray Regenerative Amplifier Free-Electron Laser Using Diamond Pinhole Mirrors",,1501
+"TUP031","J. Yan, H. Hao, P. Liu, S.F. Mikhailov, V. Popov, Y.K. Wu, N.A. Vinokurov, J.Y. Li, S. Huang, V. Litvinenko","Precision Gamma-Ray Beam Polarization Control Enabled Using Crossed Undulator Oscillator FEL",,2484
+"TUP032","G. Marcus, Y. Ding, Y. Feng, A. Halavanau, Z. Huang, J. Krzywinski, J.P. MacArthur, R.A. Margraf, T.O. Raubenheimer, D. Zhu, V. Fiadonu","Regenerative Amplification for a Hard X-Ray Free-Electron Laser",118,2144
+"TUP033","J. Krzywinski, Y. Feng, A. Halavanau, Z. Huang, A.M. Kiss, J.P. MacArthur, G. Marcus, T. Sato, D. Zhu","Q-Switching of X-Ray Optical Cavities by Using Boron Doped Buried Layer Under a Surface of a Diamond Crystal",122,2449
+"TUP035","G. Marcus, D.K. Bohler, Y. Ding, W.M. Fawley, Y. Feng, E. Hemsing, Z. Huang, J. Krzywinski, A.A. Lutman, D.F. Ratner","Sensitivity of LCLS Self-Seeded Pedestal Emission to Laser Heater Strength",126,2147
+"TUP036","P. Musumeci, A.C. Fisher, S.B. van der Geer, E.A. Nanni, E.J.C. Snively, A. Gover","A Waveguide-Based High Efficiency Super-Radiant FEL Operating in the THz Regime",127,1702
+"TUP037","Y.S. Li, K. Kim, R.R. Lindberg","Optimization of the Transverse Gradient Undulator (TGU) for Application in a Storage Ring Based XFELO",131,1643
+"TUP038","Y.S. Li, K. Kim, R.R. Lindberg","Axial Symmetry in Spontaneous Undulator Radiation for XFELO Two-Bunch Experiment",134,1644
+"TUP039","E.A. Peter, A. Endler, F.B. Rizzato, S. Marini","Radiation Reaction, Space-Charge and Thermal Effects in Free-Electron Lasers",,1081
+"TUP041","H. Jeevakhan, G. Mishra","X-cos SCILAB Model  for Simulation of Intensity and Gain of Planar Undulator Radiation",138,1061
+"TUP042","H. Jeevakhan, G. Mishra","Analysis of Undulator Radiations With Asymmetric Beam and Non-Periodic Magnetic Field",141,1021
+"TUP043","M. Alimohamadi, A. Zarei","Investigation Quantum Regime of a Plasma-Wave-Pumped Ion-Channel Free-Electron Laser",,1922
+"TUP047","Q.K. Jia","An Analysis of Optimal Initial Detuning for Maximum Energy-Extraction Efficiency",145,1761
+"TUP048","V.V. Gorev","Collapsing Cylindrical Long Shells Filled the Periodical Magnetic Field",,2202
+"TUP049","P. Traczykowski, L.T. Campbell, B.W.J. McNeil","Simulating Shot-Noise of 'Real' Electron Bunches",149,2007
+"TUP050","P. Traczykowski, B.W.J. McNeil, P.J.M. van der Slot, L.T. Campbell, J. Henderson, H. Freund","Comparison Between, and Validation Against an Experiment of, a Slowly-varying Envelope Approximation Code and a Particle-in-Cell Simulation Code for Free-Electron Lasers",153,2006
+"TUP051","B.M. Alotaibi, R. Altuijri, A.F. Habib, B. Hidding, B.W.J. McNeil, P. Traczykowski","Plasma Accelerator Driven Coherent Spontaneous Emission",157,2009
+"TUP052","L. Elias","Collective Power Radiated by Individual Electrons in a Pulse",,1181
+"TUP053","J.-W. Park, K.-J. Kim, R.R. Lindberg","An Investigation of Possible Non-Standard Photon Statistics in a Free-Electron Laser I: Experiment",161,1934
+"TUP054","J.-W. Park, R.R. Lindberg, K.-J. Kim","An Investigation of Possible Non-Standard Photon Statistics in a Free-Electron Laser II: Theory",165,1935
+"TUP055","E. Schneidmiller, M. Braune, B. Faatz, U. Jastrow, M. Kuhlmann, A.A. Sorokin, K.I. Tiedtke, M.V. Yurkov","Two-Color Operation of FLASH2 Undulator",168,1873
+"TUP056","E. Schneidmiller, V. Balandin, W. Decking, M. Dohlus, N. Golubeva, D. Noelle, M.V. Yurkov, I. Zagorodnov, Y. Li, S. Molodtsov, H. Sinn, S. Tomin, G. Geloni, J. Pflueger, S. Serkez, T. Tanikawa","Feasibility Studies of the 100 keV Undulator Line of the European XFEL",172,1909
+"TUP057","E. Schneidmiller, M.V. Yurkov","Analysis of Parameter Space of Soft X-Ray Free Electron Laser at the European XFEL Driven by High and Low Energy Electron Beam",176,2561
+"TUP058","V. Balandin, B. Beutner, F. Brinker, W. Decking, M. Dohlus, L. Froehlich, U. Jastrow, R. Kammering, T. Limberg, D. Noelle, M. Scholz, A.A. Sorokin, K.I. Tiedtke, M.V. Yurkov, I. Zagorodnov, J. Liu, L. Samoylova, U. Boesenberg, W. Freund, J. Grünert, A. Koch, N.G. Kujala, Th. Maltezopoulos, M. Messerschmidt, I. Petrov, H. Sinn","First Characterization of the Photon Beam at the European XFEL in July, 2017",180,2541
+"TUP059","E. Schneidmiller, M.V. Yurkov","Influence of Energy Chirp in the Electron Beam and Undulator Tapering on Spatial Properties of the Radiation From Seeded and SASE FEL",184,2196
+"TUP060","I. Zagorodnov, M. Dohlus, E. Schneidmiller, M.V. Yurkov","An Advanced Compression Option for the European XFEL",187,2004
+"TUP061","S. Serkez, G. Geloni, S. Karabekyan, T. Tanikawa, A. Trebushinin, C. Boffo, M. Dohlus, E. Schneidmiller, M.V. Yurkov, I. Zagorodnov, Y. Li, S. Tomin, F. Wolff-Fabris, S. Casalbuoni","Super-X: Simulations for Extremely Hard X-Ray Generation With Short Period Superconducting Undulators for the European XFEL",191,2000
+"TUP062","S. Serkez, G. Geloni, J. Grünert, S. Karabekyan, A. Koch, J. Laksman, Th. Maltezopoulos, W. Decking, L. Froehlich, V. Kocharyan, Y.A. Kot, E. Saldin, E. Schneidmiller, M. Scholz, M.V. Yurkov, I. Zagorodnov, N. Gerasimova, T. Mazza, M. Meyer, S. Tomin, M. Huttula, E. Kukk","Two Colors at the SASE3 Line of the European XFEL: Project Scope and First Measurements",195,2031
+"TUP063","N. Huang, H.X. Deng, B. Liu, D. Wang","Physical Design and FEL Performance Study for FEL-III Beamline of SHINE",199,2441
+"TUP064","M.H. Cho, C.H. Shim, H.-S. Kang, G. Kim, H. Yang","Effect on FEL Gain Curve Using Phase Shifters",203,1782
+"TUP065","I.G. Jeong, M.Y. Han, J.Y. Lee, S.H. Lee, Y.J. Joo, H.R. Lee, P. Buaphad, Y. Kim","Optimization of a Coherent Undulator Beamline for New Advanced Synchrotron Light Source in Korea",206,1903
+"TUP066","W. Qin, J. Andersson, L. Isaksson, M. Kotur, E. Mansten, M.A. Pop, S. Thorin, F. Curbis, S. Werin","Start-to-End Simulations for the Soft X-Ray FEL at the MAX IV Laboratory",210,2098
+"TUP067","W. Qin, M.A. Pop, F. Curbis, S. Werin","Advanced Concepts in the Design for the Soft X-Ray FEL at MAX IV",214,2097
+"TUP068","P. Dijkstal, A. Malyzhenkov, E. Prat, S. Reiche","Simple Method to Generate Two-Color FEL Pulses Using a Sextupole Magnet",,2193
+"TUP069","E. Prat, S. Reiche","A Simple and Compact Scheme to Enhance the Brightness of SASE-FELs",,2342
+"TUP070","E. Prat, S. Reiche","Compact Coherence Enhancement by Subharmonic Self-Seeding in X-Ray FELs",,2343
+"TUP071","S. Reiche, E. Ferrari, E. Prat, T. Schietinger, A. Saa Hernandez","Recent Results of the Large Bandwidth Operation at SwissFEL",,2341
+"TUP072","J.F. Morgan, B.W.J. McNeil, B.D. Muratori, P.H. Williams, A. Wolski","Orbital Angular Momentum from SASE",218,1913
+"TUP073","S. Ackermann, B. Faatz, V. Grattoni, C. Lechner, G. Paraskaki, G. Geloni, S. Serkez, T. Tanikawa, W. Hillert","High-Repetition-Rate Seeding Schemes Using a Resonator-Amplifier Setup",222,1939
+"TUP074","V. Grattoni, S. Ackermann, B. Faatz, T. Lang, C. Lechner, M.M. Mohammad Kazemi, G. Paraskaki, W. Hillert","FLASH Upgrade for Seeding",226,2066
+"TUP076","C. Lechner, S. Ackermann, R.W. Assmann, B. Faatz, V. Grattoni, I. Hartl, S.D. Hartwell, R. Ivanov, T. Laarmann, T. Lang, M.M. Mohammad Kazemi, G. Paraskaki, A. Przystawik, J. Zheng, S. Khan, A. Azima, H. Biss, M. Drescher, W. Hillert, V. Miltchev, J. Rossbach","Seeding R&D at sFLASH",230,2186
+"TUP077","G. Paraskaki, S. Ackermann, B. Faatz, V. Grattoni, C. Lechner, M. Mehrjoo, G. Geloni, S. Serkez, T. Tanikawa, W. Hillert","Study of a Seeded Oscillator-Amplifier FEL",234,2086
+"TUP078","G. Paraskaki, S. Ackermann, B. Faatz, V. Grattoni, C. Lechner, J. Zemella, W. Hillert","Impact of Electron Beam Energy Chirp on Seeded FELs",238,2084
+"TUP079","G. Geloni, S. Karabekyan, D. La Civita, S. Serkez, R.A. Shayduk, H. Sinn, M. Yakopov, J.W.J. Anton, S.P. Kearney, D. Shu, W. Decking, V. Kocharyan, S. Liu, E. Negodin, E. Saldin, T. Wohlenberg, L. Samoylova, V. Sleziona, M. Vannoni, X. Dong, V.D. Blank, S. Terentiev","Status of the Hard X-Ray Self-Seeding Setup at the European XFEL",242,1997
+"TUP080","A. Meyer auf der Heide, B. Büsing, S. Khan, D. Krieg, C. Mai","Harmonic Off-Axis Seeding at the DELTA Short-Pulse Source",246,1984
+"TUP081","M.B. Danailov, P. Cinquegrana, A.A. Demidovich, G. Kurdi, I. Nikolov, P. Sigalotti","Critical Aspects  and  New Configurations  of the FERMI Seed Laser",,2020
+"TUP082","N.S. Mirian, E. Allaria, G. De Ninno, W.M. Fawley, G. Gaio, G. Penco, P. Rebernik Ribic, C. Spezzani, M. Trovo, L. Giannessi, E. Ferrari, E. Hemsing","Measurements of the Impact of Seed Laser Chirp on EEHG FEL Spectra",,2091
+"TUP083","S. Spampinati, E. Allaria, L. Giannessi, P. Rebernik Ribic","Energy Spread Impact on HGHG and EEHG FEL Pulse Energy",250,2180
+"TUP084","V. Petrillo","High Repetition Rate and Coherent Free-Electron Laser in the X-rays Range Tailored for Linear Spectroscopy",,1681
+"TUP085","C. Feng, X.F. Wang, Z.T. Zhao","Angular Dispersion Enabled Microbunching for Coherent EUV and Soft X-Ray FEL Generation in Storage Rings",,1708
+"TUP086","C. Feng","Echo-Enabled Harmonic Generation at Shanghai Soft X-Ray FEL Facility",,2063
+"TUP087","T. Liu, X. Dong, C. Feng","Start-to-end Simulations of the Reflection Hard X-Ray Self-Seeding at the SHINE Project",254,1948
+"TUP088","K.S. Zhou, H.X. Deng, B. Liu, D. Wang","Numerical Simulations for Generating Fully Coherent Soft X-Ray Free Electron Lasers With Ultra-Short Wavelength",258,2223
+"TUP090","M.A. Pop, W. Qin, F. Curbis, S. Werin","Considerations on Implementing EEHG with a Strong Linear Chirp",262,2016
+"TUP091","S.Y. Teng, C.H. Chen, W.K. Lau, A.P. Lee","Start-to-End Simulation of the NSRRC Seeded VUV FEL",266,1908
+"TUP092","A. Halavanau, C. Emma, E. Hemsing, A.A. Lutman, G. Marcus, C. Pellegrini","XFEL Third Harmonic Statistics Measurement at LCLS",269,1841
+"TUT01","A. Gover, A. Friedman, R. Ianconescu, C. Emma, P. Musumeci, N.S. Sudar, C. Pellegrini","Superradiance and Stimulated-Superradiant Emission of Bunched Electron Beams",288,2301
+"WEA01","H.J. Qian, E. Vogel","Overview of CW RF Guns for Short Wavelength FELs",290,2014
+"WEA02","N.A. Moody, J. Smedley","State-of-the-Art Photocathodes and New Developments",,2461
+"WEA03","Y. Chen, M. Gross, P.W. Huang, I.I. Isaev, C. Koschitzki, M. Krasilnikov, S. Lal, O. Lishilin, G. Loisch, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko","Emittance Budget in the Transition Regime Between Linear Emission and Space Charge Dominated Photoemission",,1723
+"WEA04","L. Monaco, P. Michelato, D. Sertore, G. Guerini Rocco, C. Pagani","Growing and Characterization of Cs2Te Photocatodes with Different Thicknesses at INFN LASA",297,2022
+"WEB01","G. Kube, S. Liu, A.I. Novokshonov, M. Scholz","Identification and Mitigation of Smoke-Ring Effects in Scintillator-Based Electron Beam Images at the European XFEL",301,2001
+"WEB02","G.L. Orlandi, S. Borrelli, Ch. David, E. Ferrari, V. Guzenko, B. Hermann, O. Huerzeler, R. Ischebeck, C. Lombosi, C. Ozkan Loch, E. Prat, M. Ferianis, G. Penco, M. Veronese, N. Cefarin, S. Dal Zilio, M. Lazzarino","Wire-Scanners with Sub-Micrometer Resolution: Developments and Measurements",307,1621
+"WEB03","E. Fol, R. Tomas, G. Franchetti, J.M. Coello de Portugal","Application of Machine Learning to Beam Diagnostics",311,1812
+"WEB04","S. Schulz, M.K. Czwalinna, M. Felber, M. Fenner, C. Gerth, T. Kozak, T. Lamb, B. Lautenschlager, F. Ludwig, U. Mavric, J. Mueller, S. Pfeiffer, H. Schlarb, Ch. Schmidt, C. Sydlo, M. Titberidze, F. Zummack","Few-Femtosecond Facility-Wide Synchronization of the European XFEL",318,2101
+"WED01","T. Schmidt, M. Aiba, A.D. Alarcon, C. Arrell, S. Bettoni, M. Calvi, A. Cassar, E. Ferrari, R. Follath, R. Ganter, N. Hiller, P.N. Juranic, C. Kittel, F. Loehl, E. Prat, S. Reiche, T. Schietinger, D. Voulot, U.H. Wagner, N.J. Sammut","Experience with Short-Period, Small Gap Undulators at the SwissFEL Aramis Beamline",564,2189
+"WED02","F. Wolff-Fabris, J. Pflueger, H. Sinn, W. Decking, D. Noelle, F. Schmidt-Foehre, A. Hedqvist, F. Hellberg","Absorbed Radiation Doses on the European XFEL Undulator Systems During Early User Experiments",569,1915
+"WED03","J. Grünert, W. Freund, A. Koch, N.G. Kujala, J. Laksman, Th. Maltezopoulos, M.P. Planas, F. Dietrich, J. Liu","Pulse Resolved Photon Diagnostics at MHz Repetition Rates",,2155
+"WED04","W. Freund, S. Karabekyan, A. Koch, L. Froehlich, D. Noelle, J. Wilgen, J. Grünert, J. Liu","Undulator Adjustment with the K-Monochromator System at the European XFEL",,1543
+"WEP001","E. Roussel, S. Bielawski, C. Evain, C. Szwaj, N. Adhlakha, P. Cinquegrana, S. Di Mitri, P. Di Pietro, A. Perucchi, M. Veronese","Development of a THz Oscilloscope for the Detection of Electric Fields in the 1-10 THz Range at the TeraFERMI Beamline",,2361
+"WEP002","E. Roussel, S. Bielawski, C. Evain, C. Szwaj, C. Gerth, B. Steffen","Photonic Time-Stretch Electro-Optic Sampling of Electron Bunches at European XFEL",,2401
+"WEP003","K. Shafak, A. Berlin, E. Cano Vargas, H.P.H. Cheng, A. Dai, J. Derksen, M. Neuhaus, P. Schiepel, F.X. Kaertner","Balanced Optical-Microwave Phase Detector for 800-nm Pulsed Lasers with Sub-Femtosecond Resolution",322,1999
+"WEP004","E. Cano Vargas, F.X. Kaertner, A. Berlin, H.P.H. Cheng, A. Dai, J. Derksen, P. Schiepel, K. Shafak","Timing Stability Comparison Study of RF Synthesis Techniques",325,2003
+"WEP005","B. Beutner","A Post-Undulator X-Band TDS Diagnostics Line for the European XFEL",,1912
+"WEP006","F. Christie, J. Roensch-Schulenburg, M. Vogt","A PolariX TDS for the FLASH2 Beamline",328,1302
+"WEP007","M. Felber, E.P. Felber, M. Fenner, T. Kozak, T. Lamb, J. Mueller, K.P. Przygoda, H. Schlarb, S. Schulz, C. Sydlo, M. Titberidze, F. Zummack","Usage of the MicroTCA.4 Electronics Platform for Femtosecond Synchronization Systems",332,1642
+"WEP008","L. Froehlich, A. Aghababyan, V. Balandin, B. Beutner, F. Brinker, W. Decking, N. Golubeva, O. Hensler, Y. Janik, R. Kammering, H. Kay, T. Limberg, S. Liu, D. Noelle, F. Obier, M. Omet, M. Scholz, T. Wamsat, T. Wilksen, J. Wortmann","Multi-Beamline Operation at the European XFEL",335,1882
+"WEP009","R. Kammering","Long Term Stability and Slow Feedback Performance at the European XFEL",339,2011
+"WEP010","T. Lamb, M. Felber, T. Kozak, J. Mueller, H. Schlarb, S. Schulz, C. Sydlo, M. Titberidze, F. Zummack","Femtosecond Laser-to-RF Synchronization and RF Reference Distribution at the European XFEL",343,2024
+"WEP011","S. Pfeiffer, L. Butkowski, M.K. Czwalinna, B. Dursun, C. Gerth, B. Lautenschlager, H. Schlarb, Ch. Schmidt","Longitudinal Intra-Train Beam-Based Feedback at FLASH",346,2010
+"WEP012","N.M. Lockmann, C. Gerth, B. Schmidt, S. Wesch","THz Spectroscopy with MHz Repetition Rates for Bunch Profile Reconstructions at European XFEL",350,1741
+"WEP013","F. Obier, W. Decking, M. Huening, J. Wortmann","Fast Kicker System for European XFEL Beam Distribution",353,1803
+"WEP014","F. Obier, W. Decking, M. Huening, J. Wortmann","Long Pulse Kicker for European XFEL Beam Distribution",357,1809
+"WEP015","B. Steffen, M.K. Czwalinna, C. Gerth, S. Bielawski, C. Evain, E. Roussel, C. Szwaj","Electro-Optical Bunch Length Detection at the European XFEL",360,1905
+"WEP016","M. Titberidze, M. Felber, T. Kozak, T. Lamb, J. Mueller, H. Schlarb, S. Schulz, C. Sydlo, F. Zummack","Precise Laser-to-RF Synchronization of Photocathode Lasers",364,2030
+"WEP017","M. Chen, N. Awari, M. Bawatna, J.-C. Deinert, S. Germanskiy, I.E. Ilyakov, S. Kovalev, Zhe. Wang, M. Gensch","Pulse and Field-Resolved Photon Diagnostics at a Superradiant THz User Facility",,2168
+"WEP018","I.E. Ilyakov, J.-C. Deinert, S. Kovalev, L. Foglia, G. Kurdi, R. Mincigrucci, E. Principi, N. Agarwal, R. Carley, L. Le Guyader, J. Liu, A. Scherz, A.A. Yaroslavtsev, T. Kampfrath, M. Gensch","Single-Shot Arrival Time Monitor Based on XUV-THz Conversion",,2156
+"WEP019","A. Penirschke, M.K. Czwalinna, H. Schlarb, W. Ackermann","Concept of a Novel High-Bandwidth Arrival Time Monitor for Very Low Charges as a Part of the All-Optical Synchronization Systems at XFEL and FLASH",368,2463
+"WEP020","A. Haj Yhya","Thomson Scattering of Intense Laser Pulses from Beams and Plasmas",,2344
+"WEP021","P. Sigalotti, P. Cinquegrana, M.B. Danailov, A.A. Demidovich, G. Kurdi, I. Nikolov, M. Veronese","Architecture of the Synchronization, Delay and Timing of the Multifunctional FERMI Seed Laser System",,2195
+"WEP023","J. Wang, P. Li, D.X. Xiao","Kicker Pulse Generation Using Parameter Fitting Method for Continuous Bunch Trains",,2082
+"WEP024","T.H. He, C.L. Lao, P. Li, X. Luo, L.J. Shan, K. Zhou","1.3 GHz Solid State Power Amplifier for the Buncher in CTFEL Facility",371,1862
+"WEP025","L.B. Li, X. Jin, C.L. Lao, M. Li, P. Li, J. Wang, X. Yang","The Design of Optical Synchronization Between THz Laser and Mode-Locked Ti: Sapphire Laser",,1904
+"WEP026","K. Zhou, P. Li, A. Arnold, S. Ma, J. Schaber, J. Teichert, R. Xiang","Preliminary Geometry Optimization of a 3.5-Cell SRF Gun Cavity at ELBE Based on Beam Dynamics",374,1281
+"WEP027","L.G. Yan, L.J. Chen, D.R. Deng, P. Li","A Fast and Accurate Method to Shim Undulator Using Multi-Objective GA",378,1925
+"WEP028","S. Chen, J.W. Yan, H.X. Deng, B. Liu, D. Wang, R. Wang","Design of the Beam Distribution System for the Shanghai Soft X-Ray FEL User Facility",,2081
+"WEP030","J. Kim, I.J. Jeon, D. Kim, D. Kwon","All-Fiber Photonic, Ultralow-Noise, Robust Optical and Microwave Signal Generators for FELs and UED",382,1781
+"WEP031","J. Shin, J. Kim, I.H. Baek, Y.U. Jeong, H.W. Kim, K. Oang, S. Park","Timing Synchronization Activities for Drift-Free Operation of Ultrafast Electron Diffraction System at KAERI",385,2095
+"WEP032","I.H. Nam, M.H. Cho, C.H. Shim, H.-S. Kang, C. Kim, G. Kim, C.-K. Min, D.H. Na, H. Yang","Temporal Diagnostics of X-Ray Free Electron Laser Pulse by Using a Narrow Slotted Foil",,1931
+"WEP034","M.A. Pop, E. Allaria, F. Curbis","Characterization of FEL Spectra Using Specific Figures of Merit",388,2064
+"WEP035","S. Fahlström, M. Hamberg, C. Gerth, N.M. Lockmann, B. Steffen","NIR Spectrometer for Bunch-Resolved, Non-Destructive Studies of Microbunching at European XFEL",392,1924
+"WEP036","P. Craievich, M. Bopp, H.-H. Braun, A. Citterio, R. Ganter, T. Kleeb, F. Marcellini, M. Pedrozzi, E. Prat, S. Reiche, S. Pitman, K. T. Szypula, W.L. Millar, N. Catalan-Lasheras, V. del Pozo Romano, A. Grudiev, G. McMonagle, W. Wuensch, R.W. Assmann, F. Christie, R.T.P. D'Arcy, U. Dorda, M. Foese, P. Gonzalez Caminal, M. Hoffmann, M. Huening, R. Jonas, O. Krebs, S. Lederer, V. Libov, B. Marchetti, D. Marx, J. Osterhoff, M. Reukauff, H. Schlarb, S. Schreiber, G. Tews, M. Vogt, A. Wagner","The PolariX-TDS Project: Bead-Pull Measurements and High-Power Test on the Prototype",396,1811
+"WEP037","Z. Geng, J. Alex, V.R. Arsov, P. Craievich, C.H. Gough, R. Kalt, T. Lippuner, F. Loehl, M. Pedrozzi, E. Prat, S. Reiche","RF Jitter and Electron Beam Stability in the SwissFEL Linac",400,1821
+"WEP038","M. Paraliev, S. Dordevic, R. Ganter, C.H. Gough, N. Hiller, R.A. Krempaska, D. Voulot","Commissioning and Stability Studies of the SwissFEL Bunch-Separation System",404,1201
+"WEP041","A.H. Lumpkin, D.W. Rule","Feasibility of Single-Shot Microbunching Diagnostics for a Pre-Bunched Beam at 266 nm",408,2034
+"WEP042","A.H. Lumpkin, D.R. Edstrom, J. Ruan, R.M. Thurman-Keup","Observations of Short-Range Wakefield Effects in TESLA-Type Superconducting RF Cavities",412,2033
+"WEP043","Z. Zhang, C. Adolphsen, Y. Ding, T.O. Raubenheimer","Multi-Energy Operation Analysis in a Superconducting Linac Based on off-Frequency Detune Method",416,1421
+"WEP044","H. Ye","Circular Dichroism of Electrons Photoemitted From an Emitter Array of Au Nanospirals",,2077
+"WEP045","V. Vogel (Fogel), M. Bousonville, A. Cherepenko, S. Choroba, H.-J. Eckoldt, T. Grevsmuehl, V.V. Katalev, K. Machau, P. Morozov, B. Yildirim","Status of the Klystrons for the European XFEL after Commissioning and First User Operation Phase",420,1920
+"WEP046","L. Winkelmann, A. Choudhuri, U. Grosse-Wortmann, I. Hartl, C. Li, C. Mohr, J. Mueller, F. Peters, S. Pfeiffer, S.H. Salman","The European XFEL Photocathode Laser",423,2197
+"WEP047","S. Lederer, F. Brinker, S. Schreiber, L. Monaco, D. Sertore","Update on the Photocathode Lifetime at FLASH and European XFEL",427,2100
+"WEP048","S. Schreiber, C. Gruen, K. Klose, J. Roensch-Schulenburg, B. Steffen","FLASH Photoinjector Laser Systems",430,2170
+"WEP049","B. Yildirim, S. Choroba, V.V. Katalev, P. Morozov, Y. Nachtigal, E.M. Apostolov","RF Power Waveguide Distribution for the RF Gun of the European XFEL at DESY",434,1986
+"WEP050","C. Koschitzki, Y. Chen, J.D. Good, M. Gross, M. Krasilnikov, G. Loisch, R. Niemczyk, F. Stephan, T. Lang, L. Winkelmann, E. Khazanov, S. Mironov","Status of Chirped Pulse Laser Shaping for the PITZ Photoinjector",437,1990
+"WEP051","M. Krasilnikov, P. Boonpornprasert, Y. Chen, G.Z. Georgiev, J.D. Good, M. Gross, P.W. Huang, I.I. Isaev, C. Koschitzki, S. Lal, X. Li, O. Lishilin, G. Loisch, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko, M. Dohlus, E. Vogel","PITZ Experimental Optimization for the Aimed Cathode Gradient of a Superconducting CW RF Gun",440,1998
+"WEP052","X. Li, P. Boonpornprasert, Y. Chen, J.D. Good, M. Gross, I.I. Isaev, C. Koschitzki, M. Krasilnikov, S. Lal, O. Lishilin, G. Loisch, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko","Simulation Studies on the Saturated Emission at PITZ",444,2501
+"WEP053","S.K. Mohanty, P. Michelato, L. Monaco, D. Sertore, G. Guerini Rocco, C. Pagani","Development of a Multialkali Antimonide Photocathode at INFN LASA",448,2023
+"WEP054","H. Shaker, S. Lal, H.J. Qian, G. Shu, F. Stephan","Beam Dynamics Optimization of a Normal-Conducting Gun Based CW Injector for the European XFEL",452,2522
+"WEP055","G. Shu, Y. Chen, S. Lal, H.J. Qian, H. Shaker, F. Stephan","Multiphysics Analysis of a CW VHF Gun for European XFEL",456,1987
+"WEP056","Y.Q. Liu, M. Chen, S. Huang, L. Lin, K.X. Liu, S.W. Quan, F. Wang, S. Zhao","Engineering Design of Low-Emittance DC-SRF Photocathode Injector",460,2221
+"WEP057","S. Zhao, S. Huang, K.X. Liu, Y.Q. Liu, D.M. Ouyang","Performance Optimization of Low-Emittance DC-SRF Injector Using Cs2Te Photocathode",463,2090
+"WEP058","X.T. Wang, T. Lan, M. Zhang, W.Y. Zhang, L. Feng, B. Liu, C.L. Li","Drive Laser Temporal Shaping Techniques for Shanghai Soft X-Ray Free Electron Laser",466,1082
+"WEP059","H. Luo, P.X. Chu, J. Guo, T. Liu, Y.X. Xu, X. Zhao, X.H. Li, Q.H. Zhou, K. Wang","Characterizing a Coherent Electron Source Extracted From a Cold Atom Trap",469,2078
+"WEP060","Y.X. Xu, J. Guo","Study on a Coherent Electron Source Extracted From a Cold Atom Trap",,2162
+"WEP061","J.H. Zhou","Diagnose the Quality of a Coherent Electron Source Extracted From a Cold Atom Trap With Kapitza-Dirac Effect",,2093
+"WEP062","P.W. Huang, A. Grigoryan, Y. Chen, M. Gross, I.I. Isaev, P. Kitisri, C. Koschitzki, M. Krasilnikov, S. Lal, X. Li, O. Lishilin, D. Melkumyan, R. Niemczyk, A. Oppelt, H.J. Qian, H. Shaker, G. Shu, F. Stephan, G. Vashchenko, T. Weilbach, S. Lederer, P. Michelato, L. Monaco, D. Sertore","Test of Cs2Te Thickness on Cathode Performance at PITZ",473,1911
+"WEP063","R. Huang, Q.K. Jia, H.T. Li, Z. Zhao","The Preliminary Study of a Pre-Bunched Terahertz Free Electron Laser by a Velocity Bunching Scheme",477,1682
+"WEP064","J.H. Hong, J.H. Han, C.-K. Min","Performance of S-Band Photocathode RF Gun With Coaxial Coupler",481,2163
+"WEP065","J. Andersson, M. Kotur, F. Lindau, E. Mansten, S. Thorin","Recent Beam Quality Improvements in the MAX IV Photoinjector",,1482
+"WEP066","D. Li, D. Filippetto, M.J. Johnson, A.R. Lambert, T.H. Luo, J. Qiang, F. Sannibale, J.W. Staples, S.P. Virostek, R.P. Wells, H.Q. Feng","Progress on Normal Conducting CW APEX2 Electron Gun Design",,1942
+"WEP067","J.E. Baader","Development and Commissioning of a Flip Coil System for Measuring Field Integrals",484,1561
+"WEP068","M.-E. Couprie, N. Béchu, F. Blache, F. Briquez, J. Da Silva, A. Ghaith, C. Herbeaux, C.A. Kitegi, M. Labat, A. Loulergue, O. Marcouillé, F. Marteau, A. Mary, D. Oumbarek Espinos, A. Somogyi, K. Tavakoli, M. Valléau, T. Weitkamp, S. Corde, O. S. Kononenko, E. Roussel","Development of Cryogenic Undulators at SOLEIL",,2122
+"WEP069","I.J. Bermudez Macias, S. Düsterer, R. Ivanov, J. Liu","Single-Shot Temporal Characterization of XUV Pulses at FLASH by THz Streaking",,1824
+"WEP070","B. Faatz, M. Tischer, P. Vagin","Influence of Radiation Exposure on the FEL Performance at FLASH",488,1988
+"WEP071","T. Lang, S. Alisauskas, U. Grosse-Wortmann, I. Hartl, T. Huelsenbusch, B. Manschwetus, C. Mohr, J. Mueller, F. Peters, S. Schulz, A. Swiderski, J. Zheng","Flexible High Power and Repetition Rate OPCPA Pump-Probe Laser System for the FLASH2 XUV FEL Beamline at DESY",,2485
+"WEP072","M. Mehrjoo, B. Faatz, G. Paraskaki, M. Tischer, P. Vagin","Expected Radiation Properties of the Harmonic Afterburner at FLASH2",492,1992
+"WEP073","S. Grunewald, E. Muller, E. Schneidmiller, K.I. Tiedtke, M.V. Yurkov, O.I. Brovko, A.Yu. Grebentsov, E. Syresin","Experience With MCP-Based Photon Detector at FLASH2",495,2198
+"WEP074","N.G. Kujala, W. Freund, J. Grünert, A. Koch, J. Laksman, M.P. Planas, J. Liu","The HIgh Resolution Hard X-Ray Single Shot Spectrometer (HIREX Spectrometer) Installation and Commissioning in SASE2 Beamline of the European XFEL",,1993
+"WEP075","J. Laksman, J. Grünert, M.P. Planas, L. Glaser, Th. Maltezopoulos, J. Viefhaus, J. Buck, F. Dietrich, M. Ilchen, J. Liu","A Photoelectron Spectrometer for Soft X-Ray Photon Diagnostics at European XFEL",,1121
+"WEP076","Y. Li, R. Rossmanith","A Superconducting Undulator With Variable Polarization Direction for the European FEL",499,1541
+"WEP077","J. Liu, T. Sato, J. Grünert, H. Kirkwood, R. Letrun, A. Mancuso","Design and Commissioning of a Photon Arrival Time Monitor at the European XFEL",,2172
+"WEP078","Th. Maltezopoulos, W. Freund, J. Grünert, A. Koch, J. Laksman, M.P. Planas, U. Jastrow, K.I. Tiedtke, A.A. Sorokin, F. Dietrich, J. Liu","Pulse Energy Measurements and Position Monitoring at European XFEL using X-ray Gas Monitors",,1641
+"WEP079","I. Petrov, U. Boesenberg, M. Dommach, J. Eidam, J. Hallmann, K. Kazarian, C. Kim, W. Lu, J. Moeller, M. Reiser, R.A. Shayduk, H. Sinn, A. Zozulya, J.W.J. Anton, S.P. Kearney, D. Shu, A. Madsen, L. Samoylova, V. Sleziona, X. Dong","Effect of Heat Load on Cryo-Cooled Monochromators at the European X-Ray Free-Electron Laser: Simulations and First Experimental Observations",502,2483
+"WEP080","S. Serkez, G. Geloni, O. Gorobtsov, N. Gerasimova, B. Sobko","ROSA: Reconstruction of Spectrogram Autocorrelation for Self-Amplified Spontaneous Emission Free-Electron Lasers",506,2154
+"WEP081","M. Bawatna, J.-C. Deinert, O. Knodel, S. Kovalev, R.G. Spallek","Design and Development of High-Speed Data Acquisition System and Online Data Processing with a Heterogeneous FPGA/GPU Architecture",510,1141
+"WEP082","S. Casalbuoni, N. Glamann, A.W. Grau, T. Holubek, D. Saez de Jauregui","Superconducting Undulator Coils With Period Length Doubling for XFEL Applications",,1868
+"WEP084","M. Trunk, A.R. Maier, J. Bahrdt, B. Schulz","A Cryogenic Undulator for a Laser-Plasma Driven FEL Experiment",,2502
+"WEP085","M. Gehlot, S.M. Khan, R. Khullar, G. Mishra, J. Hussain, F. Trillaud","Field Integral Measurements of DAVV Undulators and Future Measurement Plan",513,1101
+"WEP086","N. Balal, A. Friedman, Yu. Lurie [on leave], V.L. Bratman","Capabilities of Terahertz Super-Radiance from Electron Bunches Moving in Micro-Undulators",517,2152
+"WEP087","L.J. Chen","High Magnetic Field Pure Permanent Magnet Undulator",,1996
+"WEP088","B. Li","Towards Extremely High Resolution Broad-Band Flat-Field X-Ray Spectrometer",,2065
+"WEP089","Z.P. Liu, H.X. Deng, C. Feng, B. Liu, D. Wang, L.Y. Yu","Pulse Energy Measurement at the SXFEL",521,2442
+"WEP090","Q. Xie","Design of an Off-Line Method to Simulate Single Particle Imaging for SHINE",,2177
+"WEP091","Y. Xu","Conceptional Design of the IEM Instrument at SHINE for XPCS",,1946
+"WEP092","J.H. Han, Y.G. Jung, D.E. Kim, S.J. Lee","Spare Undulator Production for PAL-XFEL HX1 Beamline",524,2143
+"WEP093","S.J. Lee, J.H. Han, Y.G. Jung, D.E. Kim, G. Mun","Radiation Damage Monitoring at PAL-XFEL",528,2067
+"WEP094","I.V. Davidyuk, O.A. Shevchenko, V.G. Tcheskidov, N.A. Vinokurov","Variable-Period Variable-Pole Number Hybrid Undulator Design for Novosibirsk THz FEL",531,1261
+"WEP095","R. Follath, U. Flechsig, L. Patthey, U.H. Wagner","The Athos Soft X-Ray Beamlines at SwissFEL",535,2443
+"WEP096","M. Calvi, E. Ferrari, R. Ganter, C. Kittel, X. Liang, T. Schmidt","Magnetic Assessment of the First Apple X, the Prototype Undulator of the Athos Beamline",,2187
+"WEP097","C. Kittel, M. Calvi, X. Liang, T. Schmidt, N.J. Sammut","Operational Model of the Athos Undulator Beamline",538,2543
+"WEP098","X. Liang, M. Calvi, C. Kittel, T. Schmidt, N.J. Sammut","Advanced Operational Models of the Apple X Undulator",541,2542
+"WEP099","C.-H. Chang, C.H. Chang, T.Y. Chung, C.-S. Hwang, C.Y. Kuo, M.-C. Lin","Design of Twin Helix Undulators for the NSRRC VUV Free Electron Laser",,1521
+"WEP100","T.Y. Chung, C.-S. Hwang","Conceptual Design of a Permanent Magnet Undulator for Fast Pulse-to-Pulse Polarization Switching in an FEL",545,1843
+"WEP101","H.M. Castaneda Cortes, D.J. Dunning, N. Thompson","Linear Polarisation via a Delta Afterburner for the CompactLight Facility",549,1806
+"WEP102","A.Yu. Smirnov, I.I. Gadjev, S.M. Lynam, F.H. O'Shea, R.B. Agustsson, A.Y. Murokh, C. Pellegrini","Design of Superconducting Helical Undulator for High Efficiency X-Ray FELs",,1825
+"WEP103","A.S. Fisher, A.L. Benwell, Y. Feng, B.T. Jacobson","A Plasma Attenuator for Soft X-Rays in LCLS-II",553,2184
+"WEP104","Z. Zhang, A.S. Fisher, M.C. Hoffmann, Z. Huang, B.T. Jacobson, P.S. Kirchmann, W.S. Lee, A. Lindenberg, E.A. Nanni, R.W. Schoenlein, S. Sasaki, J.Z. Xu","A High-Power, High-Repetition Rate THz Source for LCLS-II Pump-Probe Experiments",556,2175
+"WEP105","Y. Liu, D.T. Attwood, M. Chollet, K. Li, A. Sakdinawat, W.F. Schlotter, M.H. Seaberg, T. Weiss, S. Marchesini","Wavefront Shaping of X-Ray Free Electron Laser with Diffractive Optics",,2157
+"WEP106","Y. Liu, Y. Ding, Y. Feng, D.M. Fritz, K. Li, G. Marcus, A. Sakdinawat, M.H. Seaberg, P. Walter, L. Assoufid, W.C. Grizolli, X. Shi","High Accuracy Wavefront Metrology for X-Ray Free Electron Lasers Using Single-Grating Talbot Interferometry",,2161
+"WEP107","H.-D. Nuhn","Polarizing Afterburner for the LCLS-II Undulator Line",560,2032
+"WET01","H. Sinn","Photon Transport Beamline Design",,2523
