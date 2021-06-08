@@ -57,6 +57,18 @@
         Logs
       </a>
         {% endif %}
+        {% if current_user.is_anonymous %}
+        <a id="login" href="{{ url_for('login')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+          Login
+        </a>
+        {% else %}
+        <a id="conference" href="{{ url_for('conference')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+          Conferences
+        </a>
+        <a id="logout" href="{{ url_for('logout')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+          Logout {{ current_user.username }}
+        </a>
+        {% endif %}
       </div>
     </div>
     <div class="navbar-end">

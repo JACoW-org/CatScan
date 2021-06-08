@@ -1,4 +1,4 @@
-FROM python:3.7.2
+FROM python:3.9.5
 
 ARG BUILD_GIT_BRANCH
 ARG BUILD_GIT_COMMIT
@@ -21,7 +21,7 @@ RUN pip install -r requirements.txt
 #COPY Pipfile* ./
 #COPY setup.py ./
 #RUN pipenv lock --requirements > requirements.txt
-COPY .env .flaskenv boot.sh ./
+COPY .flaskenv boot.sh ./
 COPY setup.py README.md ./
 COPY src src
 

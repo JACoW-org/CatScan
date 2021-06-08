@@ -5,7 +5,7 @@ from subprocess import run
 from docx import Document
 from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
-from flask import redirect, render_template, request, url_for, send_file, abort
+from flask import redirect, render_template, request, url_for, send_file, abort, flash
 from flask_uploads import UploadNotAllowed
 from jacowvalidator import app, document_docx, document_tex
 from .utils import json_serialise
@@ -14,6 +14,10 @@ from jacowvalidator.docutils.doc import create_upload_variables, create_spms_var
     AbstractNotFoundError
 from .test_utils import replace_identifying_text
 from .spms import get_conference_path, PaperNotFoundError
+from flask_login import current_user, login_user, logout_user, login_required
+from jacowvalidator.models import User, Conference
+from jacowvalidator.forms.login import LoginForm, RegistrationForm, ConverenceForm
+
 
 if app.config['USE_DB'] is True:
     from jacowvalidator import db
@@ -165,6 +169,8 @@ def upload_common(documents, args):
             if app.config['USE_DB'] is True:
                 upload_log = Log()
                 upload_log.filename = filename
+                upload_log.user_id = current_user.id
+                upload_log.conference_id = conference_id
                 upload_log.report = json.dumps(json_serialise(locals()))
                 db.session.add(upload_log)
                 db.session.commit()
@@ -225,7 +231,66 @@ def upload_common(documents, args):
     return render_template("upload.html", admin=admin, args=args, conferences=conferences)
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('upload'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user, remember=form.remember_me.data)
+        return redirect(url_for('upload'))
+    return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('upload'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('upload'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/conference', methods=['GET', 'POST'])
+@login_required
+def conference():
+    if not current_user.is_authenticated:
+        return redirect(url_for('upload'))
+    form = ConverenceForm()
+    conferences = Conference.query.all()
+    message = ''
+    if form.validate_on_submit():
+        conference = Conference(name=form.name.data, url=form.url.data, path=form.path.data)
+        db.session.add(conference)
+        db.session.commit()
+        flash('Congratulations, you have added a conference!')
+        message = 'Congratulations, you have added a conference!'
+    elif form.is_submitted() and not form.validate():
+        message = 'Error'
+    else:
+        message = 'Normal'
+        # return redirect(url_for('conference'))
+    return render_template('conference.html', title='Conference', form=form, conferences=conferences, message=message)
+
+
 @app.route("/convert", methods=["GET", "POST"])
+@login_required
 def convert():
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
     documents = document_docx
@@ -263,6 +328,7 @@ def resources():
 
 
 @app.route("/log", methods=["GET"])
+@login_required
 def log():
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
     if not admin:
