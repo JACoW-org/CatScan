@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
-from jacowvalidator.models import User, Conference
+from jacowvalidator.models import AppUser, Conference
 
 
 class LoginForm(FlaskForm):
@@ -16,10 +16,11 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    is_admin = BooleanField('Is Admin')
     submit = SubmitField('Register')
 
     def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
+        user = AppUser.query.filter_by(username=username.data).first()
         if user is not None:
             raise ValidationError('Username must be unique, Please use a different username.')
 

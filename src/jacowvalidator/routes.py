@@ -7,6 +7,7 @@ from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
 from flask import redirect, render_template, request, url_for, send_file, abort, flash
 from flask_uploads import UploadNotAllowed
+from sqlalchemy import func
 from jacowvalidator import app, document_docx, document_tex, db
 from .utils import json_serialise
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
@@ -15,7 +16,7 @@ from jacowvalidator.docutils.doc import create_upload_variables, create_spms_var
 from .test_utils import replace_identifying_text
 from .spms import get_conference_path, PaperNotFoundError
 from flask_login import current_user, login_user, logout_user, login_required
-from jacowvalidator.models import User, Conference, Log
+from jacowvalidator.models import AppUser, Conference, Log
 from jacowvalidator.forms.login import LoginForm, RegistrationForm, ConferenceForm
 
 try:
@@ -167,11 +168,11 @@ def upload_common(documents, args):
                     if spms_summary:
                         summary.update(spms_summary)
 
-            save_log(filename, conference_id, 'OK')
+            save_log(filename, conference_id, 'OK', locals())
 
             return render_template("upload.html", processed=True, **locals())
         except (PackageNotFoundError, ValueError):
-            save_log(filename, conference_id, 'PackageNotFoundError')
+            save_log(filename, conference_id, 'PackageNotFoundError', locals())
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -180,7 +181,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except TrackingOnError as err:
-            save_log(filename, conference_id, 'TrackingOnError')
+            save_log(filename, conference_id, 'TrackingOnError', locals())
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -189,7 +190,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except OSError:
-            save_log(filename, conference_id, 'OSError')
+            save_log(filename, conference_id, 'OSError', locals())
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -198,7 +199,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except PaperNotFoundError:
-            save_log(filename, conference_id, 'PaperNotFoundError')
+            save_log(filename, conference_id, 'PaperNotFoundError', locals())
             return render_template(
                 "upload.html",
                 processed=True,
@@ -206,7 +207,7 @@ def upload_common(documents, args):
                 error=f"It seems the file {filename} has no corresponding entry in the SPMS ({conference_id}) references list. "
                       f"Is your filename the same as your Paper name?")
         except AbstractNotFoundError as err:
-            save_log(filename, conference_id, 'AbstractNotFoundError')
+            save_log(filename, conference_id, 'AbstractNotFoundError', locals())
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -215,7 +216,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except Exception:
-            save_log(filename, conference_id, 'Exception')
+            save_log(filename, conference_id, 'Exception', locals())
             if app.debug:
                 raise
             else:
@@ -231,19 +232,22 @@ def upload_common(documents, args):
     return render_template("upload.html", admin=admin, args=args, conferences=conferences)
 
 
-def save_log(filename, conference_id, status):
+def save_log(filename, conference_id, status, args):
     upload_log = Log()
     upload_log.filename = filename
-    upload_log.user_id = current_user.id
+    upload_log.app_user_id = current_user.id
     if conference_id:
         conference = Conference.query.filter_by(name=conference_id).first()
         if conference:
             upload_log.conference_id = conference.id
     upload_log.status = status
-    upload_log.report = json.dumps(json_serialise(locals()))
+    upload_log.report = json.dumps(json_serialise(args))
     db.session.add(upload_log)
     db.session.commit()
 
+# TODO change to decorator
+def is_admin():
+    return current_user.is_authenticated and current_user.is_admin
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -252,7 +256,7 @@ def login():
     form = LoginForm()
     error_message = ''
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        user = AppUser.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             error_message = 'Invalid username or password'
@@ -271,24 +275,30 @@ def logout():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    # stop this route for the moment, since is_admin is on the form
+    # TODO check if logged in and is_admin and then allow is_admin to be set for others
+    admin = is_admin()
+
     if current_user.is_authenticated:
         return redirect(url_for('upload'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data)
+        user = AppUser(username=form.username.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register', form=form, admin=admin)
 
 
 @app.route('/conference', methods=['GET', 'POST'])
 @login_required
 def conference():
-    if not current_user.is_authenticated:
-        return redirect(url_for('upload'))
+    admin = is_admin()
+    if not admin:
+        abort(403)
+
     form = ConferenceForm()
     if form.validate_on_submit():
         conference = Conference(name=form.name.data, url=form.url.data, path=form.path.data)
@@ -299,14 +309,32 @@ def conference():
     return render_template('conference.html', title='Conference', form=form, conferences=conferences)
 
 
-@app.route("/convert", methods=["GET", "POST"])
+@app.route('/users', methods=['GET', 'POST'])
 @login_required
-def convert():
-    admin = current_user and current_user.is_admin
-    documents = document_docx
+def users():
+    admin = is_admin()
     if not admin:
         abort(403)
 
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = AppUser(username=form.username.data, is_admin=form.is_admin.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+
+    users = AppUser.query.all()
+    return render_template('users.html', title='Users', form=form, users=users, admin=admin)
+
+
+@app.route("/convert", methods=["GET", "POST"])
+@login_required
+def convert():
+    admin = is_admin()
+    if not admin:
+        abort(403)
+
+    documents = document_docx
     if request.method == "POST" and documents.name in request.files:
         filename = documents.save(request.files[documents.name])
         full_path = documents.path(filename)
@@ -334,17 +362,20 @@ def convert():
 @app.route("/summary", methods=["GET"])
 @login_required
 def summary():
-    admin = current_user and current_user.is_admin
+    admin = is_admin()
     if not admin:
         abort(403)
 
     logs = Log.query.order_by(Log.timestamp.desc()).all()
-    return render_template("summary.html", logs=logs, admin=admin)
+    # countLogs is an array of tuples
+    countLogs = Log.query.with_entities(Log.filename, func.count(Log.filename)).group_by(Log.filename).all()
+
+    return render_template("summary.html", logs=logs, countLogs=countLogs, admin=admin)
 
 @app.route("/log", methods=["GET"])
 @login_required
 def log():
-    admin = current_user and current_user.is_admin
+    admin = is_admin()
     if not admin:
         abort(403)
 

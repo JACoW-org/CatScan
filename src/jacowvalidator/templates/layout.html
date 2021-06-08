@@ -49,17 +49,20 @@
       <a id="resources" href="{{ url_for('resources')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
         Resources
       </a>
-        {% false && if current_user.is_anonymous %}
+        {% if false and current_user.is_anonymous %}
         <a id="login" href="{{ url_for('login')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
           Login
         </a>
         {% endif %}
-        {% if current_user.username && current_user.is_admin %}
+        {% if current_user.username and current_user.is_admin %}
         <a id="convert" href="{{ url_for('convert')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
           Convert
         </a>
         <a id="conference" href="{{ url_for('conference')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
           Conferences
+        </a>
+        <a id="users" href="{{ url_for('users')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+          Users
         </a>
         <a id="summary" href="{{ url_for('summary')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
           Summary

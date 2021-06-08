@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section">
+<div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+    <h1 class="title">Users</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="field">
+          <label class="label" for="username">{{ form.username.label }}</label>
+          <div class="control">
+            <input id="username" name="username"
+              class="input {% if form.username.errors|length > 0 %} is-danger {% endif %}"
+              value="{% if form.is_submitted() %}{{ form.username.data }}{% endif %}"
+              type="text" maxlength="32">
+          </div>
+          {% for error in form.username.errors %}
+          <p class="help is-danger">[{{ error }}]</p>
+        {% endfor %}
+      </div>
+      <div class="field">
+          <label class="label" for="password">{{ form.password.label }}</label>
+          <div class="control">
+            <input id="password" name="password"
+              class="input {% if form.password.errors|length > 0 %} is-danger {% endif %}"
+              value="{% if form.is_submitted() %}{{ form.password.data }}{% endif %}" type="password" maxlength="32">
+          </div>
+          {% for error in form.password.errors %}
+          <p class="help is-danger">[{{ error }}]</p>
+        {% endfor %}
+      </div>
+      <div class="field">
+        <label class="label" for="password2">{{ form.password2.label }}</label>
+        <div class="control">
+          <input id="password2" name="password2"
+            class="input {% if form.password2.errors|length > 0 %} is-danger {% endif %}"
+            value="{% if form.is_submitted() %}{{ form.password2.data }}{% endif %}" type="password" maxlength="32">
+        </div>
+          {% for error in form.password2.errors %}
+            <p class="help is-danger">[{{ error }}]</p>
+          {% endfor %}
+      </div>
+        <div class="field">
+            <div class="control">
+            <button class="button" style="background-color:lightblue" type="submit" alt="add user">Add User</button><br/><br/>
+            </div>
+        </div>
+    </form>
+    <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
+    <h1 class="title">Conference List</h1>
+    <table class="table is-bordered is-striped is-fullwidth">
+        <thead><tr><th>Username</th><th>Is Admin</th></tr></thead>
+        <tbody>
+    {% for user in users %}
+    <tr><td>{{user.username}}</td><td>{{user.is_admin}}</td></tr>
+    {% endfor %}
+    </tbody></table>
+</div>
+</section>
+{% endblock %}

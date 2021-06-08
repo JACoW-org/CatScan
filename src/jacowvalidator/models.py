@@ -5,9 +5,9 @@ from flask_login import UserMixin
 
 @login.user_loader
 def load_user(id):
-    return User.query.get(int(id))
+    return AppUser.query.get(int(id))
 
-class User(UserMixin, db.Model):
+class AppUser(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     password_hash = db.Column(db.String(128))
@@ -31,8 +31,8 @@ class Log(db.Model):
     report = db.Column(db.Text())
     conference_id = db.Column(db.Integer, db.ForeignKey('conference.id'), nullable=True)
     conference = db.relationship('Conference', backref=db.backref('logs', lazy='dynamic'))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
-    user = db.relationship('User', backref=db.backref('logs', lazy='dynamic'))
+    app_user_id = db.Column(db.Integer, db.ForeignKey('app_user.id'), nullable=True)
+    app_user = db.relationship('AppUser', backref=db.backref('logs', lazy='dynamic'))
 
     def __repr__(self):
         return '<Log {} {}>'.format(self.filename, self.timestamp)
