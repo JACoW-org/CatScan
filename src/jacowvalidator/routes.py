@@ -273,20 +273,13 @@ def conference():
     if not current_user.is_authenticated:
         return redirect(url_for('upload'))
     form = ConverenceForm()
-    conferences = Conference.query.all()
-    message = ''
     if form.validate_on_submit():
         conference = Conference(name=form.name.data, url=form.url.data, path=form.path.data)
         db.session.add(conference)
         db.session.commit()
-        flash('Congratulations, you have added a conference!')
-        message = 'Congratulations, you have added a conference!'
-    elif form.is_submitted() and not form.validate():
-        message = 'Error'
-    else:
-        message = 'Normal'
-        # return redirect(url_for('conference'))
-    return render_template('conference.html', title='Conference', form=form, conferences=conferences, message=message)
+
+    conferences = Conference.query.all()
+    return render_template('conference.html', title='Conference', form=form, conferences=conferences)
 
 
 @app.route("/convert", methods=["GET", "POST"])

@@ -1,31 +1,48 @@
 {% extends "layout.html" %}
 {% block content %}
+<section class="section">
+<div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+    <h1 class="title">Conferences</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.name.label }}<br>
-            {{ form.name(size=10) }}
-        </p>
-        <p>
-            {{ form.url.label }}<br>
-            {{ form.url(size=50) }}
-        </p>
-        <p>
-            {{ form.path.label }}<br>
-            {{ form.path(size=50) }}
-        </p>
-        <p>{{ form.submit() }}</p>
+        <div class="field">
+            <label class="label" for="url">{{ form.name.label }}</label>
+            <div class="control">
+              <input id="name" class="input" type="text" placeholder="Conference Short Name (10 chars)" maxlength="10">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="url">{{ form.url.label }}</label>
+            <div class="control">
+              <input id="url" class="input" type="text" placeholder="URL for spms info (50 chars)" maxlength="50">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="url">{{ form.path.label }}</label>
+            <div class="control">
+              <input id="path" class="input" type="text" placeholder="Local Path for spms info (50 chars)" maxlength="50">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <button class="button" style="background-color:lightblue" type="submit" alt="add conference">Add Conference</button><br/><br/>
+            </div>
+        </div>
     </form>
-    Conferences
-    <table>
+    <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
+    <h1 class="title">Conference List</h1>
+    <table class="table is-bordered is-striped is-fullwidth">
+        <thead><tr><th>Name</th><th>URL</th><th>path</th><th>Active</th></tr></thead>
+        <tbody>
     {% for conference in conferences %}
-    <tr><td>{{conference.name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td></tr>
+    <tr><td>{{conference.name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td><td>{{conference.active}}</td></tr>
     {% endfor %}
-    </table>
-    {{ message }}
+    </tbody></table>
     {% for fieldName, errorMessages in form.errors.items() %}
         {% for err in errorMessages %}
             {{ err }}
         {% endfor %}
     {% endfor %}
+</div>
+</section>
 {% endblock %}

@@ -1,20 +1,37 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Sign In</h1>
+<section class="section">
+<div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+    <h1 class="title">Sign In</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
+        <div class="field">
+            <label class="label" for="username">{{ form.username.label }}</label>
+            <div class="control">
+              <input id="username" class="input" type="text" maxlength="32">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="password">{{ form.password.label }}</label>
+            <div class="control">
+              <input id="password" class="input" type="text" maxlength="32">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input id="remember_me" type="checkbox">
+                {{ form.remember_me.label }}
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+            <button class="button" style="background-color:lightblue" type="submit" alt="login">Login</button><br/><br/>
+            </div>
+        </div>
     </form>
     <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+</div>
+</section>
 {% endblock %}
-
-
