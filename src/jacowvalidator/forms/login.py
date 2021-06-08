@@ -21,11 +21,16 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError('Please use a different username.')
+            raise ValidationError('Username must be unique, Please use a different username.')
 
 
-class ConverenceForm(FlaskForm):
+class ConferenceForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     url = StringField('URL', validators=[DataRequired()])
     path = StringField('Path', validators=[DataRequired()])
     submit = SubmitField('Add')
+
+    def validate_name(self, name):
+        conference = Conference.query.filter_by(name=name.data).first()
+        if conference is not None:
+            raise ValidationError('Name must be unique, Please use a different name')

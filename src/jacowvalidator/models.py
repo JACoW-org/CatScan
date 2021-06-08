@@ -27,6 +27,7 @@ class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(64), index=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    status = db.Column(db.String(25))
     report = db.Column(db.Text())
     conference_id = db.Column(db.Integer, db.ForeignKey('conference.id'), nullable=True)
     conference = db.relationship('Conference', backref=db.backref('logs', lazy='dynamic'))

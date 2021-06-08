@@ -22,7 +22,6 @@ services:
       JACOW_CONFERENCES: '{"IBIC20":{"url":"https://spms.kek.jp/pls/ibic20/references.csv","path":"References_ibic20.csv"},"IPAC21":{"url":"https://spms.kek.jp/pls/ipac2021/references.csv","path":"References_ipac21.csv"}}'
       SPMS_DEBUG: 'False'
       DEV_DEBUG: 'False'
-      USE_DB: 'True'
       API_DB_HOST: jacow_db
       API_DB_PORT: 5432
       API_DB_USER: jacow

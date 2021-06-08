@@ -7,7 +7,7 @@ from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
 from flask import redirect, render_template, request, url_for, send_file, abort, flash
 from flask_uploads import UploadNotAllowed
-from jacowvalidator import app, document_docx, document_tex
+from jacowvalidator import app, document_docx, document_tex, db
 from .utils import json_serialise
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
@@ -15,13 +15,8 @@ from jacowvalidator.docutils.doc import create_upload_variables, create_spms_var
 from .test_utils import replace_identifying_text
 from .spms import get_conference_path, PaperNotFoundError
 from flask_login import current_user, login_user, logout_user, login_required
-from jacowvalidator.models import User, Conference
-from jacowvalidator.forms.login import LoginForm, RegistrationForm, ConverenceForm
-
-
-if app.config['USE_DB'] is True:
-    from jacowvalidator import db
-    from .models import Log
+from jacowvalidator.models import User, Conference, Log
+from jacowvalidator.forms.login import LoginForm, RegistrationForm, ConferenceForm
 
 try:
     p = run(['git', 'log', '-1', '--format=%h,%at'], capture_output=True, text=True, check=True)
@@ -107,6 +102,12 @@ def upload_latex():
     return upload_common(documents, args)
 
 
+@app.route("/resources", methods=["GET"])
+def resources():
+    admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
+    return render_template("resources.html", admin=admin)
+
+
 def get_summary_latex(part, title):
     if part and part.string:
         return {'text': part.string, 'title': title, 'ok': True, 'extra_info': f'{title}: {part.string}'}
@@ -166,17 +167,11 @@ def upload_common(documents, args):
                     if spms_summary:
                         summary.update(spms_summary)
 
-            if app.config['USE_DB'] is True:
-                upload_log = Log()
-                upload_log.filename = filename
-                upload_log.user_id = current_user.id
-                upload_log.conference_id = conference_id
-                upload_log.report = json.dumps(json_serialise(locals()))
-                db.session.add(upload_log)
-                db.session.commit()
+            save_log(filename, conference_id, 'OK')
 
             return render_template("upload.html", processed=True, **locals())
         except (PackageNotFoundError, ValueError):
+            save_log(filename, conference_id, 'PackageNotFoundError')
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -185,6 +180,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except TrackingOnError as err:
+            save_log(filename, conference_id, 'TrackingOnError')
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -193,6 +189,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except OSError:
+            save_log(filename, conference_id, 'OSError')
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -201,6 +198,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except PaperNotFoundError:
+            save_log(filename, conference_id, 'PaperNotFoundError')
             return render_template(
                 "upload.html",
                 processed=True,
@@ -208,6 +206,7 @@ def upload_common(documents, args):
                 error=f"It seems the file {filename} has no corresponding entry in the SPMS ({conference_id}) references list. "
                       f"Is your filename the same as your Paper name?")
         except AbstractNotFoundError as err:
+            save_log(filename, conference_id, 'AbstractNotFoundError')
             return render_template(
                 "upload.html",
                 filename=filename,
@@ -216,6 +215,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except Exception:
+            save_log(filename, conference_id, 'Exception')
             if app.debug:
                 raise
             else:
@@ -231,19 +231,36 @@ def upload_common(documents, args):
     return render_template("upload.html", admin=admin, args=args, conferences=conferences)
 
 
+def save_log(filename, conference_id, status):
+    upload_log = Log()
+    upload_log.filename = filename
+    upload_log.user_id = current_user.id
+    if conference_id:
+        conference = Conference.query.filter_by(name=conference_id).first()
+        if conference:
+            upload_log.conference_id = conference.id
+    upload_log.status = status
+    upload_log.report = json.dumps(json_serialise(locals()))
+    db.session.add(upload_log)
+    db.session.commit()
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('upload'))
     form = LoginForm()
+    error_message = ''
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('upload'))
-    return render_template('login.html', title='Sign In', form=form)
+            error_message = 'Invalid username or password'
+            #return redirect(url_for('login'))
+        else:
+            login_user(user, remember=form.remember_me.data)
+            return redirect(url_for('upload'))
+    return render_template('login.html', title='Sign In', form=form, message=error_message)
 
 
 @app.route('/logout')
@@ -272,7 +289,7 @@ def register():
 def conference():
     if not current_user.is_authenticated:
         return redirect(url_for('upload'))
-    form = ConverenceForm()
+    form = ConferenceForm()
     if form.validate_on_submit():
         conference = Conference(name=form.name.data, url=form.url.data, path=form.path.data)
         db.session.add(conference)
@@ -285,7 +302,7 @@ def conference():
 @app.route("/convert", methods=["GET", "POST"])
 @login_required
 def convert():
-    admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
+    admin = current_user and current_user.is_admin
     documents = document_docx
     if not admin:
         abort(403)
@@ -314,16 +331,20 @@ def convert():
     return render_template("convert.html", admin=admin, action='convert')
 
 
-@app.route("/resources", methods=["GET"])
-def resources():
-    admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
-    return render_template("resources.html", admin=admin)
+@app.route("/summary", methods=["GET"])
+@login_required
+def summary():
+    admin = current_user and current_user.is_admin
+    if not admin:
+        abort(403)
 
+    logs = Log.query.order_by(Log.timestamp.desc()).all()
+    return render_template("summary.html", logs=logs, admin=admin)
 
 @app.route("/log", methods=["GET"])
 @login_required
 def log():
-    admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
+    admin = current_user and current_user.is_admin
     if not admin:
         abort(403)
 
