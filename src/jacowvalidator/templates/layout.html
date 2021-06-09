@@ -55,7 +55,7 @@
         </a>
         {% endif %}
         {% if current_user.username and current_user.is_admin %}
-        <div class="dropdown is-hoverable">
+        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Reference Data</span>
@@ -66,7 +66,7 @@
           </div>
           <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
-              <a id="conferences" href="{{ url_for('conference')}}" class="dropdown-item">
+              <a id="conference" href="{{ url_for('conference')}}" class="dropdown-item">
                 Conferences
               </a>
               <a id="users" href="{{ url_for('users')}}" class="dropdown-item">
@@ -75,7 +75,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown is-hoverable">
+        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Reports</span>
@@ -86,16 +86,16 @@
           </div>
           <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
-              <a id="conference" href="{{ url_for('summary')}}" class="dropdown-item">
+              <a id="summary" href="{{ url_for('summary')}}" class="dropdown-item">
                 Summary
               </a>
-              <a id="users" href="{{ url_for('log')}}" class="dropdown-item">
+              <a id="log" href="{{ url_for('log')}}" class="dropdown-item">
                 Logs
               </a>
             </div>
           </div>
         </div>
-        <div class="dropdown is-hoverable">
+        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Tools</span>
@@ -104,7 +104,7 @@
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-menu" id="dropdown-menu" role="menu" >
             <div class="dropdown-content">
               <a id="convert" href="{{ url_for('convert')}}" class="dropdown-item">
                 Convert
