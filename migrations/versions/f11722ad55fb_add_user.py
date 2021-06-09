@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('name', sa.String(length=10), nullable=False),
     sa.Column('url', sa.String(length=50), nullable=False),
     sa.Column('path', sa.String(length=50), nullable=False),
-    sa.Column('active', sa.Boolean(), server_default='true', nullable=False),
+    sa.Column('is_active', sa.Boolean(), server_default='true', nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
@@ -32,12 +32,14 @@ def upgrade():
     sa.Column('username', sa.String(length=64), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
     sa.Column('is_admin', sa.Boolean(), server_default='false', nullable=False),
+    sa.Column('is_editor', sa.Boolean(), server_default='false', nullable=False),
+    sa.Column('is_active', sa.Boolean(), server_default='true', nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_user_username'), 'app_user', ['username'], unique=True)
     op.add_column('log', sa.Column('conference_id', sa.Integer(), nullable=True))
     op.add_column('log', sa.Column('app_user_id', sa.Integer(), nullable=True))
-    # op.add_column('log', sa.Column('status', sa.String(length=25), nullable=True))
+    op.add_column('log', sa.Column('status', sa.String(length=25), nullable=True))
     op.create_foreign_key('log_conference_id_fkey', 'log', 'conference', ['conference_id'], ['id'])
     op.create_foreign_key('log_user_id_fkey', 'log', 'app_user', ['app_user_id'], ['id'])
     # ### end Alembic commands ###

@@ -17,6 +17,8 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     is_admin = BooleanField('Is Admin')
+    is_editor = BooleanField('Is Editor')
+    is_active = BooleanField('Is Active')
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -29,6 +31,7 @@ class ConferenceForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     url = StringField('URL', validators=[DataRequired()])
     path = StringField('Path', validators=[DataRequired()])
+    is_active = BooleanField('Is Active')
     submit = SubmitField('Add')
 
     def validate_name(self, name):

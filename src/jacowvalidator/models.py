@@ -12,6 +12,8 @@ class AppUser(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean(), nullable=False, default=False, server_default='false')
+    is_editor = db.Column(db.Boolean(), nullable=False, default=False, server_default='false')
+    is_active = db.Column(db.Boolean(), nullable=False, default=True, server_default='true')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -43,7 +45,7 @@ class Conference(db.Model):
     name = db.Column(db.String(10), unique=True, nullable=False)
     url = db.Column(db.String(50), nullable=False)
     path = db.Column(db.String(50), nullable=False)
-    active = db.Column(db.Boolean, nullable=False, default=True, server_default='true')
+    is_active = db.Column(db.Boolean, nullable=False, default=True, server_default='true')
 
     def __repr__(self):
         return '<Conference {}>'.format(self.name)

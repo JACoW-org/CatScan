@@ -40,18 +40,56 @@
           {% endfor %}
       </div>
         <div class="field">
-            <div class="control">
-            <button class="button" style="background-color:lightblue" type="submit" alt="add user">Add User</button><br/><br/>
-            </div>
+          <div class="control">
+            <label class="checkbox">
+              <input id="is_admin" name="is_admin" type="checkbox"
+              {% if form.is_submitted() and (form.is_admin.data or form.is_admin.data=='on') %}
+              checked
+              {% endif %}
+              >
+              {{ form.is_admin.label }}
+            </label>
+          </div>
         </div>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input id="is_editor" name="is_editor" type="checkbox"
+                {% if form.is_submitted() and (form.is_editor.data or form.is_editor.data=='on') %}
+                checked
+                {% endif %}
+              >
+              {{ form.is_editor.label }}
+            </label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input id="is_active" name="is_active" type="checkbox"
+              {% if form.is_submitted() and (form.is_active.data or form.is_active.data=='on') %}
+              checked
+              {% elif not form.is_submitted() %}
+              checked
+              {% endif %}
+              >
+              {{ form.is_active.label }}
+            </label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+          <button class="button" style="background-color:lightblue" type="submit" alt="add user">Add User</button><br/><br/>
+          </div>
+      </div>
     </form>
     <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
     <h1 class="title">Conference List</h1>
     <table class="table is-bordered is-striped is-fullwidth">
-        <thead><tr><th>Username</th><th>Is Admin</th></tr></thead>
+        <thead><tr><th>Username</th><th>Is Admin</th><th>Is Editor</th><th>Is Active</th></tr></thead>
         <tbody>
     {% for user in users %}
-    <tr><td>{{user.username}}</td><td>{{user.is_admin}}</td></tr>
+    <tr><td>{{user.username}}</td><td>{{user.is_admin}}</td><td>{{user.is_editor}}</td><td>{{user.is_active}}</td></tr>
     {% endfor %}
     </tbody></table>
 </div>

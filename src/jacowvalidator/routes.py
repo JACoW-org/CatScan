@@ -301,7 +301,10 @@ def conference():
 
     form = ConferenceForm()
     if form.validate_on_submit():
-        conference = Conference(name=form.name.data, url=form.url.data, path=form.path.data)
+        conference = Conference(name=form.name.data,
+          url=form.url.data,
+          path=form.path.data,
+          is_active=form.is_active.data or form.is_active.data=='on')
         db.session.add(conference)
         db.session.commit()
 
@@ -318,7 +321,10 @@ def users():
 
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = AppUser(username=form.username.data, is_admin=form.is_admin.data)
+        user = AppUser(username=form.username.data,
+          is_admin=form.is_admin.data or form.is_admin.data=='on',
+          is_editor=form.is_editor.data or form.is_editor.data=='on',
+          is_active=form.is_active.data or form.is_active.data=='on')
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
