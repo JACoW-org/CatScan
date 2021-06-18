@@ -123,7 +123,7 @@ def get_summary_latex(part, title):
 
 def upload_common(documents, args):
     admin = 'DEV_DEBUG' in os.environ and os.environ['DEV_DEBUG'] == 'True'
-    conferences = json.loads(os.environ['JACOW_CONFERENCES'])
+    conferences = [conference.short_name for conference in Conference.query.filter_by(is_active=True).order_by(Conference.display_order.asc()).all()]
     if request.method == "POST" and documents.name in request.files:
         try:
             filename = documents.save(request.files[documents.name])
@@ -138,7 +138,7 @@ def upload_common(documents, args):
         # set a default
         conference_id = False  # next(iter(conferences))
         conference_path = ''
-        if 'conference_id' in request.form and request.form["conference_id"] in conferences.keys():
+        if 'conference_id' in request.form and request.form["conference_id"] in conferences:
             conference_id = request.form["conference_id"]
             conference_path = get_conference_path(conference_id)
         try:

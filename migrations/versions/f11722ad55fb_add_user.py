@@ -24,6 +24,7 @@ def upgrade():
     sa.Column('short_name', sa.String(length=10), nullable=False),
     sa.Column('url', sa.String(length=100), nullable=False),
     sa.Column('path', sa.String(length=50), nullable=False),
+    sa.Column('display_order', sa.Integer, nullable=True),
     sa.Column('is_active', sa.Boolean(), server_default='true', nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('short_name')

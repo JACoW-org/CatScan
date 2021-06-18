@@ -46,6 +46,7 @@ class Conference(db.Model):
     short_name = db.Column(db.String(10), unique=True, nullable=False)
     url = db.Column(db.String(100), nullable=False)
     path = db.Column(db.String(50), nullable=False)
+    display_order = db.Column(db.Integer, nullable=True)
     is_active = db.Column(db.Boolean, nullable=False, default=True, server_default='true')
 
     def __repr__(self):

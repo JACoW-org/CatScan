@@ -6,6 +6,7 @@ import json
 import csv
 import re
 from jacowvalidator.docutils.authors import get_author_list
+from jacowvalidator.models import Conference
 
 RE_MULTI_SPACE = re.compile(r' +')
 HELP_INFO = 'CSESPMSCeck'
@@ -41,17 +42,8 @@ class CSVFileNotFound(Exception):
 
 
 def get_conference_path(conference_id):
-    if 'JACOW_CONFERENCES' not in os.environ:
-        raise CSVPathNotDeclared("The environment variable "
-                                 "JACOW_CONFERENCES is not "
-                                 "set! Unable to locate references.csv file for "
-                                 "title checking")
-
-    conferences = json.loads(os.environ['JACOW_CONFERENCES'])
-    selected = conferences[conference_id]
-
-    selected_path = os.path.join(os.environ['JACOW_REFERENCES_PATH'], selected['path'])
-    return selected_path
+    conference = Conference.query.filter_by(short_name=conference_id).first()
+    return os.path.join(os.environ['JACOW_REFERENCES_PATH'], conference.path)
 
 
 # runs conformity checks against the references csv file and returns a dict of

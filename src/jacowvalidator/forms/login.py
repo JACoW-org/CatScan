@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, HiddenField, IntegerField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from jacowvalidator.models import AppUser, Conference
 
@@ -41,6 +41,7 @@ class ConferenceForm(FlaskForm):
     short_name = StringField('Short Name', validators=[DataRequired()])
     url = StringField('URL', validators=[DataRequired()])
     path = StringField('Path', validators=[DataRequired()])
+    display_order = IntegerField('Display Order')
     is_active = BooleanField('Is Active')
     submit = SubmitField('Add')
 
