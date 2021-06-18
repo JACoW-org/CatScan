@@ -79,7 +79,8 @@
         <thead><tr><th>Name</th><th>Short Name</th><th>URL</th><th>path</th><th>Is Active</th><th>Actions</th></th></tr></thead>
         <tbody>
     {% for conference in conferences %}
-    <tr><td>{{conference.name}}</td><td>{{conference.short_name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td><td>{{conference.is_active}}</td>
+    <tr><td>{{conference.name}}</td><td>{{conference.short_name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td>
+      <td><span style="font-weight:bold;background:#{{conference.is_active|pastel_background_style}}">{{conference.is_active|tick_cross|safe}}</span></td>
     <td><a href="{{ url_for('conference_update', id=conference.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>

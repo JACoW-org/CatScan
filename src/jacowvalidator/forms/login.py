@@ -14,9 +14,8 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     id = HiddenField('ID')
     username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    password2 = PasswordField(
-        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    password = PasswordField('Password')
+    password2 = PasswordField('Repeat Password')
     is_admin = BooleanField('Is Admin')
     is_editor = BooleanField('Is Editor')
     is_active = BooleanField('Is Active')
@@ -27,6 +26,14 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Username must be unique, Please use a different username.')
 
+    def validate_password(self, password):
+        # only need to check if add new user
+        if not self.id and password == '':
+            raise ValidationError('Password is required')
+
+    def validate_password2(self, password2):
+        if not self.id and password2 != self.password:
+            raise ValidationError('Passwords must match')
 
 class ConferenceForm(FlaskForm):
     id = HiddenField('ID')

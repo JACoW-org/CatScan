@@ -23,16 +23,14 @@ RUN pip install -r requirements.txt
 #RUN pipenv lock --requirements > requirements.txt
 COPY .flaskenv boot.sh ./
 COPY setup.py README.md ./
-COPY src src
-
-RUN pip install -e .
-
 COPY migrations migrations
 COPY spms spms
 COPY wsgi.py ./
 
-# uses the setup file to install the app to be able to run commandline commands defined in it.
-#RUN pip install -e .
+COPY src src
+
+# uses the setup file to install the app to be able to run commandline commands defined in it. like flask db upgrade
+RUN pip install -e .
 
 # Store all build args env variables into a file for later use
 RUN env | grep BUILD_ > build_envs.txt; exit 0

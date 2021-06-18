@@ -365,11 +365,6 @@ def user_update(id):
     form = RegistrationForm(obj=user)
     if form.validate_on_submit():
         form.populate_obj(user)
-        # TODO get a better way of checking for whether checboxes are ticked
-        user.is_admin=form.is_admin.data or form.is_admin.data=='on'
-        user.is_editor=form.is_editor.data or form.is_editor.data=='on'
-        user.is_active=form.is_active.data or form.is_active.data=='on'
-
         db.session.commit()
 
     users = AppUser.query.all()
