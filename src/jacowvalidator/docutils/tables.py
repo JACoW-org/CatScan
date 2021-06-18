@@ -152,7 +152,7 @@ def get_table_paragraphs(doc):
             for row in block.rows:
                 for cell in row.cells:
                     for paragraph in cell.paragraphs:
-                        if paragraph.text.strip() is not '':
+                        if paragraph.text.strip() != '':
                             text_found = True
                             break
 
