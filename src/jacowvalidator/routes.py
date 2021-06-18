@@ -301,15 +301,36 @@ def conference():
 
     form = ConferenceForm()
     if form.validate_on_submit():
-        conference = Conference(name=form.name.data,
-          url=form.url.data,
-          path=form.path.data,
-          is_active=form.is_active.data or form.is_active.data=='on')
+        conference = Conference()
+        form.populate_obj(conference)
+        if conference.id == '':
+            conference.id = None
         db.session.add(conference)
         db.session.commit()
 
+        # TODO work out how to reset form
+        form = ConferenceForm()
+
+
     conferences = Conference.query.all()
     return render_template('conference.html', title='Conference', form=form, conferences=conferences)
+
+
+@app.route('/conference/update/<id>', methods=['GET', 'POST'])
+@login_required
+def conference_update(id):
+    admin = is_admin()
+    if not admin:
+        abort(403)
+
+    conference = Conference.query.filter_by(id=id).first_or_404()
+    form = ConferenceForm(obj=conference)
+    if form.validate_on_submit():
+        form.populate_obj(conference)
+        db.session.commit()
+
+    conferences = Conference.query.all()
+    return render_template('conference.html', title='Conference', form=form, conferences=conferences, mode='update')
 
 
 @app.route('/users', methods=['GET', 'POST'])
@@ -331,6 +352,28 @@ def users():
 
     users = AppUser.query.all()
     return render_template('users.html', title='Users', form=form, users=users, admin=admin)
+
+
+@app.route('/users/update/<id>', methods=['GET', 'POST'])
+@login_required
+def user_update(id):
+    admin = is_admin()
+    if not admin:
+        abort(403)
+
+    user = AppUser.query.filter_by(id=id).first_or_404()
+    form = RegistrationForm(obj=user)
+    if form.validate_on_submit():
+        form.populate_obj(user)
+        # TODO get a better way of checking for whether checboxes are ticked
+        user.is_admin=form.is_admin.data or form.is_admin.data=='on'
+        user.is_editor=form.is_editor.data or form.is_editor.data=='on'
+        user.is_active=form.is_active.data or form.is_active.data=='on'
+
+        db.session.commit()
+
+    users = AppUser.query.all()
+    return render_template('users.html', title='Users', form=form, users=users, mode='update')
 
 
 @app.route("/convert", methods=["GET", "POST"])

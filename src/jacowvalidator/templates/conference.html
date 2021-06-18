@@ -6,35 +6,47 @@
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <div class="field">
-          <label class="label" for="url">{{ form.name.label }}</label>
+          <label class="label" for="name">{{ form.name.label }}</label>
           <div class="control">
             <input id="name" name="name"
               class="input {% if form.name.errors|length > 0 %} is-danger {% endif %}"
-              value="{% if form.is_submitted() %}{{ form.name.data }}{% endif %}"
-              type="text" placeholder="Conference Short Name (10 chars)" maxlength="10">
+              value="{% if form.is_submitted() or mode == 'update' %}{{ form.name.data }}{% endif %}"
+              type="text" placeholder="Conference Full Name (100 chars)" maxlength="100">
           </div>
           {% for error in form.name.errors %}
           <p class="help is-danger">[{{ error }}]</p>
         {% endfor %}
       </div>
       <div class="field">
+        <label class="label" for="short_name">{{ form.short_name.label }}</label>
+        <div class="control">
+          <input id="short_name" name="short_name"
+            class="input {% if form.short_name.errors|length > 0 %} is-danger {% endif %}"
+            value="{% if form.is_submitted() or mode == 'update' %}{{ form.short_name.data }}{% endif %}"
+            type="text" placeholder="Conference Short Name (10 chars)" maxlength="10">
+        </div>
+        {% for error in form.short_name.errors %}
+        <p class="help is-danger">[{{ error }}]</p>
+      {% endfor %}
+    </div>
+      <div class="field">
           <label class="label" for="url">{{ form.url.label }}</label>
           <div class="control">
             <input id="url" name="url"
               class="input {% if form.url.errors|length > 0 %} is-danger {% endif %}"
-              value="{% if form.is_submitted() %}{{ form.url.data }}{% endif %}"
-              type="text" placeholder="URL for spms info (50 chars)" maxlength="50">
+              value="{% if form.is_submitted() or mode == 'update' %}{{ form.url.data }}{% endif %}"
+              type="text" placeholder="URL for spms info (100 chars)" maxlength="100">
           </div>
           {% for error in form.url.errors %}
           <p class="help is-danger">[{{ error }}]</p>
         {% endfor %}
       </div>
       <div class="field">
-          <label class="label" for="url">{{ form.path.label }}</label>
+          <label class="label" for="path">{{ form.path.label }}</label>
           <div class="control">
             <input id="path" name="path"
               class="input {% if form.path.errors|length > 0 %} is-danger {% endif %}"
-              value="{% if form.is_submitted() %}{{ form.path.data }}{% endif %}"
+              value="{% if form.is_submitted() or mode == 'update' %}{{ form.path.data }}{% endif %}"
               type="text" placeholder="Local Path for spms info (50 chars)" maxlength="50">
           </div>
           {% for error in form.path.errors %}
@@ -45,7 +57,7 @@
         <div class="control">
           <label class="checkbox">
             <input id="is_active" name="is_active" type="checkbox"
-            {% if form.is_submitted() and (form.is_active.data or form.is_active.data=='on') %}
+            {% if (form.is_submitted() or mode == 'update') and (form.is_active.data or form.is_active.data=='on') %}
             checked
             {% elif not form.is_submitted() %}
             checked
@@ -57,17 +69,18 @@
       </div>
         <div class="field">
             <div class="control">
-            <button class="button" style="background-color:lightblue" type="submit" alt="add conference">Add Conference</button><br/><br/>
+            <button class="button" style="background-color:lightblue" type="submit" alt="add conference">{% if mode == 'update'%}Update{% else %}Add{% endif %} Conference</button><br/><br/>
             </div>
         </div>
     </form>
     <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
-    <h1 class="title">Conference List</h1>
+    <h1 class="title">Conference List <a href="{{ url_for('users') }}" title="add"><i class="fas fa-plus"></i></a></h1>
     <table class="table is-bordered is-striped is-fullwidth">
-        <thead><tr><th>Name</th><th>URL</th><th>path</th><th>Is Active</th></tr></thead>
+        <thead><tr><th>Name</th><th>Short Name</th><th>URL</th><th>path</th><th>Is Active</th><th>Actions</th></th></tr></thead>
         <tbody>
     {% for conference in conferences %}
-    <tr><td>{{conference.name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td><td>{{conference.is_active}}</td></tr>
+    <tr><td>{{conference.name}}</td><td>{{conference.short_name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td><td>{{conference.is_active}}</td>
+    <td><a href="{{ url_for('conference_update', id=conference.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>
 </div>

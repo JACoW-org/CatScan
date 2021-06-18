@@ -10,19 +10,20 @@
           <div class="control">
             <input id="username" name="username"
               class="input {% if form.username.errors|length > 0 %} is-danger {% endif %}"
-              value="{% if form.is_submitted() %}{{ form.username.data }}{% endif %}"
+              value="{% if form.is_submitted() or mode == 'update' %}{{ form.username.data }}{% endif %}"
               type="text" maxlength="32">
           </div>
           {% for error in form.username.errors %}
           <p class="help is-danger">[{{ error }}]</p>
         {% endfor %}
       </div>
+      {% if not mode == 'update' %}
       <div class="field">
           <label class="label" for="password">{{ form.password.label }}</label>
           <div class="control">
             <input id="password" name="password"
               class="input {% if form.password.errors|length > 0 %} is-danger {% endif %}"
-              value="{% if form.is_submitted() %}{{ form.password.data }}{% endif %}" type="password" maxlength="32">
+              value="{% if form.is_submitted() or mode == 'update' %}{{ form.password.data }}{% endif %}" type="text" maxlength="32">
           </div>
           {% for error in form.password.errors %}
           <p class="help is-danger">[{{ error }}]</p>
@@ -33,17 +34,18 @@
         <div class="control">
           <input id="password2" name="password2"
             class="input {% if form.password2.errors|length > 0 %} is-danger {% endif %}"
-            value="{% if form.is_submitted() %}{{ form.password2.data }}{% endif %}" type="password" maxlength="32">
+            value="{% if form.is_submitted() or mode == 'update' %}{{ form.password2.data }}{% endif %}" type="text" maxlength="32">
         </div>
           {% for error in form.password2.errors %}
             <p class="help is-danger">[{{ error }}]</p>
           {% endfor %}
       </div>
+      {% endif %}
         <div class="field">
           <div class="control">
             <label class="checkbox">
               <input id="is_admin" name="is_admin" type="checkbox"
-              {% if form.is_submitted() and (form.is_admin.data or form.is_admin.data=='on') %}
+              {% if (form.is_submitted() or mode == 'update') and (form.is_admin.data or form.is_admin.data=='on') %}
               checked
               {% endif %}
               >
@@ -55,7 +57,7 @@
           <div class="control">
             <label class="checkbox">
               <input id="is_editor" name="is_editor" type="checkbox"
-                {% if form.is_submitted() and (form.is_editor.data or form.is_editor.data=='on') %}
+                {% if (form.is_submitted() or mode == 'update') and (form.is_editor.data or form.is_editor.data=='on') %}
                 checked
                 {% endif %}
               >
@@ -67,7 +69,7 @@
           <div class="control">
             <label class="checkbox">
               <input id="is_active" name="is_active" type="checkbox"
-              {% if form.is_submitted() and (form.is_active.data or form.is_active.data=='on') %}
+              {% if (form.is_submitted() or mode == 'update') and (form.is_active.data or form.is_active.data=='on') %}
               checked
               {% elif not form.is_submitted() %}
               checked
@@ -79,17 +81,18 @@
         </div>
         <div class="field">
           <div class="control">
-          <button class="button" style="background-color:lightblue" type="submit" alt="add user">Add User</button><br/><br/>
+          <button class="button" style="background-color:lightblue" type="submit" alt="add user">{% if mode == 'update'%}Update{% else %}Add{% endif %} User</button><br/><br/>
           </div>
       </div>
     </form>
     <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
-    <h1 class="title">Conference List</h1>
+    <h1 class="title">User List <a href="{{ url_for('users') }}" title="add"><i class="fas fa-plus"></i></a></h1>
     <table class="table is-bordered is-striped is-fullwidth">
-        <thead><tr><th>Username</th><th>Is Admin</th><th>Is Editor</th><th>Is Active</th></tr></thead>
+        <thead><tr><th>Username</th><th>Is Admin</th><th>Is Editor</th><th>Is Active</th><th>Actions</th></tr></thead>
         <tbody>
     {% for user in users %}
-    <tr><td>{{user.username}}</td><td>{{user.is_admin}}</td><td>{{user.is_editor}}</td><td>{{user.is_active}}</td></tr>
+    <tr><td>{{user.username}}</td><td>{{user.is_admin}}</td><td>{{user.is_editor}}</td><td>{{user.is_active}}</td>
+    <td><a href="{{ url_for('user_update', id=user.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>
 </div>
