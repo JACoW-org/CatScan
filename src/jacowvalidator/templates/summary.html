@@ -25,8 +25,8 @@
 <tr>
 <td>{{log.timestamp.strftime('%d/%m/%Y %H:%M ')}}</td>
 <td>{{log.filename}}</td>
-<td>{{log.conference}}</td>
-<td>{{log.user}}</td>
+<td>{% if log.conference %}{{log.conference.short_name}}{% endif %}</td>
+<td>{% if log.app_user %}{{log.app_user.username}}{% endif %}</td>
 <td>{{log.status}}</td>
 </tr>
 {% endfor %}

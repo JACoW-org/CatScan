@@ -235,9 +235,10 @@ def upload_common(documents, args):
 def save_log(filename, conference_id, status, args):
     upload_log = Log()
     upload_log.filename = filename
-    upload_log.app_user_id = current_user.id
+    if current_user.is_authenticated:
+        upload_log.app_user_id = current_user.id
     if conference_id:
-        conference = Conference.query.filter_by(name=conference_id).first()
+        conference = Conference.query.filter_by(short_name=conference_id).first()
         if conference:
             upload_log.conference_id = conference.id
     upload_log.status = status
