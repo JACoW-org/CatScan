@@ -11,7 +11,7 @@ from jacowvalidator.docutils.references import get_reference_summary
 from jacowvalidator.docutils.figures import get_figure_summary
 from jacowvalidator.docutils.tables import get_table_summary
 from jacowvalidator.spms import reference_csv_check, HELP_INFO as SPMS_HELP_INFO, EXTRA_INFO as SPMS_EXTRA_INFO
-
+from jacowvalidator.models import Conference
 
 class AbstractNotFoundError(Exception):
     """Raised when the paper submitted by a user has no matching entry in the
@@ -108,8 +108,8 @@ def create_upload_variables(doc):
 
 def create_spms_variables(paper_name, authors, title, conference_path, conference_id=False):
     summary = {}
-    if "JACOW_CONFERENCES" in os.environ:
-        # reference_csv_url = os.environ["JACOW_CONFERENCES"][conference_id]['url']
+    conferences = Conference.query.all()
+    if len(conferences) > 0:
         author_text = ''.join([a['text'] + ", " for a in authors])
         reference_csv_details = reference_csv_check(paper_name, title['text'], author_text, conference_path)
         conference_detail = conference_path

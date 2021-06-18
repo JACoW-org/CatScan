@@ -14,7 +14,6 @@ class Config:
 
     UPLOADS_DEFAULT_DEST = os.environ.get("UPLOADS_DEFAULT_DEST", "/var/tmp")
     JACOW_REFERENCES_PATH = os.environ.get("JACOW_REFERENCES_PATH", "./spms")
-    JACOW_CONFERENCES = os.environ.get("JACOW_CONFERENCES", '{}')
 
     db_host = os.environ.get("API_DB_HOST") or 'localhost'
     db_port = os.environ.get("API_DB_PORT") or '5432'
