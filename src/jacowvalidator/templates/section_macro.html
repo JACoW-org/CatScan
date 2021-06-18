@@ -58,6 +58,7 @@
     </details>
     <br/>
     {% endif %}
+    {% if 'extra_info' in section %}
     {% set extra_info = section.extra_info %}
     {% if 'title' in extra_info %}
         {% if not (section.show_total and section.details|length == 0) %}
@@ -73,6 +74,7 @@
         {% endif %}
     {% elif extra_info %}
         {{ extra_info|safe }}
+    {% endif %}
     {% endif %}
     {% if section.rules %}
         {% if section.details|length > 0 %}
