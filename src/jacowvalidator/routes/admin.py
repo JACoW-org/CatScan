@@ -74,7 +74,7 @@ def users():
         db.session.commit()
 
     users = AppUser.query.all()
-    return render_template('users.html', title='Users', form=form, users=users, admin=admin)
+    return render_template('users.html', title='Users', form=form, users=users)
 
 
 @app.route('/users/update/<id>', methods=['GET', 'POST'])

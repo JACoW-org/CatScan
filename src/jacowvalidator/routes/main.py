@@ -73,7 +73,7 @@ def first_value_in_dict(s):
 
 
 @app.route("/")
-def hello():
+def main():
     return redirect(url_for('upload'))
 
 
@@ -97,6 +97,58 @@ def resources():
     return render_template("resources.html", admin=admin)
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('upload'))
+    form = LoginForm()
+    error_message = ''
+    if form.validate_on_submit():
+        user = AppUser.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            error_message = 'Invalid username or password'
+            #return redirect(url_for('login'))
+        else:
+            login_user(user, remember=form.remember_me.data)
+            return redirect(url_for('upload'))
+    return render_template('login.html', title='Sign In', form=form, message=error_message)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('upload'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # stop this route for the moment, since is_admin is on the form
+    # TODO check if logged in and is_admin and then allow is_admin to be set for others
+    admin = is_admin()
+
+    if current_user.is_authenticated:
+        return redirect(url_for('upload'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = AppUser(username=form.username.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form, admin=admin)
+
+
+@app.route('/user/<username>')
+@login_required
+def user_profile(username):
+    app_user = AppUser.query.filter_by(username=username).first_or_404()
+    logs = Log.query.filter_by(app_user_id=app_user.id).all()
+    return render_template('profile.html', user=app_user, logs=logs)
+
+
+# helper functions below
 def get_summary_latex(part, title):
     if part and part.string:
         return {'text': part.string, 'title': title, 'ok': True, 'extra_info': f'{title}: {part.string}'}
@@ -234,56 +286,3 @@ def save_log(filename, conference_id, status, args):
     upload_log.report = json.dumps(json_serialise(args))
     db.session.add(upload_log)
     db.session.commit()
-
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('upload'))
-    form = LoginForm()
-    error_message = ''
-    if form.validate_on_submit():
-        user = AppUser.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
-            error_message = 'Invalid username or password'
-            #return redirect(url_for('login'))
-        else:
-            login_user(user, remember=form.remember_me.data)
-            return redirect(url_for('upload'))
-    return render_template('login.html', title='Sign In', form=form, message=error_message)
-
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('upload'))
-
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    # stop this route for the moment, since is_admin is on the form
-    # TODO check if logged in and is_admin and then allow is_admin to be set for others
-    admin = is_admin()
-
-    if current_user.is_authenticated:
-        return redirect(url_for('upload'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = AppUser(username=form.username.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form, admin=admin)
-
-
-@app.route('/user/<username>')
-@login_required
-def user_profile(username):
-    app_user = AppUser.query.filter_by(username=username).first_or_404()
-    logs = Log.query.filter_by(app_user_id=app_user.id).all()
-    return render_template('profile.html', user=app_user, logs=logs)
-

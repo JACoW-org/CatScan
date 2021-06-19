@@ -22,17 +22,23 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Register')
 
     def validate_username(self, username):
-        user = AppUser.query.filter(username == username.data, id != self.id).first()
+        user = None
+        if self.id.data:
+            # if there is an id, must be an update
+            user = AppUser.query.filter(AppUser.username == username.data, AppUser.id != self.id.data).first()
+        else:
+            user = AppUser.query.filter_by(username=username.data).first()
+
         if user is not None:
             raise ValidationError('Username must be unique, Please use a different username.')
 
     def validate_password(self, password):
         # only need to check if add new user
-        if not self.id and password == '':
+        if not self.id.data and password == '':
             raise ValidationError('Password is required')
 
     def validate_password2(self, password2):
-        if not self.id and password2 != self.password:
+        if not self.id.data and password2 != self.password:
             raise ValidationError('Passwords must match')
 
 class ConferenceForm(FlaskForm):
@@ -46,6 +52,14 @@ class ConferenceForm(FlaskForm):
     submit = SubmitField('Add')
 
     def validate_short_name(self, short_name):
-        conference = Conference.query.filter(short_name == short_name.data, id != self.id).first()
+        conference = None
+        if self.id.data:
+            conference = Conference.query.filter(Conference.short_name == short_name.data, Conference.id != self.id.data).first()
+        else:
+            conference = Conference.query.filter_by(short_name=short_name.data).first()
+
         if conference is not None:
             raise ValidationError('Short Name must be unique, Please use a different name')
+
+
+

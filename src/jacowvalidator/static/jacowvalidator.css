@@ -101,13 +101,13 @@ a.navbar-item.is-active:not(:hover) {
     background-color: #FFDDDD !important;
 }
 .background-dark-tick {
-    background-color: darkgreen !important;
+    color: darkgreen;
 }
 .background-dark-question {
-    background-color: darkorange !important;
+    color: darkorange;
 }
 .background-dark-cross {
-    background-color: darkred !important;
+    color: darkred;
 }
 .jacow-not-found {
     text-align:center;
@@ -118,7 +118,7 @@ a.navbar-item.is-active:not(:hover) {
     font-size:14pt;
 }
 .error-heading-jacow {
-    background-color: #DDFFDD !important;
+    background-color: #FFDDDD !important;
     text-align:center;
     font-size:14pt;
     padding:10px;
