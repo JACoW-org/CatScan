@@ -22,7 +22,7 @@
                 <a href="https://www.jacow.org/Authors/CSEHelp" title="Author Help" target="_blank">Link to DOCX Cat Scan Editor - Help and Usage Guidelines</a>
             </div>
 
-            <div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+            <div class="container box box-jacow">
                 <h2 class="subtitle">Summary</h2>
                 <div class="list is-hoverable">
                 {% for i, item in summary.items() %}
@@ -35,7 +35,7 @@
             </div>
 
             {% if metadata %}
-            <div class="box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+            <div class="box box-jacow">
                 <h2 class="subtitle"><a name="meta"></a>Word Document loaded successfully</h2>
                 <p>Author: {{ metadata.author }}</p>
                 <p>Internal Revision: {{ metadata.revision }}</p>
@@ -50,7 +50,7 @@
             </div>
             {% endif %}
 
-            <p><button class="button" style="background-color:lightblue" onclick="js:closeDetails()">Close All Expanded Sections Below </button><br/><br/></p>
+            <p><button class="button button-jacow" onclick="js:closeDetails()">Close All Expanded Sections Below </button><br/><br/></p>
             {% for index, section in summary.items() %}
                 {% set prev = loop.previtem[1].anchor if loop.previtem else '' %}
                 {% set next = loop.nextitem[1].anchor if loop.nextitem else '' %}

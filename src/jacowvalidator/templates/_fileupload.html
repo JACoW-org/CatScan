@@ -1,11 +1,11 @@
-<div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+<div class="container box box-jacow">
     <form id="fileform" method="POST" enctype="multipart/form-data" action="{{ url_for(action) }}">
         <div class="columns">
             <div class="column">
                 <div class="file has-name">
                     <label class="file-label">
                         <input id="file" class="file-input" type="file" name="document">
-                        <span class="file-cta" style="background-color:lightblue">
+                        <span class="file-cta button-jacow">
                             <span class="file-icon">
                                 <i class="fas fa-upload"></i>
                             </span>
@@ -31,7 +31,7 @@
                     <i class="fas fa-globe"></i>
                   </span>
                 </div><br/>
-                <button class="button" style="background-color:lightblue" type="submit" alt="scan">{{ 'Scan' if action in ['upload','upload_latex'] else 'Convert' }}</button>
+                <button class="button button-jacow" type="submit" alt="scan">{{ 'Scan' if action in ['upload','upload_latex'] else 'Convert' }}</button>
             </div>
             <div class="column">
                 <img src="{{ url_for('static', filename='cat.png')}}" width="104" height="122" alt="jacow validator logo">

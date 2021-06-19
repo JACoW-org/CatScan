@@ -216,6 +216,7 @@ def upload_common(documents, args):
                 admin=admin,
                 args=args)
         except Exception:
+            # TODO work out why there is an OK log followed by an Exception one.
             save_log(filename, conference_id, 'Exception', locals())
             if app.debug:
                 raise

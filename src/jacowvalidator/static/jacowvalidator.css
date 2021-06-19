@@ -42,3 +42,49 @@ a.navbar-item.is-active {
 a.navbar-item.is-active:not(:hover) {
     background-color:#ffffff;
 }
+.nav-jacow {
+    background-image: linear-gradient(to right, lightblue , white);
+    padding:3px;
+    border-bottom:1px blue solid;
+}
+.box-jacow {
+    box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1);
+}
+.nav-item-jacow {
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:30px;
+}
+.dropdown-jacow {
+    padding-top:8px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-left:30px;
+}
+.footer-item-jacow {
+    vertical-align:middle;
+}
+.button-jacow {
+    background-color:lightblue;
+}
+.divider-jacow {
+    border: 5px solid lightblue;
+    border-radius: 2px;
+}
+.details-summary-jacow {
+    padding:5px;
+    border: 1px solid grey;
+    border-radius:2px;
+    background-color:#fcfcfc;
+}
+.details-jacow {
+    border:1px lightgray solid;
+    border-radius:2px'
+}
+.div-jacow-rules {
+    padding-left:20px;
+}
+.list-jacow {
+    list-style-type: circle;
+    padding-left: 5px
+}

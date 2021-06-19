@@ -28,7 +28,7 @@
 <div id="skiptocontent">
     <a href="#content">skip to main content</a>
 </div>
-<nav class="navbar" role="navigation" aria-label="main navigation" style="background-image: linear-gradient(to right, lightblue , white);padding:3px;border-bottom:1px blue solid">
+<nav class="navbar nav-jacow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <img src="{{ url_for('static', filename='cat.png')}}" width="52" height="61" style="height:61px" alt="jacow validator logo">
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="jacowNavbar">
@@ -40,22 +40,22 @@
 
   <div id="jacowNavbar" class="navbar-menu">
     <div class="navbar-start">
-      <a id="upload" href="{{ url_for('upload')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;margin-left:30px">
+      <a id="upload" href="{{ url_for('upload')}}" class="navbar-item nav-item-jacow">
         JACoW Word (docx) Validator
       </a>
-      <a id="upload_latex" href="{{ url_for('upload_latex')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;margin-left:30px">
+      <a id="upload_latex" href="{{ url_for('upload_latex')}}" class="navbar-item nav-item-jacow">
         JACoW Latex Validator
       </a>
-      <a id="resources" href="{{ url_for('resources')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+      <a id="resources" href="{{ url_for('resources')}}" class="navbar-item nav-item-jacow">
         Resources
       </a>
         {% if false and current_user.is_anonymous %}
-        <a id="login" href="{{ url_for('login')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+        <a id="login" href="{{ url_for('login')}}" class="navbar-item nav-item-jacow">
           Login
         </a>
         {% endif %}
         {% if current_user.username and current_user.is_admin %}
-        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
+        <div class="dropdown is-hoverable dropdown-jacow">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Reference Data</span>
@@ -75,7 +75,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
+        <div class="dropdown is-hoverable dropdown-jacow">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Reports</span>
@@ -95,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="dropdown is-hoverable" style="padding-top:8px;padding-left:10px;padding-right:10px;;margin-left:30px">
+        <div class="dropdown is-hoverable dropdown-jacow">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Tools</span>
@@ -112,7 +112,7 @@
             </div>
           </div>
         </div>
-        <a id="logout" href="{{ url_for('logout')}}" class="navbar-item" style="padding-left:10px;padding-right:10px;;margin-left:30px">
+        <a id="logout" href="{{ url_for('logout')}}" class="navbar-item nav-item-jacow">
           Logout {{ current_user.username }}
         </a>
         {% endif %}
@@ -165,11 +165,11 @@
   <div class="has-text-centered">
       Created in partnership with &nbsp;&nbsp;
       <a href="https://www.ansto.gov.au">
-      <img style="vertical-align:middle" src="{{ url_for('static', filename='ansto_logo.jpg')}}" alt="ansto logo">
+      <img class="footer-item-jacow" src="{{ url_for('static', filename='ansto_logo.jpg')}}" alt="ansto logo">
       </a>
       &nbsp;&nbsp; as part of &nbsp;&nbsp;
       <a href="https://ipac19.org">
-      <img style="vertical-align:middle" src="{{ url_for('static', filename='ipac_logo.jpg')}}"  alt="ipac logo">
+      <img class="footer-item-jacow" src="{{ url_for('static', filename='ipac_logo.jpg')}}"  alt="ipac logo">
       </a>
   </div>
 </footer>

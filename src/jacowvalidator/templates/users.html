@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <section class="section">
-<div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+<div class="container box box-jacow">
     <h1 class="title">Users</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -81,20 +81,20 @@
         </div>
         <div class="field">
           <div class="control">
-          <button class="button" style="background-color:lightblue" type="submit" alt="add user">{% if mode == 'update'%}Update{% else %}Add{% endif %} User</button><br/><br/>
+          <button class="button button-jacow" type="submit" alt="add user">{% if mode == 'update'%}Update{% else %}Add{% endif %} User</button><br/><br/>
           </div>
       </div>
     </form>
-    <hr style="border: 5px solid lightblue; border-radius: 2px;"/>
+    <hr class="divider-jacow"/>
     <h1 class="title">User List <a href="{{ url_for('users') }}" title="add"><i class="fas fa-plus"></i></a></h1>
     <table class="table is-bordered is-striped is-fullwidth">
         <thead><tr><th>Username</th><th>Is Admin</th><th>Is Editor</th><th>Is Active</th><th>Actions</th></tr></thead>
         <tbody>
     {% for user in users %}
     <tr><td>{{user.username}}</td>
-      <td><span style="font-weight:bold;background:#{{user.is_admin|pastel_background_style}}">{{user.is_admin|tick_cross|safe}}</span></td>
-      <td><span style="font-weight:bold;background:#{{user.is_editor|pastel_background_style}}">{{user.is_editor|tick_cross|safe}}</span></td>
-      <td><span style="font-weight:bold;background:#{{user.is_active|pastel_background_style}}">{{user.is_active|tick_cross|safe}}</span></td>
+      <td><span style="background:#{{user.is_admin|pastel_background_style}}">{{user.is_admin|tick_cross|safe}}</span></td>
+      <td><span style="background:#{{user.is_editor|pastel_background_style}}">{{user.is_editor|tick_cross|safe}}</span></td>
+      <td><span style="background:#{{user.is_active|pastel_background_style}}">{{user.is_active|tick_cross|safe}}</span></td>
     <td><a href="{{ url_for('user_update', id=user.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>

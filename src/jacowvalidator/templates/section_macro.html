@@ -1,5 +1,5 @@
 {% macro add_section(section, args={}) -%}
- <div class="box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+ <div class="box box-jacow">
  <a name="{{section.anchor }}"></a>
  <a href="#top" class="link-color">Top <i class="fas fa-arrow-circle-up"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
   {% if args['prev'] %}
@@ -16,10 +16,10 @@
         {% if section.help_info %} - <a href="https://www.jacow.org/Authors/{{ section.help_info }}" target="_target">Author Help for {{ section.title }}</a>{%  endif %}
     </h2>
     {% if section.rules or section.extra_rules %}
-    <details style="border:1px lightgray solid;border-radius:2px">
-        <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Rules for {{ section.title }}</summary>
+    <details class="details-jacow">
+        <summary class="details-summary-jacow">Rules for {{ section.title }}</summary>
         {% if section.extra_rules %}
-            <div style="padding-left:20px">
+            <div class="div-jacow-rules">
                 <ul>
                 {% for rule in section.extra_rules %}
                     <li>{{ rule|safe }}</li>
@@ -62,8 +62,8 @@
     {% set extra_info = section.extra_info %}
     {% if 'title' in extra_info %}
         {% if not (section.show_total and section.details|length == 0) %}
-        <details {% if section.ok == false %} open {% endif %} style="border:1px lightgray solid;border-radius:2px">
-        <summary style="padding:5px;border:1px solid grey;border-radius:2px; background-color:#fcfcfc">{{ extra_info.title }} for {{ section.title }}</summary>
+        <details {% if section.ok == false %} open {% endif %} class="details-jacow">
+        <summary class="details-summary-jacow">{{ extra_info.title }} for {{ section.title }}</summary>
             {% if extra_info['multi'] %}
                 {{ make_table_multi(section.details, extra_info.headers, extra_info.columns, args) }}
             {%  else %}
@@ -78,8 +78,8 @@
     {% endif %}
     {% if section.rules %}
         {% if section.details|length > 0 %}
-            <details {% if section.ok == false %} open {% endif %} style="border:1px lightgray solid;border-radius:2px">
-                <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Style Breakdown for {{ section.title }}</summary>
+            <details {% if section.ok == false %} open {% endif %} class="details-jacow">
+                <summary class="details-summary-jacow">Style Breakdown for {{ section.title }}</summary>
                 {% if args['style_multi'] %}
                     {{ make_table_multi(section.details, false, false, args, section.rules) }}
                 {% else %}
@@ -198,7 +198,7 @@
         <td style="background-color:#{{ value|pastel_background_style }}"> {{ value|tick_cross|safe  }}</td>
     {% elif value is iterable and value is not string %}
         <td>
-            <ul style="list-style-type: circle; padding-left: 5px">
+            <ul class="list-jacow">
             {% for item in value %}
                 <li>{{ item }}</li>
             {% endfor %}
