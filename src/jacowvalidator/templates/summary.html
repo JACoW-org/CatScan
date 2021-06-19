@@ -1,23 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <section class="section">
-    <details class="details-jacow">
-        <summary class="details-summary-jacow">Count</summary>
-    <h1 class="title">Upload Summary Count</h1>
-<table class="table is-bordered is-striped is-fullwidth">
-    <thead><tr><th>Upload Name</th><th>Count</th></tr></thead>
-    <tbody>
-{% for log in countLogs %}
-<tr>
-    <td>{{log[0]}}</td>
-    <td>{{log[1]}}</td>
-</tr>
-{% endfor %}
-</tbody></table>
-</details>
-<details class="details-jacow">
-    <summary class="details-summary-jacow">All Records</summary>
+    <div class="container box box-jacow">
 <h1 class="title">Upload Summary List</h1>
+{% include "_search.html" ignore missing %}
 <table class="table is-bordered is-striped is-fullwidth">
 <thead><tr><th>Date</th><th>Upload Name</th><th>Conference</th><th>By</th><th>Status</th></tr></thead>
 <tbody>
@@ -31,6 +17,6 @@
 </tr>
 {% endfor %}
 </tbody></table>
-</details>
+</div>
 </section>
 {% endblock %}

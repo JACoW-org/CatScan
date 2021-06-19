@@ -1,0 +1,45 @@
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="field">
+        <label class="label" for="start_date">{{ form.start_date.label }}</label>
+        <div class="control">
+          <input id="start_date" name="start_date"
+            class="input {% if form.start_date.errors|length > 0 %} is-danger {% endif %}"
+            value="{% if form.is_submitted() %}{{ form.start_date.data }}{% endif %}"
+            type="text" maxlength="32" placeholder="date format is YYYY-mm-dd">
+        </div>
+        {% for error in form.start_date.errors %}
+        <p class="help is-danger">[{{ error }}]</p>
+      {% endfor %}
+    </div>
+    <div class="field">
+        <label class="label" for="end_date">{{ form.end_date.label }}</label>
+        <div class="control">
+          <input id="end_date" name="end_date"
+            class="input {% if form.end_date.errors|length > 0 %} is-danger {% endif %}"
+            value="{% if form.is_submitted() %}{{ form.end_date.data }}{% endif %}"
+            type="text" maxlength="32" placeholder="date format is YYYY-mm-dd">
+        </div>
+        {% for error in form.end_date.errors %}
+        <p class="help is-danger">[{{ error }}]</p>
+      {% endfor %}
+    </div>
+    <div class="field">
+        <label class="label" for="conference_id">Select Conference</label>
+        <div class="select is-info">
+            {{ form.conference_id() }}
+        </div>
+    </div>
+    <div class="field">
+        <label  class="label" for="app_user_id">Select User</label>
+        <div class="select is-info">
+            {{form.app_user_id}}
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+        <button class="button button-jacow" type="submit" alt="register">Search</button><br/><br/>
+        </div>
+    </div>
+</div>
+</form>

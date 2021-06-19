@@ -3,6 +3,7 @@
     <section class="section">
     <div class="container box box-jacow">
         <div class="is-size-3">Logs</div><br/>
+        {% include "_search.html" ignore missing %}
     {% for log in logs %}
     <details class="details-jacow">
         <summary class="details-summary-jacow">Log for {{ log.filename }}</summary>

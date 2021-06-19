@@ -18,6 +18,9 @@ class AppUser(UserMixin, db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
+    def __str__(self):
+        return self.username
+
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
@@ -51,3 +54,6 @@ class Conference(db.Model):
 
     def __repr__(self):
         return '<Conference {}>'.format(self.name)
+
+    def __str__(self):
+        return self.name

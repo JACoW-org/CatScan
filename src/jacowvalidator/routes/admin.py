@@ -7,15 +7,30 @@ from jacowvalidator import app, document_docx, db
 from flask_login import current_user, login_required
 from jacowvalidator.models import AppUser, Conference, Log
 from jacowvalidator.forms.login import RegistrationForm, ConferenceForm
+from jacowvalidator.forms.reports import SearchForm
 
 def is_admin():
     return current_user and current_user.is_authenticated and current_user.is_admin
 
+def is_editor():
+    return current_user and current_user.is_authenticated and current_user.is_editor
 
 def admin_required(func):
     wraps(func)
     def wrapper(*args, **kwargs):
         if is_admin():
+            return func(*args, **kwargs)
+        else:
+            # raise Exception('Not Authorised', 403)
+            abort(403)
+    wrapper.__name__ = func.__name__
+    return wrapper
+
+
+def admin_or_editor_required(func):
+    wraps(func)
+    def wrapper(*args, **kwargs):
+        if is_admin() or is_editor():
             return func(*args, **kwargs)
         else:
             # raise Exception('Not Authorised', 403)
@@ -120,22 +135,63 @@ def convert():
     return render_template("convert.html", action='convert')
 
 
-@app.route("/summary", methods=["GET"])
+@app.route("/report/summary", methods=["GET", "POST"])
 @login_required
-@admin_required
+@admin_or_editor_required
 def summary():
-    logs = Log.query.order_by(Log.timestamp.desc()).all()
-    # countLogs is an array of tuples
-    countLogs = Log.query.with_entities(Log.filename, func.count(Log.filename)).group_by(Log.filename).all()
+    logs = Log.query
+    form = SearchForm()
+    if form.validate_on_submit():
+        form, logs = get_logs_from_search(form)
+    logs = logs.order_by(Log.timestamp.desc()).all()
 
-    return render_template("summary.html", logs=logs, countLogs=countLogs)
+    return render_template("summary.html", logs=logs, form=form)
 
 
-@app.route("/log", methods=["GET"])
+@app.route("/report/count", methods=["GET", "POST"])
 @login_required
-@admin_required
+@admin_or_editor_required
+def count():
+    # countLogs is an array of tuples
+    logs = Log.query
+    form = SearchForm()
+    if form.validate_on_submit():
+        form, logs = get_logs_from_search(form)
+
+    logs = logs.with_entities(Log.filename, func.count(Log.filename)).group_by(Log.filename).all()
+
+    return render_template("count.html", logs=logs, form=form)
+
+
+
+@app.route("/report/log", methods=["GET", "POST"])
+@login_required
+@admin_or_editor_required
 def log():
-    logs = []
-    if 'SQLALCHEMY_DATABASE_URI' in app.config:
-        logs = Log.query.all()
-    return render_template("logs.html", logs=logs)
+    logs = Log.query
+    form = SearchForm()
+    if form.validate_on_submit():
+        form, logs = get_logs_from_search(form)
+
+    return render_template("logs.html", logs=logs, form=form)
+
+
+def get_logs_from_search(form):
+    logs = Log.query
+    if form.conference_id.data:
+        logs = logs.filter_by(conference_id=form.conference_id.data.id)
+    if form.app_user_id.data:
+        logs = logs.filter_by(app_user_id=form.app_user_id.data.id)
+
+
+    if form.start_date.data:
+        logs = logs.filter(Log.timestamp > form.start_date.data)
+    else:
+        # otherwise the value is the string 'None'
+        form.start_date.data = ''
+    if form.end_date.data:
+        logs = logs.filter(Log.timestamp < form.end_date.data)
+    else:
+        # otherwise the value is the string 'None'
+        form.end_date.data = ''
+    return (form, logs)

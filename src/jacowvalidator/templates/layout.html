@@ -78,6 +78,25 @@
         <div class="dropdown is-hoverable dropdown-jacow">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>Tools</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu" >
+            <div class="dropdown-content">
+              <a id="convert" href="{{ url_for('convert')}}" class="dropdown-item">
+                Convert
+              </a>
+            </div>
+          </div>
+        </div>
+        {% if current_user.username and (current_user.is_admin or current_user.is_editor) %}
+        {% endif %}
+        <div class="dropdown is-hoverable dropdown-jacow">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
               <span>Reports</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -89,25 +108,11 @@
               <a id="summary" href="{{ url_for('summary')}}" class="dropdown-item">
                 Summary
               </a>
+              <a id="log" href="{{ url_for('count')}}" class="dropdown-item">
+                Count
+              </a>
               <a id="log" href="{{ url_for('log')}}" class="dropdown-item">
                 Logs
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown is-hoverable dropdown-jacow">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-              <span>Tools</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu" >
-            <div class="dropdown-content">
-              <a id="convert" href="{{ url_for('convert')}}" class="dropdown-item">
-                Convert
               </a>
             </div>
           </div>
