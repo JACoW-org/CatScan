@@ -92,7 +92,7 @@
         <tbody>
     {% for conference in conferences %}
     <tr><td>{{conference.name}}</td><td>{{conference.short_name}}</td><td>{{conference.url}}</td><td>{{conference.path}}</td><td>{{conference.display_order}}</td>
-      <td><span style="background:#{{conference.is_active|pastel_background_style}}">{{conference.is_active|tick_cross|safe}}</span></td>
+      <td><span class="{{conference.is_active|pastel_background_style}}">{{conference.is_active|tick_cross|safe}}</span></td>
     <td><a href="{{ url_for('conference_update', id=conference.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>

@@ -53,19 +53,14 @@ def tick_cross(s):
         return '<span style="color:darkred">✗</span>'
 
 
-@app.template_filter('background_style')
-def background_style(s):
-    return "has-background-success" if s else "has-background-danger"
-
-
 @app.template_filter('pastel_background_style')
 def pastel_background_style(s):
     if s == 1 or s is True:
-        return 'DDFFDD'
+        return 'background-jacow-tick'
     elif s == 2:
-        return 'ffedcc' #ffedcc
+        return 'background-jacow-question'
     else:
-        return "FFDDDD"
+        return "background-jacow-cross"
 
 
 @app.template_filter('display_report')

@@ -88,3 +88,15 @@ a.navbar-item.is-active:not(:hover) {
     list-style-type: circle;
     padding-left: 5px
 }
+.subtitle-jacow {
+    padding:10px;
+}
+.background-jacow-tick {
+    background-color: #DDFFDD !important;
+}
+.background-jacow-question {
+    background-color: #FFEDCC !important;
+}
+.background-jacow-cross {
+    background-color: #FFDDDD !important;
+}

@@ -92,9 +92,9 @@
         <tbody>
     {% for user in users %}
     <tr><td>{{user.username}}</td>
-      <td><span style="background:#{{user.is_admin|pastel_background_style}}">{{user.is_admin|tick_cross|safe}}</span></td>
-      <td><span style="background:#{{user.is_editor|pastel_background_style}}">{{user.is_editor|tick_cross|safe}}</span></td>
-      <td><span style="background:#{{user.is_active|pastel_background_style}}">{{user.is_active|tick_cross|safe}}</span></td>
+      <td><span class="{{user.is_admin|pastel_background_style}}">{{user.is_admin|tick_cross|safe}}</span></td>
+      <td><span class="{{user.is_editor|pastel_background_style}}">{{user.is_editor|tick_cross|safe}}</span></td>
+      <td><span class="{{user.is_active|pastel_background_style}}">{{user.is_active|tick_cross|safe}}</span></td>
     <td><a href="{{ url_for('user_update', id=user.id) }}" title="update"><i class="fas fa-edit"></i></a></td></tr>
     {% endfor %}
     </tbody></table>

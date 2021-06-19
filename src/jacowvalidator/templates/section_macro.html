@@ -9,7 +9,7 @@
   {% if args['next'] %}
     <a href="#{{ args['next'] }}" class="link-color">Next <i class="fas fa-arrow-circle-right"></i></a>
   {% endif %}
-    <h2 class="subtitle" style="padding:10px;background-color:#{{ section.ok|pastel_background_style }}">
+    <h2 class="subtitle subtitle-jacow {{ section.ok|pastel_background_style }}">
         {{ section.ok|tick_cross|safe }}
         {% if args['section_header'] %} {{ args['section_header']|safe }} {% else %}{{ section.title }} {% endif %}
         {% if section.show_total %} ({{ section.details|length }}){% endif %}
@@ -88,7 +88,7 @@
             </details>
         {% else %}
             <div style="width:100%">
-                <div style="text-align:center;padding:5px;background-color:#{{ False|pastel_background_style }}">
+                <div class="{{ False|pastel_background_style }}" style="text-align:center;padding:5px">
                     No {{ section.title }} found. Please check formatting if there should be some.
                 </div>
             </div>
@@ -195,7 +195,7 @@
     {% elif col == 'text' %}
         <td title="{{ value }}">{% if args['truncate_text'] %}{{ value|truncate(args['truncate_text']) }} {% else %} {{ value }} {% endif %}</td>
     {% elif '_ok' in col|string  %}
-        <td style="background-color:#{{ value|pastel_background_style }}"> {{ value|tick_cross|safe  }}</td>
+        <td class="{{ value|pastel_background_style }}"> {{ value|tick_cross|safe  }}</td>
     {% elif value is iterable and value is not string %}
         <td>
             <ul class="list-jacow">
@@ -205,6 +205,6 @@
             </ul>
         </td>
     {% else %}
-        <td {% if 'should be' in value|string %} style="background-color:#{{ False|pastel_background_style }}" {% endif %}>{{ value }}</td>
+        <td {% if 'should be' in value|string %} class="{{ False|pastel_background_style }}" {% endif %}>{{ value }}</td>
     {% endif %}
 {%- endmacro %}
