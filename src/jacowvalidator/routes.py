@@ -46,11 +46,11 @@ def tick_cross2(s):
 @app.template_filter('tick_cross')
 def tick_cross(s):
     if s == 1 or s is True:
-        return '<span style="color:darkgreen">✓</span>'
+        return '<span class="background-dark-tick">✓</span>'
     elif s == 2:
-        return '<span style="color:darkorange"><i class="fas fa-question"></i></span>'
+        return '<span class="background-dark-question"><i class="fas fa-question"></i></span>'
     else:
-        return '<span style="color:darkred">✗</span>'
+        return '<span class="background-dark-cross">✗</span>'
 
 
 @app.template_filter('pastel_background_style')

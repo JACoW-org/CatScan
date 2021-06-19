@@ -100,3 +100,20 @@ a.navbar-item.is-active:not(:hover) {
 .background-jacow-cross {
     background-color: #FFDDDD !important;
 }
+.background-dark-tick {
+    background-color: darkgreen !important;
+}
+.background-dark-question {
+    background-color: darkorange !important;
+}
+.background-dark-cross {
+    background-color: darkred !important;
+}
+.jacow-not-found {
+    text-align:center;
+    padding:5px;
+}
+.jacow-help-link {
+    text-align:center;
+    font-size:14pt;
+}

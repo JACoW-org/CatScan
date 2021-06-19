@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
     <section class="section">
-    <div class="container box" style="box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1), 0 0 0 2px rgba(0, 0, 255, 0.1)">
+    <div class="container box box-jacow">
         <div class="is-size-3">Logs</div><br/>
     {% for log in logs %}
-    <details style="border:1px lightgray solid;border-radius:2px">
-        <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Log for {{ log.filename }}</summary>
+    <details class="details-jacow">
+        <summary class="details-summary-jacow">Log for {{ log.filename }}</summary>
         <table class="table is-bordered">
             <tr>
                 <td style="width:5%">{{ log.id }}</td>
@@ -18,8 +18,8 @@
                             <table class="table is-bordered">
                             {% for i, d in data.items() %}
                                 <tr><td>
-                                <details style="border:1px lightgray solid;border-radius:2px">
-                                <summary style="padding:5px;border: 1px solid grey;border-radius:2px; background-color:#fcfcfc">Details for {{ i }}</summary>
+                                <details class="details-jacow">
+                                <summary class="details-summary-jacow">Details for {{ i }}</summary>
                                     <table><tr><td>{{ d }}</td></tr></table>
                                 </details>
                                 </td></tr>
