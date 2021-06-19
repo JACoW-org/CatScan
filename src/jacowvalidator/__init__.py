@@ -21,6 +21,6 @@ app.jinja_env.lstrip_blocks = True
 
 configure_uploads(app, (document_docx, document_tex))
 
-from jacowvalidator import routes
+from jacowvalidator.routes import main, admin, errors
 from jacowvalidator import spms_cli
 

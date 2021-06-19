@@ -5,19 +5,17 @@ from subprocess import run
 from docx import Document
 from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
-from flask import redirect, render_template, request, url_for, send_file, abort, flash
+from flask import redirect, render_template, request, url_for, flash
 from flask_uploads import UploadNotAllowed
-from sqlalchemy import func
 from jacowvalidator import app, document_docx, document_tex, db
-from .utils import json_serialise
+from jacowvalidator.utils import json_serialise
 from jacowvalidator.docutils.page import (check_tracking_on, TrackingOnError)
 from jacowvalidator.docutils.doc import create_upload_variables, create_spms_variables, create_upload_variables_latex, \
     AbstractNotFoundError
-from .test_utils import replace_identifying_text
-from .spms import get_conference_path, PaperNotFoundError
+from jacowvalidator.spms import get_conference_path, PaperNotFoundError
 from flask_login import current_user, login_user, logout_user, login_required
 from jacowvalidator.models import AppUser, Conference, Log
-from jacowvalidator.forms.login import LoginForm, RegistrationForm, ConferenceForm
+from jacowvalidator.forms.login import LoginForm, RegistrationForm
 
 try:
     p = run(['git', 'log', '-1', '--format=%h,%at'], capture_output=True, text=True, check=True)
@@ -36,11 +34,6 @@ def inject_commit_details():
 def inject_debug():
     debug = app.env == 'development' or app.debug
     return dict(debug=debug)
-
-
-@app.template_filter('tick_cross2')
-def tick_cross2(s):
-    return "✓" if s else "✗"
 
 
 @app.template_filter('tick_cross')
@@ -242,9 +235,7 @@ def save_log(filename, conference_id, status, args):
     db.session.add(upload_log)
     db.session.commit()
 
-# TODO change to decorator
-def is_admin():
-    return current_user.is_authenticated and current_user.is_admin
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -289,138 +280,10 @@ def register():
     return render_template('register.html', title='Register', form=form, admin=admin)
 
 
-@app.route('/conference', methods=['GET', 'POST'])
+@app.route('/user/<username>')
 @login_required
-def conference():
-    admin = is_admin()
-    if not admin:
-        abort(403)
+def user_profile(username):
+    app_user = AppUser.query.filter_by(username=username).first_or_404()
+    logs = Log.query.filter_by(app_user_id=app_user.id).all()
+    return render_template('profile.html', user=app_user, logs=logs)
 
-    form = ConferenceForm()
-    if form.validate_on_submit():
-        conference = Conference()
-        form.populate_obj(conference)
-        if conference.id == '':
-            conference.id = None
-        db.session.add(conference)
-        db.session.commit()
-
-        # TODO work out how to reset form
-        form = ConferenceForm()
-
-
-    conferences = Conference.query.all()
-    return render_template('conference.html', title='Conference', form=form, conferences=conferences)
-
-
-@app.route('/conference/update/<id>', methods=['GET', 'POST'])
-@login_required
-def conference_update(id):
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    conference = Conference.query.filter_by(id=id).first_or_404()
-    form = ConferenceForm(obj=conference)
-    if form.validate_on_submit():
-        form.populate_obj(conference)
-        db.session.commit()
-
-    conferences = Conference.query.all()
-    return render_template('conference.html', title='Conference', form=form, conferences=conferences, mode='update')
-
-
-@app.route('/users', methods=['GET', 'POST'])
-@login_required
-def users():
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = AppUser(username=form.username.data,
-          is_admin=form.is_admin.data or form.is_admin.data=='on',
-          is_editor=form.is_editor.data or form.is_editor.data=='on',
-          is_active=form.is_active.data or form.is_active.data=='on')
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-
-    users = AppUser.query.all()
-    return render_template('users.html', title='Users', form=form, users=users, admin=admin)
-
-
-@app.route('/users/update/<id>', methods=['GET', 'POST'])
-@login_required
-def user_update(id):
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    user = AppUser.query.filter_by(id=id).first_or_404()
-    form = RegistrationForm(obj=user)
-    if form.validate_on_submit():
-        form.populate_obj(user)
-        db.session.commit()
-
-    users = AppUser.query.all()
-    return render_template('users.html', title='Users', form=form, users=users, mode='update')
-
-
-@app.route("/convert", methods=["GET", "POST"])
-@login_required
-def convert():
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    documents = document_docx
-    if request.method == "POST" and documents.name in request.files:
-        filename = documents.save(request.files[documents.name])
-        full_path = documents.path(filename)
-        try:
-            doc = Document(full_path)
-            new_doc_path = documents.path('test_'+filename)
-            replace_identifying_text(doc, new_doc_path)
-            # send_file should handle the open read and close
-            return send_file(
-                new_doc_path,
-                mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                as_attachment=True,
-                attachment_filename=filename
-            )
-
-        finally:
-            os.remove(full_path)
-            # PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: '/var/tmp\\document\\test_THPMK148_2.docx'
-            # only happens on windows I think.
-            # os.remove(new_doc_path)
-
-    return render_template("convert.html", admin=admin, action='convert')
-
-
-@app.route("/summary", methods=["GET"])
-@login_required
-def summary():
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    logs = Log.query.order_by(Log.timestamp.desc()).all()
-    # countLogs is an array of tuples
-    countLogs = Log.query.with_entities(Log.filename, func.count(Log.filename)).group_by(Log.filename).all()
-
-    return render_template("summary.html", logs=logs, countLogs=countLogs, admin=admin)
-
-@app.route("/log", methods=["GET"])
-@login_required
-def log():
-    admin = is_admin()
-    if not admin:
-        abort(403)
-
-    logs = []
-    if 'SQLALCHEMY_DATABASE_URI' in app.config:
-        logs = Log.query.all()
-    return render_template("logs.html", logs=logs, admin=admin)
