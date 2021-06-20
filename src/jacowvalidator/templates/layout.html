@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='jacowvalidator.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <!--[if lt IE 9]><script src="{{ url_for('static', filename='js/details-polyfill/index.min.js')}}" async></script><![endif]-->
+    <script>
+      function toggle_display(){
+          const el = document.getElementById("wrapper");
+          if (el.style.height == '') {
+            el.style.height = '0px';
+          } else if (el.style.height == 0 || el.style.height == '0px') {
+            el.style.height = `${el.scrollHeight}px`;
+          } else {
+            el.style.height = '0px';
+          }
+        }
+      </script>
     {% endblock %}
 </head>
 <body>

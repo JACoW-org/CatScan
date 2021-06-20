@@ -2,7 +2,7 @@
 {% block content %}
     <section class="section">
     <div class="container box box-jacow">
-        <div class="is-size-3">Logs</div><br/>
+        <h1 class="title">Logs <button class="button button-jacow" onclick="toggle_display()">Show/Hide search fields</button></h1>
         {% include "_search.html" ignore missing %}
     {% for log in logs %}
     <details class="details-jacow">

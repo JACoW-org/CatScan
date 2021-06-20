@@ -2,7 +2,8 @@
 {% block content %}
 <section class="section">
 <div class="container box box-jacow">
-    <h1 class="title">Conferences</h1>
+    <h1 class="title">Conferences <button class="button button-jacow" onclick="toggle_display()">Show/Hide add/edit fields</button></h1>
+    <div id="wrapper">
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <div class="field">
@@ -85,8 +86,9 @@
             </div>
         </div>
     </form>
+    </div>
     <hr class="divider-jacow"/>
-    <h1 class="title">Conference List <a href="{{ url_for('users') }}" title="add"><i class="fas fa-plus"></i></a></h1>
+    <h1 class="title">Conference List <a href="{{ url_for('conference') }}" title="add"><i class="fas fa-plus"></i></a></h1>
     <table class="table is-bordered is-striped is-fullwidth">
         <thead><tr><th>Name</th><th>Short Name</th><th>URL</th><th>path</th><th>Display Order</th><th>Is Active</th><th>Actions</th></th></tr></thead>
         <tbody>

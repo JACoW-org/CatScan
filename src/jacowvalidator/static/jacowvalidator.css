@@ -123,3 +123,7 @@ a.navbar-item.is-active:not(:hover) {
     font-size:14pt;
     padding:10px;
 }
+#wrapper {
+    transition:height 1s ease-out;
+    overflow:hidden;
+}
