@@ -31,7 +31,10 @@ def upgrade():
     )
     op.create_table('app_user',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('username', sa.String(length=64), nullable=True),
+    sa.Column('username', sa.String(length=64)),
+    sa.Column('first_name', sa.String(length=64), nullable=True),
+    sa.Column('last_name', sa.String(length=64), nullable=True),
+    sa.Column('email', sa.String(length=120), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
     sa.Column('is_admin', sa.Boolean(), server_default='false', nullable=False),
     sa.Column('is_editor', sa.Boolean(), server_default='false', nullable=False),

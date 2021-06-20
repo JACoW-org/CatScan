@@ -14,6 +14,9 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     id = HiddenField('ID')
     username = StringField('Username', validators=[DataRequired()])
+    first_name = StringField('First Name')
+    last_name = StringField('Last Name')
+    email = StringField('Email')
     password = PasswordField('Password')
     password2 = PasswordField('Repeat Password')
     is_admin = BooleanField('Is Admin')
@@ -38,8 +41,8 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Password is required')
 
     def validate_password2(self, password2):
-        if not self.id.data and password2 != self.password:
-            raise ValidationError('Passwords must match')
+        if not self.id.data and password2.data != self.password.data:
+            raise ValidationError(f'Passwords must match')
 
 class ConferenceForm(FlaskForm):
     id = HiddenField('ID')

@@ -10,6 +10,9 @@ def load_user(id):
 class AppUser(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
+    first_name = db.Column(db.String(64), nullable=False)
+    last_name = db.Column(db.String(64), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean(), nullable=False, default=False, server_default='false')
     is_editor = db.Column(db.Boolean(), nullable=False, default=False, server_default='false')

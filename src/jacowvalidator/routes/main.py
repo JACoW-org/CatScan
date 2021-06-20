@@ -16,6 +16,7 @@ from jacowvalidator.spms import get_conference_path, PaperNotFoundError
 from flask_login import current_user, login_user, logout_user, login_required
 from jacowvalidator.models import AppUser, Conference, Log
 from jacowvalidator.forms.login import LoginForm, RegistrationForm
+from jacowvalidator.routes.admin import is_admin
 
 try:
     p = run(['git', 'log', '-1', '--format=%h,%at'], capture_output=True, text=True, check=True)
