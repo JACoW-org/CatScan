@@ -104,8 +104,8 @@
             </div>
           </div>
         </div>
-        {% if current_user.username and (current_user.is_admin or current_user.is_editor) %}
         {% endif %}
+        {% if current_user.username and (current_user.is_admin or current_user.is_editor) %}
         <div class="dropdown is-hoverable dropdown-jacow">
           <div class="dropdown-trigger">
             <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">

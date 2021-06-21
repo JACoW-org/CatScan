@@ -182,7 +182,8 @@ def get_logs_from_search(form):
         logs = logs.filter_by(conference_id=form.conference_id.data.id)
     if form.app_user_id.data:
         logs = logs.filter_by(app_user_id=form.app_user_id.data.id)
-
+    if form.filename.data:
+        logs = logs.filter_by(filename=form.filename.data)
 
     if form.start_date.data:
         logs = logs.filter(Log.timestamp > form.start_date.data)

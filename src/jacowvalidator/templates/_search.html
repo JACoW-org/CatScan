@@ -26,6 +26,18 @@
       {% endfor %}
     </div>
     <div class="field">
+      <label class="label" for="filename">{{ form.filename.label }}</label>
+      <div class="control">
+        <input id="filename" name="filename"
+          class="input {% if form.filename.errors|length > 0 %} is-danger {% endif %}"
+          value="{% if form.is_submitted() %}{{ form.filename.data }}{% endif %}"
+          type="text" maxlength="32">
+      </div>
+      {% for error in form.end_date.errors %}
+      <p class="help is-danger">[{{ error }}]</p>
+    {% endfor %}
+    </div>
+    <div class="field">
         <label class="label" for="conference_id">Select Conference</label>
         <div class="select is-info">
             {{ form.conference_id() }}
