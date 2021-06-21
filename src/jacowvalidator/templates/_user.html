@@ -3,7 +3,7 @@
     <div class="control">
       <input id="username" name="username"
         class="input {% if form.username.errors|length > 0 %} is-danger {% endif %}"
-        value="{% if form.is_submitted() %}{{ form.username.data }}{% endif %}"
+        value="{% if form.is_submitted() or mode == 'update' %}{{ form.username.data }}{% endif %}"
         type="text" maxlength="32">
     </div>
     {% for error in form.username.errors %}
@@ -15,7 +15,7 @@
   <div class="control">
     <input id="first_name" name="first_name"
       class="input {% if form.first_name.errors|length > 0 %} is-danger {% endif %}"
-      value="{% if form.is_submitted() %}{{ form.first_name.data }}{% endif %}"
+      value="{% if form.is_submitted() or mode == 'update' %}{{ form.first_name.data }}{% endif %}"
       type="text" maxlength="32">
   </div>
   {% for error in form.first_name.errors %}
@@ -27,7 +27,7 @@
 <div class="control">
   <input id="last_name" name="last_name"
     class="input {% if form.last_name.errors|length > 0 %} is-danger {% endif %}"
-    value="{% if form.is_submitted() %}{{ form.last_name.data }}{% endif %}"
+    value="{% if form.is_submitted() or mode == 'update' %}{{ form.last_name.data }}{% endif %}"
     type="text" maxlength="32">
 </div>
 {% for error in form.last_name.errors %}
@@ -39,13 +39,14 @@
 <div class="control">
 <input id="email" name="email"
   class="input {% if form.email.errors|length > 0 %} is-danger {% endif %}"
-  value="{% if form.is_submitted() %}{{ form.email.data }}{% endif %}"
+  value="{% if form.is_submitted() or mode == 'update' %}{{ form.email.data }}{% endif %}"
   type="text" maxlength="32">
 </div>
 {% for error in form.email.errors %}
 <p class="help is-danger">[{{ error }}]</p>
 {% endfor %}
 </div>
+{% if not mode == 'update' %}
 <div class="field">
     <label class="label" for="password">{{ form.password.label }}</label>
     <div class="control">
@@ -68,3 +69,4 @@
       <p class="help is-danger">[{{ error }}]</p>
     {% endfor %}
 </div>
+{% endif %}

@@ -6,7 +6,8 @@ from functools import wraps
 from jacowvalidator import app, document_docx, db
 from flask_login import current_user, login_required
 from jacowvalidator.models import AppUser, Conference, Log
-from jacowvalidator.forms.login import RegistrationForm, ConferenceForm
+from jacowvalidator.forms.user import RegistrationForm
+from jacowvalidator.forms.conference import ConferenceForm
 from jacowvalidator.forms.reports import SearchForm
 
 def is_admin():
@@ -188,11 +189,11 @@ def get_logs_from_search(form):
     if form.start_date.data:
         logs = logs.filter(Log.timestamp > form.start_date.data)
     else:
-        # otherwise the value is the string 'None'
+        # if I don't set it to empty string the value is the string 'None'
         form.start_date.data = ''
     if form.end_date.data:
         logs = logs.filter(Log.timestamp < form.end_date.data)
     else:
-        # otherwise the value is the string 'None'
+        # if I don't set it to empty string the value is the string 'None'
         form.end_date.data = ''
     return (form, logs)

@@ -5,7 +5,7 @@ from subprocess import run
 from docx import Document
 from docx.opc.exceptions import PackageNotFoundError
 from TexSoup import TexSoup
-from flask import redirect, render_template, request, url_for, flash
+from flask import redirect, render_template, request, url_for, flash, abort
 from flask_uploads import UploadNotAllowed
 from jacowvalidator import app, document_docx, document_tex, db
 from jacowvalidator.utils import json_serialise
@@ -15,7 +15,7 @@ from jacowvalidator.docutils.doc import create_upload_variables, create_spms_var
 from jacowvalidator.spms import get_conference_path, PaperNotFoundError
 from flask_login import current_user, login_user, logout_user, login_required
 from jacowvalidator.models import AppUser, Conference, Log
-from jacowvalidator.forms.login import LoginForm, RegistrationForm
+from jacowvalidator.forms.user import LoginForm, RegistrationForm, UserRegistrationForm
 from jacowvalidator.routes.admin import is_admin
 
 try:
@@ -130,7 +130,7 @@ def register():
 
     if current_user.is_authenticated:
         return redirect(url_for('upload'))
-    form = RegistrationForm()
+    form = UserRegistrationForm()
     if form.validate_on_submit():
         user = AppUser(username=form.username.data)
         user.set_password(form.password.data)
@@ -141,12 +141,23 @@ def register():
     return render_template('register.html', title='Register', form=form, admin=admin)
 
 
-@app.route('/user/<username>')
+@app.route('/user/<username>', methods=['GET', 'POST'])
 @login_required
 def user_profile(username):
+    # make sure username is the one logged in
+    if (not current_user or not current_user.username == username):
+        abort(403)
+
+    message = ''
     app_user = AppUser.query.filter_by(username=username).first_or_404()
+    form = UserRegistrationForm(obj=app_user)
+    if form.validate_on_submit():
+        form.populate_obj(app_user)
+        db.session.commit()
+        message = 'Profile Updated'
+
     logs = Log.query.filter_by(app_user_id=app_user.id).all()
-    return render_template('profile.html', user=app_user, logs=logs)
+    return render_template('profile.html', user=app_user, mode='update', message=message, form=form, logs=logs)
 
 
 # helper functions below
