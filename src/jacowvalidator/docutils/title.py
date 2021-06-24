@@ -32,25 +32,23 @@ def get_title_details(p):
     return title_detail
 
 
-def get_title_summary(p):
+def get_title_summary(paragraphs):
     style_compare = STYLES['normal']
-    details = get_title_details(p)
-    details.update(check_style_detail(p, style_compare))
-    title_style_ok = p.style.name == style_compare['styles']['jacow']
-    details.update({'title_style_ok': title_style_ok, 'style': p.style.name})
-
-    extra_info = ''
-    if not details['case_ok']:
-        extra_info = '<p class="has-text-weight-bold has-text-danger">Title should be at least 70% uppercase</p>'
-
+    title_details = []
+    for p in paragraphs:
+        if p.text.strip():
+            detail = get_title_details(p)
+            detail.update(check_style_detail(p, style_compare))
+            title_style_ok = p.style.name == style_compare['styles']['jacow']
+            detail.update({'title_style_ok': title_style_ok, 'style': p.style.name})
+            title_details.append(detail)
     return {
-        'details': [details],
+        'details': title_details,
         'rules': STYLES,
         'extra_rules': EXTRA_RULES,
         'help_info': HELP_INFO,
-        'extra_info': extra_info,
         'title': 'Title',
-        'ok': details['style_ok'] and details['case_ok'],
+        'ok': all([tick['style_ok'] and tick['case_ok'] for tick in title_details]),
         'message': 'Title issues',
         'anchor': 'title'
     }

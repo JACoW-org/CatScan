@@ -20,7 +20,8 @@ class AbstractNotFoundError(Exception):
 
 
 def parse_paragraphs(doc):
-    title_index = abstract_index = reference_index = -1
+    title_index = author_index = abstract_index = reference_index = -1
+    current_style = None
 
     summary = {}
     for i, p in enumerate(doc.paragraphs):
@@ -30,15 +31,18 @@ def parse_paragraphs(doc):
             continue
 
         # first non empty paragraph is the title
-        # TODO fix since it can go over more than paragraph
+        # Assume all of title is same style so end of title is when the style changes
         if title_index == -1:
             title_index = i
-            summary['Title'] = get_title_summary(p)
+        elif title_index != -1 and author_index == -1 and current_style != p.style.name:
+            author_index = i
 
         # find abstract heading
         if text.lower() == 'abstract':
             abstract_index = i
             summary['Abstract'] = get_abstract_summary(p)
+
+        current_style = p.style.name
 
         # all headings, paragraphs captions, figures, tables, equations should be between these two
         # if abstract_index > 0 and reference_index == -1:
@@ -74,7 +78,8 @@ def parse_paragraphs(doc):
         raise AbstractNotFoundError("Abstract header not found")
 
     # authors is all the text between title and abstract heading
-    summary['Authors'] = get_author_summary(doc.paragraphs[title_index+1: abstract_index])
+    summary['Title'] = get_title_summary(doc.paragraphs[title_index: author_index])
+    summary['Authors'] = get_author_summary(doc.paragraphs[author_index: abstract_index])
 
     return summary
 
@@ -100,7 +105,7 @@ def create_upload_variables(doc):
     }
 
     # get title and author to use in SPMS check
-    title = summary['Title']['details'][0]
+    title = summary['Title']['details']
     authors = summary['Authors']['details']
 
     return summary, authors, title
@@ -111,7 +116,8 @@ def create_spms_variables(paper_name, authors, title, conference_path, conferenc
     conferences = Conference.query.all()
     if len(conferences) > 0:
         author_text = ''.join([a['text'] + ", " for a in authors])
-        reference_csv_details = reference_csv_check(paper_name, title['text'], author_text, conference_path)
+        title_text = ''.join([a['text'] for a in title])
+        reference_csv_details = reference_csv_check(paper_name, title_text, author_text, conference_path)
         conference_detail = conference_path
         if conference_id:
             conference_detail = conference_id
