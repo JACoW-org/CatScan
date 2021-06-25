@@ -59,7 +59,11 @@ open http://localhost:5000/
 5. For the first time use, you will need to
    * exec into the docker container with the database
    * login to postgres with the credentals in docker-compose
-   * create a user with is_admin and is-active set to true.
+   * browse to /register and create an account
+   * update the user in the app_user table with is_admin, is_editor and is_active set to true.
+   * browse to /login page
+   * login as new user
+   * then you can user the interface to add conferences
 
 
 ### Running in PyCharm
