@@ -1,13 +1,25 @@
 version: '3'
 
 services:
+  traefik:
+    image: "traefik:v2.5"
+    container_name: "traefik"
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
   jacow_db:
     image: postgres:12.0
     container_name: jacow-db
     environment:
-      POSTGRES_USER: jacow
-      POSTGRES_PASSWORD: docker
-      POSTGRES_DB: jacow
+      POSTGRES_USER: '${POSTGRES_USER}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
+      POSTGRES_DB: '${POSTGRES_DB}'
     volumes:
       - jacow-db-vol:/var/lib/postgresql/data
     ports:
@@ -23,11 +35,13 @@ services:
       DEV_DEBUG: 'False'
       API_DB_HOST: jacow_db
       API_DB_PORT: 5432
-      API_DB_USER: jacow
-      API_DB_PASS: docker
-      API_DB_NAME: jacow
-    ports:
-      - "80:5000"
+      API_DB_USER: '${POSTGRES_USER}'
+      API_DB_PASS: '${POSTGRES_PASSWORD}'
+      API_DB_NAME: '${POSTGRES_DB}'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`jacow.synchrotron.org.au`) || Host(`edit.ipac19.org`) || Host(`scan.jacow.org`)"
+      - "traefik.http.routers.whoami.entrypoints=web"
     depends_on:
       - jacow_db
 
