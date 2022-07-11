@@ -53,17 +53,25 @@ open http://localhost:5000/
 2. Open a command prompt
 
 3. Browse to the jacow-validator folder
+4. create an .env file with variables where password is whatever you want
 
-4. Type docker-compose up --build
+POSTGRES_USER=jacowuser
+POSTGRES_PASSWORD=<password>
+POSTGRES_DB=jacow
 
-5. For the first time use, you will need to
-   * exec into the docker container with the database
-   * login to postgres with the credentals in docker-compose
+5. Type docker-compose up --build
+
+6. For the first time use, you will need to
    * browse to /register and create an account
+   * exec into the docker container with the database
+   * docker exec -it <container> /bin/bash
+   * login to postgres with the credentials in your .env
+   * psql -U jacowuser
    * update the user in the app_user table with is_admin, is_editor and is_active set to true.
+   * \c jacow
    * browse to /login page
    * login as new user
-   * then you can user the interface to add conferences
+   * then you can use the interface to add conferences
 
 
 ### Running in PyCharm
