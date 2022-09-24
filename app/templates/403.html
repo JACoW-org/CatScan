@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <section class="section">
+    <div class="container box box-jacow">
+    <h1 class="error-heading-jacow">Not Authorised</h1>
+    <p><a href="{{ url_for('routes.upload') }}">Back to Upload</a></p>
+    </div>
+    </section>
+{% endblock %}

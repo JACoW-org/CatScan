@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section">
+    <div class="container box box-jacow">
+<h1 class="title">Upload Summary List <button class="button button-jacow" onclick="toggle_display()">Show/Hide search fields</button></h1>
+{% include "_search.html" ignore missing %}
+<table class="table is-bordered is-striped is-fullwidth">
+<thead><tr><th>Date</th><th>Upload Name</th><th>Conference</th><th>By</th><th>Status</th></tr></thead>
+<tbody>
+{% for log in logs %}
+<tr>
+<td>{{log.timestamp.strftime('%d/%m/%Y %H:%M ')}}</td>
+<td>{{log.filename}}</td>
+<td>{% if log.conference %}{{log.conference.short_name}}{% endif %}</td>
+<td>{% if log.app_user %}{{log.app_user.username}}{% endif %}</td>
+<td>{{log.status}}</td>
+</tr>
+{% endfor %}
+</tbody></table>
+</div>
+</section>
+{% endblock %}
