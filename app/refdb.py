@@ -20,17 +20,6 @@ class PaperNotFoundError(Exception):
     spms references list of papers"""
     pass
 
-def get_auth_cache():
-    data = ''
-    with open(basedir + "/../cache/auth_token", 'r') as file:
-        data = file.read()
-    return data
-
-
-def write_auth_cache(token):
-    with open(basedir + "/../cache/auth_token", "w") as f:
-        f.write(token)
-
 def get_cache(filename):
     data = ''
     expiry = None
@@ -77,13 +66,14 @@ def get_new_auth_token():
     token = response.json()['token']
     return token
 
-def authenticate():
-    try:
-        token = get_auth_cache()
-        jwt.decode(get_auth_cache(), get_refdb_pub(), algorithms=["RS256"])
-    except:
+def get_auth_token():
+    expiry, token = get_cache('token')
+    now = datetime.now()
+    if expiry is not None and expiry > now:
+        return token
+    else:
         token = get_new_auth_token()
-        write_auth_cache(token)
+        write_cache('token', token)
 
     return token
 
