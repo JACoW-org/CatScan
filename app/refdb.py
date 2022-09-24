@@ -66,7 +66,7 @@ def get_new_auth_token():
     token = response.json()['token']
     return token
 
-def get_auth_token():
+def authenticate():
     expiry, token = get_cache('token')
     now = datetime.now()
     if expiry is not None and expiry > now:
