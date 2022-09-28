@@ -1,5 +1,7 @@
 import json
 
+def remove_white_space(text):
+    return text.replace("\n", "").replace(" ", "").replace("\t", "")
 
 def is_jsonable(x):
     try:

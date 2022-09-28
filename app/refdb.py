@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import os
 from app.upload import basedir
 import json
+from utils import remove_white_space
 
 SPMS_HELP_INFO = 'CSESPMSCeck'
 SPMS_EXTRA_INFO = {
@@ -401,7 +402,7 @@ def reference_check(filename_minus_ext, title, authors, references):
         if filename_minus_ext == reference['paperId']:
             RE_MULTI_SPACE = re.compile(r' +')
             reference_title = RE_MULTI_SPACE.sub(' ', reference['title'].upper())
-            title_match = title.upper().strip('*') == reference_title
+            title_match = remove_white_space(title.upper().strip('*')) == remove_white_space(reference_title)
             report, authors_match = get_author_list_report(authors, reference['authors'])
 
             spms_authors = map(lambda x: x['name'], reference['authors'])
