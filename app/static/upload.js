@@ -16,6 +16,17 @@ $(document).ready(function(){
     file.onchange = function(){
         if(file.files.length > 0) {
           document.getElementById('filename').innerHTML = file.files[0].name;
+          let extension = file.files[0].name.split('.').pop();
+          if (extension != 'docx' && extension != 'tex') {
+            $(".file").addClass("is-danger");
+            $(".file span.file-label").text("Must be .docx or .tex");
+            $("form button[type=submit]").attr("disabled", "disabled");
+          }
+          else {
+              $(".file").removeClass("is-danger");
+              $(".file span.file-label").text("Choose a file…");
+              $("form button[type=submit]").removeAttr("disabled");
+          }
         }
     };
     setInterval(function(){
