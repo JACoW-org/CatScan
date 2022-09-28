@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 import os
 from app.upload import basedir
 import json
-from utils import remove_white_space
+from app.utils import remove_white_space
 
 SPMS_HELP_INFO = 'CSESPMSCeck'
 SPMS_EXTRA_INFO = {
@@ -454,11 +454,11 @@ def create_spms_variables(paper_name, authors, title, references):
         return None, None
 
     summary['SPMS'] = {
-        'title': ' SPMS Abstract Title Author Check',
+        'title': ' Title Author Check',
         'help_info': SPMS_HELP_INFO,
         'extra_info': SPMS_EXTRA_INFO,
         'ok': reference_csv_details['title']['match'] and reference_csv_details['author']['match'],
-        'message': 'SPMS Abstract Title Author Check issues',
+        'message': 'Title Author Check issues',
         'details': reference_csv_details['summary'],
         'anchor': 'spms'
     }
