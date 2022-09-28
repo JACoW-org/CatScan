@@ -405,7 +405,7 @@ def reference_check(filename_minus_ext, title, authors, references):
             title_match = remove_white_space(title.upper().strip('*')) == remove_white_space(reference_title)
             report, authors_match = get_author_list_report(authors, reference['authors'])
 
-            spms_authors = map(lambda x: x['name'], reference['authors'])
+            spms_authors = list(map(lambda x: x['name'], reference['authors']))
             spms_author_string = ' '.join(spms_authors)
             # builds the data for display, match_ok determines the colour of the cell
             # True for green, False for red, 2 for amber.
