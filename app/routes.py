@@ -45,7 +45,7 @@ def main():
     paper_name = get_name(filename)
 
     try:
-        metadata, summary, title = [], None, None
+        metadata, summary, title = None, None, None
 
         if error_or_extension == 'tex':
             doc = TexSoup(open(full_path, encoding="utf8"))
@@ -84,7 +84,7 @@ def main():
 
         meta = {}
 
-        if 'author' in metadata:
+        if metadata is not None:
             meta = {
                 "author": metadata.author,
                 "revision": metadata.revision,
