@@ -82,17 +82,22 @@ def main():
 
         scores = score(summary)
 
-        return {
-            "scores": scores,
-            "summary": summary,
-            "metadata": {
+        meta = {}
+
+        if 'author' in metadata:
+            meta = {
                 "author": metadata.author,
                 "revision": metadata.revision,
                 "created": metadata.created.strftime("%d/%m/%Y %H:%M"),
                 "modified": metadata.modified.strftime("%d/%m/%Y %H:%M"),
                 "version": metadata.version,
                 "language": metadata.language,
-            },
+            }
+
+        return {
+            "scores": scores,
+            "summary": summary,
+            "metadata": meta,
             "filename": filename
         }
     except (PackageNotFoundError, ValueError):
