@@ -7,7 +7,7 @@ from app.docutils.doc import create_upload_variables, create_upload_variables_la
 from app.refdb import authenticate, get_references, create_spms_variables, get_conferences
 from app.upload import upload_file, delete_file, get_name, get_full_path
 from flask import Blueprint
-from score import score
+from app.score import score
 
 routes = Blueprint('routes', __name__)
 
