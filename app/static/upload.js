@@ -10,6 +10,22 @@ function elapsed() {
     timeDiff /= 1000;
     return Math.round(timeDiff);
 }
+function render_content(content) {
+    if (typeof content.error !== 'undefined') {
+        $("#report").text(error);
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: "/render",
+            data: JSON.stringify(content),
+            contentType: "application/json; charset=utf-8",
+            success: function(data){
+                $("#report").html(data);
+                $("#upload-form").hide();
+            }
+        });
+    }
+}
 
 $(document).ready(function(){
     const file = document.getElementById("file");
@@ -77,16 +93,13 @@ $(document).ready(function(){
                 processing = false;
             },
             success: function(data){
-                $("#report").html(data);
-                $("#upload-form").hide();
-
+                render_content(data);
                 mixpanel.track('Upload Success', {
                     'elapsed': elapsed(),
                     'conference': conference,
                     'distinct_id': filename,
                     'size': filesize
                 });
-
             },
             error: function(xhr) {
                 $("#report").html(xhr.responseText);

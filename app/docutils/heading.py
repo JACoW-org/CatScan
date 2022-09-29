@@ -125,6 +125,6 @@ def get_heading_summary(doc):
         'ok': all([tick['style_ok'] is True for tick in headings]),
         'message': 'Heading issues',
         'details': headings,
-        'anchor': 'heading',
+        'anchor': 'headings',
         'show_total': True,
     }

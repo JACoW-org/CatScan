@@ -151,7 +151,7 @@ def get_paragraph_summary(doc):
         'ok': all([tick['style_ok'] for tick in paragraphs]),
         'message': 'Paragraph issues',
         'details': paragraphs,
-        'anchor': 'paragraph',
+        'anchor': 'paragraphs',
         'show_total': True,
     }
 

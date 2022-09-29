@@ -23,6 +23,16 @@ def pastel_background_style(s):
     else:
         return "background-jacow-cross"
 
+@blueprint.app_template_filter('score_background_style')
+def score_background_style(field_type, show):
+    if field_type == 'positive' and show:
+        return 'background-jacow-tick'
+    elif field_type == 'unknown' and show:
+        return 'background-jacow-question'
+    elif field_type == 'negative' and show:
+        return "background-jacow-cross"
+    else:
+        return ""
 
 @blueprint.app_template_filter('display_report')
 def display_report(s):

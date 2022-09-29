@@ -44,7 +44,7 @@ def get_abstract_summary(p):
         'title': 'Abstract Heading',
         'ok': details['style_ok'],
         'message': 'Abstract issues',
-        'anchor': 'abstract'
+        'anchor': 'abstract submission'
     }
 
 
