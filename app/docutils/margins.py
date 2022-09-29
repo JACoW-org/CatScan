@@ -121,5 +121,5 @@ def get_margin_summary(doc):
         'ok': ok,
         'message': 'Margins',
         'details': sections,
-        'anchor': 'pagesize'
+        'anchor': 'margins'
     }

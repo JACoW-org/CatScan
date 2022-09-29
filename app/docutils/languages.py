@@ -60,5 +60,5 @@ def get_language_summary(doc):
         'message': 'Language issues',
         'details': language_summary,
         'extra': languages,
-        'anchor': 'language'
+        'anchor': 'languages'
     }
