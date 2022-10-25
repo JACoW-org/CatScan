@@ -12,7 +12,7 @@ function elapsed() {
 }
 function render_content(content) {
     if (typeof content.error !== 'undefined') {
-        $("#report").text(error);
+        $("#report").text(content.error);
     } else {
         $.ajax({
             type: 'POST',
