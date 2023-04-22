@@ -14,6 +14,7 @@ routes = Blueprint('routes', __name__)
 @routes.route("/", methods=["GET"])
 def upload():
     conferences = filter(lambda x: not x['isPublished'], get_conferences(authenticate()))
+    conferences = sorted(conferences, key=lambda x: x['id'], reverse=True)
     return render_template("upload.html", conferences=conferences)
 
 
