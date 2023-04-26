@@ -1,6 +1,6 @@
 var startTime;
 var processing = false;
-var timeout = 60;
+var timeout = 120;
 function start() {
     startTime = new Date();
 };
