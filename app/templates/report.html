@@ -16,7 +16,7 @@
                 <th>Section</th>
 
                 <th class="background-jacow-tick">Correct</th>
-                <th class="background-jacow-question">Concerns</th>
+                <th class="background-jacow-question">Indeterminate *</th>
                 <th class="background-jacow-cross">Issues</th>
             </tr>
         {% for section_name, score in scores.items() %}
@@ -38,7 +38,9 @@
 {#               {% if item.ok == False %} - {{ item.message }}{% endif %}#}
 {#           </a>#}
 {#        {% endfor %}#}
+
         </div>
+        <p>* Unable to determine if there is an issue. This is due to the limitation of the document scanner. Some checks were performed, no errors were found, but some manual checks may be required in addition to the automatic checks performed.</p>
     </div>
 
     {% if metadata %}
