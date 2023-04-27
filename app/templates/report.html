@@ -11,12 +11,33 @@
     <div class="container box box-jacow">
         <h2 class="subtitle">Summary</h2>
         <div class="list is-hoverable">
-        {% for i, item in summary.items() %}
-           <a href="#{{ item.anchor }}" class="list-item link-color {{ item.ok|pastel_background_style }}">
-            {{ item.ok|tick_cross|safe }} {{ item.title }} {% if item.show_total %} ({{ item.details|length }}){% endif %}
-               {% if item.ok == False %} - {{ item.message }}{% endif %}
-           </a>
+        <table class="table is-fullwidth">
+            <tr>
+                <th>Section</th>
+
+                <th class="background-jacow-tick">Correct</th>
+                <th class="background-jacow-question">Concerns</th>
+                <th class="background-jacow-cross">Issues</th>
+            </tr>
+        {% for section_name, score in scores.items() %}
+            <tr>
+            <td>
+                <a href="#{{ section_name|lower }}">
+                {{ section_name|title }}
+                </a>
+            </td>
+            <td class="{{ "positive"|score_background_style(score[2] == 0 and score[1] == 0 and score[0] != 0) }}">{{ score[0] }}</td>
+            <td class="{{ "unknown"|score_background_style(score[1] > 0) }}">{{ score[1] }}</td>
+            <td class="{{ "negative"|score_background_style(score[2] > 0) }}">{{ score[2] }}</td>
+            </tr>
         {% endfor %}
+        </table>
+{#        {% for i, item in summary.items() %}#}
+{#           <a href="#{{ item.anchor }}" class="list-item link-color {{ item.ok|pastel_background_style }}">#}
+{#            {{ item.ok|tick_cross|safe }} {{ item.title }} {% if item.show_total %} ({{ item.details|length }}){% endif %}#}
+{#               {% if item.ok == False %} - {{ item.message }}{% endif %}#}
+{#           </a>#}
+{#        {% endfor %}#}
         </div>
     </div>
 
@@ -25,8 +46,8 @@
         <h2 class="subtitle"><a id="meta"></a>Word Document loaded successfully</h2>
         <p>Author: {{ metadata.author }}</p>
         <p>Internal Revision: {{ metadata.revision }}</p>
-        <p>Created at (UTC): {{ metadata.created.strftime('%d/%m/%Y %H:%M') }}</p>
-        <p>Modified at (UTC): {{ metadata.modified.strftime('%d/%m/%Y %H:%M') }}</p>
+        <p>Created at (UTC): {{ metadata.created }}</p>
+        <p>Modified at (UTC): {{ metadata.modified }}</p>
         {% if metadata.version %}
             <p>Version: {{ metadata.version }}</p>
         {% endif %}
@@ -47,11 +68,11 @@
             {{ section_helper.add_section(summary[index], {'truncate_text':50, 'prev':prev, 'next':next}) }}
         {% elif index == 'Figures' %}
             {{ section_helper.add_section(summary[index], {'style_multi':true, 'prev':prev, 'next':next}) }}
-        {% elif index == 'SPMS' %}
+        {% elif index == 'Abstract Submission' %}
             {% if reference_csv_url is defined %}
                 {% set title = 'Conformance with <a href=' + reference_csv_url + '>references.csv</a>' %}
             {% else %}
-               {% set title = 'Conformance with reference search tool' %}
+               {% set title = 'Conformance with Abstract Submission' %}
             {% endif %}
             {{ section_helper.add_section(summary[index], {'section_header':title, 'prev':prev, 'next':mext}) }}
         {% else %}

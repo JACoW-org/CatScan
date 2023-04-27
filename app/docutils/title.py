@@ -54,6 +54,9 @@ def get_title_summary(paragraphs):
     }
 
 
+def tex_remove_lines(text):
+    return text.replace('\\\\', '')
+
 def get_title_summary_latex(part):
     """
     Example from JACoW example latex file
@@ -80,6 +83,6 @@ def get_title_summary_latex(part):
                 # ignore
                 continue
 
-        return {'original_text': part.string, 'text': text.strip(), 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
+        return {'original_text': part.string, 'text': tex_remove_lines(text.strip()), 'title': 'Title', 'ok': True, 'extra_info': f'Title: {text}'}
 
     return {'original_text': '', 'text': '', 'title': 'Title', 'ok': False, 'extra_info': f'No Title found'}

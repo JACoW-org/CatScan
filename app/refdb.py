@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import os
 from app.upload import basedir
 import json
+from app.utils import remove_white_space
 
 SPMS_HELP_INFO = 'CSESPMSCeck'
 SPMS_EXTRA_INFO = {
@@ -401,10 +402,10 @@ def reference_check(filename_minus_ext, title, authors, references):
         if filename_minus_ext == reference['paperId']:
             RE_MULTI_SPACE = re.compile(r' +')
             reference_title = RE_MULTI_SPACE.sub(' ', reference['title'].upper())
-            title_match = title.upper().strip('*') == reference_title
+            title_match = remove_white_space(title.upper().strip('*')) == remove_white_space(reference_title)
             report, authors_match = get_author_list_report(authors, reference['authors'])
 
-            spms_authors = map(lambda x: x['name'], reference['authors'])
+            spms_authors = list(map(lambda x: x['name'], reference['authors']))
             spms_author_string = ' '.join(spms_authors)
             # builds the data for display, match_ok determines the colour of the cell
             # True for green, False for red, 2 for amber.
@@ -452,14 +453,14 @@ def create_spms_variables(paper_name, authors, title, references):
     if reference_csv_details is None:
         return None, None
 
-    summary['SPMS'] = {
-        'title': ' SPMS Abstract Title Author Check',
+    summary['Abstract Submission'] = {
+        'title': ' Title Author Check',
         'help_info': SPMS_HELP_INFO,
         'extra_info': SPMS_EXTRA_INFO,
         'ok': reference_csv_details['title']['match'] and reference_csv_details['author']['match'],
-        'message': 'SPMS Abstract Title Author Check issues',
+        'message': 'Title Author Check issues',
         'details': reference_csv_details['summary'],
-        'anchor': 'spms'
+        'anchor': 'abstract'
     }
 
     return summary, reference_csv_details

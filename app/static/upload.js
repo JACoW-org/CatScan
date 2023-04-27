@@ -1,6 +1,6 @@
 var startTime;
 var processing = false;
-var timeout = 60;
+var timeout = 120;
 function start() {
     startTime = new Date();
 };
@@ -10,12 +10,39 @@ function elapsed() {
     timeDiff /= 1000;
     return Math.round(timeDiff);
 }
+function render_content(content) {
+    if (typeof content.error !== 'undefined') {
+        $("#report").text(content.error);
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: "/render",
+            data: JSON.stringify(content),
+            contentType: "application/json; charset=utf-8",
+            success: function(data){
+                $("#report").html(data);
+                $("#upload-form").hide();
+            }
+        });
+    }
+}
 
 $(document).ready(function(){
     const file = document.getElementById("file");
     file.onchange = function(){
         if(file.files.length > 0) {
           document.getElementById('filename').innerHTML = file.files[0].name;
+          let extension = file.files[0].name.split('.').pop();
+          if (extension != 'docx' && extension != 'tex') {
+            $(".file").addClass("is-danger");
+            $(".file span.file-label").text("Must be .docx or .tex");
+            $("form button[type=submit]").attr("disabled", "disabled");
+          }
+          else {
+              $(".file").removeClass("is-danger");
+              $(".file span.file-label").text("Choose a file…");
+              $("form button[type=submit]").removeAttr("disabled");
+          }
         }
     };
     setInterval(function(){
@@ -66,16 +93,13 @@ $(document).ready(function(){
                 processing = false;
             },
             success: function(data){
-                $("#report").html(data);
-                $("#upload-form").hide();
-
+                render_content(data);
                 mixpanel.track('Upload Success', {
                     'elapsed': elapsed(),
                     'conference': conference,
                     'distinct_id': filename,
                     'size': filesize
                 });
-
             },
             error: function(xhr) {
                 $("#report").html(xhr.responseText);

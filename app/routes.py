@@ -7,6 +7,7 @@ from app.docutils.doc import create_upload_variables, create_upload_variables_la
 from app.refdb import authenticate, get_references, create_spms_variables, get_conferences
 from app.upload import upload_file, delete_file, get_name, get_full_path
 from flask import Blueprint
+from app.score import score
 
 routes = Blueprint('routes', __name__)
 
@@ -17,6 +18,14 @@ def upload():
     conferences = sorted(conferences, key=lambda x: x['id'], reverse=True)
     return render_template("upload.html", conferences=conferences)
 
+@routes.route("/render", methods=["POST"])
+def render():
+    payload = request.json
+    filename = payload['filename']
+    summary = payload['summary']
+    metadata = payload['metadata']
+    scores = payload['scores']
+    return render_template("report.html", filename=filename, summary=summary, metadata=metadata, scores=scores)
 
 @routes.route("/validator", methods=["POST"])
 def main():
@@ -24,7 +33,9 @@ def main():
 
     if filename is None:
         error = error_or_extension
-        return render_template("error.html", error=error), 400
+        return {
+            "error": error
+        }
 
     conference_id = request.form["conference_id"]
     references = []
@@ -35,7 +46,7 @@ def main():
     paper_name = get_name(filename)
 
     try:
-        metadata, summary, title = [], None, None
+        metadata, summary, title = None, None, None
 
         if error_or_extension == 'tex':
             doc = TexSoup(open(full_path, encoding="utf8"))
@@ -46,17 +57,22 @@ def main():
             tracking_is_on = check_tracking_on(doc)
 
             if tracking_is_on:
-                return render_template("error.html",
-                                       error="Cannot process file, tracking is turned on")
+                return {
+                    "error": "Cannot process file, tracking is turned on"
+                }
 
             details, error = create_upload_variables(doc)
 
             if details is None:
-                return render_template("error.html", error=error)
+                return {
+                    "error": error
+                }
 
             summary, authors, title = details
         else:
-            return render_template("error.html", error="Unknown extension")
+            return {
+                "error": "Unknown extension"
+            }
 
         if conference_id:
             reference_check_summary, reference_details = create_spms_variables(paper_name, authors, title, references)
@@ -64,17 +80,38 @@ def main():
                 summary.update(reference_check_summary)
 
         delete_file(request)
-        return render_template("report.html", filename=filename, summary=summary, metadata=metadata)
+
+        scores = score(summary)
+
+        meta = {}
+
+        if metadata is not None:
+            meta = {
+                "author": metadata.author,
+                "revision": metadata.revision,
+                "created": metadata.created.strftime("%d/%m/%Y %H:%M"),
+                "modified": metadata.modified.strftime("%d/%m/%Y %H:%M"),
+                "version": metadata.version,
+                "language": metadata.language,
+            }
+
+        return {
+            "scores": scores,
+            "summary": summary,
+            "metadata": meta,
+            "filename": filename
+        }
     except (PackageNotFoundError, ValueError):
-        return render_template(
-            "report.html",
-            error=f"Failed to open document. Is it a valid document?")
+        return {
+            "error": "Failed to open document. Is it a valid document?"
+        }
     except OSError:
-        return render_template(
-            "error.html",
-            error=f"File is corrupted, and cannot be read")
-    finally:
-        delete_file(request)
+        return {
+            "error": "File is corrupted, and cannot be read"
+        }
+
+    # finally:
+        # delete_file(request)
     # except Exception:
     #     print(Exception)
         # return render_template(
