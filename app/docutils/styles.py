@@ -290,7 +290,11 @@ def check_style_detail(p, compare):
                 if not result:
                     detail[key] = f"{detail[key]} should be {compare[key]}"
         else:
-            result = detail[key] == compare[key]
+            if isinstance(compare[key], list):
+                result = detail[key] in compare[key]
+            else:
+                result = detail[key] == compare[key]
+
             if not result:
                 detail[key] = f"{detail[key]} should be {compare[key]}"
         if not result:
