@@ -10,9 +10,14 @@ function elapsed() {
     timeDiff /= 1000;
     return Math.round(timeDiff);
 }
-function render_content(content) {
+function render_content(content, filename) {
     if (typeof content.error !== 'undefined') {
         $("#report").text(content.error);
+        mixpanel.track('Upload Failure', {
+            'elapsed': elapsed(),
+            'distinct_id': filename,
+            'error': content.error
+        });
     } else {
         $.ajax({
             type: 'POST',
@@ -23,6 +28,11 @@ function render_content(content) {
                 $("#report").html(data);
                 $("#upload-form").hide();
             }
+        });
+        mixpanel.track('Upload Success', {
+            'elapsed': elapsed(),
+            'distinct_id': filename,
+            ...content.scores
         });
     }
 }
@@ -93,13 +103,7 @@ $(document).ready(function(){
                 processing = false;
             },
             success: function(data){
-                render_content(data);
-                mixpanel.track('Upload Success', {
-                    'elapsed': elapsed(),
-                    'conference': conference,
-                    'distinct_id': filename,
-                    'size': filesize
-                });
+                render_content(data, filename);
             },
             error: function(xhr) {
                 $("#report").html(xhr.responseText);
@@ -111,7 +115,7 @@ $(document).ready(function(){
                     'conference': conference,
                     'distinct_id': filename,
                     'size': filesize,
-                    'error': $("#report #error").text()
+                    'error': $("#report").text()
                 });
             },
             timeout: timeout * 1000,
