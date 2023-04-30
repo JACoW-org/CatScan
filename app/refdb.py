@@ -1,7 +1,5 @@
 import requests, re
 from decouple import config
-import jwt
-from jwt import get_algorithm_by_name
 from datetime import datetime, timedelta
 import os
 from app.upload import basedir
@@ -16,10 +14,12 @@ SPMS_EXTRA_INFO = {
 }
 BASE_URL = "https://refdb-6y4en.ondigitalocean.app"
 
+
 class PaperNotFoundError(Exception):
     """Raised when the paper submitted by a user has no matching entry in the
     spms references list of papers"""
     pass
+
 
 def get_cache(filename):
     data = ''
@@ -43,8 +43,10 @@ def write_cache(filename, data, expiry=2):
 def get_conference_cache():
     return get_cache("conferences")
 
+
 def write_conference_cache(data):
     return write_cache("conferences", data)
+
 
 def get_refdb_pub():
     expiry, raw_content = get_cache("publickey")
@@ -63,54 +65,60 @@ def get_new_auth_token():
         "username": config('REFDB_USER'),
         "password": config('REFDB_PASS')
     }
-    response = requests.post(BASE_URL + "/api/login_check", json=data)
-    token = response.json()['token']
-    return token
+    try:
+        response = requests.post(BASE_URL + "/api/login_check", json=data)
+        if response.ok:
+            token = response.json()['token']
+            return token
+    except Exception:
+        print("Failed to get new token")
+    return None
+
 
 def authenticate():
-    expiry, token = get_cache('token')
+    expiry, cache_token = get_cache('token')
     now = datetime.now()
-    if expiry is not None and expiry > now:
-        return token
-    else:
-        token = get_new_auth_token()
-        write_cache('token', token)
-
-    return token
+    if expiry is None or expiry <= now:
+        new_token = get_new_auth_token()
+        if new_token is not None:
+            write_cache('token', new_token)
+            return new_token
+    return cache_token
 
 
 def get_conferences(token):
     expiry, raw_content = get_conference_cache()
     now = datetime.now()
-    if expiry is not None and expiry > now:
-        data = json.loads(raw_content)
-    else:
-        response = requests.get(BASE_URL + "/api/conferences/?bearer=%s" %token)
-        if response.status_code == 200:
-            write_conference_cache(response.text)
-        data = response.json()
-
-    return data
+    cache_data = json.loads(raw_content)
+    if expiry is None or expiry <= now:
+        try:
+            response = requests.get(BASE_URL + "/api/conferences/?bearer=%s" % token)
+            if response.ok:
+                write_conference_cache(response.text)
+                return response.json()
+        except Exception:
+            print("Failed to get conferences")
+    return cache_data
 
 
 def get_references(token, conference_id):
     expiry, raw_content = get_cache("references_" + conference_id)
     now = datetime.now()
-    if expiry is not None and expiry > now:
-        return json.loads(raw_content)
-    else:
-        response = requests.get(BASE_URL + "/api/conferences/" + str(conference_id) + "/references/?bearer=%s" %token)
-
-        if response.status_code == 200:
-            write_cache("references_" + conference_id, response.text, 15)
-            return response.json()
-        else:
-            return None
-
+    cache_data = json.loads(raw_content)
+    if expiry is None or expiry <= now:
+        try:
+            response = requests.get(BASE_URL + "/api/conferences/" + str(conference_id) + "/references/?bearer=%s" % token)
+            if response.ok:
+                write_cache("references_" + conference_id, response.text, 15)
+                return response.json()
+        except Exception:
+            print("Failed to get references")
+    return cache_data
 
 
 NON_BREAKING_SPACE = '\u00A0'
 LINE_TERMINATOR_CHARS = ['\u000A', '\u000B', '\u000C', '\u000D', '\u0085', '\u2028', '\u2029', '\n', '\\n']
+
 
 def get_author_list(text):
     """function to extract authors from some text that will also include
@@ -168,10 +176,11 @@ National Synchrotron Radiation Research Center, Hsinchu, Taiwan, R.O.C`
     # the allowance of an optional hyphen preceding an initial is to satisfy a
     # common pattern observed with the papers coming out of asia.
     for author in potential_authors:
-        if my_name_pattern.match(author):   # match has an implied ^ at the start
+        if my_name_pattern.match(author):  # match has an implied ^ at the start
             # which is ok for our purposes.
             filtered_authors.append(author)
     return filtered_authors
+
 
 def normalize_author_name(author_name):
     """returns a normalized name suitable for comparing"""
@@ -187,10 +196,12 @@ def normalize_author_name(author_name):
     normalized_name = normalized_name.strip()
     return normalized_name
 
+
 def get_surname(author_name):
     """finds the index of the last period in the string then returns the substring
     starting 2 positions forward from that period"""
-    return author_name[author_name.rfind('.')+2:]
+    return author_name[author_name.rfind('.') + 2:]
+
 
 def get_first_last_only(normalized_author_name):
     """given an author name returns a version with only the first initial
@@ -285,6 +296,7 @@ def build_comparison_author_objects(author_names):
             })
     return author_compare_objects
 
+
 def get_author_list_report(document_text, authors):
     """Compares two lists of authors (one sourced from the uploaded document file
     and one sourced from the corresponding paper's entry in the SPMS references
@@ -335,7 +347,8 @@ def get_author_list_report(document_text, authors):
 
     all_authors_match = True  # assume they all match until left with unpaired authors
     for spms_author in spms_list[:]:
-        document_author = next((document_author for document_author in document_list if document_author['compare-value'] == spms_author['compare-value']), None)
+        document_author = next((document_author for document_author in document_list if
+                                document_author['compare-value'] == spms_author['compare-value']), None)
         if document_author:
             document_matched.append(document_author)
             document_list.remove(document_author)
@@ -356,7 +369,10 @@ def get_author_list_report(document_text, authors):
     # if any unmatched authors remain, perform second round of matching, looking for loose matches (missing initials)
 
     for spms_author in spms_unmatched[:]:
-        document_author = next((document_author for document_author in document_unmatched if document_author['compare-first-last'] == spms_author['compare-first-last'] or document_author['compare-transliterated'] == spms_author['compare-transliterated']), None)
+        document_author = next((document_author for document_author in document_unmatched if
+                                document_author['compare-first-last'] == spms_author['compare-first-last'] or
+                                document_author['compare-transliterated'] == spms_author['compare-transliterated']),
+                               None)
         if document_author:
             document_matched.append(document_author)
             document_unmatched.remove(document_author)
@@ -443,6 +459,7 @@ def reference_check(filename_minus_ext, title, authors, references):
             }
 
     return None
+
 
 def create_spms_variables(paper_name, authors, title, references):
     summary = {}

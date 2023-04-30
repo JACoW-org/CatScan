@@ -153,6 +153,33 @@ def get_paragraph_space(paragraph):
 
     return before, after, first_line_indent, hanging_indent, left_indent
 
+def get_style_font_run(run):
+    style = run.style
+    bold, italic, font_size, font_name, all_caps = style.font.bold, style.font.italic, style.font.size, style.font.name, style.font.all_caps
+    if run.style.base_style is not None:
+        style = run.style.base_style
+        # if values not set, use base style
+        if font_size is None:
+            font_size = style.font.size
+        if font_name is None:
+            font_name = style.font.name
+        if bold is None:
+            bold = style.font.bold
+        if italic is None:
+            italic = style.font.italic
+        if all_caps is None:
+            all_caps = style.font.all_caps
+
+    if font_name is None:
+        font_name = run.font.name
+    if font_size is None:
+        font_size = run.font.size
+
+    if font_size is not None:
+        font_size = font_size.pt
+
+    return bold, italic, font_size, font_name, all_caps
+
 
 def get_style_font(paragraph, url):
     # use paragraph style if values set
@@ -290,7 +317,11 @@ def check_style_detail(p, compare):
                 if not result:
                     detail[key] = f"{detail[key]} should be {compare[key]}"
         else:
-            result = detail[key] == compare[key]
+            if isinstance(compare[key], list):
+                result = detail[key] in compare[key]
+            else:
+                result = detail[key] == compare[key]
+
             if not result:
                 detail[key] = f"{detail[key]} should be {compare[key]}"
         if not result:

@@ -1,6 +1,6 @@
 import re
 from itertools import chain
-from app.docutils.styles import check_style, get_style_font
+from app.docutils.styles import check_style, get_style_font_run
 
 RE_REFS_LIST = re.compile(r'^\[([\d]+)\]')
 RE_REFS_LIST_TAB = re.compile(r'^\[([\d]+)\]\t')
@@ -168,7 +168,7 @@ def extract_references(doc, strict_styles=False):
                 if text.startswith(s):
                     has_url = True
                     bold, italic, font_size, font_name, all_caps = \
-                        get_style_font(r, {'has_url': has_url, 'url_font': url_font, 'starts': starts})
+                        get_style_font_run(r)
 
                     if not font_size or not font_name == url_font['name'] \
                             or not font_size == url_font['size']:

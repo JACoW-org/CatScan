@@ -52,7 +52,13 @@ def main():
             doc = TexSoup(open(full_path, encoding="utf8"))
             summary, authors, title = create_upload_variables_latex(doc)
         elif error_or_extension == 'docx':
-            doc = Document(full_path)
+            try:
+                doc = Document(full_path)
+            except KeyError:
+                return {
+                    "error": "Error parsing document. Document may not be in a supported format"
+                }
+
             metadata = doc.core_properties
             tracking_is_on = check_tracking_on(doc)
 

@@ -18,8 +18,8 @@ STYLES = {
        'font_size': 12.0,
        'space_before': 9.0,
        'space_after': 12.0,
-       'bold': None,
-       'italic': None,
+       'bold': [None, False],
+       'italic': [None, False],
    }
 }
 EXTRA_RULES = ['Case: UPPER and lowercase']
