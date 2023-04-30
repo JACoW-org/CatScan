@@ -56,7 +56,8 @@ def main():
                 doc = Document(full_path)
             except KeyError:
                 return {
-                    "error": "Error parsing document. Document may not be in a supported format"
+                    "error": "Document may not be in a supported format. Try to re-saving the file as a 'Word "
+                             "Document' and try again."
                 }
 
             metadata = doc.core_properties
