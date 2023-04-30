@@ -1,7 +1,5 @@
 import requests, re
 from decouple import config
-import jwt
-from jwt import get_algorithm_by_name
 from datetime import datetime, timedelta
 import os
 from app.upload import basedir
@@ -67,10 +65,13 @@ def get_new_auth_token():
         "username": config('REFDB_USER'),
         "password": config('REFDB_PASS')
     }
-    response = requests.post(BASE_URL + "/api/login_check", json=data)
-    if response.ok:
-        token = response.json()['token']
-        return token
+    try:
+        response = requests.post(BASE_URL + "/api/login_check", json=data)
+        if response.ok:
+            token = response.json()['token']
+            return token
+    except Exception:
+        print("Failed to get new token")
     return None
 
 
@@ -90,10 +91,13 @@ def get_conferences(token):
     now = datetime.now()
     cache_data = json.loads(raw_content)
     if expiry is None or expiry <= now:
-        response = requests.get(BASE_URL + "/api/conferences/?bearer=%s" % token)
-        if response.ok:
-            write_conference_cache(response.text)
-            return response.json()
+        try:
+            response = requests.get(BASE_URL + "/api/conferences/?bearer=%s" % token)
+            if response.ok:
+                write_conference_cache(response.text)
+                return response.json()
+        except Exception:
+            print("Failed to get conferences")
     return cache_data
 
 
@@ -102,11 +106,15 @@ def get_references(token, conference_id):
     now = datetime.now()
     cache_data = json.loads(raw_content)
     if expiry is None or expiry <= now:
-        response = requests.get(BASE_URL + "/api/conferences/" + str(conference_id) + "/references/?bearer=%s" % token)
-        if response.ok:
-            write_cache("references_" + conference_id, response.text, 15)
-            return response.json()
+        try:
+            response = requests.get(BASE_URL + "/api/conferences/" + str(conference_id) + "/references/?bearer=%s" % token)
+            if response.ok:
+                write_cache("references_" + conference_id, response.text, 15)
+                return response.json()
+        except Exception:
+            print("Failed to get references")
     return cache_data
+
 
 NON_BREAKING_SPACE = '\u00A0'
 LINE_TERMINATOR_CHARS = ['\u000A', '\u000B', '\u000C', '\u000D', '\u0085', '\u2028', '\u2029', '\n', '\\n']
