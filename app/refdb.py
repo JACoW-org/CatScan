@@ -22,7 +22,7 @@ class PaperNotFoundError(Exception):
 
 
 def get_cache(filename):
-    data = ''
+    data = '{}'
     expiry = None
     if os.path.exists(basedir + "/../cache/" + filename):
         with open(basedir + "/../cache/" + filename, 'r') as file:
