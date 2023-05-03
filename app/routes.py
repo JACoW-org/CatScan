@@ -49,14 +49,21 @@ def main():
         metadata, summary, title = None, None, None
 
         if error_or_extension == 'tex':
-            doc = TexSoup(open(full_path, encoding="utf8"))
+            try:
+                doc = TexSoup(open(full_path, encoding="utf8"))
+            except TypeError:
+                return {
+                    "error": "Unable to process this TeX file. TeX support is still a work in progress. "
+                             "We are working to improve support for TeX. Please try again in the future."
+                }
             summary, authors, title = create_upload_variables_latex(doc)
         elif error_or_extension == 'docx':
             try:
                 doc = Document(full_path)
             except KeyError:
                 return {
-                    "error": "Error parsing document. Document may not be in a supported format"
+                    "error": "Document may not be in a supported format. Try to re-saving the file as a 'Word "
+                             "Document' and try again."
                 }
 
             metadata = doc.core_properties
@@ -64,7 +71,7 @@ def main():
 
             if tracking_is_on:
                 return {
-                    "error": "Cannot process file, tracking is turned on"
+                    "error": "Cannot process file, tracking is turned on. Please turn tracking off, and try again."
                 }
 
             details, error = create_upload_variables(doc)
