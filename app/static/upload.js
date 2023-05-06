@@ -47,6 +47,7 @@ var droppedFiles;
 function updateData(file) {
     $('#filename').text(file.name);
     let extension = file.name.split('.').pop();
+    $(".dropzone").removeClass("active");
     if (extension != 'docx' && extension != 'tex') {
         $(".file").addClass("is-danger");
         $(".file span.file-label").text("Must be .docx or .tex");
@@ -56,12 +57,13 @@ function updateData(file) {
         $(".file").removeClass("is-danger");
         $(".file span.file-label").text("Choose a file…");
         $("form button[type=submit]").removeAttr("disabled");
+        $(".dropzone").addClass("active");
     }
 }
 
 $(document).ready(function(){
 
-    var $form = $('#file-field');
+    var $form = $('.dropzone');
 
     if (isAdvancedUpload) {
 

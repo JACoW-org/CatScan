@@ -127,3 +127,14 @@ a.navbar-item.is-active:not(:hover) {
     transition:height 1s ease-out;
     overflow:hidden;
 }
+
+.dropzone {
+    margin-top: 5px;
+    padding: 20px;
+    background-position:center center;
+    border: 4px dashed #CCC;
+}
+
+.dropzone.active {
+    border-color: #3399ff;
+}
