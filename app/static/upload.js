@@ -37,22 +37,58 @@ function render_content(content, filename) {
     }
 }
 
+var isAdvancedUpload = function() {
+  var div = document.createElement('div');
+  return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+}();
+
+var droppedFiles;
+
+function updateData(file) {
+    $('#filename').text(file.name);
+    let extension = file.name.split('.').pop();
+    if (extension != 'docx' && extension != 'tex') {
+        $(".file").addClass("is-danger");
+        $(".file span.file-label").text("Must be .docx or .tex");
+        $("form button[type=submit]").attr("disabled", "disabled");
+    }
+    else {
+        $(".file").removeClass("is-danger");
+        $(".file span.file-label").text("Choose a file…");
+        $("form button[type=submit]").removeAttr("disabled");
+    }
+}
+
 $(document).ready(function(){
+
+    var $form = $('#file-field');
+
+    if (isAdvancedUpload) {
+
+      $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      })
+      .on('dragover dragenter', function() {
+        $form.addClass('is-dragover');
+      })
+      .on('dragleave dragend drop', function() {
+        $form.removeClass('is-dragover');
+      })
+      .on('drop', function(e) {
+        droppedFiles = e.originalEvent.dataTransfer.files;
+        if (droppedFiles.length > 0) {
+            updateData(droppedFiles[0]);
+        }
+      });
+    }
+
+    $("#conference_id").val(Cookies.get('conference') ?? '');
     const file = document.getElementById("file");
     file.onchange = function(){
         if(file.files.length > 0) {
-          document.getElementById('filename').innerHTML = file.files[0].name;
-          let extension = file.files[0].name.split('.').pop();
-          if (extension != 'docx' && extension != 'tex') {
-            $(".file").addClass("is-danger");
-            $(".file span.file-label").text("Must be .docx or .tex");
-            $("form button[type=submit]").attr("disabled", "disabled");
-          }
-          else {
-              $(".file").removeClass("is-danger");
-              $(".file span.file-label").text("Choose a file…");
-              $("form button[type=submit]").removeAttr("disabled");
-          }
+            updateData(file.files[0]);
+            droppedFiles = false;
         }
     };
     setInterval(function(){
@@ -64,8 +100,11 @@ $(document).ready(function(){
     var filesize = -1;
     var filename = 'Unknown';
     var conference = "Not Selected";
+
+
     $("form").submit(function(e){
         conference = $("#conference_id option:selected").text();
+        Cookies.set('conference', $("#conference_id").val(), { expires: 31 });
         let field = document.getElementById('file');
         if (field.files[0] !== undefined) {
             filesize = field.files[0].size / 1000;
@@ -76,6 +115,13 @@ $(document).ready(function(){
         $(".progress").show();
         e.preventDefault();
         var formData = new FormData(this);
+
+         if (droppedFiles) {
+            formData.delete("document");
+            $.each( droppedFiles, function(i, file) {
+              formData.append( 'document', file );
+            });
+        }
         $("form button").hide();
         $("form input, form select").attr("disabled", "disabled");
         $("#status").text("Uploading file");
