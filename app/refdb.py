@@ -12,7 +12,7 @@ SPMS_EXTRA_INFO = {
     'headers': '<thead><tr><th>Type</th><th>Match</th><th>Document</th><th>SPMS</th></tr></thead>',
     'columns': ['type', 'match_ok', 'document', 'spms']
 }
-BASE_URL = "https://refdb-6y4en.ondigitalocean.app"
+BASE_URL = "https://refs.jacow.org"
 
 
 class PaperNotFoundError(Exception):
